@@ -1,0 +1,27 @@
+<root>
+	<window>
+		<template name="HintSystem.confirmationLayerRocketlauncher">
+			<container name="confirmationContainer" template="HintSystem.confirmationLayerWithOneButtonTemplate">
+				<button name="confirmationButton01" text="localize:targeted_hintwindow_button_rocketlauncher" />
+			</container>
+		</template>
+		
+		<container template="baseWindow">
+			<placeholder 
+				name     ="confirmationLayerPlaceholder"
+				template ="HintSystem.confirmationLayerRocketlauncher" 
+				/>
+		</container>
+	</window>
+	
+	<playlist repeat="true" >
+		<item resKey="hint-system_image_rocket_launcher_01" effect="alphafade" fadeTime="1" duration="2000" />
+		<item resKey="hint-system_image_rocket_launcher_02" effect="alphafade" fadeTime="1" duration="2000" />
+		<item resKey="hint-system_image_rocket_launcher_03" effect="alphafade" fadeTime="1" duration="2000" />
+		<item resKey="hint-system_image_rocket_launcher_04" effect="alphafade" fadeTime="1" duration="2000" />
+		<item resKey="hint-system_image_rocket_launcher_05" effect="alphafade" fadeTime="1" duration="2000" />
+		<item resKey="hint-system_image_rocket_launcher_06" effect="alphafade" fadeTime="1" duration="2000" />
+		<item resKey="hint-system_image_rocket_launcher_07" effect="alphafade" fadeTime="1" duration="2000" />
+	</playlist>
+	
+</root>

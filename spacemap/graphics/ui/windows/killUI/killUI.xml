@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+    <libraries>
+        <library id="gameclientCommonUI"/>
+    </libraries>
+
+    <textstyle
+            name="plague_window_headline_textstyle"
+            textColor="0xbfbfbf"
+            type="dynamic"
+            embedFonts="false"
+            fontName="Verdana"
+            fontSize="14"
+            align="center"/>
+    <textstyle
+            name="plague_window_progress_textstyle"
+            textColor="0xfefefe"
+            type="dynamic"
+            embedFonts="false"
+            fontName="Verdana"
+            align="center"
+            fontSize="12"/>
+
+    <textstyle name="killUI_textstyle_score"
+               background="false"
+               textColor="0xFFFFFF"
+               type="dynamic"
+               selectable="false"
+               fontName="EurostileFl"
+               wordWrap="true"
+               align="center"
+               embedFonts="true"
+               fontSize="16"
+                />
+
+
+    <!--
+    autoSizeHeight="true"
+    autoSizeMode="children"
+    layout="vertical"
+    */
+                /*height         = "108"*/
+    /*
+    -->
+
+    <container name="root" mouseEnabled="false" mouseChildren="false" >
+        <container
+                name           = "contentContainer"
+                mouseEnabled   = "false"
+                width          = "300"
+                layout         = "vertical"
+                autoSizeHeight = "true"
+                autoSizeMode   = "children"
+                >
+                <label name="title"
+                       text="localize:kill_progress_window_headline"
+                       registeredSkinName="commonui_default_label"
+                       width="300"
+                       height="22"
+                       alignX="center"
+                       registeredTextStyleName="commonui_default_headline_textstyle"
+                       />
+                <label text="0/0"
+                       name="points"
+                       registeredSkinName="commonui_default_label"
+                       width="300"
+                       height="20"
+                       alignX="center"
+                       registeredTextStyleName="killUI_textstyle_score"
+                       decorate="default.lightBlueGlow"
+                        />
+                <progressbar
+                        alignX="center"
+                        name="progressbar"
+                        registeredSkinName="commonui_progressbar_skin"
+                        width="262"
+                        height="13"
+                        />
+                <label name="killsleft"
+                       text=""
+                       registeredSkinName="commonui_default_label"
+                       registeredTextStyleName="textstyle_button_align_center_multine_verdana_10"
+                       width="300"
+                       height="20"
+                       alignX="center"
+                       useHTML="true"
+                       autoSizeTextHeight="true"
+                        />
+                <label name="onmap"
+                       text=""
+                       registeredSkinName="commonui_default_label"
+                       registeredTextStyleName="textstyle_button_align_center_multine_verdana_10"
+                       width="300"
+                       height="20"
+                       alignX="center"
+                       useHTML="true"
+                       autoSizeTextHeight="true"
+                        />
+        </container>
+
+    <container
+            name           = "alertContainer"
+            mouseEnabled   = "false"
+            width          = "300"
+            y              = "14"
+            gap            = "10"
+            layout         = "vertical"
+            autoSizeHeight = "true"
+            autoSizeMode   = "children"
+            >
+            <label name="title"
+                   text="localize:kill_progress_window_plague_alert"
+                   registeredSkinName="commonui_default_label"
+                   width="300"
+                   height="22"
+                   alignX="center"
+                   registeredTextStyleName="commonui_default_headline_textstyle_yellow"
+                    />
+            <label text="message"
+                   name="message"
+                   registeredSkinName="commonui_default_label"
+                   width="300"
+                   height="20"
+                   alignX="center"
+                   registeredTextStyleName="textstyle_button_align_center_multine_verdana_10"
+                   useHTML="true"
+                   autoSizeTextHeight="true"
+                    />
+        </container>
+    </container>
+</root>

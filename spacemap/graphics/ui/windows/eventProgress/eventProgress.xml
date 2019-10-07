@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+	<libraries>
+		<library id="gameclientCommonUI"/>
+		<library id="eventProgressUI"/>
+	</libraries>
+
+	<textstyle  name="win_event_progress_default"
+				textColor="0xCCCCCC"
+				type="dynamic"
+				fontSize="10"
+				wordWrap="true"
+				multiline="true"
+				embedFonts="false"
+				fontName="Verdana"
+				autoSize="center"
+				/>
+
+	<textstyle
+			name="event_window_info_centered_textstyle"
+			textColor="0x999898"
+			type="dynamic"
+			fontSize="10"
+			autoSize="center"
+			wordWrap="false"
+			multiline="false"
+			embedFonts="false"
+			fontName="Verdana"
+			align="center"/>
+
+	<textstyle  name="win_event_progress_nextreward_textstyle"
+				textColor="0xCCCCCC"
+				type="dynamic"
+				fontSize="10"
+				wordWrap="true"
+				multiline="true"
+				embedFonts="false"
+				fontName="Verdana"
+				autoSize="left"
+				/>
+
+	<textstyle    name       = "win_event_progress_remainingtime_textstyle"
+				  background = "false"
+				  textColor  = "0xFFCC00"
+				  type       = "dynamic"
+				  selectable = "true"
+				  wordWrap   = "true"
+				  align      = "right"
+				  embedFonts = "false"
+				  fontName   = "Verdana"
+				  fontSize   = "10"
+				  />
+
+	<textstyle	name="win_event_progress_resetprice"
+				textColor="0xBFBFBF"
+				type="dynamic"
+				fontSize="11"
+				embedFonts="false"
+				fontName="Verdana"
+				align="center"/>
+
+	<skins>
+		<skin name="win_event_progress_bgnd_progress_component" library="eventProgressUI" classname="BasicSkin">
+			<layer classname="BitmapLayer" libraryID="win_event_progress_bgnd_progress_component">normal</layer>
+		</skin>
+		<skin name="win_event_progress_bgnd_item_big_grey" library="eventProgressUI" classname="BasicSkin">
+			<layer classname="BitmapLayer" libraryID="win_event_progress_bgnd_item_big_grey">normal</layer>
+		</skin>
+		<skin name="win_event_progress_bgnd_item_big_blue" library="eventProgressUI" classname="BasicSkin">
+			<layer classname="BitmapLayer" libraryID="win_event_progress_bgnd_item_big_blue">normal</layer>
+		</skin>
+		<skin name="win_event_progress_bgnd_item_big_green" library="eventProgressUI" classname="BasicSkin">
+			<layer classname="BitmapLayer" libraryID="win_event_progress_bgnd_item_big_green">normal</layer>
+		</skin>
+		<skin name="win_event_progress_scrollcontainer" classname="BasicSkin">
+			<layer classname="FilledBoxLayer" fillColor="0x13323E" fillAlpha="0">mask</layer>
+		</skin>
+	</skins>
+
+	<container
+			name="contentContainer"
+			mouseEnabled="false"
+			width  ="455"
+			height ="346"
+			>
+
+			<container name            = "tabBarContainer"
+					   width		   = "280"
+					   height		   = "16"
+					   mouseEnabled    = "true"
+					   layout          = "horizontal"
+					   gap             = "1"
+					   alignX          = "right"
+					   >
+						<container name="tabbarbuttonProgress" width="140" height="15">
+							<radiobutton name="progress" groupName="win_event_progress_tabbarbutton_group" autoSizeWidth="true" height="15" registeredSkinName="commonui_tabbarbutton.left" registeredTextStyleName="contactlist_selectedUsernameTextStyle" />
+							<label name="label" y="-1" mouseEnabled="false" autoSizeWidth="true" height="11" text="localize:window_event_progress_tabbar_eventprogress" marginLeft="16" alignX="center" registeredSkinName="commonui_default_label" registeredTextStyleName="event_window_info_centered_textstyle" />
+						</container>
+						<container name="tabbarbuttonSource" width="140" height="15">
+							<radiobutton name="source" groupName="win_event_progress_tabbarbutton_group" autoSizeWidth="true" height="15" registeredSkinName="commonui_tabbarbutton" text="localize:window_event_progress_tabbar_eventprogress"  />
+							<label name="label" y="-1" mouseEnabled="false" autoSizeWidth="true" height="11" text="localize:window_event_progress_tabbar_explanation" alignX="center" registeredSkinName="commonui_default_label" registeredTextStyleName="event_window_info_centered_textstyle" />
+						</container>
+			</container>
+
+			<container name="progressContainer" marginTop="20" autoSizeWidth="true" autoSizeHeight="true" alpha="0" layout="vertical" >
+					<container name="descriptionContainer" width="423" height="70" alignX="center" >
+
+						<scrollcontainer mouseEnabled="true" alignY="center" name="eventProgressScrollContainer" autoSizeHeight="true" autoSizeWidth="true" marginRight="22" marginLeft="17" registeredSkinName="win_event_progress_scrollcontainer">
+							<label name="content" autoSizeWidth="true" useHTML="true" mouseEnabled="true" registeredTextStyleName="win_event_progress_default" autoSizeTextHeight="true" />
+						</scrollcontainer>
+						<scrollbar name="eventProgressScrollbarText" width="10" autoSizeHeight="true" alignX="right"
+								   marginRight="6" marginBottom="6" marginTop="6"
+								   registeredSkinName="commonui_scrollbar_bgnd">
+									<button name="buttonSlider" width="6" height="6"
+											alignX="center" registeredSkinName="commonui_scrollbar_slider"/>
+						</scrollbar>
+						<bind source="eventProgressScrollbarText" target="eventProgressScrollContainer" type="scrollcontainer"/>
+					</container>
+
+					<container name="progressBarContainer" width="423" height="184" registeredSkinName="win_event_progress_bgnd_progress_component" alignX="center">
+						<container name="progressLayoutContainer" autoSizeWidth="true" margin="4">
+							<container y="3" name="labelContainer" height="14" autoSizeWidth="true">
+								<label name="labelReward" y="-2" width="200" height="15" text="localize:window_event_progress_label_nextreward" alignX="left"  registeredSkinName="commonui_default_label" registeredTextStyleName="win_event_progress_nextreward_textstyle" />
+								<label name="labelTime"   y="-2" width="200" height="15" text="localize:window_event_progress_label_event_ends" alignX="right" registeredSkinName="commonui_default_label" registeredTextStyleName="win_event_progress_remainingtime_textstyle" />
+							</container>
+							<container name="progressContainer" height="146" y="30" alignX="center" autoSizeWidth="true">
+								<eventprogressbar name="progressbar" library="eventProgressUI" marginLeft="68" autoSizeWidth="true" autoSizeHeight="true" />
+								<coreponent name="finalRewardBgnd"          alignX="right" alignY="bottom" width="137" height="137" marginRight="12" marginBottom="10" registeredSkinName="win_event_progress_bgnd_item_big_grey" />
+								<coreponent name="finalRewardBgnd_progress" alignX="right" alignY="bottom" width="137" height="137" marginRight="12" marginBottom="10" registeredSkinName="win_event_progress_bgnd_item_big_blue"  />
+								<coreponent name="finalRewardBgnd_progressmask" alignX="right" alignY="bottom" width="137" height="137" marginRight="12" marginBottom="10" registeredSkinName="commonui_hitlayer"  />
+								<coreponent name="finalRewardBgnd_selected" alignX="right" alignY="bottom" width="137" height="137" marginRight="12" marginBottom="10" registeredSkinName="win_event_progress_bgnd_item_big_green" visible="false" />
+								<videoplayer name="videoplayer"  width="130" height="130" alignX="right" alignY="top" marginTop="6" marginRight="15" marginBottom="13" />
+							</container>
+						</container>
+					</container>
+			</container>
+
+			<container name="explanationContainer" marginTop="30" autoSizeWidth="true" autoSizeHeight="true" alpha="0" >
+				<label name="source" autoSizeWidth="true" marginRight="22" marginLeft="27" text="localize:window_event_progress_label_event_collection_points_hatchingout_event" registeredTextStyleName="win_event_progress_default" autoSizeTextHeight="true" />
+			</container>
+
+			<container name="confirmationContainer" alignY="bottom" marginBottom="8" alignX="center" autoSizeWidth="true" height="60">
+				<button name="resetButton"   text="localize:window_event_progress_button_confirmation_collect_restart" width="240"  alpha="0" height="62" alignX="center" registeredSkinName="commonui_confirmationbutton_blue"  registeredTextStyleName="commonui_confirmationbutton_green_normal" textMarginY="-6" />
+				<button name="collectButton" text="localize:window_event_progress_button_confirmation_collect_rewards" width="240"  alpha="0" height="62" alignX="center" registeredSkinName="commonui_confirmationbutton_green" registeredTextStyleName="commonui_confirmationbutton_green_normal" />
+				<label  name="resetLabel"  marginBottom="10" width="240" height="20" text="localize:window_event_progress_label_event_ends" alignY="bottom" alignX="center" registeredSkinName="commonui_default_label" registeredTextStyleName="win_event_progress_resetprice" mouseEnabled="false" />
+			</container>
+
+	</container>
+
+</root>

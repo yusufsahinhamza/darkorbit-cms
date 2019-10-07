@@ -1,0 +1,190 @@
+<root>
+<window>
+	<container
+		name   = "hintDialogView"
+		width  = "800"
+		height = "600"
+		>
+		
+<!-- extended view -->
+		<window 
+			name               = "hintWindow"
+			width              = "621"
+			height             = "500"
+			alignX             = "center"
+			alpha              = "0"
+			>
+							
+		<!-- window background -->
+			<coreponent 
+				name               = "windowContainer"
+				autoSizeWidth      = "true"
+				autoSizeHeight     = "true"
+				marginTop          = "35"
+				marginLeft         = "20"
+				registeredSkinName = "hintsystem_window_background"
+				/>
+	
+		<!-- window close button -->
+			<button 
+				name               = "closeButton"
+				alignX             = "right"
+				width              = "43"
+				height             = "21"
+				marginY            = "44"
+				marginX            = "8"
+				registeredSkinName = "hintsystem_window_close_button"
+				/>	
+						
+		<!-- window headline -->
+			<coreponent
+				name               = "windowHeaderBackground"
+				width              = "520"
+				height             = "34"
+				x                  = "36"
+				y                  = "8"
+				registeredSkinName = "hintsystem_window_header_bgnd"
+				/>
+			<label name="windowHeaderLabel" autoSizeWidth="true" registeredSkinName="hintsystem_label" registeredTextStyleName="hintsystem_header" marginLeft="51" marginRight="60" marginTop="12" />					
+		<!-- window headline -->
+				
+			<container
+				name               = "iconBackground" 
+				width              = "51"
+				height             = "49"
+				registeredSkinName = "hintsystem_window_icon_bgnd"
+				>
+			</container>
+			
+			<coreponent 
+				width              = "38"
+				height             = "38"
+				x                  = "6"
+				y                  = "6"
+				registeredSkinName = "hintsystem_window_icon_info"
+				/>
+			
+			
+	
+			<!--content: START -->
+				<container
+					name           = "contentContainer"
+					autoSizeWidth  = "true"
+					autoSizeHeight = "true"
+					marginLeft     = "58"
+					marginRight    = "40"
+					marginTop      = "71"
+					marginBottom   = "20"
+					>
+					
+					<!-- message: -->
+					<container
+						name          = "messageContainer"
+						autoSizeWidth = "true"
+						height        = "160"
+						>
+						
+					<!--message: hint message -->
+						<container name="textBoxContainer"  width="380" height="130" alignX="right" registeredSkinName="hintsystem_window_panel_speechbubble">
+							<label name="header" autoSizeWidth="true" registeredSkinName="hintsystem_label" registeredTextStyleName="hintsystem_message_header" marginLeft="30" marginRight="30" marginTop="10" />
+							<scrollcontainer name="scrollContainer" registeredSkinName="hintsystem_scrollcontainerskin" autoSizeWidth="true" autoSizeHeight="true" marginTop="32" marginLeft="30" marginRight="30" marginBottom="2">
+								<label name="content" autoSizeWidth="true" registeredSkinName="hintsystem_label" registeredTextStyleName="hintsystem_message" />
+							</scrollcontainer>
+							<scrollbar name="scrollbar"      width="10" autoSizeHeight="true" alignX="right"  marginRight="6" marginBottom="6" marginTop="32" registeredSkinName="hintsystem_window_scrollbar_bgnd">
+								<button name="buttonSlider"  width="6"  height="28"  alignX="center" y ="0" registeredSkinName="hintsystem_window_scrollbar_slider" />
+							</scrollbar>
+						</container>
+					</container>
+					
+					<container name="slideShowContainer" width="524" height="350" mouseEnabled="false" mouseChildren="false">
+						<imageslideshow name="imageSlideShow" width="520" height="348" alignX="center" y="center" mouseEnabled="false" mouseChildren="false"/>
+						<Coreponent alignX="right" y="174"         width="20" height="20" registeredSkinName="hintsystem_slideshow_border_TR" />
+						<Coreponent alignX="left"  alignY="bottom" width="20" height="20" registeredSkinName="hintsystem_slideshow_border_BL" />
+						<Coreponent alignX="right" alignY="bottom" width="20" height="20" registeredSkinName="hintsystem_slideshow_border_BR" />
+					</container>
+					
+					<placeholder name="confirmationLayerPlaceholder" template="HintSystem.confirmationLayerWithOneButtonTemplate" />
+									
+				</container>
+			<!--content: END -->					
+	
+		</window>
+<!-- extended view -->
+
+<!-- notificationbar view -->	
+		<container
+			name       = "minibar"
+			width      = "307"
+			height     = "29"
+			alignX     = "center"
+			marginTop  = "54"
+			alpha      = "0"
+			>
+			
+			<container
+				name       = "background"
+				width      = "307"
+				height     = "29"
+				registeredSkinName = "hintsystem_window_header_bgnd"
+				/>
+				
+			<container
+				name       = "infoIconbackground"
+				width      = "42"
+				height     = "40"
+				marginLeft = "-10"
+				alignY     = "center"
+				registeredSkinName = "hintsystem_window_icon_bgnd"
+				>
+				
+			</container>
+			
+			<coreponent
+				name       = "infoIcon"
+				width      = "38"
+				height     = "38"
+				x          = "-8"
+				y          = "-5"
+				registeredSkinName="hintsystem_notificationbar_icon_info"
+				/>
+			
+			<label 
+				name           ="infoLabel" 
+				autoSizeWidth  ="true" 
+				marginLeft     = "38" 
+				marginRight    = "10"
+				marginTop      = "2"
+				text           = "How to fly" 
+				registeredTextStyleName= "hintsystem_header" 
+				registeredSkinName     = "hintsystem_label" 
+				/>
+			<button
+				name        = "closeButton"
+				width       = "20"
+				height      = "21"
+				alignX      = "right"
+				alignY      = "center"
+				registeredSkinName="hintsystem_notificationbar_close_button"
+				/>
+			<coreponent
+				name       = "borderTR"
+				width      = "4"
+				height     = "4"
+				alignX     = "right"
+				registeredSkinName="hintsystem_notification_minibar_border_TR"
+				/>			
+			<coreponent
+				name       = "borderBR"
+				width      = "4"
+				height     = "4"
+				alignX     = "right"
+				alignY     = "bottom"
+				registeredSkinName="hintsystem_notification_minibar_border_BR"
+				/>			
+<!-- notificationbar view -->	
+			
+		</container>
+	</container>
+</window>
+	
+</root>

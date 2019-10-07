@@ -1,0 +1,17 @@
+<root>
+	<window>
+		<container template="baseWindow">
+			<placeholder 
+				name     = "confirmationLayerPlaceholder"
+				template = "HintSystem.confirmationLayerWithOneButtonTemplate" 
+				>
+			</placeholder>
+		</container>
+		
+	</window>
+	
+	<playlist repeat="false" >
+		<item resKey="hint-system_image_training_ground" effect="alphafade" fadeTime="1" duration="3000" />
+	</playlist>
+	
+</root>

@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+    <!-- LIBS -->
+    <libraries>
+        <library id="gameclientCommonUI"/>
+        <library id="traininggroundsUI"/>
+        <library id="contactsWindowUI"/>
+        <library id="settingsWindowFUI"/>
+    </libraries>
+    <!-- TEXT STYLES -->
+
+
+    <textstyle
+            name="settings_window_info_textstyle"
+            textColor="0x999898"
+            type="dynamic"
+            fontSize="10"
+            autoSize="left"
+            wordWrap="true"
+            multiline="true"
+            embedFonts="false"
+            fontName="Verdana" />
+
+    <textstyle
+            name="settings_window_info_textstyle_single_line"
+            textColor="0x999898"
+            type="dynamic"
+            fontSize="10"
+            autoSize="left"
+            wordWrap="false"
+            multiline="false"
+            embedFonts="false"
+            fontName="Verdana" />
+
+    <textstyle
+            name="settings_window_info_centered_textstyle"
+            textColor="0x999898"
+            type="dynamic"
+            fontSize="10"
+            autoSize="center"
+            wordWrap="false"
+            multiline="false"
+            embedFonts="false"
+            fontName="Verdana"
+            align="center"/>
+
+    <textstyle
+            name="settings_window_caps_textstyle"
+            textColor="0xFFFFFF"
+            type="dynamic"
+            fontSize="10"
+            autoSize="center"
+            wordWrap="true"
+            multiline="true"
+            fontName="EurostileTHea" />
+    <textstyle
+            name="settings_window_caps_textstyle_center"
+            textColor="0xFFFFFF"
+            type="dynamic"
+            fontSize="10"
+            autoSize="center"
+            wordWrap="true"
+            multiline="true"
+            fontName="EurostileTHea"
+            align="center"/>
+
+    <textstyle
+            name="settings_window_blue_textstyle"
+            textColor="0x00AAFF"
+            type="dynamic"
+            fontSize="10"
+            autoSize="center"
+            wordWrap="true"
+            multiline="true"
+            embedFonts="false"
+            fontName="Verdana" />
+
+    <textstyle 	name           = "settings_whiteTextStyleButton"
+                  textColor      = "0xFFFFFF"
+                  type           = "dynamic"
+                  selectable     = "false"
+                  fontName       = "EurostileTHea"
+                  align		   = "center"
+                  fontSize	   = "16"
+                  embedFonts   = "true"
+            />
+
+    <skin name="settings_label_skin" classname="LabelSkin" />
+    <skin name="settings_window_horizontal_divider" library="contactsWindowUI" classname="BasicSkin">
+        <layer classname="BitmapLayer" libraryID="contactlist_horizontal_divider"   >normal</layer>
+    </skin>
+    <skin name="settings_window_grey_bg" library="settingsWindowFUI" classname="BasicSkin">
+        <layer classname="BitmapLayer" libraryID="grey_bg"   >normal</layer>
+    </skin>
+    <skin name="settings_window_busy" library="settingsWindowFUI" classname="BasicSkin">
+        <layer classname="MovieClipLayer" libraryID="Busy">normal</layer>
+    </skin>
+    <skin name="settings_window_slider" library="settingsWindowFUI" classname="BasicSkin">
+        <layer classname="MovieClipLayer" libraryID="Slider4Steps">normal</layer>
+    </skin>
+    <skin name="settings_window_music_slider" library="settingsWindowFUI" classname="BasicSkin">
+        <layer classname="MovieClipLayer" libraryID="Slider100Steps">normal</layer>
+    </skin>
+    <skin name="settings_window_dropdownbox" library="settingsWindowFUI" classname="BasicSkin">
+        <layer classname="MovieClipLayer" libraryID="DropDownSelected">normal</layer>
+    </skin>
+    <skin name="settings_window_tab_bar" library="settingsWindowFUI" classname="BasicSkin">
+        <layer classname="MovieClipLayer" libraryID="SettingsTabs">normal</layer>
+    </skin>
+    <skin name="settings_window_keybindingBg" library="settingsWindowFUI" classname="BasicSkin">
+        <layer classname="MovieClipLayer" libraryID="OtherTabs">normal</layer>
+    </skin>
+    <skin name="settings_window_info_icon" library="settingsWindowFUI" classname="FadableButtonSkin">
+        <layer classname="BitmapLayer" libraryID="info_icon">normal</layer>
+        <layer classname="BitmapLayer" libraryID="info_icon_hover">over</layer>
+        <layer classname="BitmapLayer" libraryID="info_icon_hover">clicked</layer>
+        <layer classname="BitmapLayer" libraryID="info_icon">disabled</layer>
+    </skin>
+    <skin name="settings_label_button_green" classname="FadableButtonSkin" library="settingsWindowFUI" >
+        <layer classname="BitmapLayer" libraryID="btn_green_normal" >normal</layer>
+        <layer classname="BitmapLayer" libraryID="btn_green_hover" >over</layer>
+        <layer classname="BitmapLayer" libraryID="btn_inactive" >disabled</layer>
+    </skin>
+    <skin name="settings_label_button_red" classname="FadableButtonSkin" library="settingsWindowFUI" >
+        <layer classname="BitmapLayer" libraryID="btn_red_normal" >normal</layer>
+        <layer classname="BitmapLayer" libraryID="btn_red_hover" >over</layer>
+        <layer classname="BitmapLayer" libraryID="btn_inactive" >disabled</layer>
+    </skin>
+    <skin name="settings_label_button_blue" classname="FadableButtonSkin" library="settingsWindowFUI">
+        <layer classname="BitmapLayer" libraryID="btn_blue_normal" scale9grid="16,9,144,19" >normal</layer>
+        <layer classname="BitmapLayer" libraryID="btn_blue_hover"  scale9grid="16,9,144,19">over</layer>
+        <layer classname="BitmapLayer" libraryID="btn_inactive"  scale9grid="16,9,144,19">disabled</layer>
+    </skin>
+
+    <skin name="settings_list_skin"  library="gameclientCommonUI" classname="BasicSkin">
+        <layer classname="BitmapLayer" libraryID="debug_mask_rounded_edges_3x3"  scale9grid="3,3,4,4" >mask</layer>
+    </skin>
+    <!-- CONTENT -->
+    <container
+            name="contentContainer"
+            mouseEnabled="false"
+            width="370"
+            height="470" >
+        <container name            = "tabBarContainer"
+                   width		   = "420"
+                   height		   = "10"
+                   mouseEnabled    = "true"
+                   visible		   = "true" >
+            <tabbar name="settingsBar" alignX="left" marginLeft="47" marginTop="-5" localizedTexts="setting_btn_display_tab,setting_btn_gameplay_tab,setting_btn_interface_tab,setting_btn_sound_tab,setting_btn_keyboard_tab" registeredSkinName="settings_window_tab_bar" registeredTextStyleName="settings_window_info_centered_textstyle"/>
+        </container>
+        <container
+                name           = "displaySettingsContainer"
+                width		   = "420"
+                height		   = "470"
+                mouseEnabled   = "false"
+                visible		   = "false"
+                marginTop      = "-10" >
+
+            <!--<container-->
+            <!--name="contentContainer"-->
+            <!--mouseEnabled="false"-->
+            <!--layout="vertical"-->
+            <!--width="262"-->
+            <!--height="320">-->
+            <container
+                    name    = "firstLineLayout"
+                    width	= "420"
+                    >
+                <!--checkbox name="preloadShips" marginLeft="10" marginTop="40" alignX="left" selection="true" registeredSkinName="commonui_checkbox16x16_blue" />
+                <label marginTop="40" marginLeft="30" width="200" name="preloadShipsLabel"  height="20" text="localize:setting_preloadShips"
+                        registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_textstyle_single_line" />
+                <button name="infoIconPreloadShips" mouseEnabled="true" marginTop="40" marginLeft="210" registeredSkinName="settings_window_info_icon" tooltipTemplateID="commonui_tooltip_simple" tooltipData="localize:ttip_setting_preloadShips"/-->
+                <checkbox name="use2D" marginTop="40" marginLeft="30" alignX="left" selection="false" registeredSkinName="commonui_checkbox16x16_blue" />
+                <label marginTop="40" marginLeft="50" width="200" name="use2DLabel" height="20" text="localize:setting_use2D"
+                       registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_textstyle_single_line" />
+                <!--<button name="use2D" width="160"  height="30" marginTop="33" marginLeft="250" text="localize:setting_use2D" registeredSkinName="settings_label_button_blue" registeredTextStyleName="settings_whiteTextStyleButton"/>-->
+                <!--<button name="use3D" width="160"  height="30" marginTop="33" marginLeft="250" text="localize:setting_use3D" registeredSkinName="settings_label_button_blue" registeredTextStyleName="settings_whiteTextStyleButton"/>-->
+
+            </container>
+
+            <coreponent name="horizontalDivider" x="10" y="70" autoSizeWidth="true" marginLeft="10" marginRight="10" registeredSkinName="settings_window_horizontal_divider"  />
+
+
+            <label marginTop="80" marginLeft="10" name="graphicsQualityDescLabel" autoSizeWidth="true" height="20" text="localize:setting_quality_presetting" alignX="center"
+                   registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_caps_textstyle" />
+            <label marginTop="80" marginLeft="120" name="graphicsQualityValueLabel" autoSizeWidth="true" height="20" text="localize:quality_custom" alignX="center"
+                   registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_blue_textstyle" />
+
+            <label marginTop="100" marginLeft="45" name="presettingLowLabel" height="20" text="localize:quality_low" alignX="left"
+                   registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_centered_textstyle" />
+            <label marginTop="100" marginLeft="155" name="presettingAverageLabel"  height="20" text="localize:quality_medium" alignX="left"
+                   registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_centered_textstyle" />
+            <label marginTop="100" marginLeft="265" name="presettingGoodLabel"  height="20" text="localize:quality_good" alignX="left"
+                   registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_centered_textstyle" />
+            <label marginTop="100" marginLeft="375" name="presettingHighLabel"  height="20" text="localize:quality_high" alignX="left"
+                   registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_centered_textstyle" />
+
+            <slidernsteps name="sliderDisplayQuality" x="45" y="120" autoSizeWidth="true" marginLeft="45" marginRight="-30" registeredSkinName="settings_window_slider"/>
+
+            <coreponent name="grey_bg" autoSizeWidth="true" marginLeft="10" marginRight="5" autoSizeHeight="true" marginTop="150" marginBottom="60" registeredSkinName="settings_window_grey_bg"  />
+
+            <checkbox name="advancedMode" marginLeft="20" marginTop="160" alignX="left" selection="true" registeredSkinName="commonui_checkbox16x16_blue" />
+            <label marginLeft="40" marginTop="160" name="advancedModeLabel" autoSizeWidth="true" height="20" text="localize:btn_advanced" alignX="left"
+                   registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_textstyle" />
+            <label marginLeft="20" marginTop="180" marginRight="20" name="advancedModeDescriptionLabel" autoSizeWidth="true" height="20" text="localize:info_advanced" alignX="left"
+                   registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_textstyle" />
+            <container name="advancedSettingsContainer3D" visible="false">
+                <label  marginLeft="20"  marginTop="215" name="qualityAntialiasLabel"  height="20" text="localize:setting_antialiasing" alignX="left"
+                        registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_textstyle_single_line" />
+                <dropdownbox name="qualityAntialias"  marginLeft="20" marginTop="230" registeredSkinName="settings_window_dropdownbox"/>
+                <button name="infoIconAntialias" marginLeft="130" marginTop="230" registeredSkinName="settings_window_info_icon" tooltipTemplateID="commonui_tooltip_simple" tooltipData="localize:ttip_setting_antialiasing" />
+
+                <label  marginLeft="175"  marginTop="215" name="qualityLightsLabel"  height="20" text="localize:setting_lights" alignX="left"
+                        registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_textstyle_single_line" />
+                <dropdownbox name="qualityLights"  marginLeft="175" marginTop="230" registeredSkinName="settings_window_dropdownbox"/>
+                <button name="infoIconLights" marginLeft="285" marginTop="230" registeredSkinName="settings_window_info_icon" tooltipTemplateID="commonui_tooltip_simple" tooltipData="localize:ttip_setting_lights" />
+
+                <label  marginLeft="20"  marginTop="260" name="qualityTexturesLabel"  height="20" text="localize:setting_texture_quality" alignX="left"
+                        registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_textstyle_single_line" />
+                <dropdownbox name="qualityTextures"  marginLeft="20" marginTop="275" registeredSkinName="settings_window_dropdownbox"/>
+                <button name="infoIconQualityTextures" marginLeft="130" marginTop="275" registeredSkinName="settings_window_info_icon" tooltipTemplateID="commonui_tooltip_simple" tooltipData="localize:ttip_setting_texture_quality" />
+
+                <label  marginLeft="175"  marginTop="260" name="sizeTexturesLabel"  height="20" text="localize:setting_texture_size" alignX="left"
+                        registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_textstyle_single_line" />
+                <dropdownbox name="sizeTextures"  marginLeft="175" marginTop="275" registeredSkinName="settings_window_dropdownbox"/>
+                <button name="infoIconSizeTextures" marginLeft="285" marginTop="275" registeredSkinName="settings_window_info_icon" tooltipTemplateID="commonui_tooltip_simple" tooltipData="localize:ttip_setting_texture_size" />
+
+                <label marginLeft="20"  marginTop="305" name="qualityEffectsLabel"  height="20"  text="localize:setting_quality_effects" alignX="left"
+                       registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_textstyle_single_line" />
+                <dropdownbox name="qualityEffects"  marginLeft="20" marginTop="320" registeredSkinName="settings_window_dropdownbox"/>
+                <button name="infoIconEffects" marginLeft="130" marginTop="320" registeredSkinName="settings_window_info_icon" tooltipTemplateID="commonui_tooltip_simple" tooltipData="localize:ttip_setting_quality_effects" />
+
+                <label marginLeft="175"  marginTop="305" name="textureFilteringLabel"  height="20" text="localize:setting_texture_filtering" alignX="left"
+                       registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_textstyle_single_line" />
+                <dropdownbox name="textureFiltering"  marginLeft="175" marginTop="320" registeredSkinName="settings_window_dropdownbox"/>
+                <button name="infoIconTextureFiltering" marginLeft="285" marginTop="320" registeredSkinName="settings_window_info_icon" tooltipTemplateID="commonui_tooltip_simple" tooltipData="localize:ttip_setting_texture_filtering" />
+
+                <label marginLeft="20"  marginTop="350" name="qualityBackground3DLabel" width="140" height="20" text="localize:setting_quality_background3D" alignX="left"
+                       registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_textstyle_single_line"  />
+                <dropdownbox name="qualityBackground3D"  marginLeft="20" marginTop="365" registeredSkinName="settings_window_dropdownbox"/>
+                <button name="infoIconqualityBackground3D" marginLeft="130" marginTop="365" registeredSkinName="settings_window_info_icon" tooltipTemplateID="commonui_tooltip_simple" tooltipData="localize:ttip_setting_quality_background3D" />
+
+                <label marginLeft="175"  marginTop="350" name="qualityZones3DLabel"  height="20" text="localize:setting_quality_zones3D" alignX="left"
+                       registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_textstyle_single_line" visible="true" />
+                <dropdownbox name="qualityZones3D"  marginLeft="175" marginTop="365" registeredSkinName="settings_window_dropdownbox" visible="true" />
+                <button name="infoIconqualityZones3D" marginLeft="285" marginTop="365" registeredSkinName="settings_window_info_icon" tooltipTemplateID="commonui_tooltip_simple" tooltipData="localize:ttip_setting_quality_zones3D" />
+            </container>
+
+
+            <container name="advancedSettingsContainer2D" visible="false">
+                <label  marginLeft="20"  marginTop="215" name="qualityBackgroundLabel"  height="20" text="localize:setting_quality_background" alignX="left"
+                        registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_textstyle_single_line" />
+                <dropdownbox name="qualityBackground"  marginLeft="20" marginTop="230" registeredSkinName="settings_window_dropdownbox"/>
+                <button name="infoIconBackground" marginLeft="130" marginTop="230" registeredSkinName="settings_window_info_icon" tooltipTemplateID="commonui_tooltip_simple" tooltipData="localize:ttip_setting_quality_background" />
+
+                <label  marginLeft="175"  marginTop="215" name="qualityZonesLabel"  height="20" text="localize:setting_quality_poizone" alignX="left"
+                        registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_textstyle_single_line" />
+                <dropdownbox name="qualityZones"  marginLeft="175" marginTop="230" registeredSkinName="settings_window_dropdownbox"/>
+                <button name="infoIconZones" marginLeft="285" marginTop="230" registeredSkinName="settings_window_info_icon" tooltipTemplateID="commonui_tooltip_simple" tooltipData="localize:ttip_setting_quality_poizone" />
+
+                <label  marginLeft="20"  marginTop="260" name="qualityShipsLabel"  height="20" text="localize:setting_quality_ship" alignX="left"
+                        registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_textstyle_single_line" />
+                <dropdownbox name="qualityShips"  marginLeft="20" marginTop="275" registeredSkinName="settings_window_dropdownbox"/>
+                <button name="infoIconShips" marginLeft="130" marginTop="275" registeredSkinName="settings_window_info_icon" tooltipTemplateID="commonui_tooltip_simple" tooltipData="localize:ttip_setting_quality_ship"/>
+
+                <label  marginLeft="175"  marginTop="260" name="qualityEnginesLabel"  height="20" text="localize:setting_quality_engine" alignX="left"
+                        registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_textstyle_single_line" />
+                <dropdownbox name="qualityEngines"  marginLeft="175" marginTop="275" registeredSkinName="settings_window_dropdownbox"/>
+                <button name="infoIconEngines" marginLeft="285" marginTop="275" registeredSkinName="settings_window_info_icon" tooltipTemplateID="commonui_tooltip_simple" tooltipData="localize:ttip_setting_quality_engine"/>
+
+                <label marginLeft="20"  marginTop="305" name="qualityExplosionsLabel"  height="20" text="localize:setting_quality_explosion" alignX="left"
+                       registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_textstyle_single_line" />
+                <dropdownbox name="qualityExplosions"  marginLeft="20" marginTop="320" registeredSkinName="settings_window_dropdownbox"/>
+                <button name="infoIconExplosions" marginLeft="130" marginTop="320" registeredSkinName="settings_window_info_icon" tooltipTemplateID="commonui_tooltip_simple" tooltipData="localize:ttip_setting_quality_explosion" />
+
+                <label marginLeft="175" marginTop="305" name="resourcesBoxesLabel" width="200" height="20" text="localize:setting_quality_collectable" alignX="left"
+                       registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_textstyle_single_line" />
+                <dropdownbox name="resourcesBoxes"  marginLeft="175" marginTop="320" registeredSkinName="settings_window_dropdownbox"/>
+                <button name="infoIconResourcesBoxes" marginLeft="285" marginTop="320" registeredSkinName="settings_window_info_icon" tooltipTemplateID="commonui_tooltip_simple" tooltipData="localize:ttip_setting_quality_collectable" />
+            </container>
+
+
+            <checkbox name="pixelationMode" marginLeft="20" marginTop="390" alignX="left" selection="true" registeredSkinName="commonui_checkbox16x16_blue" visible="false"/>
+            <label marginLeft="40" marginTop="390" name="pixelationModeLabel" autoSizeWidth="true" height="20" localizedText="settings_pixelationMode" alignX="left"
+                   registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_textstyle" visible="false"/>
+
+        </container>
+
+        <container
+                name           = "gameplaySettingsContainer"
+                width		   = "420"
+                height		   = "500"
+                mouseEnabled   = "false"
+                visible		   = "false"
+                marginTop      = "0" >
+            <coreponent name="grey_bg" autoSizeWidth="true" marginLeft="10" marginRight="5" autoSizeHeight="true" marginTop="30" marginBottom="160" registeredSkinName="settings_window_grey_bg"  />
+
+            <checkbox name="autoWeaponBoost" marginLeft="20" marginTop="40" alignX="left" selection="true" registeredSkinName="commonui_checkbox16x16_blue" />
+            <label marginTop="40" marginLeft="40" name="autoWeaponBoostLabel" autoSizeWidth="true" height="20" text="localize:sett_setting1" alignX="center"
+                   registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_textstyle" />
+            <checkbox name="autoAmmoChange" marginLeft="20" marginTop="70" alignX="left" selection="true" registeredSkinName="commonui_checkbox16x16_blue" />
+            <label marginTop="70" marginLeft="40" name="autoAmmoChangeLabel" autoSizeWidth="true" height="20" text="localize:sett_setting22" alignX="center"
+                   registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_textstyle" />
+            <checkbox name="autoMaterialRefinement" marginLeft="20" marginTop="100" alignX="left" selection="true" registeredSkinName="commonui_checkbox16x16_blue" />
+            <label marginTop="100" marginLeft="40" name="autoMaterialRefinementLabel" autoSizeWidth="true" height="20" text="localize:auto_refinement" alignX="center"
+                   registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_textstyle" />
+            <button name="infoIconAutoMaterialRefinement" marginRight="30" alignX="right" marginTop="100" registeredSkinName="settings_window_info_icon" tooltipTemplateID="commonui_tooltip_simple" tooltipData="localize:ttip_auto_refinement" />
+            <checkbox name="toggleAttackQuickbar" marginLeft="20" marginTop="130" alignX="left" selection="true" registeredSkinName="commonui_checkbox16x16_blue" />
+            <label marginTop="130" marginLeft="40" name="toggleAttackQuickbarLabel" autoSizeWidth="true" height="20" text="localize:setting_quickSlotStopAttack" alignX="center"
+                   registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_textstyle" />
+            <checkbox name="autoLogin" marginLeft="20" marginTop="160" alignX="left" selection="true" registeredSkinName="commonui_checkbox16x16_blue" />
+            <label marginTop="160" marginLeft="40" name="autoLoginLabel" autoSizeWidth="true" height="20" text="localize:setting_autostart" alignX="center"
+                   registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_textstyle" />
+            <checkbox name="doubleClickAttack" marginLeft="20" marginTop="190" alignX="left" selection="true" registeredSkinName="commonui_checkbox16x16_blue" />
+            <label marginTop="190" marginLeft="40" name="doubleClickAttackLabel" autoSizeWidth="true" height="20" text="localize:setting_doubleClickAttack" alignX="center"
+                   registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_textstyle" />
+            <checkbox name="autoBuyBootyKeys" marginLeft="20" marginTop="220" alignX="left" selection="true" registeredSkinName="commonui_checkbox16x16_blue" />
+            <label marginTop="220" marginLeft="40" name="autoBuyBootyKeysLabel" autoSizeWidth="true" height="20" text="localize:setting_auto_buy_booty_keys" alignX="center"
+                   registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_textstyle" />
+            <checkbox name="showBattlerayNotifications" marginLeft="20" marginTop="250" alignX="left" selection="true" registeredSkinName="commonui_checkbox16x16_blue" />
+            <label marginTop="250" marginLeft="40" name="showBattlerayNotificationsLabel" autoSizeWidth="true" height="20" text="localize:setting_battleray_notifications" alignX="center"
+                   registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_textstyle" />
+            <checkbox name="showLowHpWarning" marginLeft="20" marginTop="280" alignX="left" selection="true" registeredSkinName="commonui_checkbox16x16_blue" />
+            <label marginTop="280" marginLeft="40" name="showLowHpWarningLabel" autoSizeWidth="true" height="20" text="localize:setting_show_low_hp_warnings" alignX="center"
+                   registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_textstyle" />
+            <checkbox name="autoEquip" marginLeft="20" marginTop="310" alignX="left" selection="true" registeredSkinName="commonui_checkbox16x16_blue" />
+            <label marginTop="310" marginLeft="40" name="autoEquipLabel" autoSizeWidth="true" height="20" text="localize:setting_autoEquip" alignX="center"
+                   registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_textstyle" />
+
+        </container>
+        <container
+                name           = "interfaceSettingsContainer"
+                width		   = "420"
+                height		   = "470"
+                mouseEnabled   = "false"
+                visible		   = "false"
+                marginTop      = "-10" >
+            <coreponent name="grey_bg" autoSizeWidth="true" marginLeft="10" marginRight="5" autoSizeHeight="true" marginTop="40" marginBottom="70" registeredSkinName="settings_window_grey_bg"  />
+            <itemlist registeredSkinName="settings_list_skin" gap="0" layout="vertical" marginLeft="20" marginRight="20"
+                      autoSizeWidth="true" height="270" marginTop="50" cacheSkinMaskAsBitmap="false" mouseEnabled="true"
+                      mouseChildren="true" name="interfaceSettingsItemlist">
+                <itemrenderer height="29" mouseEnabled="true" mouseChildren="true">
+                    <checkbox name="settingsCheckBox" marginLeft="0" marginTop="0" alignX="left" selection="true"
+                              registeredSkinName="commonui_checkbox16x16_blue"/>
+                    <label marginTop="0" marginLeft="20" name="settingLabel" autoSizeWidth="true" height="20"
+                           text="showPlayerNames" alignX="center"
+                           registeredSkinName="settings_label_skin"
+                           registeredTextStyleName="settings_window_info_textstyle"/>
+                    <button name="infoIconInterfaceSettings" alignX="right" marginRight="15" marginTop="0"
+                            registeredSkinName="settings_window_info_icon" tooltipTemplateID="commonui_tooltip_simple"
+                            tooltipData="localize:"/>
+                </itemrenderer>
+            </itemlist>
+            <scrollbar name="interfaceSettingsScrollbar"      width="10" autoSizeHeight="true" alignX="right"  registeredSkinName="commonui_scrollbar_bgnd" marginRight="5" marginTop="40" marginBottom="145"  >
+                <button name="buttonSlider"  width="6"  height="28"           alignX="center" registeredSkinName="commonui_scrollbar_slider" y ="0"                                             />
+            </scrollbar>
+            <coreponent name="horizontalDivider" x="10" y="325" autoSizeWidth="true" marginLeft="10" marginRight="5" registeredSkinName="settings_window_horizontal_divider"  />
+            <button name="configButton" width="260"  height="30" marginTop="350" marginLeft="20" alignX="left" textMarginY="0" text="localize:open_config_mode_window" registeredSkinName="settings_label_button_blue" registeredTextStyleName="commonui_button_whitetxt_16pt"/>
+            <button name="infoIconConfigMode" marginLeft="290" marginTop="357" registeredSkinName="settings_window_info_icon" tooltipTemplateID="commonui_tooltip_simple" tooltipData="localize:ttip_open_config_mode_window"/>
+        </container>
+        <container
+                name           = "soundSettingsContainer"
+                width		   = "420"
+                height		   = "470"
+                mouseEnabled   = "false"
+                visible		   = "false"
+                marginTop      = "-10" >
+            <coreponent name="grey_bg" autoSizeWidth="true" marginLeft="10" marginRight="5" autoSizeHeight="true" marginTop="40" marginBottom="170" registeredSkinName="settings_window_grey_bg"  />
+
+            <label marginTop="55" marginLeft="40" name="soundDescLabel" autoSizeWidth="true" height="20" text="localize:sett_setting16_slider" alignX="center"
+                   registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_caps_textstyle" />
+            <label marginTop="70" marginLeft="45" name="soundLowLabel" height="20" text="localize:quality_low" alignX="left"
+                   registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_centered_textstyle" />
+            <label marginTop="70" marginLeft="210" name="soundMediumLabel"  height="20" text="localize:quality_medium" alignX="left"
+                   registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_centered_textstyle" />
+            <label marginTop="70" marginLeft="375" name="soundHighLabel"  height="20" text="localize:quality_high" alignX="left"
+                   registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_centered_textstyle" />
+            <slidernsteps name="sliderSoundVolume" x="45" y="90" autoSizeWidth="true" marginLeft="45" marginRight="-30" registeredSkinName="settings_window_music_slider"/>
+
+            <label marginTop="125" marginLeft="40" name="musicDescLabel" autoSizeWidth="true" height="20" text="localize:sett_setting15_slider" alignX="center"
+                   registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_caps_textstyle" />
+            <label marginTop="140" marginLeft="45" name="musicLowLabel" height="20" text="localize:quality_low" alignX="left"
+                   registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_centered_textstyle" />
+            <label marginTop="140" marginLeft="210" name="musicMediumLabel"  height="20" text="localize:quality_medium" alignX="left"
+                   registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_centered_textstyle" />
+            <label marginTop="140" marginLeft="375" name="musicHighLabel"  height="20" text="localize:quality_high" alignX="left"
+                   registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_centered_textstyle" />
+            <slidernsteps name="sliderMusicVolume" x="45" y="160" autoSizeWidth="true" marginLeft="45" marginRight="-30" registeredSkinName="settings_window_music_slider"/>
+
+            <label marginTop="195" marginLeft="40" name="boardcomputerDescLabel" autoSizeWidth="true" height="20" text="localize:sett_setting49" alignX="center"
+                   registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_caps_textstyle" />
+            <label marginTop="210" marginLeft="45" name="boardcomputerLowLabel" height="20" text="localize:quality_low" alignX="left"
+                   registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_centered_textstyle" />
+            <label marginTop="210" marginLeft="210" name="boardcomputerMediumLabel"  height="20" text="localize:quality_medium" alignX="left"
+                   registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_centered_textstyle" />
+            <label marginTop="210" marginLeft="375" name="boardcomputerHighLabel"  height="20" text="localize:quality_high" alignX="left"
+                   registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_centered_textstyle" />
+            <slidernsteps name="sliderBoardcomputerVolume" x="45" y="230" autoSizeWidth="true" marginLeft="45" marginRight="-30" registeredSkinName="settings_window_music_slider"/>
+
+            <checkbox name="playCombatMusic" marginLeft="40" marginTop="270" alignX="left" selection="true" registeredSkinName="commonui_checkbox16x16_blue" />
+            <label marginTop="270" marginLeft="60" name="playCombatMusicLabel" autoSizeWidth="true" height="20" text="localize:sett_play_combat_music" alignX="center"
+                   registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_info_textstyle" />
+        </container>
+        <container
+                name           = "keyboardSettingsContainer"
+                width		   = "420"
+                height		   = "470"
+                mouseEnabled   = "false"
+                visible		   = "false"
+                marginTop      = "-10" >
+            <coreponent name="grey_bg" autoSizeWidth="true" marginLeft="10" marginRight="5" autoSizeHeight="true" marginTop="40" marginBottom="70" registeredSkinName="settings_window_grey_bg"  />
+            <label  marginLeft="30"  marginTop="50" name="keyboardAction" width="200" height="20" text="localize:setting_keyboard_action_title" alignX="left"
+                    registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_caps_textstyle" />
+            <label  marginRight="-37"  marginTop="50" name="keyboardKey" width="200" height="20" text="localize:setting_keyboard_key_title" alignX="right"
+                    registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_caps_textstyle_center" />
+
+            <coreponent name="horizontalDivider" x="10" y="70" autoSizeWidth="true" marginLeft="10" marginRight="5" registeredSkinName="settings_window_horizontal_divider"  />
+
+            <itemlist name="keyboardSettingsItemlist" registeredSkinName="settings_list_skin" layout="vertical" marginLeft="20" marginRight="20" autoSizeWidth="true" autoSizeHeight="true" marginTop="80" marginBottom="125" cacheSkinMaskAsBitmap="false" mouseEnabled="true" mouseChildren="true">
+                <itemrenderer height="29" mouseEnabled="true" mouseChildren="true">
+                    <label marginTop="0" marginLeft="10" name="actionLabel" autoSizeWidth="true" height="20" text=""
+                           alignX="center"
+                           registeredSkinName="settings_label_skin"
+                           registeredTextStyleName="settings_window_info_textstyle"/>
+                    <coreponent name="boundKeyBg" alignX="right" width="75" marginRight="5" marginTop="0"
+                                registeredSkinName="settings_window_keybindingBg"/>
+                    <label name="boundKey" marginRight="5" marginLeft="298" marginTop="0" autoSizeWidth="true"
+                           alignX="right" registeredSkinName="settings_label_skin"
+                           registeredTextStyleName="settings_window_caps_textstyle_center"/>
+                </itemrenderer>
+            </itemlist>
+            <scrollbar name="keyboardSettingsScrollbar"      width="10" autoSizeHeight="true" alignX="right"  registeredSkinName="commonui_scrollbar_bgnd" marginRight="5" marginTop="71" marginBottom="125"  >
+                <button name="buttonSlider"  width="6"  height="28"           alignX="center" registeredSkinName="commonui_scrollbar_slider" y ="0"                                             />
+            </scrollbar>
+            <coreponent name="horizontalDivider" x="10" y="345" autoSizeWidth="true" marginLeft="10" marginRight="5" registeredSkinName="settings_window_horizontal_divider"  />
+            <label  marginLeft="20" marginRight="20"  marginTop="365" name="keyboardPressKeyToBind" autoSizeWidth="true" height="20" text="localize:msg_new_key" alignX="left"
+                    registeredSkinName="settings_label_skin" registeredTextStyleName="settings_window_caps_textstyle" visible="false" />
+        </container>
+
+
+        <button name="saveButton" width="120" height="30" marginTop="440" alignX="left" textMarginY="0" text="localize:sett_save" registeredSkinName="settings_label_button_green" registeredTextStyleName="commonui_button_whitetxt_16pt" />
+        <button name="cancelButton" width="120"  height="30" marginTop="440" marginLeft="130" alignX="left" textMarginY="0" text="localize:btn_cancel" registeredSkinName="settings_label_button_blue" registeredTextStyleName="commonui_button_whitetxt_16pt"/>
+        <button name="resetButton" width="120"  height="30" marginTop="440" marginRight="-50" alignX="right" textMarginY="0" text="localize:btn_reset" registeredSkinName="settings_label_button_red" registeredTextStyleName="commonui_button_whitetxt_16pt"/>
+
+        <!--<coreponent name="busy_bg" autoSizeWidth="true" marginLeft="-10" marginRight="0" autoSizeHeight="true" marginTop="-10" marginBottom="0" registeredSkinName="settings_window_grey_bg"  />-->
+        <coreponent name="busyMC" x="220" y="240"  registeredSkinName="settings_window_busy" visible="false" />
+
+    </container>
+    <!-- CONTENT -->
+</root>

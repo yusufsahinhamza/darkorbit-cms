@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view>
+	<textureAtlas id="base" textureKey="breach_portal_texture" atlasKey="breach_portal_atlas" />
+	<collision ids="base" />
+	<assets>
+		<asset atlas="base" texture="Black_hole_" x="-170" y="-200" fps="10"/>
+	</assets>
+</view>

@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="spawnAnimation.png">
+	<!-- Created with Adobe Flash Professional version 13.1.0.226 -->
+	<!-- http://www.adobe.com/products/flash.html -->
+	<SubTexture name="spawneffect_00000.png" x="0" y="720" width="240" height="240" pivotX="0" pivotY="0"/>
+	<SubTexture name="spawneffect_00001.png" x="240" y="720" width="240" height="240" pivotX="0" pivotY="0"/>
+	<SubTexture name="spawneffect_00002.png" x="480" y="720" width="240" height="240" pivotX="0" pivotY="0"/>
+	<SubTexture name="spawneffect_00003.png" x="720" y="720" width="240" height="240" pivotX="0" pivotY="0"/>
+	<SubTexture name="spawneffect_00004.png" x="0" y="960" width="240" height="240" pivotX="0" pivotY="0"/>
+	<SubTexture name="spawneffect_00005.png" x="240" y="960" width="240" height="240" pivotX="0" pivotY="0"/>
+	<SubTexture name="spawneffect_00006.png" x="480" y="960" width="240" height="240" pivotX="0" pivotY="0"/>
+	<SubTexture name="spawneffect_00007.png" x="720" y="960" width="240" height="240" pivotX="0" pivotY="0"/>
+	<SubTexture name="spawneffect_00008.png" x="0" y="0" width="240" height="240" pivotX="0" pivotY="0"/>
+	<SubTexture name="spawneffect_00009.png" x="240" y="0" width="240" height="240" pivotX="0" pivotY="0"/>
+	<SubTexture name="spawneffect_00010.png" x="480" y="0" width="240" height="240" pivotX="0" pivotY="0"/>
+	<SubTexture name="spawneffect_00011.png" x="720" y="0" width="240" height="240" pivotX="0" pivotY="0"/>
+	<SubTexture name="spawneffect_00012.png" x="0" y="240" width="240" height="240" pivotX="0" pivotY="0"/>
+	<SubTexture name="spawneffect_00013.png" x="240" y="240" width="240" height="240" pivotX="0" pivotY="0"/>
+	<SubTexture name="spawneffect_00014.png" x="480" y="240" width="240" height="240" pivotX="0" pivotY="0"/>
+	<SubTexture name="spawneffect_00015.png" x="720" y="240" width="240" height="240" pivotX="0" pivotY="0"/>
+	<SubTexture name="spawneffect_00016.png" x="0" y="480" width="240" height="240" pivotX="0" pivotY="0"/>
+	<SubTexture name="spawneffect_00017.png" x="240" y="480" width="240" height="240" pivotX="0" pivotY="0"/>
+	<SubTexture name="spawneffect_00018.png" x="480" y="480" width="240" height="240" pivotX="0" pivotY="0"/>
+	<SubTexture name="spawneffect_00019.png" x="720" y="480" width="240" height="240" pivotX="0" pivotY="0"/>
+</TextureAtlas>

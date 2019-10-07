@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:4cff963278c03968f0742aaba9ca612a$ -->
+<TextureAtlas imagePath="clouds-green_texture.png">
+    <SubTexture name="clouds-green_01" x="510" y="448" width="254" height="252"/>
+    <SubTexture name="clouds-green_02" x="510" y="2" width="506" height="444"/>
+    <SubTexture name="clouds-green_03" x="2" y="2" width="506" height="504"/>
+</TextureAtlas>

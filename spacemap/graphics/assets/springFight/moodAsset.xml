@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="moodAsset.png">
+	<!-- Created with Adobe Animate version 15.2.0.66 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="poster1_eic" x="290" y="182" width="145" height="182" pivotX="0" pivotY="0"/>
+	<SubTexture name="poster1_mmo" x="289" y="364" width="144" height="183" pivotX="0" pivotY="0"/>
+	<SubTexture name="poster1_vru" x="0" y="549" width="134" height="171" pivotX="0" pivotY="0"/>
+	<SubTexture name="poster2_eic" x="0" y="184" width="145" height="182" pivotX="0" pivotY="0"/>
+	<SubTexture name="poster2_mmo" x="145" y="184" width="144" height="183" pivotX="0" pivotY="0"/>
+	<SubTexture name="poster2_vru" x="288" y="547" width="134" height="171" pivotX="0" pivotY="0"/>
+	<SubTexture name="poster3_eic" x="290" y="0" width="145" height="182" pivotX="0" pivotY="0"/>
+	<SubTexture name="poster3_mmo" x="0" y="366" width="144" height="183" pivotX="0" pivotY="0"/>
+	<SubTexture name="poster3_vru" x="134" y="550" width="134" height="171" pivotX="0" pivotY="0"/>
+	<SubTexture name="poster4_eic.png" x="144" y="367" width="144" height="183" pivotX="0" pivotY="0"/>
+	<SubTexture name="poster4_mmo.png" x="0" y="0" width="145" height="184" pivotX="0" pivotY="0"/>
+	<SubTexture name="poster4_vru.png" x="145" y="0" width="145" height="184" pivotX="0" pivotY="0"/>
+	<SubTexture name="poster6_prometheus_day.png" x="268" y="718" width="134" height="168" pivotX="0" pivotY="0"/>
+</TextureAtlas>

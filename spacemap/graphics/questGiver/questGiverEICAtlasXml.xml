@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<TextureAtlas imagePath="_0.png">
+  <SubTexture name="antenna_light" x="0" y="1969" width="215" height="42"/>
+  <SubTexture name="blink_light" x="215" y="1969" width="163" height="43"/>
+  <SubTexture name="eic_quests_x-1" x="0" y="0" width="512" height="705" frameX="0" frameY="-15" frameWidth="515" frameHeight="728"/>
+  <SubTexture name="eic_quests_x-8" x="0" y="705" width="512" height="705" frameX="0" frameY="-15" frameWidth="515" frameHeight="728"/>
+  <SubTexture name="mission-control_eic" x="0" y="1410" width="266" height="559" frameX="-167" frameY="-18" frameWidth="600" frameHeight="600"/>
+</TextureAtlas>

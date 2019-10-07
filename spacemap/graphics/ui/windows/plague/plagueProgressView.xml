@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+    <textstyle
+            name="plague_window_headline_textstyle"
+            textColor="0xbfbfbf"
+            type="dynamic"
+            embedFonts="false"
+            fontName="Verdana"
+            fontSize="14"
+            align="center"/>
+    <textstyle
+            name="plague_window_progress_textstyle"
+            textColor="0xfefefe"
+            type="dynamic"
+            embedFonts="false"
+            fontName="Verdana"
+            align="center"
+            fontSize="12"/>
+    <skin
+            name="plague_window_progressbar_skin"
+            library="plagueWindow"
+            tweenTime="1"
+            classname="ProgressBarSkin">
+        <layer
+                libraryID="plague_outer"
+                classname="BitmapLayer"
+                scale9grid="4,4,5,5">normal
+        </layer>
+        <layer
+                libraryID="plague_inner"
+                classname="BitmapLayer"
+                scale9grid="4,4,5,5">bar
+        </layer>
+    </skin>
+
+    <container layout="vertical"
+               width="262"
+               height="70"
+               anlignX="center">
+        <coreponent
+                marginBottom="5"
+                name="horizontalDivider"
+                alignX="center"
+                autoSizeWidth="true"
+                height="2"
+                registeredSkinName="plague_window_horizontal_divider"/>
+        <label
+                width="262"
+                text="localize:plague_mothership_progress"
+                height="22"
+                registeredSkinName="plague_label_skin"
+                registeredTextStyleName="plague_window_headline_textstyle"/>
+        <label
+                text="---"
+                name="score"
+                alignX="center"
+                height="18"
+                width="262"
+                registeredSkinName="plague_label_skin"
+                registeredTextStyleName="plague_window_progress_textstyle"/>
+        <progressbar
+                alignX="center"
+                name="progressbar"
+                registeredSkinName="plague_window_progressbar_skin"
+                width="262"
+                height="13"/>
+        <coreponent
+                marginTop="5"
+                marginBottom="5"
+                name="horizontalDivider"
+                alignX="center"
+                width="262"
+                height="2"
+                registeredSkinName="plague_window_horizontal_divider"/>
+
+    </container>
+</root>
+

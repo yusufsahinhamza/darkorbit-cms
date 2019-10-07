@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+	<!-- STEP 0 - define libraries used / id from resources.xml -->
+	<libraries>
+		<library id="gameclientCommonUI" />
+		<library id="traininggroundsUI"/>
+		<library id="header_label"/>
+	</libraries>
+
+	
+	<textstyle 	name           = "traininggrounds_listHeaderBgTextStyle" 
+				textColor      = "0xFFFFFF" 
+				type           = "dynamic" 
+				selectable     = "false" 
+				fontName       = "EurostileT"
+				background     = "true" 
+				backgroundColor= "0x7777CC" 
+				align		   = "center"
+				/>
+	<textstyle 	name           = "traininggrounds_listBgTextStyle" 
+				textColor      = "0xFFFFFF" 
+				type           = "dynamic" 
+				selectable     = "false" 
+				fontName       = "EurostileT"
+				background     = "true" 
+				backgroundColor= "0x000000" 
+				align		   = "center"
+				/>
+	<textstyle 	name           = "traininggrounds_personHeaderTextStyle" 
+				textColor      = "0xCCCC00" 
+				type           = "dynamic" 
+				selectable     = "false" 
+				fontName       = "EurostileT"
+				align		   = "center"
+				/>
+	<textstyle 	name           = "traininggrounds_thingHeaderTextStyle" 
+				textColor      = "0x33AAAA" 
+				type           = "dynamic" 
+				selectable     = "false" 
+				fontName       = "EurostileT"
+				align		   = "center"
+				/>
+	<textstyle 	name           = "traininggrounds_result_whiteTextStyle" 
+				textColor      = "0xAAAAAA" 
+				type           = "dynamic" 
+				selectable     = "false" 
+				fontName       = "EurostileT"
+				align		   = "center"
+				/>
+	<textstyle 	name           = "traininggrounds_victoryTextStyle" 
+				textColor      = "0xFFFF00" 
+				type           = "dynamic" 
+				selectable     = "false" 
+				fontName       = "EurostileTHea"
+				align		   = "center"
+				fontSize	   = "48"
+				/>
+	<textstyle 	name           = "traininggrounds_defeatAndDrawTextStyle" 
+				textColor      = "0xFFFFFF" 
+				type           = "dynamic" 
+				selectable     = "false" 
+				fontName       = "EurostileTHea"
+				align		   = "center"
+				fontSize	   = "48"
+				/>
+	<textstyle 	name           = "traininggrounds_headerTextStyle" 
+				textColor      = "0x000000" 
+				type           = "dynamic" 
+				selectable     = "false" 
+				fontName       = "EurostileT"
+				align		   = "center"
+				background     = "true" 
+				backgroundColor= "0xFFFF00" 
+				border     	   = "true" 
+				borderColor    = "0x000000" 
+				/>
+
+
+	<skins>
+		<skin name="traininggrounds_label" classname="LabelSkin" library="gameclientCommonUI" />
+		<skin name="traininggrounds_list_skin"  library="gameclientCommonUI" classname="BasicSkin">
+			<layer classname="BitmapLayer" libraryID="debug_mask_rounded_edges_3x3"  scale9grid="3,3,4,4" >mask</layer>
+		</skin>	
+		<skin name="traininggrounds_result_win" library="traininggroundsUI" classname="BasicSkin">
+			<layer classname="BitmapLayer" libraryID="victory"   >normal</layer>
+		</skin>
+		<skin name="traininggrounds_result_lose" library="traininggroundsUI" classname="BasicSkin">
+			<layer classname="BitmapLayer" libraryID="defeat"   >normal</layer>
+		</skin>
+		<skin name="traininggrounds_table_bg_2x4" library="traininggroundsUI" classname="BasicSkin">
+			<layer classname="BitmapLayer" libraryID="table_bg_2x4"   >normal</layer>
+		</skin>
+		<skin name="traininggrounds_table_bg_3x3" library="traininggroundsUI" classname="BasicSkin">
+			<layer classname="BitmapLayer" libraryID="table_bg_3x3"   >normal</layer>
+		</skin>
+	</skins>
+	
+	<container
+		name   	= "windowContentContainer"
+		width  	= "480"
+		height 	= "340"
+		x		= "10"
+		mouseEnabled = "false"
+		>
+		<result name="result" x="8" y="25" registeredTextStyleName="traininggrounds_defeatAndDrawTextStyle" width="470" height="80"/>
+		<coreponent name="scoreTableBg" alignX="center" marginLeft="15" marginRight="15" marginTop="115" height="70" autoSizeWidth="true" mouseEnabled="false" mouseChildren="false" registeredSkinName="traininggrounds_table_bg_3x3"/>	
+		<!-- header score  -->
+			<label name="hbg" registeredSkinName="traininggrounds_label" alignX="center" text=" " marginLeft="20" marginRight="20" marginTop="120"  autoSizeWidth="true" alpha="0.3" mouseEnabled="false" mouseChildren="false" height="20"  registeredTextStyleName="traininggrounds_listHeaderBgTextStyle" />
+			<label name="headerDataColumn" registeredSkinName="traininggrounds_label" alignX="left" localizedText="label_traininggrounds_results_stats_data" marginLeft="25" marginRight="325" marginTop="120" autoSizeWidth="true" alpha="1" mouseEnabled="false" mouseChildren="false" height="20"  registeredTextStyleName="traininggrounds_thingHeaderTextStyle" />
+			<label name="headerWinner" visible="true" registeredSkinName="traininggrounds_label" alignX="center" marginLeft="168" marginRight="168" marginTop="120" autoSizeWidth="true" alpha="1" mouseEnabled="false" mouseChildren="false" height="20"  registeredTextStyleName="traininggrounds_personHeaderTextStyle" />
+			<label name="headerLoser" visible="true" registeredSkinName="traininggrounds_label" alignX="center" marginLeft="325" marginRight="25" marginTop="120" autoSizeWidth="true" alpha="1" mouseEnabled="false" mouseChildren="false" height="20"  registeredTextStyleName="traininggrounds_personHeaderTextStyle" />
+		<!-- /header score -->
+		<itemlist registeredSkinName="traininggrounds_list_skin" marginLeft="25" marginRight="25" autoSizeWidth="true" autoSizeHeight="true" marginTop="141" marginBottom="50" cacheSkinMaskAsBitmap="false" mouseEnabled="true" mouseChildren="true" name="traininggroundsScoreItemlist">
+			<itemrenderer height="20" mouseEnabled="true" mouseChildren="true" >
+				<coreponent name="hitlayer" registeredSkinName="commonui_hitlayer" mouseEnabled="true" mouseChildren="true" autoSizeWidth="true"  autoSizeHeight="true" alpha="0"/>
+				<label name="dataColumn" registeredSkinName="traininggrounds_label" alignX="center" marginLeft="0" marginRight="300" autoSizeWidth="true" alpha="1" mouseEnabled="false" mouseChildren="false" height="20"  registeredTextStyleName="traininggrounds_result_whiteTextStyle" />
+				<label name="winnerColumn" registeredSkinName="traininggrounds_label" alignX="center" marginLeft="143" marginRight="143" autoSizeWidth="true" alpha="1" mouseEnabled="false" mouseChildren="false" height="20"  registeredTextStyleName="traininggrounds_result_whiteTextStyle" />
+				<label name="loserColumn" registeredSkinName="traininggrounds_label" alignX="center" marginLeft="300" marginRight="0" autoSizeWidth="true" alpha="1" mouseEnabled="false" mouseChildren="false" height="20"  registeredTextStyleName="traininggrounds_result_whiteTextStyle" />
+			</itemrenderer>
+		</itemlist>	
+		
+		<coreponent name="rewardTableBg" alignX="center" marginLeft="15" marginRight="15" marginTop="215" height="90" autoSizeWidth="true" mouseEnabled="false" mouseChildren="false" registeredSkinName="traininggrounds_table_bg_2x4"/>	
+		<!-- header reward -->
+			<label name="hbg" registeredSkinName="traininggrounds_label" alignX="center" text=" " marginLeft="20" marginRight="20" marginTop="220"  autoSizeWidth="true" alpha="0.3" mouseEnabled="false" mouseChildren="false" height="20"  registeredTextStyleName="traininggrounds_listHeaderBgTextStyle" />
+			<coreponent name="hitlayer" registeredSkinName="commonui_hitlayer" mouseEnabled="true" mouseChildren="true" autoSizeWidth="true" marginTop="31" autoSizeHeight="true" alpha="0"/>
+			<label name="headerYourRewardLabel" registeredSkinName="traininggrounds_label" alignX="center" localizedText="label_traininggrounds_results_your_reward" marginLeft="25" marginRight="255" marginTop="220" autoSizeWidth="true" alpha="1" mouseEnabled="false" mouseChildren="false" height="20"  registeredTextStyleName="traininggrounds_thingHeaderTextStyle" />		
+			<label name="headerAmountLabel" visible="true" registeredSkinName="traininggrounds_label" alignX="center" localizedText="label_traininggrounds_results_reward_amount" marginLeft="255" marginRight="25" marginTop="220" autoSizeWidth="true" alpha="1" mouseEnabled="false" mouseChildren="false" height="20"  registeredTextStyleName="traininggrounds_thingHeaderTextStyle" />
+		<!-- /header reward -->
+
+		<itemlist registeredSkinName="traininggrounds_list_skin" itemGap="1" marginLeft="25" marginRight="25" autoSizeWidth="true" y="241" height="64"	cacheSkinMaskAsBitmap="false" mouseEnabled="true" mouseChildren="true" name="traininggroundsRewardsItemlist">
+			<itemrenderer height="20" mouseEnabled="true" mouseChildren="true" >
+				<coreponent name="hitlayer" registeredSkinName="commonui_hitlayer" mouseEnabled="true" mouseChildren="true" autoSizeWidth="true"  autoSizeHeight="true" alpha="0"/>
+				<label name="rewardColumn" registeredSkinName="traininggrounds_label" marginLeft="0" marginRight="230" alignX="center" autoSizeWidth="true" alpha="1" mouseEnabled="false" mouseChildren="false" height="20"  registeredTextStyleName="traininggrounds_result_whiteTextStyle" />
+				<label name="amountColumn" registeredSkinName="traininggrounds_label" marginLeft="230" marginRight="0" alignX="center" autoSizeWidth="true" alpha="1" mouseEnabled="false" mouseChildren="false" height="20"  registeredTextStyleName="traininggrounds_result_whiteTextStyle" />
+			</itemrenderer>
+		</itemlist>	
+		<scrollbar name="rewardScrollbar" width="10" autoSizeHeight="true" alignX="right" registeredSkinName="commonui_scrollbar_bgnd" marginRight="5" marginBottom="40" marginTop="219">
+			<button name="buttonSlider" width="6" height="28" alignX="center" registeredSkinName="commonui_scrollbar_slider" y="0" />
+		</scrollbar>
+	</container>
+</root>

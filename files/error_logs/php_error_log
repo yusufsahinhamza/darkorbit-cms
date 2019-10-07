@@ -1,40 +1,22 @@
-[06-Oct-2019 22:25:34 UTC] PHP Warning:  Use of undefined constant INCLUDES - assumed 'INCLUDES' (this will throw an Error in a future version of PHP) in C:\xampp\htdocs\files\external\index.php on line 111
-[06-Oct-2019 22:25:34 UTC] PHP Warning:  require_once(INCLUDESfooter.php): failed to open stream: No such file or directory in C:\xampp\htdocs\files\external\index.php on line 111
-[06-Oct-2019 22:25:34 UTC] PHP Fatal error:  require_once(): Failed opening required 'INCLUDESfooter.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\files\external\index.php on line 111
-[06-Oct-2019 22:25:43 UTC] PHP Warning:  Use of undefined constant INCLUDES - assumed 'INCLUDES' (this will throw an Error in a future version of PHP) in C:\xampp\htdocs\files\external\index.php on line 111
-[06-Oct-2019 22:25:58 UTC] PHP Warning:  Use of undefined constant INCLUDES - assumed 'INCLUDES' (this will throw an Error in a future version of PHP) in C:\xampp\htdocs\files\external\index.php on line 111
-[06-Oct-2019 22:25:58 UTC] PHP Warning:  require_once(INCLUDESfooter.php): failed to open stream: No such file or directory in C:\xampp\htdocs\files\external\index.php on line 111
-[06-Oct-2019 22:25:58 UTC] PHP Fatal error:  require_once(): Failed opening required 'INCLUDESfooter.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\files\external\index.php on line 111
-[06-Oct-2019 22:26:43 UTC] PHP Warning:  Use of undefined constant EXTERNALS - assumed 'EXTERNALS' (this will throw an Error in a future version of PHP) in C:\xampp\htdocs\files\classes\Functions.php on line 20
-[06-Oct-2019 22:26:43 UTC] PHP Warning:  Use of undefined constant EXTERNALS - assumed 'EXTERNALS' (this will throw an Error in a future version of PHP) in C:\xampp\htdocs\files\classes\Functions.php on line 25
-[06-Oct-2019 22:26:43 UTC] PHP Warning:  require_once(EXTERNALSerror.php): failed to open stream: No such file or directory in C:\xampp\htdocs\files\classes\Functions.php on line 27
-[06-Oct-2019 22:26:43 UTC] PHP Fatal error:  require_once(): Failed opening required 'EXTERNALSerror.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\files\classes\Functions.php on line 27
-[06-Oct-2019 22:31:12 UTC] PHP Notice:  Undefined variable: _SESSION in C:\xampp\htdocs\files\classes\Functions.php on line 35
-[07-Oct-2019 00:32:28 Europe/Berlin] PHP Parse error:  syntax error, unexpected 'Function' (T_FUNCTION), expecting identifier (T_STRING) in C:\xampp\htdocs\files\classes\Function.php on line 3
-[07-Oct-2019 00:32:38 Europe/Berlin] PHP Parse error:  syntax error, unexpected 'Function' (T_FUNCTION), expecting identifier (T_STRING) in C:\xampp\htdocs\files\classes\Function.php on line 3
-[07-Oct-2019 00:33:09 Europe/Berlin] PHP Warning:  require_once(C:\xampp\htdocs\files\classes\Functions.php): failed to open stream: No such file or directory in C:\xampp\htdocs\files\config.php on line 21
-[07-Oct-2019 00:33:09 Europe/Berlin] PHP Fatal error:  require_once(): Failed opening required 'C:\xampp\htdocs\files\classes\Functions.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\files\config.php on line 21
-[07-Oct-2019 00:33:18 Europe/Berlin] PHP Warning:  require_once(C:\xampp\htdocs\files\classes\Functions.php): failed to open stream: No such file or directory in C:\xampp\htdocs\files\config.php on line 21
-[07-Oct-2019 00:33:18 Europe/Berlin] PHP Fatal error:  require_once(): Failed opening required 'C:\xampp\htdocs\files\classes\Functions.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\files\config.php on line 21
-[07-Oct-2019 00:33:18 Europe/Berlin] PHP Warning:  require_once(C:\xampp\htdocs\files\classes\Functions.php): failed to open stream: No such file or directory in C:\xampp\htdocs\files\config.php on line 21
-[07-Oct-2019 00:33:18 Europe/Berlin] PHP Fatal error:  require_once(): Failed opening required 'C:\xampp\htdocs\files\classes\Functions.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\files\config.php on line 21
-[07-Oct-2019 00:33:18 Europe/Berlin] PHP Warning:  require_once(C:\xampp\htdocs\files\classes\Functions.php): failed to open stream: No such file or directory in C:\xampp\htdocs\files\config.php on line 21
-[07-Oct-2019 00:33:18 Europe/Berlin] PHP Fatal error:  require_once(): Failed opening required 'C:\xampp\htdocs\files\classes\Functions.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\files\config.php on line 21
-[07-Oct-2019 00:33:18 Europe/Berlin] PHP Warning:  require_once(C:\xampp\htdocs\files\classes\Functions.php): failed to open stream: No such file or directory in C:\xampp\htdocs\files\config.php on line 21
-[07-Oct-2019 00:33:18 Europe/Berlin] PHP Fatal error:  require_once(): Failed opening required 'C:\xampp\htdocs\files\classes\Functions.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\files\config.php on line 21
-[07-Oct-2019 00:33:19 Europe/Berlin] PHP Warning:  require_once(C:\xampp\htdocs\files\classes\Functions.php): failed to open stream: No such file or directory in C:\xampp\htdocs\files\config.php on line 21
-[07-Oct-2019 00:33:19 Europe/Berlin] PHP Fatal error:  require_once(): Failed opening required 'C:\xampp\htdocs\files\classes\Functions.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\files\config.php on line 21
-[07-Oct-2019 00:33:19 Europe/Berlin] PHP Warning:  require_once(C:\xampp\htdocs\files\classes\Functions.php): failed to open stream: No such file or directory in C:\xampp\htdocs\files\config.php on line 21
-[07-Oct-2019 00:33:19 Europe/Berlin] PHP Fatal error:  require_once(): Failed opening required 'C:\xampp\htdocs\files\classes\Functions.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\files\config.php on line 21
-[07-Oct-2019 00:33:26 Europe/Berlin] PHP Warning:  require_once(C:\xampp\htdocs\files\classes\Functions.php): failed to open stream: No such file or directory in C:\xampp\htdocs\files\config.php on line 21
-[07-Oct-2019 00:33:26 Europe/Berlin] PHP Fatal error:  require_once(): Failed opening required 'C:\xampp\htdocs\files\classes\Functions.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\files\config.php on line 21
-[07-Oct-2019 00:33:27 Europe/Berlin] PHP Warning:  require_once(C:\xampp\htdocs\files\classes\Functions.php): failed to open stream: No such file or directory in C:\xampp\htdocs\files\config.php on line 21
-[07-Oct-2019 00:33:27 Europe/Berlin] PHP Fatal error:  require_once(): Failed opening required 'C:\xampp\htdocs\files\classes\Functions.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\files\config.php on line 21
-[06-Oct-2019 22:40:55 UTC] PHP Warning:  require_once(external\error.php): failed to open stream: No such file or directory in C:\xampp\htdocs\files\classes\Functions.php on line 27
-[06-Oct-2019 22:40:55 UTC] PHP Fatal error:  require_once(): Failed opening required 'external\error.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\files\classes\Functions.php on line 27
-[06-Oct-2019 22:40:57 UTC] PHP Warning:  require_once(external\error.php): failed to open stream: No such file or directory in C:\xampp\htdocs\files\classes\Functions.php on line 27
-[06-Oct-2019 22:40:57 UTC] PHP Fatal error:  require_once(): Failed opening required 'external\error.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\files\classes\Functions.php on line 27
-[06-Oct-2019 22:40:59 UTC] PHP Warning:  require_once(external\error.php): failed to open stream: No such file or directory in C:\xampp\htdocs\files\classes\Functions.php on line 27
-[06-Oct-2019 22:40:59 UTC] PHP Fatal error:  require_once(): Failed opening required 'external\error.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\files\classes\Functions.php on line 27
-[06-Oct-2019 22:42:05 UTC] PHP Warning:  require_once(external\error.php): failed to open stream: No such file or directory in C:\xampp\htdocs\files\classes\Functions.php on line 27
-[06-Oct-2019 22:42:05 UTC] PHP Fatal error:  require_once(): Failed opening required 'external\error.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\files\classes\Functions.php on line 27
+[07-Oct-2019 22:20:03 UTC] PHP Fatal error:  Uncaught Error: Class 'Config' not found in C:\xampp\htdocs\files\external\map_revolution.php:33
+Stack trace:
+#0 C:\xampp\htdocs\files\classes\Functions.php(58): require_once()
+#1 C:\xampp\htdocs\files\redirect.php(4): Functions::LoadPage('map-revolution')
+#2 {main}
+  thrown in C:\xampp\htdocs\files\external\map_revolution.php on line 33
+[07-Oct-2019 22:20:28 UTC] PHP Fatal error:  Uncaught Error: Class 'Config' not found in C:\xampp\htdocs\files\external\map_revolution.php:33
+Stack trace:
+#0 C:\xampp\htdocs\files\classes\Functions.php(58): require_once()
+#1 C:\xampp\htdocs\files\redirect.php(4): Functions::LoadPage('map-revolution')
+#2 {main}
+  thrown in C:\xampp\htdocs\files\external\map_revolution.php on line 33
+[07-Oct-2019 22:22:05 UTC] PHP Notice:  Undefined variable: Player in C:\xampp\htdocs\files\external\map_revolution.php on line 58
+[07-Oct-2019 22:22:05 UTC] PHP Notice:  Trying to get property 'Data' of non-object in C:\xampp\htdocs\files\external\map_revolution.php on line 58
+[07-Oct-2019 22:22:05 UTC] PHP Notice:  Undefined variable: Player in C:\xampp\htdocs\files\external\map_revolution.php on line 58
+[07-Oct-2019 22:22:05 UTC] PHP Notice:  Trying to get property 'Data' of non-object in C:\xampp\htdocs\files\external\map_revolution.php on line 58
+[07-Oct-2019 22:22:05 UTC] PHP Fatal error:  Uncaught Error: Class 'Config' not found in C:\xampp\htdocs\files\external\map_revolution.php:58
+Stack trace:
+#0 C:\xampp\htdocs\files\classes\Functions.php(58): require_once()
+#1 C:\xampp\htdocs\files\redirect.php(4): Functions::LoadPage('map-revolution')
+#2 {main}
+  thrown in C:\xampp\htdocs\files\external\map_revolution.php on line 58

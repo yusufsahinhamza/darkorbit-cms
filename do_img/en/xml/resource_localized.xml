@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<filecollection>
+    <location path="spacemap/hints/" id="spacemap_hints"/>
+    <file version="1" type="png" name="hint_bigboyDefensive" location="spacemap_hints" id="hint_bigboyDefensive" hash="582d68aa6b46c63088ee769c25276500" debugView="false"/>
+    <file version="1" type="png" name="hint_bigboyOffensive" location="spacemap_hints" id="hint_bigboyOffensive" hash="64b68a3e6fc91ce9b5be7baa8b5d6300" debugView="false"/>
+    <file version="1" type="png" name="hint_booster_bonus_box" location="spacemap_hints" id="hint_booster_bonus_box" hash="7b5052cf1ce7d87d421f2b825757eb00" debugView="false"/>
+    <file version="1" type="png" name="hint_booster_quest_reward" location="spacemap_hints" id="hint_booster_quest_reward" hash="83712120c2eeaccccf64452e07b7f900" debugView="false"/>
+    <file version="1" type="png" name="hint_buyPet" location="spacemap_hints" id="hint_buyPet" hash="6336b2cc18b1011034f9564b6b0bf100" debugView="false"/>
+    <file version="1" type="png" name="hint_logfileAdvantage" location="spacemap_hints" id="hint_logfileAdvantage" hash="c767f2bcbf768b865363689f0e3c1600" debugView="false"/>
+    <file version="1" type="png" name="hint_partner_antec" location="spacemap_hints" id="hint_partner_antec" hash="3933013f2d49b4999c8957b542b3c700" debugView="false"/>
+    <file version="1" type="png" name="hint_partner_razer" location="spacemap_hints" id="hint_partner_razer" hash="c7c4c2dbce6996a15812af83a2e11a00" debugView="false"/>
+    <file version="1" type="png" name="hint_tradeDrone" location="spacemap_hints" id="hint_tradeDrone" hash="62025a433c8dfead984ae37d1de42e00" debugView="false"/>
+    <file version="1" type="png" name="hint_trialPremium" location="spacemap_hints" id="hint_trialPremium" hash="95fe09e38640c7c21734b5733652bd00" debugView="false"/>
+</filecollection>

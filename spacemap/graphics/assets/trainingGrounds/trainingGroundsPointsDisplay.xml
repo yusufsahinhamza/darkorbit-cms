@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view>
+	<textureAtlas id="base" textureKey="traininggroundsVictoryPointsBackgroundDisplay" atlasKey="traininggroundsVictoryPointsBackgroundDisplayAtlas" />
+	<assets>
+		<asset id="header" atlas="base" texture="header" x="65" y="0" />
+		<asset id="divider" atlas="base" texture="divider" x="110" y="24" />
+		<asset id="HERO_DIGIT1" atlas="base" texture="digit" x="0" y="24" freezed = "true" />
+		<asset id="HERO_DIGIT2" atlas="base" texture="digit" x="55" y="24" freezed = "true" />
+		<asset id="OPPONENT_DIGIT1" atlas="base" texture="digit" x="165" y="24" freezed = "true" />
+		<asset id="OPPONENT_DIGIT2" atlas="base" texture="digit" x="220" y="24" freezed = "true" />
+
+
+		<asset id="logo" atlas="base" texture="logo" x="-15"  y="94"/>
+		<textfield id="text" y="220" x="0" width="280" height="30" alpha="0.3" align="center" />
+	</assets>
+<!-- 	4900 2700 -->
+</view>

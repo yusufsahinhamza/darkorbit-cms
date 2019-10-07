@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:6afc09b679c35d1afa740f8ed2b4ad7d$ -->
+<TextureAtlas imagePath="stars2_50x50.png">
+    <SubTexture name="stars01" x="54" y="158" width="50" height="50"/>
+    <SubTexture name="stars02" x="54" y="106" width="50" height="50"/>
+    <SubTexture name="stars03" x="54" y="54" width="50" height="50"/>
+    <SubTexture name="stars04" x="158" y="2" width="50" height="50"/>
+    <SubTexture name="stars05" x="106" y="2" width="50" height="50"/>
+    <SubTexture name="stars06" x="54" y="2" width="50" height="50"/>
+    <SubTexture name="stars07" x="2" y="158" width="50" height="50"/>
+    <SubTexture name="stars08" x="2" y="106" width="50" height="50"/>
+    <SubTexture name="stars09" x="2" y="54" width="50" height="50"/>
+    <SubTexture name="stars10" x="2" y="2" width="50" height="50"/>
+</TextureAtlas>

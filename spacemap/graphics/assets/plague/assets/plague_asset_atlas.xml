@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="plague_asset_texture.png">
+	<!-- Created with Adobe Flash Professional version 13.1.0.226 -->
+	<!-- http://www.adobe.com/products/flash.html -->
+    <SubTexture name="icon" x="0" y="0" width="75" height="75" pivotX="0" pivotY="0"/>
+    <SubTexture name="ring" x="0" y="75" width="512" height="512" pivotX="0" pivotY="0"/>
+</TextureAtlas>

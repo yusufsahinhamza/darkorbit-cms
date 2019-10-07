@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+<info mapId="1" xmlResKey="hologram_flag_prometheus" layer="6" pfac="3" _x="17200" _y="10200"/>
+<info mapId="2" xmlResKey="hologram_flag_prometheus" layer="6" pfac="3" _x="2500" _y="2500"/>
+<info mapId="2" xmlResKey="hologram_flag_prometheus" layer="6" pfac="3" _x="11100" _y="7500"/>
+<info mapId="3" xmlResKey="hologram_flag_prometheus" layer="5" pfac="3" _x="9990" _y="10200"/>
+<info mapId="3" xmlResKey="hologram_flag_prometheus" layer="5" pfac="3" _x="11100" _y="7500"/>
+<info mapId="4" xmlResKey="hologram_flag_prometheus" layer="5" pfac="3" _x="18100" _y="6700"/>
+<info mapId="4" xmlResKey="hologram_flag_prometheus" layer="5" pfac="3" _x="11100" _y="7500"/>
+<info mapId="17" xmlResKey="hologram_flag_prometheus" layer="6" pfac="3" _x="10500" _y="7600"/>
+<info mapId="18" xmlResKey="hologram_flag_prometheus" layer="6" pfac="3" _x="8200" _y="6900"/>
+<info mapId="19" xmlResKey="hologram_flag_prometheus" layer="6" pfac="3" _x="9500" _y="4100"/>
+<info mapId="20" xmlResKey="hologram_flag_prometheus" layer="5" pfac="3" _x="4300" _y="7600"/>
+
+<info mapId="5" xmlResKey="hologram_flag_prometheus" layer="4" pfac="3" _x="3900" _y="9600"/>
+<info mapId="5" xmlResKey="hologram_flag_prometheus" layer="4" pfac="3" _x="18600" _y="4200"/>
+<info mapId="6" xmlResKey="hologram_flag_prometheus" layer="7" pfac="3" _x="14110" _y="3330"/>
+<info mapId="6" xmlResKey="hologram_flag_prometheus" layer="7" pfac="3" _x="8710" _y="8230"/>
+<info mapId="7" xmlResKey="hologram_flag_prometheus" layer="5" pfac="3" _x="9510" _y="6810"/>
+<info mapId="8" xmlResKey="hologram_flag_prometheus" layer="5" pfac="3" _x="9990" _y="7110"/>
+<info mapId="8" xmlResKey="hologram_flag_prometheus" layer="5" pfac="3" _x="7890" _y="11010"/>
+<info mapId="21" xmlResKey="hologram_flag_prometheus" layer="5" pfac="3" _x="3100" _y="9700"/>
+<info mapId="22" xmlResKey="hologram_flag_prometheus" layer="5" pfac="3" _x="12300" _y="7200"/>
+<info mapId="23" xmlResKey="hologram_flag_prometheus" layer="5" pfac="3" _x="12500" _y="6700"/>
+<info mapId="24" xmlResKey="hologram_flag_prometheus" layer="5" pfac="3" _x="10300" _y="4700"/>
+
+<info mapId="9" xmlResKey="hologram_flag_prometheus" layer="5" pfac="3" _x="1500" _y="2700"/>
+<info mapId="9" xmlResKey="hologram_flag_prometheus" layer="5" pfac="3" _x="20100" _y="9600"/>
+
+<info mapId="10" xmlResKey="hologram_flag_prometheus" layer="6" pfac="3" _x="15300" _y="5800"/>
+<info mapId="10" xmlResKey="hologram_flag_prometheus" layer="6" pfac="3" _x="5600" _y="3800"/>
+<info mapId="11" xmlResKey="hologram_flag_prometheus" layer="5" pfac="3" _x="4800" _y="4400"/>
+<info mapId="11" xmlResKey="hologram_flag_prometheus" layer="5" pfac="3" _x="16600" _y="8800"/>
+<info mapId="12" xmlResKey="hologram_flag_prometheus" layer="6" pfac="3" _x="14500" _y="8220"/>
+<info mapId="25" xmlResKey="hologram_flag_prometheus" layer="5" pfac="3" _x="4700" _y="4400"/>
+<info mapId="26" xmlResKey="hologram_flag_prometheus" layer="5" pfac="3" _x="11200" _y="6220"/>
+<info mapId="27" xmlResKey="hologram_flag_prometheus" layer="5" pfac="3" _x="10400" _y="10820"/>
+<info mapId="28" xmlResKey="hologram_flag_prometheus" layer="5" pfac="3" _x="14400" _y="6620"/>
+</root>

@@ -1,0 +1,24 @@
+<root>
+	<window>
+	
+		<template name="HintSystem.confirmationLayerAuctionHouse">
+			<container name="confirmationContainer" template="HintSystem.confirmationLayerWithOneButtonTemplate">
+				<button name="confirmationButton" text="localize:targeted_hintwindow_button_auction_house" />
+			</container>
+		</template>
+
+		<container template="baseWindow">
+			<placeholder 
+				name     = "confirmationLayerPlaceholder"
+				template = "HintSystem.confirmationLayerAuctionHouse" 
+				>
+			</placeholder>
+		</container>
+		
+	</window>
+	
+	<playlist repeat="false" >
+		<item resKey="hint-system_image_auction_house" effect="alphafade" fadeTime="1" duration="3000" />
+	</playlist>
+	
+</root>

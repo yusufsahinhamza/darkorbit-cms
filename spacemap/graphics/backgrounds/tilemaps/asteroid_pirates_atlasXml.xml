@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:b8f3b5fc2a8633718a0cafa329775ddc$ -->
+<TextureAtlas imagePath="asteroid_pirates.png">
+    <SubTexture name="asteroids1" x="346" y="694" width="323" height="329"/>
+    <SubTexture name="asteroids2" x="2" y="516" width="342" height="331"/>
+    <SubTexture name="asteroids3" x="2" y="849" width="317" height="457"/>
+    <SubTexture name="asteroids4" x="671" y="694" width="296" height="291"/>
+    <SubTexture name="asteroids5" x="2" y="2" width="480" height="512"/>
+    <SubTexture name="asteroids6" x="484" y="2" width="478" height="461"/>
+    <SubTexture name="asteroids7" x="484" y="465" width="370" height="227"/>
+</TextureAtlas>

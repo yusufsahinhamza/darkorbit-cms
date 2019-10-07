@@ -1,0 +1,13 @@
+<root>
+	<window>
+		<container template="baseWindow">
+			<placeholder name="confirmationLayerPlaceholder"
+				template="HintSystem.confirmationLayerWithOneButtonTemplate" />
+		</container>
+	</window>
+	
+	<playlist repeat="false" >
+		<item resKey="hint-system_image_quickbuy" effect="alphafade" fadeTime="0.5" duration="3500" />
+	</playlist>
+	
+</root>

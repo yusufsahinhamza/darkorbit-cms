@@ -1,0 +1,23 @@
+<root>
+	<window>
+		<container template="baseWindow">
+			<window 
+				name               = "hintWindow"
+				height             = "302"
+				/>
+			
+			<placeholder 
+				name="slideshowLayerPlaceholder" 
+				template="HintSystem.NULLTemplate"
+				/>
+			<placeholder 
+				name="confirmationLayerPlaceholder"
+				template="HintSystem.confirmationLayerWithOneButtonTemplate" 
+				/>
+		</container>
+	</window>
+	
+	<playlist repeat="true" >
+	</playlist>
+	
+</root>

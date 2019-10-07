@@ -1,0 +1,21 @@
+<root>
+	<window>
+		<template name="HintSystem.confirmationLayerOresTransfer">
+			<container name="confirmationContainer" template="HintSystem.confirmationLayerWithOneButtonTemplate">
+				<button name="confirmationButton01" text="localize:targeted_hintwindow_button_orestransfer" />
+			</container>
+		</template>
+		
+		<container template="baseWindow">
+			<placeholder 
+				name     ="confirmationLayerPlaceholder"
+				template ="HintSystem.confirmationLayerOresTransfer" 
+				/>
+		</container>
+	</window>
+	
+	<playlist repeat="false" >
+		<item resKey="hint-system_image_ores_transfer" effect="alphafade" fadeTime="1" duration="3000" />
+	</playlist>
+	
+</root>

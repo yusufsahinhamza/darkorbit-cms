@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<TextureAtlas imagePath="mmo_x1_asset_0.png">
+  <SubTexture name="blink_light" x="0" y="681" width="163" height="43"/>
+  <SubTexture name="mmo_quests_x-1" x="0" y="0" width="513" height="681" frameX="0" frameY="-18" frameWidth="515" frameHeight="728"/>
+</TextureAtlas>

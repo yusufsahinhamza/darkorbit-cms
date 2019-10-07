@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view>
+	<textureAtlas textureKey="mmo_outpost_atlas_0" atlasKey="mmo_outpost_atlas" />
+
+	<assets>
+		<asset texture="mission-control_mmo" >
+			<prop prop="x" arg="0" />
+			<prop prop="y" arg="0" />
+		</asset>
+		<asset id = "light" texture="blink_light">
+			<prop prop="x" arg="51" />
+			<prop prop="y" arg="-8.5" />
+		</asset>
+
+	</assets>
+	
+	<animation id="tween1" viewId="light" loop="true" autoPlay="true">
+		<tween time="1">
+			<prop prop="alpha" arg='0' />
+		</tween>
+		<tween time="1">
+			<prop prop="alpha" arg='1' />
+		</tween>
+	</animation>
+
+</view>

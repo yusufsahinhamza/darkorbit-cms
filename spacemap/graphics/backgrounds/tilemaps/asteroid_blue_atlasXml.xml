@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="asteroid_blue_texture.png">
+	<!-- Created with Adobe Flash Professional version 13.1.0.226 -->
+	<!-- http://www.adobe.com/products/flash.html -->
+	<SubTexture name="asteroid_01.png" x="0" y="0" width="260" height="275" pivotX="0" pivotY="0"/>
+	<SubTexture name="asteroid_02.png" x="260" y="0" width="512" height="334" pivotX="0" pivotY="0"/>
+	<SubTexture name="asteroid_03.png" x="772" y="0" width="512" height="490" pivotX="0" pivotY="0"/>
+	<SubTexture name="asteroid_04.png" x="1284" y="0" width="478" height="433" pivotX="0" pivotY="0"/>
+	<SubTexture name="asteroid_05.png" x="0" y="490" width="440" height="440" pivotX="0" pivotY="0"/>
+</TextureAtlas>

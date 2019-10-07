@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<huntEvent>
+
+	<eventType>PirateHunt</eventType>
+
+	<npcsToKill>
+		<npc npcId="58" pointsPlayer="1" pointsClan="1" /> <!-- npcType="INTERCEPTOR" -->
+		<npc npcId="59" pointsPlayer="2" pointsClan="2" /> <!-- npcType="BARRACUDA" -->
+		<npc npcId="60" pointsPlayer="5" pointsClan="5" /> <!-- npcType="SABOTEUR" -->
+		<npc npcId="61" pointsPlayer="6" pointsClan="6" /> <!-- npcType="ANNIHILATOR" -->
+		<npc npcId="62" pointsPlayer="8" pointsClan="8" /> <!-- npcType="BATTLERAY" -->
+		<npc npcId="121" pointsPlayer="10" pointsClan="10" /> <!-- npcType="DEADLY_BATTLERAY" -->
+		
+		<npc npcId="163" pointsPlayer="4" pointsClan="4" /> <!-- npcType="UBER_INTERCEPTOR" -->
+		<npc npcId="164" pointsPlayer="8" pointsClan="8" /> <!-- npcType="UBER_BARRACUDA" -->
+		<npc npcId="165" pointsPlayer="20" pointsClan="20" /> <!-- npcType="UBER_SABOTEUR" -->
+		<npc npcId="166" pointsPlayer="24" pointsClan="24" /> <!-- npcType="UBER_ANNIHILATOR" -->
+		<npc npcId="167" pointsPlayer="32" pointsClan="32" /> <!-- npcType="UBER_BATTLERAY" -->
+	</npcsToKill>
+
+	<rewardPlayers>event_external_rewards_piratehunt2017rewards-players</rewardPlayers>
+	<rewardClans>event_external_rewards_piratehunt2017rewards-clans</rewardClans>
+
+</huntEvent>

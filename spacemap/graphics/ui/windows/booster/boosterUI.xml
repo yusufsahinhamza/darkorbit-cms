@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+    <!-- LIBS -->
+    <libraries>
+        <library id="assemblyWindow"/>
+        <library id="boosterUIAssets"/>
+        <library id="gameclientCommonUI"/>
+    </libraries>
+    <!-- TEXT STYLES -->
+
+
+    <textstyle
+            name="booster_default"
+            textColor="0xededed"
+            type="dynamic"
+            fontSize="10"
+            wordWrap="false"
+            multiline="false"
+            embedFonts="false"
+            fontName="Verdana"
+            autoSize="none"/>
+
+    <textstyle
+            name="booster_default_disabled"
+            textColor="0x767676"
+            type="dynamic"
+            fontSize="10"
+            wordWrap="false"
+            multiline="false"
+            embedFonts="false"
+            fontName="Verdana"
+            autoSize="none"/>
+
+
+    <textstyle
+            name="booster_detail_headline"
+            textColor="0xededed"
+            type="dynamic"
+            fontSize="10"
+            bold="true"
+            embedFonts="false"
+            fontName="Verdana"
+            autoSize="none"/>
+
+    <textstyle
+            name="booster_detail_headline_disabled"
+            textColor="0x767676"
+            type="dynamic"
+            fontSize="10"
+            bold="true"
+            embedFonts="false"
+            fontName="Verdana"
+            autoSize="none"/>
+
+    <skin name="booster_itemlist_green" classname="FadableButtonSkin">
+        <layer classname="FilledBoxLayer" fillColor="0x32e629" fillAlpha="0">normal</layer>
+        <layer classname="FilledBoxLayer" fillColor="0xffffff" fillAlpha="0.1">over</layer>
+        <layer classname="FilledBoxLayer" fillColor="0xffffff" fillAlpha="0.3">clicked</layer>
+        <layer classname="FilledBoxLayer" lineColor="0xffcc00" fillAlpha="0" lineAlpha="1">disabled</layer>
+    </skin>
+
+
+    <skin name="booster_arrow_right" classname="FadableButtonSkin" library="boosterUIAssets">
+        <layer classname="BitmapLayer" libraryID="btn_jump_normal">normal</layer>
+        <layer classname="BitmapLayer" libraryID="btn_jump_hover">over</layer>
+        <layer classname="BitmapLayer" libraryID="btn_jump_active">clicked</layer>
+    </skin>
+
+    <skin name="booster_arrow_left" classname="FadableButtonSkin" library="boosterUIAssets">
+        <layer classname="BitmapLayer" x="19" scaleX="-1" libraryID="btn_jump_active">normal</layer>
+        <layer classname="BitmapLayer" x="19" scaleX="-1" libraryID="btn_jump_hover">over</layer>
+        <layer classname="BitmapLayer" x="19" scaleX="-1" libraryID="btn_jump_normal">clicked</layer>
+    </skin>
+
+
+    <skin name="booster_details_bg" library="boosterUIAssets" classname="BasicSkin">
+        <layer classname="BitmapLayer" libraryID="detail_bg" scale9grid="15,16,221,30">
+            normal
+        </layer>
+    </skin>
+
+    <skin name="booster_selected_bg" library="boosterUIAssets" classname="BasicSkin">
+        <layer classname="BitmapLayer" libraryID="cat_select_category_box">
+            normal
+        </layer>
+    </skin>
+
+
+    <skin name="scrollbtn_big_down" library="boosterUIAssets" classname="FadableButtonSkin">
+        <layer classname="BitmapLayer" libraryID="scrollbtn_big_down_normal">normal</layer>
+        <layer classname="BitmapLayer" libraryID="scrollbtn_big_down_hover">over</layer>
+        <layer classname="BitmapLayer" libraryID="scrollbtn_big_down_active">clicked</layer>
+        <layer classname="BitmapLayer" libraryID="scrollbtn_big_down_inactive">disabled</layer>
+    </skin>
+
+    <skin name="scrollbtn_big_up" library="boosterUIAssets" classname="FadableButtonSkin">
+        <layer classname="BitmapLayer" libraryID="scrollbtn_big_up_normal">normal</layer>
+        <layer classname="BitmapLayer" libraryID="scrollbtn_big_up_hover">over</layer>
+        <layer classname="BitmapLayer" libraryID="scrollbtn_big_up_active">clicked</layer>
+        <layer classname="BitmapLayer" libraryID="scrollbtn_big_up_inactive">disabled</layer>
+    </skin>
+
+    <skin name="scrollbtn_small_down" library="boosterUIAssets" classname="FadableButtonSkin">
+        <layer classname="BitmapLayer" libraryID="scrollbtn_small_down_normal">normal</layer>
+        <layer classname="BitmapLayer" libraryID="scrollbtn_small_down_hover">over</layer>
+        <layer classname="BitmapLayer" libraryID="scrollbtn_small_down_active">clicked</layer>
+        <layer classname="BitmapLayer" libraryID="scrollbtn_small_down_inactive">disabled</layer>
+    </skin>
+
+    <skin name="scrollbtn_small_up" library="boosterUIAssets" classname="FadableButtonSkin">
+        <layer classname="BitmapLayer" libraryID="scrollbtn_small_up_normal">normal</layer>
+        <layer classname="BitmapLayer" libraryID="scrollbtn_small_up_hover">over</layer>
+        <layer classname="BitmapLayer" libraryID="scrollbtn_small_up_active">clicked</layer>
+        <layer classname="BitmapLayer" libraryID="scrollbtn_small_up_inactive">disabled</layer>
+    </skin>
+
+
+    <skin name="booster_item_state" library="boosterUIAssets"
+          classname="BasicStateSkin">
+        <layer classname="BitmapLayer" libraryID="box_cat_blue">normal</layer>
+        <layer classname="BitmapLayer" libraryID="box_cat_grey">none</layer>
+        <layer classname="BitmapLayer" libraryID="box_cat_red">low</layer>
+    </skin>
+
+    <skin name="booster_item_state_details" classname="BasicStateSkin">
+        <layer classname="FilledBoxLayer" lineColor="0x0888a9" lineAlpha="1" fillAlpha="0.3">normal</layer>
+        <layer classname="FilledBoxLayer" lineColor="0x0888a9" lineAlpha="1" fillAlpha="0.3">owned</layer>
+        <layer classname="FilledBoxLayer" lineColor="0x767676" lineAlpha="1" fillAlpha="0.3">notOwned</layer>
+    </skin>
+
+    <skin name="booster_tiled_no_items_bg" library="boosterUIAssets" classname="BasicSkin">
+        <layer classname="BitmapLayer" libraryID="list_bg" scale9grid="1,0,42,43,repeatY">
+            normal
+        </layer>
+    </skin>
+    <skin name="booster_list_mask" classname="BasicSkin">
+        <layer classname="FilledBoxLayer" fillColor="0x358BAC" fillAlpha="1">mask</layer>
+        <!--<layer classname="FilledBoxLayer" fillColor="0x13323E" fillAlpha="0">normal</layer>-->
+    </skin>
+    <skin name="booster_scrollbar_bgnd" classname="FadableButtonSkin">
+        <layer classname="FilledBoxLayer"  fillColor="0x0" fillAlpha="0.3"  >normal</layer>
+    </skin>
+
+    <skin name="booster_label_truncate" classname="LabelSkin" truncateText="true" />
+
+    <!--
+    btn_progress_inactive
+    -->
+
+
+    <!-- CONTENT -->
+    <container name="globalContainer" width="430" height="350" x="20" y="15">
+        <checkbox name="filter" registeredSkinName="commonui_checkbox16x16_blue" selection="true"/>
+        <label registeredTextStyleName="booster_default" marginLeft="20" width="200" height="16"
+               registeredSkinName="commonui_default_label" text="localize:booster_filter_show_all"/>
+
+        <coreponent registeredSkinName="booster_tiled_no_items_bg" mouseEnabled="false" marginTop="36"
+                    width="156" autoSizeHeight="true" marginBottom="-25">
+        </coreponent>
+        <container
+                name="contentContainer" layout="vertical"
+                mouseEnabled="false" marginTop="21"
+                width="156" autoSizeHeight="true">
+            <container
+                    name="upButtons"
+                    mouseEnabled="false"
+                    width="156" height="15">
+                <button name="up" alignX="left" height="15" marginLeft="0"
+                        registeredSkinName="scrollbtn_big_up" width="124"/>
+                <button name="top" alignX="right" height="15" marginRight="0"
+                        registeredSkinName="scrollbtn_small_up" width="30"/>
+            </container>
+
+            <!--<coreponent-->
+            <!--width="156"-->
+            <!--marginTop="15"-->
+            <!--marginBottom="-20"-->
+            <!--mouseChildren="false"-->
+            <!--mouseEnabled="false"-->
+            <!--autoSizeHeight="true"-->
+            <!--alpha="0.3"-->
+            <!--registeredSkinName="booster_tiled_no_items_bg">-->
+            <!--</coreponent>-->
+
+            <itemlist name="boosterList"
+                      allowDeselection="true"
+                      width="157"
+
+                      itemGap="0"
+                      marginTop="15"
+                      marginBottom="-25"
+                      mouseChildren="true"
+                      mouseEnabled="true"
+                      autoSizeHeight="true"
+
+
+                      layout="vertical"
+
+                      cacheSkinMaskAsBitmap="false"
+                      registeredSkinName="booster_list_mask"
+                    >
+                <itemrenderer width="156" autoSizeWidth="false" height="43" mouseEnabled="true" mouseChildren="true">
+                    <coreponent name="bg" registeredSkinName="booster_selected_bg" mouseEnabled="false"
+                                mouseChildren="false" marginLeft="0" width="157" visible="false" autoSizeHeight="true"/>
+                    <coreponent name="hitlayer" registeredSkinName="commonui_hitlayer" mouseEnabled="true"
+                                mouseChildren="true" autoSizeWidth="true" autoSizeHeight="true" alpha="0"
+                                tooltipTemplateID="commonui_tooltip_simple"/>
+
+                    <coreponent name="pic" width="30" height="30" alignX="left" alignY="center" marginLeft="6"/>
+                    <coreponent name="state" width="32" height="32" alignX="left" alignY="center" marginLeft="5"
+                                registeredSkinName="booster_item_state"/>
+                    <coreponent name="number" width="6" height="6" marginLeft="28" marginTop="7"/>
+                    <label name="category" registeredSkinName="booster_label_truncate"
+                           registeredTextStyleName="booster_detail_headline" alignY="top"
+                           height="20" width="90" marginLeft="45"/>
+                    <label name="percent" registeredSkinName="booster_label_truncate"
+                           registeredTextStyleName="booster_default" alignY="center"
+                           height="20" width="90" marginLeft="45"/>
+                    <label name="time" registeredSkinName="booster_label_truncate"
+                           registeredTextStyleName="booster_default" alignY="bottom"
+                           height="20" width="90" marginLeft="45"/>
+                    <button name="hover" width="157" height="43"
+                            registeredSkinName="booster_itemlist_green"/>
+                    <button name="expand" marginRight="5" alignX="right" alignY="center"
+                              registeredSkinName="booster_arrow_right"/>
+
+                </itemrenderer>
+            </itemlist>
+            <container
+                    name="downButtons" alingY="bottom"
+                    mouseEnabled="false" marginBottom="0"
+                    width="156" height="15">
+                <button name="down" alignX="left" registeredSkinName="scrollbtn_big_down" height="15"
+                        width="124" alignY="top" marginLeft="0" />
+                <button name="bottom" alignX="right" alignY="top" height="15"
+                        registeredSkinName="scrollbtn_small_down" marginRight="0"
+                        width="30"/>
+            </container>
+        </container>
+
+
+        <container
+                name="detailContainer" marginTop="21" marginBottom="-40"
+                mouseEnabled="false" x="157" registeredSkinName="booster_details_bg"
+                width="236" autoSizeHeight="true">
+            <coreponent registeredSkinName="booster_tiled_no_items_bg"
+                        width="300"
+                        height="400"
+                        mouseChildren="false"
+                        mouseEnabled="false"
+                        autoSizeHeight="true"
+                        autoSizeWidth="true"
+                        marginLeft="15"
+                        marginRight="20"
+                        marginBottom="15"
+                        marginTop="40">
+            </coreponent>
+            <label name="category" registeredSkinName="booster_label_truncate"
+                   registeredTextStyleName="booster_detail_headline" alignY="top"
+                   height="20" width="200" marginTop="20" marginLeft="15"/>
+
+
+            <itemlist name="boosterDetailList"
+                      width="300"
+                      itemGap="0"
+                      height="400"
+                      mouseChildren="true"
+                      mouseEnabled="true"
+                      autoSizeHeight="true"
+                      autoSizeWidth="true"
+                      layout="vertical"
+                      marginLeft="15"
+                      marginTop="40"
+                      marginBottom="15"
+                      marginRight="20"
+                      cacheSkinMaskAsBitmap="false"
+                      registeredSkinName="booster_list_mask"
+                    >
+                <itemrenderer width="200" autoSizeWidth="false" height="43" mouseEnabled="true" mouseChildren="true">
+                    <coreponent name="hitlayer" registeredSkinName="commonui_hitlayer" mouseEnabled="true"
+                                mouseChildren="true" autoSizeWidth="true" autoSizeHeight="true" alpha="0"
+                                tooltipTemplateID="commonui_tooltip_simple"/>
+                    <coreponent name="pic" width="30" height="30" alignX="left" alignY="center" marginLeft="6"/>
+                    <label name="boosterName" registeredSkinName="booster_label_truncate"
+                           registeredTextStyleName="booster_detail_headline" alignY="top"
+                           height="20" width="155" marginLeft="45"/>
+                    <label name="effect" registeredSkinName="booster_label_truncate"
+                           registeredTextStyleName="booster_default" alignY="center"
+                           height="20" width="155" marginLeft="45"/>
+                    <label name="value" registeredSkinName="booster_label_truncate"
+                           registeredTextStyleName="booster_default" alignY="bottom"
+                           height="20" width="155" marginLeft="45"/>
+
+                    <!--was ist mit dem margen los?!-->
+                    <coreponent name="state" width="30" height="30" alignX="left" alignY="center" marginLeft="5"
+                                registeredSkinName="booster_item_state_details"/>
+                </itemrenderer>
+            </itemlist>
+
+            <scrollbar name="boosterDetailScrollbar" width="5" autoSizeHeight="true" direction="vertical"
+                       marginTop="41"
+                       marginBottom="15"
+                       marginRight="14"
+                       alignX="right"
+                       registeredSkinName="booster_scrollbar_bgnd">
+                <button name="buttonSlider" alignX="center" width="5" height="10"
+                        registeredSkinName="commonui_scrollbar_slider"/>
+            </scrollbar>
+            <bind source="boosterDetailScrollbar" target="boosterDetailList"/>
+        </container>
+    </container>
+</root>

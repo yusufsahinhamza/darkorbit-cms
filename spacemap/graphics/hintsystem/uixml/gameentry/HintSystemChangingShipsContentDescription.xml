@@ -1,0 +1,19 @@
+<root>
+	<window>
+		<container template="baseWindow">
+			<placeholder name="confirmationLayerPlaceholder"
+				template="HintSystem.confirmationLayerWithOneButtonTemplate" />
+		</container>
+	</window>
+	
+	<playlist repeat="true" >
+		<item resKey="hint-system_image_shipwarp_01" effect="alphafade" fadeTime="1" duration="3000" />
+		<item resKey="hint-system_image_shipwarp_02" effect="alphafade" fadeTime="1" duration="3000" />
+		<item resKey="hint-system_image_shipwarp_03" effect="alphafade" fadeTime="1" duration="3000" />
+		<item resKey="hint-system_image_shipwarp_04" effect="alphafade" fadeTime="1" duration="3000" />
+		<item resKey="hint-system_image_shipwarp_05" effect="alphafade" fadeTime="1" duration="3000" />
+		<item resKey="hint-system_image_shipwarp_06" effect="alphafade" fadeTime="1" duration="3000" />
+		<item resKey="hint-system_image_shipwarp_07" effect="alphafade" fadeTime="1" duration="3000" />
+	</playlist>
+	
+</root>

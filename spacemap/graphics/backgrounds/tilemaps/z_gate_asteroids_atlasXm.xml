@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="z_gate_asteroids.png">
+	<!-- Created with Adobe Animate version 15.2.0.66 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="z_gate_asteroid_blockzone_1.png" x="269" y="501" width="237" height="210" pivotX="0" pivotY="0"/>
+	<SubTexture name="z_gate_asteroid_blockzone_2.png" x="0" y="738" width="284" height="224" pivotX="0" pivotY="0"/>
+	<SubTexture name="z_gate_asteroid_blockzone_3.png" x="0" y="0" width="437" height="254" pivotX="0" pivotY="0"/>
+	<SubTexture name="z_gate_asteroid_blockzone_4.png" x="0" y="254" width="298" height="247" pivotX="0" pivotY="0"/>
+	<SubTexture name="z_gate_asteroid_blockzone_5.png" x="0" y="501" width="269" height="237" pivotX="0" pivotY="0"/>
+</TextureAtlas>

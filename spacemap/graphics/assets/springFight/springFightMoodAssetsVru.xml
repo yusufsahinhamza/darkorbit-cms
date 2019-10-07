@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view>
+	<textureAtlas id="base" textureKey="moodAssetBase" atlasKey="moodAssetBase_atlas" />
+	<textureAtlas id="pics" textureKey="moodAssetVRUPoster" atlasKey="moodAssetVRUPoster_atlas" />
+	<collision ids="base,flag1" />	
+	<assets>
+		<asset id="base" atlas="base" texture="beacon_main" x="0" y="0" />
+		<asset id="flag1" atlas="pics" texture="poster3_vru" x="0" y="0" visible="false" alpha="0"/>
+		<asset id="flag2" atlas="pics" texture="poster2_vru" x="0" y="0" visible="false" alpha="0"/>
+		<asset id="flag3" atlas="pics" texture="poster1_vru" x="0" y="0" />
+		<asset id="glow" atlas="base" texture="beacon_glow_vru" x="0" y="0" />
+	</assets>
+	
+		<animation parallel="true" loop="true" maxReductionThreshold="1" minUserQuality="3">
+			<tween time="0.1" viewId="glow" delay="0.5" dynamicPropsFactory='{"alpha":"random","params":{"alpha":[0.7,1 ]}}'  />
+		</animation>
+		
+		<animation parallel="false" loop="true" maxReductionThreshold="2" minUserQuality="2">
+			<animation parallel="true" loop="false" yoyo="false">
+				<tween time="1" viewId="flag1" delay="15" autoAlpha="1"/>
+				<tween time="1" viewId="flag2" delay="15" autoAlpha="0"/>
+				<tween time="1" viewId="flag3" delay="15" autoAlpha="0"/>
+			</animation>
+			<animation parallel="true" loop="false" yoyo="false">
+				<tween time="1" viewId="flag2" delay="15" autoAlpha="1"/>
+				<tween time="1" viewId="flag1" delay="15" autoAlpha="0"/>
+				<tween time="1" viewId="flag3" delay="15" autoAlpha="0"/>
+			</animation>
+			<animation parallel="true" loop="false" yoyo="false">
+				<tween time="1" viewId="flag3" delay="15" autoAlpha="1"/>
+				<tween time="1" viewId="flag1" delay="15" autoAlpha="0"/>
+				<tween time="1" viewId="flag2" delay="15" autoAlpha="0"/>
+			</animation>
+		</animation>
+</view>

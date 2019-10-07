@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+		<skins>
+							
+		<!-- window elements -->
+			<skin name="hintsystem_window" library="hintSystemUI" classname="BasicSkin">
+				<layer classname="BitmapLayer" libraryID="window_background" scale9grid="15 ,39,64,42,repeatXY" >mask</layer>
+			</skin>
+			<skin name="hintsystem_window_background" library="hintSystemUI" classname="BasicSkin">
+				<layer classname="BitmapLayer" libraryID="window_background" scale9grid="15 ,39,64,42,repeatXY" >normal</layer>
+			</skin>
+			<skin name="hintsystem_window_header_bgnd" library="hintSystemUI" classname="BasicSkin">
+				<layer classname="BitmapLayer" libraryID="window_header_bgnd">normal</layer>
+			</skin>
+			
+			<skin name="hintsystem_window_icon_bgnd" library="hintSystemUI" classname="BasicSkin">
+				<layer classname="BitmapLayer" libraryID="window_icon_info_background" scale9grid="15,16,17,18" >normal</layer>
+			</skin>
+			<skin name="hintsystem_window_icon_info" library="hintSystemUI" classname="BasicSkin">
+				<layer classname="BitmapLayer" libraryID="help_icon_normal">normal</layer>
+			</skin>
+			
+			<skin name="hintsystem_window_close_button" library="hintSystemUI" classname="FadableButtonSkin">
+				<layer classname="BitmapLayer" libraryID="close_button_normal"  >normal</layer>
+				<layer classname="BitmapLayer" libraryID="close_button_over"    >over</layer>
+				<layer classname="BitmapLayer" libraryID="close_button_clicked" >clicked</layer>
+			</skin>
+	<!-- window elements -->
+	
+	
+			
+	<!-- panel character -->
+			<skin name="hintsystem_window_panel_characterbackground" library="hintSystemUI" classname="BasicSkin">
+				<layer classname="BitmapLayer" libraryID="character_background_mask" scale9grid="18,20,20,23" >mask</layer>
+			</skin>
+			
+			<skin name="hintsystem_window_panel_character" library="hintSystemUI" classname="BasicSkin">
+				<layer classname="BitmapLayer" libraryID="character_mask"   scale9grid="24,35,27,37" >mask</layer>
+			</skin>
+			<!-- scale9grid="24,35,27,37" -->
+			<skin name="hintsystem_window_border_character" library="hintSystemUI" classname="BasicSkin">
+				<layer classname="BitmapLayer" libraryID="character_border"  scale9grid="24,35,26,37" >normal</layer>
+			</skin>
+	<!-- panel character -->
+
+	
+
+	<!-- panel speechbubble -->
+			<skin name="hintsystem_window_panel_speechbubble" library="hintSystemUI" classname="BasicSkin">
+				<layer classname="Scale15YBitmapLayer" libraryID="speechbubble_bgnd" scale15grid="11,27,18,21,36,59" >normal</layer>
+			</skin>
+	<!-- panel speechbubble -->
+		
+		
+			
+	<!-- confirmation button -->
+			<skin name="hintsystem_button_confirmation_blue" classname="FadableButtonSkin" library="hintSystemUI" >
+				<layer classname="BitmapLayer" libraryID="confirmation_button_blue_normal"  scale9grid="22,24,140,40" >normal</layer>
+				<layer classname="BitmapLayer" libraryID="confirmation_button_blue_over"    scale9grid="22,24,140,40" >over</layer>
+				<layer classname="BitmapLayer" libraryID="confirmation_button_blue_clicked" scale9grid="22,24,140,40" >clicked</layer>
+				<layer classname="BitmapLayer" libraryID="confirmation_button_deactivated"  scale9grid="22,24,140,40" >disabled</layer>
+			</skin>
+			<skin name="hintsystem_button_confirmation_green" classname="FadableButtonSkin" library="hintSystemUI" >
+				<layer classname="BitmapLayer" libraryID="confirmation_button_green_normal"  scale9grid="22,24,140,40" >normal</layer>
+				<layer classname="BitmapLayer" libraryID="confirmation_button_green_over"    scale9grid="22,24,140,40" >over</layer>
+				<layer classname="BitmapLayer" libraryID="confirmation_button_green_clicked" scale9grid="22,24,140,40" >clicked</layer>
+				<layer classname="BitmapLayer" libraryID="confirmation_button_deactivated"   scale9grid="22,24,140,40" >disabled</layer>
+			</skin>
+	<!-- confirmation button -->
+		
+			
+			
+	<!-- scroll stuff (scrollbar, scrollcontainer, ...) related skins -->
+			<skin name="hintsystem_window_scrollbar_bgnd" classname="FadableButtonSkin" library="hintSystemUI">
+				<layer classname="FilledBoxLayer"  fillColor="0x13323E" fillAlpha="0.45"  >normal</layer>
+			</skin>
+			
+			<skin name="hintsystem_window_scrollbar_slider" classname="FadableButtonSkin" library="hintSystemUI">
+				<layer classname="FilledBoxLayer"  fillColor="0x358BAC" fillAlpha="0.45" >normal</layer>
+				<layer classname="FilledBoxLayer"  fillColor="0x358BAC" fillAlpha="1"    >over</layer>
+				<layer classname="FilledBoxLayer"  fillColor="0x358BAC" fillAlpha="0.7"  >clicked</layer>
+			</skin>
+				
+			<skin name="hintsystem_scrollcontainerskin"  classname="ContainerSkin" library="hintSystemUI" >
+				<layer classname="BitmapLayer" libraryID="textbox_alphamask"  scale9grid="1,3,2,4" >mask</layer>
+			</skin>
+			
+			<skin name="hintsystem_overwindow_scrollcontainerskin"  classname="ContainerSkin" library="hintSystemUI" >
+				<layer classname="FilledBoxLayer"  fillColor="0x358BAC" fillAlpha="1" >mask</layer>
+			</skin>
+			
+			
+	<!-- scroll stuff related skins  -->
+			
+			
+	
+	<!-- LABEL styles -->	
+			<skin name="hintsystem_label"     classname="LabelSkin"    library="hintSystemUI" />
+
+			<!-- 
+			
+			<skin name="hintsystem_richtext" classname="BasicSkin" library="hintSystemUI" >
+				<layer classname="MovieClipLayer" libraryID="textfield_EuostileFl" >normal</layer>
+			</skin>
+						
+			<skin name="hintsystem_richtext"  classname="BasicSkin" library="hintSystemUI">
+				<layer classname="BitmapLayer" libraryID="textfield_EuostileFl" >normal</layer>
+				<layer classname="FilledBoxLayer"  fillColor="0x358BAC" fillAlpha="1" >normal</layer>
+			</skin>
+				
+			-->
+			
+	<!-- LABEL styles -->	
+			
+			
+			
+	<!-- slide show border elements -->
+			<skin name="hintsystem_slideshow_border_TL" classname="BasicSkin"  library="hintSystemUI" >
+				<layer classname="BitmapLayer" libraryID="slideshow_border_TL">normal</layer>
+			</skin>
+			<skin name="hintsystem_slideshow_border_TR" classname="BasicSkin"  library="hintSystemUI" >
+				<layer classname="BitmapLayer" libraryID="slideshow_border_TR">normal</layer>
+			</skin>
+			<skin name="hintsystem_slideshow_border_BL" classname="BasicSkin"  library="hintSystemUI" >
+				<layer classname="BitmapLayer" libraryID="slideshow_border_BL">normal</layer>
+			</skin>
+			<skin name="hintsystem_slideshow_border_BR" classname="BasicSkin"  library="hintSystemUI" >
+				<layer classname="BitmapLayer" libraryID="slideshow_border_BR">normal</layer>
+			</skin>
+			<skin name="hintsystem_slideshow_keyvisual_placeholder" classname="BasicSkin"  library="hintSystemUI" >
+				<layer classname="BitmapLayer" libraryID="slideshow_keyvisual_placeholder">normal</layer>
+			</skin>
+	<!-- slide show border elements -->
+			
+		
+	<!-- notification bar -->
+			<skin name="hintsystem_notificationbar_icon_info" classname="BasicSkin"  library="hintSystemUI" >
+				<layer classname="BitmapLayer" libraryID="help_icon_normal">normal</layer>
+			</skin>
+			
+			<skin name="hintsystem_notificationbar_close_button" classname="ButtonSkin" library="hintSystemUI" >
+				<layer classname="BitmapLayer" libraryID="notificationbar_close_button_normal">normal</layer>
+				<layer classname="BitmapLayer" libraryID="notificationbar_close_button_over">over</layer>
+				<layer classname="BitmapLayer" libraryID="notificationbar_close_button_clicked">clicked</layer>
+			</skin>
+			
+			<skin name="hintsystem_notification_minibar_border_TR" classname="BasicSkin"  library="hintSystemUI" >
+				<layer classname="BitmapLayer" libraryID="notification_minibar_border_TR">normal</layer>
+			</skin>
+			
+			<skin name="hintsystem_notification_minibar_border_BR" classname="BasicSkin"  library="hintSystemUI" >
+				<layer classname="BitmapLayer" libraryID="notification_minibar_border_BR">normal</layer>
+			</skin>
+	<!-- notification bar -->
+	
+
+	<!--  overview window  -->
+			<skin name="hintsystem_overview_bgnd_test" classname="BasicSkin"  library="hintSystemUI" >
+				<layer classname="BitmapLayer" libraryID="border_edges" scale9grid="3,3,4,4" >normal</layer>
+			</skin>
+
+			<skin name="hintsystem_overview_scrollcontainer_bgnd" classname="BasicSkin"  library="hintSystemUI" >
+				<layer classname="BitmapLayer" libraryID="overview_scrollcontainer_bgnd" scale9grid="1,1,2,2" >normal</layer>
+			</skin>
+	<!--  overview window  -->
+
+					
+		</skins>

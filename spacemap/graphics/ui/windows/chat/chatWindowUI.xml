@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+	<!-- LIBS -->
+	<libraries>
+		<library id="gameclientCommonUI" />
+		<library id="chatWindowUIAssets" />
+	</libraries>
+	<!-- TEXT STYLES -->
+	
+
+<!--  -->
+<!--  -->
+<!--  -->
+	<!-- These are partly from http://globalchat-eu-pub-01.bigpoint.net/gamechat/as3/cfg/extended_22_0.xml -->
+
+	<textstyle
+			name="chat_window_default_tab_center_modern_textstyle"
+			textColor="0x6FB2CB"
+			type="dynamic"
+			fontSize="9"
+			autoSize="center"
+			wordWrap="false"
+			multiline="false"
+			embedFonts="false"
+			fontName="Verdana"
+			align="center"/>
+
+	<textstyle
+			name="chat_window_active_tab_center_modern_textstyle"
+			textColor="0xE9E2C0"
+			type="dynamic"
+			fontSize="9"
+			autoSize="center"
+			wordWrap="false"
+			multiline="false"
+			embedFonts="false"
+			fontName="Verdana"
+			align="center"/>
+
+	<textstyle
+			name="chat_window_center_textstyle"
+			textColor="0xFEFEFE"
+			type="dynamic"
+			fontSize="10"
+			autoSize="center"
+			wordWrap="true"
+			multiline="true"
+			embedFonts="false"
+			fontName="TAHOMA"
+			align="center" />
+	<textstyle
+			name="chat_window_left_textstyle"
+			textColor="0xEEEEEE"
+			bold="false"
+			type="dynamic"
+			fontSize="11"
+			autoSize="left"
+			wordWrap="true"
+			multiline="true"
+			embedFonts="false"
+			fontName="TAHOMA"
+			align="left" />
+
+	<textstyle
+			name="chat_window_left_input_nomultiline_textstyle"
+			textColor="0xEEEEEE"
+			type="input"
+			fontSize="11"
+			autoSize="none"
+			wordWrap="false"
+			multiline="false"
+			selectable="true"
+			embedFonts="false"
+			fontName="TAHOMA"
+			border="true"
+			borderColor="0xAAAAAA"
+			marginLeft="5"
+			align="left" />
+	<textstyle
+			name="chat_window_left_input_nomultiline_modern_textstyle"
+			textColor="0xEEEEEE"
+			selectionTextColor = "0x333344"
+			type="input"
+			fontSize="11"
+			autoSize="none"
+			wordWrap="false"
+			multiline="false"
+			selectable="true"
+			embedFonts="false"
+			fontName="TAHOMA"
+			border="false"
+			marginLeft="5"
+			align="left" />
+
+	<textstyle
+			name="chat_window_sender_default_left_textstyle"
+			textColor="0x00ccff"
+			bold="false"
+			type="dynamic"
+			fontSize="11"
+			autoSize="left"
+			wordWrap="false"
+			multiline="false"
+			embedFonts="false"
+			fontName="TAHOMA"
+			align="left" />
+	<textstyle
+			name="chat_window_message_mod_left_textstyle"
+			textColor="0xF5B829"
+			bold="false"
+			type="dynamic"
+			fontSize="11"
+			autoSize="left"
+			wordWrap="true"
+			multiline="true"
+			embedFonts="false"
+			fontName="TAHOMA"
+			align="left" />
+	<textstyle
+			name="chat_window_sender_mod_left_textstyle"
+			textColor="0xF5B829"
+			bold="false"
+			type="dynamic"
+			fontSize="11"
+			autoSize="left"
+			wordWrap="false"
+			multiline="false"
+			embedFonts="false"
+			fontName="TAHOMA"
+			align="left" />
+	<textstyle
+			name="chat_window_message_supporter_left_textstyle"
+			textColor="0xEF0808"
+			bold="false"
+			type="dynamic"
+			fontSize="11"
+			autoSize="left"
+			wordWrap="true"
+			multiline="true"
+			embedFonts="false"
+			fontName="TAHOMA"
+			align="left" />
+	<textstyle
+			name="chat_window_sender_supporter_left_textstyle"
+			textColor="0xEF0808"
+			bold="false"
+			type="dynamic"
+			fontSize="11"
+			autoSize="left"
+			wordWrap="false"
+			multiline="false"
+			embedFonts="false"
+			fontName="TAHOMA"
+			align="left" />
+	<textstyle
+			name="chat_window_sender_system_left_textstyle"
+			textColor="0xFFCC00"
+			bold="false"
+			type="dynamic"
+			fontSize="11"
+			autoSize="left"
+			wordWrap="false"
+			multiline="false"
+			embedFonts="false"
+			fontName="TAHOMA"
+			align="left" />
+	<textstyle
+			name="chat_window_sender_whisper_left_textstyle"
+			textColor="0xFFE538"
+			bold="false"
+			type="dynamic"
+			fontSize="11"
+			autoSize="left"
+			wordWrap="false"
+			multiline="false"
+			embedFonts="false"
+			fontName="TAHOMA"
+			align="left" />
+	<textstyle
+			name="chat_window_sender_invite_left_textstyle"
+			textColor="0xFF00FF"
+			bold="false"
+			underline="true"
+			type="dynamic"
+			fontSize="11"
+			autoSize="left"
+			wordWrap="false"
+			multiline="false"
+			embedFonts="false"
+			fontName="TAHOMA"
+			align="left" />
+
+	<skin
+		name="chat_label_skin"
+		classname="LabelSkin"
+		truncateText="true"
+		/>
+
+	<skin name="chat_window_horizontal_divider_modern" library="chatWindowUIAssets" classname="BasicSkin">
+		<layer classname="BitmapLayer" libraryID="horizontal_divider_modern"   >normal</layer>
+	</skin>
+	<skin name="chat_window_horizontal_divider_slope" library="chatWindowUIAssets" classname="BasicSkin">
+		<layer classname="BitmapLayer" libraryID="horizontal_divider_slope"   >normal</layer>
+	</skin>
+	<skin name="chat_list_skin"  library="gameclientCommonUI" classname="BasicSkin">
+		<layer classname="BitmapLayer" libraryID="debug_mask_rounded_edges_3x3"  scale9grid="3,3,4,4" >mask</layer>
+	</skin>
+
+	<skin name="chat_messagelist_skin"  library="gameclientCommonUI" classname="BasicSkin">
+		<layer classname="BitmapLayer" libraryID="debug_mask_rounded_edges_3x3"  scale9grid="3,3,4,4" >mask</layer>
+	</skin>
+
+	<skin name="chattab_modern_skin"  library="chatWindowUIAssets" classname="FadableButtonSkin">
+		<layer classname="BitmapLayer" libraryID="tab_modern_normal"  >normal</layer>
+		<layer classname="BitmapLayer" libraryID="tab_modern_hover"  >over</layer>
+		<layer classname="BitmapLayer" libraryID="tab_modern_active"  >clicked</layer>
+	</skin>
+	<skin name="chat_input_style" library="gameclientCommonUI" classname="InputSkin">
+	</skin>
+
+	<skin name="button_scroll_left_modern_skin" library="chatWindowUIAssets" classname="ButtonSkin">
+		<layer classname="BitmapLayer" libraryID="btn_left_modern_normal"   >normal</layer>
+		<layer classname="BitmapLayer" libraryID="btn_left_modern_over"    >over</layer>
+		<layer classname="BitmapLayer" libraryID="btn_left_modern_active"    >active</layer>
+		<layer classname="BitmapLayer" libraryID="btn_left_modern_inactive"    >disabled</layer>
+	</skin>
+	<skin name="button_scroll_right_modern_skin" library="chatWindowUIAssets" classname="ButtonSkin">
+		<layer classname="BitmapLayer" libraryID="btn_right_modern_normal"   >normal</layer>
+		<layer classname="BitmapLayer" libraryID="btn_right_modern_over"    >over</layer>
+		<layer classname="BitmapLayer" libraryID="btn_right_modern_active"    >active</layer>
+		<layer classname="BitmapLayer" libraryID="btn_right_modern_inactive"    >disabled</layer>
+	</skin>
+	<skin name="button_reconnect_skin" library="chatWindowUIAssets" classname="FadableButtonSkin">
+		<layer classname="BitmapLayer" libraryID="btn_refresh_normal"   >normal</layer>
+		<layer classname="BitmapLayer" libraryID="btn_refresh_hover"    >over</layer>
+		<layer classname="BitmapLayer" libraryID="btn_refresh_active"    >clicked</layer>
+		<layer classname="BitmapLayer" libraryID="btn_refresh_inactive"    >disabled</layer>
+	</skin>
+
+	<!-- CONTENT -->
+	<container
+		name="contentContainer"
+
+		width="440"
+		height="300"
+		mouseEnabled="true"
+		mouseChildren="true"
+			>
+		<coreponent name="horizontalDividerSlope" marginTop="25" marginLeft="5" registeredSkinName="chat_window_horizontal_divider_slope" pixelSnapping="true"/>
+
+		<container
+				name="topContainer"
+				layout="vertical"
+				mouseEnabled="true"
+				mouseChildren="true"
+				autoSizeHeight="true"
+				autoSizeWidth="true"
+				>
+			<container name="chatroomTabbarContainer" height="20" layout="horizontal" autoSizeWidth="true" marginTop="12.5" marginLeft="22" marginRight="0" pixelSnapping="true">
+				<button name="scrollTabsLeft" alignX="left" marginLeft="1" registeredSkinName="button_scroll_left_modern_skin"  visible="true"/>
+				<itemlist name="chatTabsItemlist" registeredSkinName="chat_list_skin" layout="horizontal" autoSizeWidth="true" marginLeft="40"  marginRight="30" height="20" mouseEnabled="true" mouseChildren="true" cacheSkinMaskAsBitmap="false">
+					<itemrenderer height="15" width="113" autoSizeWidth="false" mouseEnabled="true" mouseChildren="true"  >
+						<coreponent name="tab" registeredSkinName="chattab_modern_skin" mouseEnabled="true" mouseChildren="true" />
+						<label y="-1" name="tabLabel"  registeredSkinName="chat_label_skin" registeredTextStyleName="chat_window_default_tab_center_modern_textstyle" mouseEnabled="false" mouseChildren="false" width="100" text="?"/>
+					</itemrenderer>
+				</itemlist>
+				<button name="scrollTabsRight" marginLeft="-25" registeredSkinName="button_scroll_right_modern_skin" visible="true"/>
+			</container>
+			<coreponent name="horizontalDivider" autoSizeWidth="true" marginTop="2" marginLeft="37" marginRight="1" registeredSkinName="chat_window_horizontal_divider_modern" pixelSnapping="true"/>
+			<button name="reconnectButton" alignX="right" marginRight="8" registeredSkinName="button_reconnect_skin" visible="true" tooltipTemplateID="commonui_tooltip_simple" tooltipData="localize:dochat.chat.ttip_reconnect:chat"/>
+			<!--<button name="report" text="localize:dochat.chat.ttip_report:chat" alignX="right" marginTop="-10" marginRight="38" registeredSkinName="chattab_modern_skin" visible="true" tooltipTemplateID="commonui_tooltip_simple" tooltipData="localize:dochat.chat.ttip_report:chat" registeredTextStyleName="chat_window_default_tab_center_modern_textstyle"/>-->
+			<!--<button name="reconnectButton" alignX="right" marginTop="-22" marginRight="28" registeredSkinName="button_reconnect_skin" visible="true" tooltipTemplateID="commonui_tooltip_simple" tooltipData="localize:dochat.chat.ttip_reconnect:chat"/>-->
+
+			<!-- ===== This is only if the messages section shall be switched to FUI some day -->
+			<!-- <messageitemlist name="chatMessagesItemlist" registeredSkinName="chat_messagelist_skin" layout="vertical" marginLeft="30" marginRight="20" autoSizeWidth="true" marginTop="60" marginBottom="40" autoSizeHeight="true" mouseEnabled="true" mouseChildren="true"  cacheSkinMaskAsBitmap="false">
+				<itemrenderer autoSizeHeight="true" width="88" autoSizeWidth="true" mouseEnabled="true" mouseChildren="true" >
+					<container name="messageContainer" autoSizeHeight="true" layout="horizontal" autoSizeWidth="true">
+						<label name="senderLabel" registeredSkinName="chat_label_skin" registeredTextStyleName="chat_window_sender_default_left_textstyle" mouseEnabled="true" mouseChildren="false" text=""/>
+						<label name="contentLabel" registeredSkinName="chat_label_skin" registeredTextStyleName="chat_window_left_textstyle" mouseEnabled="true" mouseChildren="false" text=""/>
+					</container>
+				</itemrenderer>
+			</messageitemlist> -->
+
+			<scrollbar name="messagesScrollbar" width="10" autoSizeHeight="true" alignX="right" registeredSkinName="commonui_scrollbar_bgnd" marginRight="20" marginBottom="40" marginTop="60" >
+				<button name="buttonSlider"  width="6"  height="28" alignX="center" registeredSkinName="commonui_scrollbar_slider" y ="0" />
+			</scrollbar>
+		</container>
+
+		<input name="chatInput" alignY="bottom" autoSizeWidth="true" marginLeft="22" marginRight="20" marginBottom="10" height="18" text=""  registeredSkinName="commonui_input_blue" registeredTextStyleName="chat_window_left_input_nomultiline_modern_textstyle" mouseEnabled="true" />
+	</container>
+	<!-- CONTENT -->
+</root>

@@ -1,0 +1,22 @@
+<root>
+	<window>
+	
+		<template name="HintSystem.GalaxyGate.confirmationLayerWithOneButtonTemplate" >
+			<container name="confirmationContainer" alignY="bottom" alignX="center" autoSizeWidth="true" height="60">
+				<button name="confirmationButton02" text="localize:targeted_hintwindow_button_galaxygates_open_galaxygate" width="220"  height="62" alignX="center" registeredSkinName="hintsystem_button_confirmation_green" registeredTextStyleName="commonui_confirmationbutton_green_normal"/>
+			</container>
+		</template>
+
+		<container template="baseWindow">
+			<placeholder 
+				name     ="confirmationLayerPlaceholder"
+				template ="HintSystem.GalaxyGate.confirmationLayerWithOneButtonTemplate" 
+				/>
+		</container>
+	</window>
+	
+	<playlist repeat="false" >
+		<item resKey="hint-system_image_galaxygates" effect="alphafade" fadeTime="1" duration="3000" />
+	</playlist>
+	
+</root>

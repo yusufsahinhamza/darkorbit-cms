@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view>
+	<textureAtlas id="base" textureKey="iceberg_texture" atlasKey="iceberg_atlas" />
+	<collision ids="base" />
+	<assets>
+		<asset id="base" atlas="base" texture="icebergsmall" x="0" y="0" />
+	</assets>
+	<animation id="default" parallel="false" autoPlay="true">
+		<tween time="9" viewId="base" y="10" yoyo="true" repeat="-1"/>
+	</animation>
+</view>

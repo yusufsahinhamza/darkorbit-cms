@@ -1,0 +1,19 @@
+<root>
+	<window>
+		<template name="HintSystem.confirmationLayerSkylabContent">
+			<container name="confirmationContainer" template="HintSystem.confirmationLayerWithButtonAndExternalLinkTemplate">
+				<button name="confirmationButton02" text="localize:gameentry_hintwindow_button_openskylab" />
+			</container>
+		</template>
+		
+		<container template="baseWindow">
+			<placeholder 
+				name="confirmationLayerPlaceholder"
+				template="HintSystem.confirmationLayerSkylabContent" />
+		</container>
+	</window>
+
+	<playlist repeat="false" >
+		<item resKey="hint-system_image_skylab" effect="alphafade" fadeTime="1" duration="3000" />
+	</playlist>
+</root>

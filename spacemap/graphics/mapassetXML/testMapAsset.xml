@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view>
+	<textureAtlas textureKey="repair_robot1_texture" atlasKey="repair_robot1_atlas" />
+
+	<assets>
+		<asset id="mc" texture="">
+			<prop prop="x" arg="0" />
+			<prop prop="y" arg="0" />
+			<prop prop="alpha" arg="0.5" />
+		</asset>
+
+		<asset id="light1" texture="">
+			<prop prop="x" arg="115" />
+			<prop prop="y" arg="75" />
+<!-- 			<prop prop="fps" arg="120" /> -->
+		</asset>
+
+		<asset id="light2" texture="">
+			<prop prop="x" arg="82" />
+			<prop prop="y" arg="154" />
+		</asset>
+
+		<asset id="light3" texture="">
+			<prop prop="x" arg="19" />
+			<prop prop="y" arg="142" />
+		</asset>
+		<asset id="light4" texture="">
+			<prop prop="x" arg="-26" />
+			<prop prop="y" arg="52" />
+		</asset>
+		<asset id="light5" texture="">
+			<prop prop="x" arg="180" />
+			<prop prop="y" arg="75" />
+		</asset>
+		<asset id="light6" texture="">
+			<prop prop="x" arg="86" />
+			<prop prop="y" arg="534" />
+		</asset>
+
+	</assets>
+
+	<tweens id="light1" loop="true">
+		<tween time="0">
+			<prop prop="autoAlpha" arg='0' />
+			<prop prop="rotation" arg='0' />
+		</tween>
+		<tween time="2">
+			<prop prop="delay" arg='2' />
+			<prop prop="autoAlpha" arg='1' />
+		</tween>
+		<tween time="2">
+			<prop prop="x" arg='32' />
+			<prop prop="y" arg='112' />
+			<prop prop="scaleX" arg='0' />
+			<prop prop="scaleY" arg='0' />
+			<prop prop="autoAlpha" arg='0' />
+		</tween>
+	</tweens>
+
+	<tweens id="light2" loop="true">
+		<tween time="0">
+			<prop prop="autoAlpha" arg='0' />
+		</tween>
+		<tween time="2">
+			<prop prop="delay" arg='3.4' />
+			<prop prop="autoAlpha" arg='1' />
+		</tween>
+		<tween time="2">
+			<prop prop="x" arg='32' />
+			<prop prop="y" arg='112' />
+			<prop prop="scaleX" arg='0' />
+			<prop prop="scaleY" arg='0' />
+			<prop prop="autoAlpha" arg='0' />
+		</tween>
+	</tweens>
+
+	<tweens id="light3" loop="true">
+		<tween time="0">
+			<prop prop="autoAlpha" arg='0' />
+		</tween>
+		<tween time="2">
+			<prop prop="delay" arg='4' />
+			<prop prop="autoAlpha" arg='1' />
+		</tween>
+		<tween time="2">
+			<prop prop="x" arg='32' />
+			<prop prop="y" arg='112' />
+			<prop prop="scaleX" arg='0' />
+			<prop prop="scaleY" arg='0' />
+			<prop prop="autoAlpha" arg='0' />
+		</tween>
+	</tweens>
+
+	<tweens id="light4" loop="true">
+		<tween time="0">
+			<prop prop="autoAlpha" arg='0' />
+		</tween>
+		<tween time="2">
+			<prop prop="delay" arg='4.3' />
+			<prop prop="autoAlpha" arg='1' />
+		</tween>
+		<tween time="2">
+			<prop prop="x" arg='32' />
+			<prop prop="y" arg='112' />
+			<prop prop="scaleX" arg='0' />
+			<prop prop="scaleY" arg='0' />
+			<prop prop="autoAlpha" arg='0' />
+		</tween>
+	</tweens>
+
+	<tweens id="light5" loop="true">
+		<tween time="0">
+			<prop prop="autoAlpha" arg='1' />
+		</tween>
+		<tween time="3">
+			<prop prop="autoAlpha" arg='0' />
+		</tween>
+		<tween time="2">
+			<prop prop="delay" arg="1" />
+			<prop prop="autoAlpha" arg='1' />
+		</tween>
+	</tweens>
+
+	<tweens id="light6" loop="true">
+		<tween time="0">
+			<prop prop="autoAlpha" arg='1' />
+		</tween>
+		<tween time="4">
+			<prop prop="autoAlpha" arg='0' />
+		</tween>
+		<tween time="1" >
+			<tween time="10" viewId="light143253" alpha="0"
+			physicsProps='{"physicsProps":{"x":{"velocity":50}, "y":{"velocity":-260, "acceleration":300}}}' />
+		</tween>
+	</tweens>
+
+</view>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+
+	<container
+		name   = "hintOverviewContainer"
+		height = "120"
+		width  = "120"
+		>
+					
+		<!--overview list -->
+			<container name="overviewListContainer"  autoSizeWidth="true"  autoSizeHeight="true" marginTop="1" marginBottom="0" marginLeft="0" marginRight="13">
+				<scrollcontainer name="scrollContainer" registeredSkinName="hintsystem_overwindow_scrollcontainerskin" autoSizeWidth="true" autoSizeHeight="true" marginTop="0" marginLeft="0" marginRight="3" marginBottom="0" >
+					<container name="content" autoSizeWidth="true"/>
+				</scrollcontainer>
+				
+				<scrollbar name="scrollbar"      width="10" autoSizeHeight="true" alignX="right"  marginRight="-6" marginBottom="16" marginTop="10"  registeredSkinName="hintsystem_window_scrollbar_bgnd">
+					<button name="buttonSlider"  width="6"  height="28"  alignX="center" y ="0" registeredSkinName="hintsystem_window_scrollbar_slider" />
+				</scrollbar>
+				
+			</container>
+			
+			<!-- 
+			<button name="archiveButton" 
+					width="102"  
+					height="12" 
+					alignX="center"  
+					alignY="bottom" 
+					marginBotom="3" 
+					registeredSkinName="hintsystem_overview_archiv_button" 
+					registeredTextStyleName="hintsystem_overview_archivebutton" 
+					/>
+			-->		
+	</container>
+	
+</root>

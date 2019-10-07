@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+    <!-- LIBS -->
+    <libraries>
+        <library id="assemblyWindow"/>
+        <library id="gameclientCommonUI"/>
+        <library id="rzone"/>
+    </libraries>
+
+    <!-- TEXT STYLES -->
+
+
+
+    <textstyle name="rzone_textstyle_score"
+               background="false"
+               textColor="0xFFFFFF"
+               type="dynamic"
+               selectable="false"
+               fontName="EurostileFl"
+               wordWrap="true"
+               align="center"
+               embedFonts="true"
+               fontSize="16"/>
+    <textstyle
+            name="rzone_info_textstyle"
+            textColor="0x999898"
+            type="dynamic"
+            fontSize="10"
+            autoSize="center"
+            align="center"
+            wordWrap="true"
+            multiline="true"
+            embedFonts="false"
+            fontName="Verdana" />
+
+
+
+    <!-- CONTENT -->
+    <container name="content"  width="300" autoSizeHeight="true" autoSizeMode="children" layout="vertical">
+        <label text="localize:rzone_confirmation_help"
+               registeredSkinName="commonui_default_label" width="300" alignX="center"
+               height="30" registeredTextStyleName="rzone_info_textstyle"/>
+        <label text="00:00:00" name="time" registeredSkinName="commonui_default_label" width="300" height="20"
+               alignX="center" registeredTextStyleName="rzone_textstyle_score" decorate="default.lightBlueGlow"/>
+
+    </container>
+</root>

@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="quarantine_zone_portal_texture.png">
+	<!-- Created with Adobe Animate version 15.2.0.66 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="Black_hole_pink_01" x="0" y="0" width="400" height="400" pivotX="0" pivotY="0"/>
+	<SubTexture name="Black_hole_pink_02" x="400" y="0" width="400" height="400" pivotX="0" pivotY="0"/>
+	<SubTexture name="Black_hole_pink_03" x="0" y="400" width="400" height="400" pivotX="0" pivotY="0"/>
+	<SubTexture name="Black_hole_pink_04" x="400" y="400" width="400" height="400" pivotX="0" pivotY="0"/>
+	<SubTexture name="Black_hole_pink_05" x="0" y="800" width="400" height="400" pivotX="0" pivotY="0"/>
+	<SubTexture name="Black_hole_pink_06" x="400" y="800" width="400" height="400" pivotX="0" pivotY="0"/>
+	<SubTexture name="Black_hole_pink_07" x="0" y="1200" width="400" height="400" pivotX="0" pivotY="0"/>
+	<SubTexture name="Black_hole_pink_08" x="0" y="1600" width="400" height="400" pivotX="0" pivotY="0"/>
+	<SubTexture name="Black_hole_pink_09" x="400" y="1200" width="400" height="400" pivotX="0" pivotY="0"/>
+	<SubTexture name="Black_hole_pink_10" x="400" y="1600" width="400" height="400" pivotX="0" pivotY="0"/>
+</TextureAtlas>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<profile>
+	<qualityLowLimit>14</qualityLowLimit>
+	<intervalLength>5000</intervalLength>
+	<notificationSteps>
+		<notificationStep value="12"/>
+		<notificationStep value="16"/>
+		<notificationStep value="24"/>
+	</notificationSteps>
+	<autoQualityLowerBoundFPS>14</autoQualityLowerBoundFPS>
+	<autoQualityLowerBoundIntervalsTillChange>1</autoQualityLowerBoundIntervalsTillChange>
+	<autoQualityUpperBoundFPS>27</autoQualityUpperBoundFPS>
+	<autoQualityUpperBoundIntervalsTillChange>1</autoQualityUpperBoundIntervalsTillChange>
+</profile>

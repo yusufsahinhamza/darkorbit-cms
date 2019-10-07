@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+	<map id="2">
+		<layer id="small" index="6" pfac="3" />
+		<layer id="medium" index="5" pfac="5" />
+		<layer id="large" index="4" pfac="6" />
+	</map>
+	<map id="3">
+		<layer id="small" index="6" pfac="3" />
+		<layer id="medium" index="5" pfac="5" />
+		<layer id="large" index="4" pfac="6" />
+	</map>
+	<map id="4">
+		<layer id="small" index="6" pfac="3" />
+		<layer id="medium" index="5" pfac="5" />
+		<layer id="large" index="4" pfac="6" />
+	</map>
+	<map id="6">
+		<layer id="small" index="7" pfac="3" />
+		<layer id="large" index="5" pfac="6" />
+		<layer id="medium" index="6" pfac="5" />
+	</map>
+	<map id="7">
+		<layer id="small" index="5" pfac="3" />
+		<layer id="medium" index="4" pfac="5" />
+		<layer id="large" index="3" pfac="6" />
+	</map>
+	<map id="8">
+		<layer id="small" index="5" pfac="3" />
+		<layer id="medium" index="4" pfac="5" />
+		<layer id="large" index="3" pfac="6" />
+	</map>
+	<map id="10">
+		<layer id="small" index="6" pfac="3" />
+		<layer id="medium" index="5" pfac="5" />
+		<layer id="large" index="4" pfac="6" />
+	</map>
+	<map id="11">
+		<layer id="small" index="5" pfac="3" />
+		<layer id="medium" index="4" pfac="5" />
+		<layer id="large" index="3" pfac="6" />
+	</map>
+	<map id="12">
+		<layer id="small" index="6" pfac="3" />
+		<layer id="medium" index="5" pfac="5" />
+		<layer id="large" index="4" pfac="6" />
+	</map>
+	
+	<map id="17">
+		<layer id="small" index="6" pfac="3" />
+		<layer id="medium" index="5" pfac="5" />
+		<layer id="large" index="4" pfac="6" />
+	</map>
+	<map id="18">
+		<layer id="small" index="6" pfac="3" />
+		<layer id="medium" index="5" pfac="5" />
+		<layer id="large" index="4" pfac="6" />
+	</map>
+	<map id="19">
+		<layer id="small" index="6" pfac="3" />
+		<layer id="medium" index="5" pfac="5" />
+		<layer id="large" index="4" pfac="6" />
+	</map>
+	<map id="20">
+		<layer id="small" index="6" pfac="3" />
+		<layer id="medium" index="5" pfac="5" />
+		<layer id="large" index="4" pfac="6" />
+	</map>
+	<map id="21">
+		<layer id="small" index="6" pfac="3" />
+		<layer id="medium" index="5" pfac="5" />
+		<layer id="large" index="4" pfac="6" />
+	</map>
+	<map id="22">
+		<layer id="small" index="5" pfac="3" />
+		<layer id="medium" index="4" pfac="5" />
+		<layer id="large" index="3" pfac="6" />
+	</map>
+	<map id="23">
+		<layer id="small" index="5" pfac="3" />
+		<layer id="medium" index="4" pfac="5" />
+		<layer id="large" index="3" pfac="6" />
+	</map>
+	<map id="24">
+		<layer id="small" index="5" pfac="3" />
+		<layer id="medium" index="4" pfac="5" />
+		<layer id="large" index="3" pfac="6" />
+	</map>
+	<map id="25">
+		<layer id="small" index="5" pfac="3" />
+		<layer id="medium" index="4" pfac="5" />
+		<layer id="large" index="3" pfac="6" />
+	</map>
+	<map id="26">
+		<layer id="small" index="5" pfac="3" />
+		<layer id="medium" index="4" pfac="5" />
+		<layer id="large" index="3" pfac="6" />
+	</map>
+	<map id="27">
+		<layer id="small" index="5" pfac="3" />
+		<layer id="medium" index="4" pfac="5" />
+		<layer id="large" index="3" pfac="6" />
+	</map>
+	<map id="28">
+		<layer id="small" index="5" pfac="3" />
+		<layer id="medium" index="4" pfac="5" />
+		<layer id="large" index="3" pfac="6" />
+	</map>
+
+	<asset id="small" _x="0.14" _y="0.14" xmlResKey="iceBergAssetLarge" />
+	<asset id="small" _x="0.6" _y="0.15" xmlResKey="iceBergAssetLarge" />
+
+	<asset id="small" _x="0.34" _y="0.29" xmlResKey="iceBergAssetLarge" />
+	<asset id="small" _x="0.8" _y="0.39" xmlResKey="iceBergAssetLarge" />
+
+	<asset id="small" _x="0.14" _y="0.6" xmlResKey="iceBergAssetLarge" />
+	<asset id="small" _x="0.6" _y="0.61" xmlResKey="iceBergAssetLarge" />
+
+	<asset id="small" _x="0.34" _y="0.72" xmlResKey="iceBergAssetLarge" />
+	<asset id="small" _x="0.8" _y="0.83" xmlResKey="iceBergAssetLarge" />
+
+	<asset id="medium" _x="0.22" _y="0.22" xmlResKey="iceBergAssetMedium" />
+	<asset id="medium" _x="0.77" _y="0.28" xmlResKey="iceBergAssetMedium" />
+	<asset id="medium" _x="0.22" _y="0.74" xmlResKey="iceBergAssetMedium" />
+	<asset id="medium" _x="0.76" _y="0.79" xmlResKey="iceBergAssetMedium" />
+
+	<asset id="large" _x="0.27" _y="0.48" xmlResKey="iceBergAssetSmall" />
+	<asset id="large" _x="0.68" _y="0.6" xmlResKey="iceBergAssetSmall" />
+
+</root>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:9478c9f0b8db597b60d428e2f806dd39$ -->
+<TextureAtlas imagePath="asteroids2_small_blue_texture.png">
+    <SubTexture name="asteroids2_small_blue_tile01" x="382" y="160" width="342" height="338"/>
+    <SubTexture name="asteroids2_small_blue_tile02" x="382" y="2" width="370" height="156"/>
+    <SubTexture name="asteroids2_small_blue_tile03" x="2" y="376" width="333" height="266"/>
+    <SubTexture name="asteroids2_small_blue_tile04" x="2" y="2" width="378" height="372"/>
+    <SubTexture name="asteroids2_small_blue_tile05" x="754" y="2" width="192" height="186"/>
+</TextureAtlas>

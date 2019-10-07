@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="moodAsset_masque.png">
+	<!-- Created with Adobe Flash Professional version 14.2.0.20 -->
+	<!-- http://www.adobe.com/products/flash.html -->
+	<SubTexture name="glow_masque" x="0" y="305" width="218" height="305" pivotX="0" pivotY="0"/>
+	<SubTexture name="poster_masque1" x="0" y="0" width="218" height="305" pivotX="0" pivotY="0"/>
+	<SubTexture name="poster_masque2" x="0" y="610" width="218" height="305" pivotX="0" pivotY="0"/>
+</TextureAtlas>

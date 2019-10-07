@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="traininggroundsVictoryPointsBackgroundDisplay.png">
+	<!-- Created with Adobe Flash Professional version 15.0.1.179 -->
+	<!-- http://www.adobe.com/products/flash.html -->
+	<SubTexture name="digit0" x="0" y="0" width="64" height="64" pivotX="0" pivotY="0"/>
+	<SubTexture name="digit1" x="64" y="0" width="64" height="64" pivotX="0" pivotY="0"/>
+	<SubTexture name="digit2" x="128" y="0" width="64" height="64" pivotX="0" pivotY="0"/>
+	<SubTexture name="divider" x="192" y="0" width="64" height="64" pivotX="0" pivotY="0"/>
+	<SubTexture name="header" x="256" y="0" width="192" height="24" pivotX="0" pivotY="0"/>
+	<SubTexture name="logo" x="0" y="64" width="298" height="129" pivotX="0" pivotY="0"/>
+</TextureAtlas>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view>
+	<textureAtlas id="standart" textureKey="mmo_outpost_atlas_0" atlasKey="mmo_outpost_atlas" />
+	<textureAtlas id="test2" textureKey="portal_epsilon_texture" atlasKey="portal_epsilon_atlas" />
+
+	<assets>
+		<asset id="base" atlas="standart" texture="mission-control_mmo"/>
+		<asset atlas="test2" id="light" texture="jump_" x="51" y="-8.5"/>
+		<asset atlas="test2" id="light143253" texture="jump_" x="51" y="-8.5"/>
+		<textfield id="text" text="This is not the asset you are looking for!"
+		 fontSize="20" font="EurostileHeaFl" autoSize="bothDirections" color="914122" width ="300"/>
+	</assets>
+	
+	
+	<animation id="name" loop="true"  >
+		<animation>
+			<tween time="1" viewId="light" alpha="0"  />
+			<tween time="1" viewId="text" alpha="0"  minUserQuality="10" maxReductionThreshold="5"/>
+		</animation>
+
+		<animation>
+			<tween time="5" viewId="light" alpha="1" />
+			<tween time="5" viewId="text" alpha="1" minUserQuality="10"/>
+		</animation>
+	</animation>
+	
+	<animation loop="true" yoyo="true" minUserQuality="10" maxReductionThreshold="5">
+		<animation parallel="true">
+			<tween time="10" viewId="base" y="50" />
+			<tween time="10" viewId="light" y="101" />
+		</animation>
+	</animation>
+
+	<animation loop="true" minUserQuality="15">
+		<tween time="10" viewId="light143253" alpha="0"
+			physicsProps='{"physicsProps":{"x":{"velocity":50}, "y":{"velocity":-260, "acceleration":300}}}' />
+		<tween time="0" viewId="light143253"  delay="10" />
+	</animation>
+
+</view>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<view>
+	<textureAtlas id="base" textureKey="iceberg_texture" atlasKey="iceberg_atlas" />
+	<collision ids="base" />
+	<assets>
+		<asset id="base" atlas="base" texture="icebergmedium" x="0" y="0" />
+	</assets>
+	
+	<!--<animation parallel="false" loop="true" maxReductionThreshold="2" minUserQuality="2">-->
+		<!--<tween time="6" viewId="base" y="20" yoyo="true" repeat="1" ease="sine.easeinout"/>-->
+	<!--</animation>-->
+</view>

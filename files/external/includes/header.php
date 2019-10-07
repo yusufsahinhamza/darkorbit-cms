@@ -6,23 +6,30 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
     <link type="text/css" rel="stylesheet" href="css/style.css"/>
+    <?php if (Functions::IsLoggedIn() && isset($page[0]) && $page[0] === 'company-select') { ?>
+    <link type="text/css" rel="stylesheet" href="css/company_select.css"/>
+    <?php } ?>
+    <?php if (Functions::IsLoggedIn() && isset($page[0]) && $page[0] === 'home') { ?>
+    <link type="text/css" rel="stylesheet" href="css/home.css"/>
+    <?php } ?>
   </head>
   <body>
     <div id="app">
 
       <?php if (Functions::IsLoggedIn()) { ?>
       <ul id="dropdown1" class="dropdown-content">
-        <li><a href="#!">Ships</a></li>
-        <li><a href="#!">Equipment</a></li>
+        <li><a href="<?php echo DOMAIN; ?>ships">Ships</a></li>
+        <li><a href="<?php echo DOMAIN; ?>equipment">Equipment</a></li>
       </ul>
       <nav>
         <div class="nav-wrapper grey darken-4">
           <div class="container">
-          <a href="#!" class="brand-logo">{{serverName}}</a>
+          <a href="<?php echo DOMAIN; ?>" class="brand-logo"><?php echo SERVER_NAME; ?></a>
           <ul class="right hide-on-med-and-down">
-            <li class="grey darken-3"><a href="/asdsad" target="_blank">Start</a></li>
+            <li class="grey darken-3"><a href="<?php echo DOMAIN; ?>map-revolution" target="_blank">Start</a></li>
             <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Hangar<i class="material-icons right">arrow_drop_down</i></a></li>
             <li><a href="/clan">Clan</a></li>
+            <li><a href="/api/logout">Logout</a></li>
           </ul>
           </div>
         </div>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<filecollection>
+    <location id="img" path="img/"/>
+    <location id="swf" path="swf/"/>
+    <file debugView="false" hash="7cc9e748730a303b5c334d4f9977a00" id="common" location="swf" name="common" type="swf" version="1"/>
+    <file debugView="false" hash="2d8a9be7993c43fc4dc54122deb03200" id="scrollbar" location="swf" name="scrollbar" type="swf" version="1"/>
+    <file debugView="false" hash="3252e4c4be3ebf6755a6cf7774ce8200" id="gates" location="swf" name="gates" type="swf" version="1"/>
+    <file debugView="false" hash="715b9fa702695a400c76e165b4793e00" id="main_bg" location="img" name="main_bg" type="png" version="1"/>
+</filecollection>

@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="moodAssetVRUWinner.png">
+	<!-- Created with Adobe Flash Professional version 13.1.0.226 -->
+	<!-- http://www.adobe.com/products/flash.html -->
+	<SubTexture name="character_vru" x="0" y="0" width="218" height="305" pivotX="0" pivotY="0"/>
+	<SubTexture name="logo_vru" x="218" y="0" width="218" height="305" pivotX="0" pivotY="0"/>
+</TextureAtlas>

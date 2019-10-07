@@ -1,0 +1,14 @@
+<map id="81" name="FOOTBALL-TDM" music="0" scaleFactor="0.5" minimap="81football">
+
+	<gameserverIP>%IP%</gameserverIP>
+
+	<starfield color="0x6699BB">true</starfield>
+
+	<backgrounds>
+		<background typeID="2001" pFactor="10" layer="0" hideLensflare="false" scale="2.5"/>
+		<background typeID="5082" layer="1" pFactor="10" isMain="true" />
+		<background typeID="2027" pFactor="7" layer="3" hideLensflare="false" scale="1.6" maskID="5" />
+		<background typeID="2012" pFactor="6" layer="4" hideLensflare="false" maskID="6" />
+		<background typeID="2025" pFactor="4" layer="5" shiftX="200" shiftY="200" hideLensflare="false" scale="1.6" maskID="7" />
+	</backgrounds>
+</map>

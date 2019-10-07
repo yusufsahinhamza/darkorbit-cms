@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="portal_domination_texture.png">
+	<!-- Created with Adobe Flash Professional version 13.1.0.226 -->
+	<!-- http://www.adobe.com/products/flash.html -->
+	<SubTexture name="activ" x="0" y="0" width="489" height="447" pivotX="0" pivotY="0"/>
+	<SubTexture name="gate" x="489" y="0" width="489" height="447" pivotX="0" pivotY="0"/>
+	<SubTexture name="highlight1" x="0" y="447" width="489" height="447" pivotX="0" pivotY="0"/>
+	<SubTexture name="highlight2" x="489" y="447" width="489" height="447" pivotX="0" pivotY="0"/>
+	<SubTexture name="highlight3" x="0" y="894" width="489" height="447" pivotX="0" pivotY="0"/>
+</TextureAtlas>

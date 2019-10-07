@@ -1,0 +1,22 @@
+<root>
+	<window>
+		<template name="HintSystem.confirmationLayerSkillTree">
+			<container name="confirmationContainer" template="HintSystem.confirmationLayerWithButtonAndExternalLinkTemplate">
+				<button name="confirmationButton01" registeredSkinName="hintsystem_button_confirmation_blue" text="localize:targeted_hintwindow_button_skilltree_open_specialoffer" />	
+				<button name="confirmationButton02" registeredSkinName="hintsystem_button_confirmation_green" text="localize:targeted_hintwindow_button_skilltree_open_pilotsheet" />
+			</container>
+		</template>
+		
+		<container template="baseWindow">
+			<placeholder 
+				name     ="confirmationLayerPlaceholder"
+				template ="HintSystem.confirmationLayerSkillTree" 
+				/>
+		</container>
+	</window>
+	
+	<playlist repeat="false" >
+		<item resKey="hint-system_image_skilltree" effect="alphafade" fadeTime="1" duration="3000" />
+	</playlist>
+	
+</root>

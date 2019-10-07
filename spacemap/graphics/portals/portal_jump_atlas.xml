@@ -1,0 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="portal_jump_texture.png">
+	<!-- Created with Adobe Flash Professional version 13.1.0.226 -->
+	<!-- http://www.adobe.com/products/flash.html -->
+	<SubTexture name="portalAnim0001.png" x="0" y="0" width="290" height="260" pivotX="0" pivotY="0"/>
+	<SubTexture name="portalAnim0002.png" x="290" y="0" width="290" height="260" pivotX="0" pivotY="0"/>
+	<SubTexture name="portalAnim0003.png" x="580" y="0" width="290" height="260" pivotX="0" pivotY="0"/>
+	<SubTexture name="portalAnim0004.png" x="870" y="0" width="290" height="260" pivotX="0" pivotY="0"/>
+	<SubTexture name="portalAnim0005.png" x="1160" y="0" width="290" height="260" pivotX="0" pivotY="0"/>
+</TextureAtlas>

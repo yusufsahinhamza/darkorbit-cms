@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="streuner_gate_texture.png">
+	<!-- Created with Adobe Flash Professional version 14.2.0.20 -->
+	<!-- http://www.adobe.com/products/flash.html -->
+	<SubTexture name="effect__00" x="512" y="512" width="512" height="512" pivotX="0" pivotY="0"/>
+	<SubTexture name="effect__01" x="0" y="1024" width="512" height="512" pivotX="0" pivotY="0"/>
+	<SubTexture name="effect__02" x="512" y="0" width="512" height="512" pivotX="0" pivotY="0"/>
+	<SubTexture name="effect__03" x="0" y="0" width="512" height="512" pivotX="0" pivotY="0"/>
+	<SubTexture name="effect__04" x="0" y="512" width="512" height="512" pivotX="0" pivotY="0"/>
+	<SubTexture name="active" x="512" y="1024" width="512" height="512" pivotX="0" pivotY="0"/>
+</TextureAtlas>

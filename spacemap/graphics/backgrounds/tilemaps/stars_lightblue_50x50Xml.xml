@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="stars_lightblue_50x50.png">
+	<!-- Created with Adobe Animate version 15.2.0.66 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="stars_refraction1.png" x="0" y="0" width="50" height="50" pivotX="0" pivotY="0"/>
+	<SubTexture name="stars_refraction10.png" x="51" y="0" width="50" height="50" pivotX="0" pivotY="0"/>
+	<SubTexture name="stars_refraction2.png" x="0" y="51" width="50" height="50" pivotX="0" pivotY="0"/>
+	<SubTexture name="stars_refraction3.png" x="0" y="102" width="50" height="50" pivotX="0" pivotY="0"/>
+	<SubTexture name="stars_refraction4.png" x="0" y="204" width="50" height="50" pivotX="0" pivotY="0"/>
+	<SubTexture name="stars_refraction5.png" x="51" y="51" width="50" height="50" pivotX="0" pivotY="0"/>
+	<SubTexture name="stars_refraction6.png" x="51" y="153" width="50" height="50" pivotX="0" pivotY="0"/>
+	<SubTexture name="stars_refraction7.png" x="51" y="204" width="50" height="50" pivotX="0" pivotY="0"/>
+	<SubTexture name="stars_refraction8.png" x="51" y="102" width="50" height="50" pivotX="0" pivotY="0"/>
+	<SubTexture name="stars_refraction9.png" x="0" y="153" width="50" height="50" pivotX="0" pivotY="0"/>
+</TextureAtlas>

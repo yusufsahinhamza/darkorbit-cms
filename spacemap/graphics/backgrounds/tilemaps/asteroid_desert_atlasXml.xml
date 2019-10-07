@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:baef98d6798534d901499ef988f067f1$ -->
+<TextureAtlas imagePath="asteroid_desert_texture.png">
+    <SubTexture name="Astro_1_" x="2" y="2" width="512" height="425"/>
+    <SubTexture name="Astro_2_" x="516" y="2" width="354" height="367"/>
+    <SubTexture name="Astro_3_" x="2" y="819" width="512" height="383"/>
+    <SubTexture name="Astro_4_" x="2" y="1204" width="512" height="311"/>
+    <SubTexture name="Astro_5_" x="2" y="429" width="512" height="388"/>
+    <SubTexture name="Astro_6_" x="516" y="629" width="298" height="256"/>
+    <SubTexture name="Astro_7_" x="516" y="371" width="329" height="256"/>
+</TextureAtlas>

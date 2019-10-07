@@ -1,0 +1,14 @@
+<map id="16" name="4-4" scaleFactor="2" music="0" minimap="16football">
+	<starfield>true</starfield>
+	<backgrounds>
+		<background typeID="2001" pFactor="10" layer="0" hideLensflare="false" scale="2.5"/>
+		<background typeID="94" pFactor="10" layer="1" isMain="true"/>
+		<background typeID="2025" pFactor="8" layer="3" maskID="15" scale="1.6" />
+		<background typeID="2027" pFactor="6" layer="4" maskID="15" scale="1.6" />
+	</backgrounds>
+	<planets>
+		<planet typeID="23" x="2825" y="150" pFactor="9" layer="2" />
+		<planet typeID="99" x="653" y="1350" pFactor="9" layer="2" />
+		<planet typeID="102" x="2900" y="2500" pFactor="9" layer="2" />
+	</planets>
+</map>

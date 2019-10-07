@@ -1,0 +1,8 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="iceberg.png">
+	<!-- Created with Adobe Flash Professional version 13.1.0.226 -->
+	<!-- http://www.adobe.com/products/flash.html -->
+	<SubTexture name="icebergbig" x="0" y="0" width="400" height="320" pivotX="0" pivotY="0"/>
+	<SubTexture name="icebergmedium" x="0" y="320" width="300" height="230" pivotX="0" pivotY="0"/>
+	<SubTexture name="icebergsmall" x="300" y="320" width="200" height="200" pivotX="0" pivotY="0"/>
+</TextureAtlas>

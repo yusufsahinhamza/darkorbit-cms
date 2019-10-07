@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:ee02549fb726882c5bab1c578f52932f$ -->
+<TextureAtlas imagePath="scrap_pirates_simple_texture.png">
+    <SubTexture name="scrap1" x="210" y="619" width="184" height="202"/>
+    <SubTexture name="scrap2" x="210" y="475" width="192" height="142"/>
+    <SubTexture name="scrap3" x="2" y="2" width="256" height="221"/>
+    <SubTexture name="scrap4" x="2" y="409" width="206" height="209"/>
+    <SubTexture name="scrap5" x="2" y="225" width="256" height="182"/>
+    <SubTexture name="scrap6" x="260" y="217" width="215" height="256"/>
+    <SubTexture name="scrap7" x="260" y="2" width="249" height="213"/>
+</TextureAtlas>

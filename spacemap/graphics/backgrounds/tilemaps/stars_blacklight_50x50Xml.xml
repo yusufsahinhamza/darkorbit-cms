@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="stars_blacklight_50x50.png">
+	<!-- Created with Adobe Animate version 15.2.0.66 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="stars_plague_alert1.png" x="2" y="2" width="50" height="50" pivotX="0" pivotY="0"/>
+	<SubTexture name="stars_plague_alert10.png" x="2" y="54" width="50" height="50" pivotX="0" pivotY="0"/>
+	<SubTexture name="stars_plague_alert2.png" x="2" y="106" width="50" height="50" pivotX="0" pivotY="0"/>
+	<SubTexture name="stars_plague_alert3.png" x="2" y="158" width="50" height="50" pivotX="0" pivotY="0"/>
+	<SubTexture name="stars_plague_alert4.png" x="54" y="2" width="50" height="50" pivotX="0" pivotY="0"/>
+	<SubTexture name="stars_plague_alert5.png" x="54" y="54" width="50" height="50" pivotX="0" pivotY="0"/>
+	<SubTexture name="stars_plague_alert6.png" x="54" y="106" width="50" height="50" pivotX="0" pivotY="0"/>
+	<SubTexture name="stars_plague_alert7.png" x="54" y="158" width="50" height="50" pivotX="0" pivotY="0"/>
+	<SubTexture name="stars_plague_alert8.png" x="106" y="2" width="50" height="50" pivotX="0" pivotY="0"/>
+	<SubTexture name="stars_plague_alert9.png" x="106" y="54" width="50" height="50" pivotX="0" pivotY="0"/>
+</TextureAtlas>

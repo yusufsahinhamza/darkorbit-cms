@@ -1,0 +1,5 @@
+<?xml version="1.0"?>
+<TextureAtlas imagePath="mmo_outpost_atlas_0.png">
+  <SubTexture name="blink_light" x="0" y="559" width="163" height="43"/>
+  <SubTexture name="mission-control_mmo" x="0" y="0" width="266" height="559" frameX="-167" frameY="-18" frameWidth="600" frameHeight="600"/>
+</TextureAtlas>

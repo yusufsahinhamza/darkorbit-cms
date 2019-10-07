@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="breach_portal_texture.png">
+	<!-- Created with Adobe Flash Professional version 13.1.0.226 -->
+	<!-- http://www.adobe.com/products/flash.html -->
+	<SubTexture name="Black_hole_01" x="0" y="0" width="400" height="400" pivotX="0" pivotY="0"/>
+	<SubTexture name="Black_hole_02" x="400" y="0" width="400" height="400" pivotX="0" pivotY="0"/>
+	<SubTexture name="Black_hole_03" x="0" y="400" width="400" height="400" pivotX="0" pivotY="0"/>
+	<SubTexture name="Black_hole_04" x="400" y="400" width="400" height="400" pivotX="0" pivotY="0"/>
+	<SubTexture name="Black_hole_05" x="0" y="800" width="400" height="400" pivotX="0" pivotY="0"/>
+	<SubTexture name="Black_hole_06" x="400" y="800" width="400" height="400" pivotX="0" pivotY="0"/>
+	<SubTexture name="Black_hole_07" x="0" y="1200" width="400" height="400" pivotX="0" pivotY="0"/>
+	<SubTexture name="Black_hole_08" x="400" y="1200" width="400" height="400" pivotX="0" pivotY="0"/>
+	<SubTexture name="Black_hole_09" x="0" y="1600" width="400" height="400" pivotX="0" pivotY="0"/>
+	<SubTexture name="Black_hole_10" x="400" y="1600" width="400" height="400" pivotX="0" pivotY="0"/>
+</TextureAtlas>

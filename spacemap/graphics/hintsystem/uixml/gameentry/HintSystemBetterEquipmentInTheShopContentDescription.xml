@@ -1,0 +1,20 @@
+<root>
+	<window>
+	
+		<template name="HintSystem.confirmationLayerBetterEquipmentInTheShop">
+			<container name="confirmationContainer" template="HintSystem.confirmationLayerWithExternalLinkTemplate">
+				<button name="confirmationButton02" text="localize:gameentry_hintwindow_button_openequipment" />
+			</container>
+		</template>
+		
+		<container template="baseWindow">
+			<placeholder 
+				name="confirmationLayerPlaceholder"
+				template="HintSystem.confirmationLayerBetterEquipmentInTheShop" />
+		</container>
+	</window>
+	
+	<playlist repeat="false" >
+		<item resKey="hint-system_image_better-ship" effect="alphafade" fadeTime="1" duration="4000" />
+	</playlist>
+</root>

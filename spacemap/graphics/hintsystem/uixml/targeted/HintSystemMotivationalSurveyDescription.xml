@@ -1,0 +1,30 @@
+<root>
+    <window>
+        <template name="HintSystem.motivationalSurveyTemplate">
+            <container name="confirmationContainer" alignY="bottom" alignX="center" autoSizeWidth="true" height="60">
+                <button name="confirmationButton01" text="localize:targeted_hintwindow_button_survey_open" width="220"
+                        height="62" alignX="left" marginLeft="24"
+                        registeredSkinName="commonui_confirmationbutton_green"
+                        registeredTextStyleName="commonui_confirmationbutton_green_normal"/>
+                <button name="confirmationButton02" text="localize:targeted_hintwindow_button_survey_cancel" width="220"
+                        height="62" alignX="right" marginRight="24"
+                        registeredSkinName="commonui_confirmationbutton_blue"
+                        registeredTextStyleName="commonui_confirmationbutton_blue_normal"/>
+            </container>
+        </template>
+
+        <container template="baseWindow">
+            <placeholder
+                    name="confirmationLayerPlaceholder"
+                    template="HintSystem.motivationalSurveyTemplate"
+                    >
+            </placeholder>
+        </container>
+
+    </window>
+
+    <playlist repeat="false">
+        <item resKey="hint-system_image_motivational_survey" effect="alphafade" fadeTime="1" duration="3000"/>
+    </playlist>
+
+</root>

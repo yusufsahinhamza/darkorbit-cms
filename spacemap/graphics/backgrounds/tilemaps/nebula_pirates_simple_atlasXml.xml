@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with TexturePacker http://texturepacker.com-->
+<!-- $TexturePacker:SmartUpdate:c2d35fc7a718bef2717dfb63c4728d89$ -->
+<TextureAtlas imagePath="nebula_pirates_simple_texture.png">
+    <SubTexture name="nebula_pirates_01" x="2" y="175" width="244" height="161"/>
+    <SubTexture name="nebula_pirates_02" x="128" y="338" width="114" height="100"/>
+    <SubTexture name="nebula_pirates_03" x="2" y="338" width="124" height="128"/>
+    <SubTexture name="nebula_pirates_04" x="2" y="2" width="248" height="171"/>
+    <SubTexture name="nebula_pirates_05" x="252" y="2" width="244" height="246"/>
+    <SubTexture name="nebula_pirates_06" x="248" y="250" width="128" height="215"/>
+</TextureAtlas>

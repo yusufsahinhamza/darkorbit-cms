@@ -1,0 +1,18 @@
+<root>
+	<window>
+		<container template="baseWindow">
+			<placeholder name="confirmationLayerPlaceholder"
+				template="HintSystem.confirmationLayerWithOneButtonTemplate" />
+		</container>
+	</window>
+	
+	<playlist repeat="true" >
+		<item resKey="hint-system_image_quickbar_01" effect="alphafade" fadeTime="0.3" duration="800" />
+		<item resKey="hint-system_image_quickbar_02" effect="alphafade" fadeTime="0.3" duration="800" />
+		<item resKey="hint-system_image_quickbar_03" effect="alphafade" fadeTime="0.3" duration="800" />
+		<item resKey="hint-system_image_quickbar_04" effect="alphafade" fadeTime="0.3" duration="800" />
+		<item resKey="hint-system_image_quickbar_05" effect="alphafade" fadeTime="0.3" duration="800" />
+		<item resKey="hint-system_image_quickbar_06" effect="alphafade" fadeTime="0.3" duration="800" />
+	</playlist>
+	
+</root>
