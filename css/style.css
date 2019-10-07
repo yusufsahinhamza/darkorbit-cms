@@ -1,0 +1,78 @@
+body { background: #505050; margin: 0; padding: 0; line-height: 1.5; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"; }
+*, ::after, ::before { box-sizing: border-box; }
+*:focus { outline: none; }
+img { vertical-align: middle; border-style: none; object-fit: cover; }
+p { margin-top: 0; margin-bottom: 1rem; }
+h1, h2, h3, h4, h5, h6 { margin-top: 0; margin-bottom: .5rem; font-family: inherit; font-weight: 500; line-height: 1.2; color: inherit; }
+button, input, optgroup, select, textarea { margin: 0; font-family: inherit; font-size: inherit; line-height: inherit; }
+ol, ul { list-style-type: none; margin: 0; padding: 0; }
+a, a:active { text-decoration: none; color: #000; }
+
+.col-12, .col-9, .col-4, .col-3 { position: relative; width: 100%; min-height: 1px; }
+.col-12 { -ms-flex: 0 0 100%; flex: 0 0 100%; max-width: 100%; }
+.col-9 { -ms-flex: 0 0 75%; flex: 0 0 75%; max-width: 75%; }
+.col-4 { -ms-flex: 0 0 33.333333%; flex: 0 0 33.333333%; max-width: 33.333333%; }
+.col-3 { -ms-flex: 0 0 25%; flex: 0 0 25%; max-width: 25%; }
+
+.no-margin {
+  margin: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+.dropdown-content {
+  top: 100% !important;
+}
+#main {
+  height: 100vh;
+}
+#data {
+  padding: 10px 25px;
+}
+#profile, #hall-of-fame {
+  padding: 15px;
+}
+#profile .profile-informations {
+  display: inline-block;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+#profile .profile-informations p {
+  margin-bottom: 5px;
+}
+#login, #register {
+  padding: 15px;
+}
+.form {
+  display: table-cell;
+  vertical-align: middle;
+}
+.nav-wrapper {
+  text-transform: uppercase;
+}
+.panel {
+  color: white;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+.panel:first-child {
+  margin-top: 25px;
+}
+table.striped>tbody>tr:nth-child(odd) {
+  background-color: rgba(121, 121, 121, 0.5) !important;
+}
+.tabs .tab a {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+}
+.tabs .tab a:hover, .tabs .tab a.active {
+  color: #fff;
+}
+.container-center {
+  padding: 0;
+  display: table;
+  height: 100%;
+}

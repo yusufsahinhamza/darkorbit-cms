@@ -1,0 +1,33 @@
+Options -Indexes
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ files/redirect.php?action=$1
+
+RewriteRule ^files/config.php files/redirect.php?action=error
+RewriteRule ^files/external/ files/redirect.php?action=error
+RewriteRule ^files/classes/ files/redirect.php?action=error
+
+ErrorDocument 400 /files/redirect.php?action=error
+ErrorDocument 401 /files/redirect.php?action=error
+ErrorDocument 403 /files/redirect.php?action=error
+ErrorDocument 404 /files/redirect.php?action=error
+ErrorDocument 500 /files/redirect.php?action=error
+ErrorDocument 502 /files/redirect.php?action=error
+ErrorDocument 504 /files/redirect.php?action=error
+
+<IfModule mod_headers.c>
+  Header always set X-XSS-Protection "1; mode=block"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-FRAME-OPTIONS "DENY"
+  <FilesMatch "\.(jpeg|jpg|css|js|json|xml|woff|woff2|ttf|ico)$">
+    Header set Cache-Control "must_revalidate, public, max-age=31536000"
+  </FilesMatch>
+</IfModule>
+
+<IfModule mod_deflate.c>
+  <FilesMatch "\.(html|txt|css|js|json|xml|php|pl)$">
+     SetOutputFilter DEFLATE
+  </FilesMatch>
+</IfModule>
