@@ -16,10 +16,10 @@
     <meta name="revisit-after" content="1 days">
     <link rel="shortcut icon" href="<?php echo DOMAIN; ?>favicon.ico" />
     <link rel="stylesheet" type="text/css" href="<?php echo DOMAIN; ?>css/map-revolution.css" />
-    <script type="text/javascript" src="<?php echo DOMAIN; ?>js/map-revolution/jquery.min.js"></script>
-    <script type="text/javascript" src="<?php echo DOMAIN; ?>js/map-revolution/jquery.js"></script>
-    <script type="text/javascript" src="<?php echo DOMAIN; ?>js/map-revolution/jquery.flashembed.js"></script>
-    <script type="text/javascript" src="<?php echo DOMAIN; ?>js/map-revolution/main.js"></script>
+    <script type="text/javascript" src="<?php echo DOMAIN; ?>js/darkorbit/jquery.min.js"></script>
+    <script type="text/javascript" src="<?php echo DOMAIN; ?>js/darkorbit/jquery.js"></script>
+    <script type="text/javascript" src="<?php echo DOMAIN; ?>js/darkorbit/jquery.flashembed.js"></script>
+    <script type="text/javascript" src="<?php echo DOMAIN; ?>js/darkorbit/main.js"></script>
 </head>
 <body>
   <div id="container"></div>
