@@ -22,7 +22,7 @@
 
             <div id="profile" class="card white-text grey darken-4 col s12">
               <img src="/img/avatar.png">
-              <div class="profile-informations">
+              <div class="inline-right">
                 <h5><?php echo $player['shipName']; ?></h5>
                 <p>Clan: Free Agent</p>
                 <p>Rank: <img src="<?php echo DOMAIN; ?>img/ranks/rank_<?php echo $player['rankID']; ?>.png"> <?php echo Functions::GetRankName($player['rankID']); ?></p>

@@ -27,7 +27,7 @@ img {
 
 p {
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 5px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -67,6 +67,7 @@ a, a:active {
 
 #main {
   height: 100vh;
+  min-height: 100vh;
 }
 
 #login, #register {
@@ -111,4 +112,18 @@ table.striped>tbody>tr:nth-child(odd) {
   right: auto !important;
   bottom: 3%;
   left: 1.5%;
+}
+
+.inline-right {
+  display: inline-block;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.padding-15 {
+  padding: 15px !important;
+}
+
+table tbody tr td a {
+  color: #fff !important;
 }

@@ -762,9 +762,9 @@ function GetAllShipInformations() {
 	$ships = '';
 	$i = 18;
 
-	$array = $mysqli->query('SELECT shipID FROM server_ships');
+	$array = $mysqli->query('SELECT shipID FROM server_ships')->fetch_all(MYSQLI_ASSOC);
 	foreach ($array as $key => $ship) {
-		$ships .= GetShipInformation($i++, $ship['shipID']) . ($key != $array->num_rows - 1 ? ',' : '');
+		$ships .= GetShipInformation($i++, $ship['shipID']) . ($key != count($array) - 1 ? ',' : '');
 	}
 
 	return $ships;
@@ -775,9 +775,9 @@ function GetAllShipLootIds() {
 
 	$lootIds = '';
 
-	$array = $mysqli->query('SELECT lootID FROM server_ships');
+	$array = $mysqli->query('SELECT lootID FROM server_ships')->fetch_all(MYSQLI_ASSOC);
 	foreach ($array as $key => $ship) {
-		$lootIds .= '"'.$ship['lootID'].'"'. ($key != $array->num_rows - 1 ? ',' : '');
+		$lootIds .= '"'.$ship['lootID'].'"'. ($key != count($array) - 1 ? ',' : '');
 	}
 
 	return $lootIds;

@@ -6,13 +6,3 @@
 #profile, #hall-of-fame {
   padding: 15px;
 }
-
-#profile .profile-informations {
-  display: inline-block;
-  margin-left: 10px;
-  vertical-align: middle;
-}
-
-#profile .profile-informations p {
-  margin-bottom: 5px;
-}

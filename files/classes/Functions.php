@@ -51,7 +51,7 @@ class Functions {
       }
     }
 
-    if(!file_exists($path)) {
+    if (!file_exists($path)) {
       $path = EXTERNALS . 'error.php';
     }
 
@@ -262,6 +262,61 @@ class Functions {
 		header('Location: '.DOMAIN.'');
 	}
 
+	public static function SearchClan($keywords) {
+    $mysqli = Database::GetInstance();
+
+		$keywords = $mysqli->real_escape_string($keywords);
+
+		$clans = [];
+
+		foreach ($mysqli->query('SELECT * FROM server_clan WHERE tag like "%'.$keywords.'%" OR name like "%'.$keywords.'%"')->fetch_all(MYSQLI_ASSOC) as $key => $value) {
+			$clans[$key]['id'] = $value['id'];
+			$clans[$key]['members'] = count($mysqli->query('SELECT userId FROM player_accounts WHERE clanId = '.$value['id'].'')->fetch_all(MYSQLI_ASSOC));
+			$clans[$key]['tag'] = $value['tag'];
+			$clans[$key]['name'] = $value['name'];
+			$clans[$key]['rank'] = $value['rank'];
+			$clans[$key]['rankPoints'] = $value['rankPoints'];
+		}
+
+		return json_encode($clans);
+	}
+
+	public static function SendClanApplication($clanId, $text) {
+		$mysqli = Database::GetInstance();
+
+		$player = Functions::GetPlayer();
+		$clanId = $mysqli->real_escape_string($clanId);
+		$text = $mysqli->real_escape_string($text);
+
+		$json = [
+			'status' => false,
+			'message' => ''
+		];
+
+		$statement = $mysqli->query('SELECT id FROM server_clan_applications WHERE clanId = '.$clanId.' AND userId = '.$player['userId'].'');
+
+		if ($statement->num_rows <= 0) {
+			$mysqli->begin_transaction();
+
+			try {
+				$mysqli->query('INSERT INTO server_clan_applications (clanId, userId, text) VALUES ('.$clanId.', '.$player['userId'].', "'.$text.'")');
+
+				$json['status'] = true;
+
+				$mysqli->commit();
+			} catch (Exception $e) {
+				$json['message'] = 'Something went wrong!';
+				$mysqli->rollback();
+			}
+
+			$mysqli->close();
+		} else {
+			$json['message'] = 'Something went wrong!';
+		}
+
+		return json_encode($json);
+	}
+
   public static function GetUniqueSessionId() {
     $mysqli = Database::GetInstance();
 
@@ -296,7 +351,9 @@ class Functions {
 
 	        try {
 	          $mysqli->query("UPDATE player_accounts SET verification = '".json_encode($verification)."' WHERE userId = ".$userId."");
+
 	          $message = 'You account is now verified.';
+
 	          $mysqli->commit();
 	        } catch (Exception $e) {
 	          $message = 'Something went wrong!';

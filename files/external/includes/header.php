@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <title>InfinityOrbit 10.0</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-    <link type="text/css" rel="stylesheet" href="css/style.css"/>
-    <?php if (Functions::IsLoggedIn() && isset($page[0]) && $page[0] === 'company-select') { ?>
-    <link type="text/css" rel="stylesheet" href="css/company_select.css"/>
+    <link type="text/css" rel="stylesheet" href="<?php echo DOMAIN; ?>css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="<?php echo DOMAIN; ?>css/style.css"/>
+    <?php if (Functions::IsLoggedIn() && ((isset($page[0]) && $page[0] === 'company-select') || (isset($page[0]) && $page[0] === 'clan' && isset($page[1]) && $page[1] === 'company'))) { ?>
+    <link type="text/css" rel="stylesheet" href="<?php echo DOMAIN; ?>css/company_select.css"/>
     <?php } ?>
     <?php if (Functions::IsLoggedIn() && isset($page[0]) && $page[0] === 'home') { ?>
-    <link type="text/css" rel="stylesheet" href="css/home.css"/>
+    <link type="text/css" rel="stylesheet" href="<?php echo DOMAIN; ?>css/home.css"/>
     <?php } ?>
   </head>
   <body>
@@ -21,6 +21,11 @@
         <li><a href="<?php echo DOMAIN; ?>ships">Ships</a></li>
         <li><a href="<?php echo DOMAIN; ?>equipment">Equipment</a></li>
       </ul>
+      <ul id="dropdown2" class="dropdown-content">
+        <li><a href="<?php echo DOMAIN; ?>clan/join">Join</a></li>
+        <li><a href="<?php echo DOMAIN; ?>clan/found">Found</a></li>
+        <li><a href="<?php echo DOMAIN; ?>clan/company">Company</a></li>
+      </ul>
       <nav>
         <div class="nav-wrapper grey darken-4">
           <div class="container">
@@ -28,7 +33,7 @@
           <ul class="right hide-on-med-and-down">
             <li class="grey darken-3"><a href="<?php echo DOMAIN; ?>map-revolution" target="_blank">Start</a></li>
             <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Hangar<i class="material-icons right">arrow_drop_down</i></a></li>
-            <li><a href="/clan">Clan</a></li>
+            <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">Clan<i class="material-icons right">arrow_drop_down</i></a></li>
             <li><a href="/api/logout">Logout</a></li>
           </ul>
           </div>

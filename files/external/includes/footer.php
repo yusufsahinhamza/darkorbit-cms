@@ -103,6 +103,62 @@
 </script>
 <?php } ?>
 
+<?php if (Functions::IsLoggedIn() && isset($page[1]) && $page[1] === 'join') { ?>
+<script type="text/javascript">
+  $('input[name=search_clan]').on('keyup keypress keydown click', function(e) {
+    if ($('input[name=search_clan]').val() != '') {
+      $.ajax({
+        url: '<?php echo DOMAIN; ?>api/',
+        data: { action: 'search_clan', keywords: $('input[name=search_clan]').val() },
+        type: 'POST',
+        success:function(response) {
+          $('#clan-list tbody').html('');
+
+          var json = jQuery.parseJSON(response);
+          for (var index in json) {
+            $('#clan-list tbody').append('
+              <tr>
+                <td><a href="<?php echo DOMAIN; ?>clan/clan-details/'+json[index].id+'">['+ json[index].tag +'] '+json[index].name+'</a></td>
+                <td>'+ json[index].members +'</td>
+                <td>'+ json[index].rank +'</td>
+                <td>'+ json[index].rankPoints +'</td>
+              </tr>');
+          }
+        }
+      });
+    }
+  });
+</script>
+<?php } ?>
+
+<?php if (Functions::IsLoggedIn() && isset($page[1], $clanId, $clan) && $page[1] === 'clan_details' && $clan !== NULL) { ?>
+<script type="text/javascript">
+  $('#send_clan_application').submit(function(e) {
+    e.preventDefault();
+
+    var form = $(this);
+
+    $.ajax({
+      url: '<?php echo DOMAIN; ?>api/',
+      data: form.serialize() + '&action=send_clan_application',
+      type: 'POST',
+      success:function(response) {
+        var json = jQuery.parseJSON(response);
+
+        if (json.status) {
+          $('#send_clan_application textarea[name=text]').val('').attr('placeholder', 'Your application to this Clan is pending.').attr('disabled', true);
+          $('#send_clan_application button').addClass('disabled');
+        }
+
+        if (json.message != '') {
+          M.toast({html: '<span>'+ json.message +'</span>'});
+        }
+      }
+    });
+  });
+</script>
+<?php } ?>
+
 <?php if (Functions::IsLoggedIn() && isset($page[0]) && $page[0] === 'equipment') { ?>
   <script type="text/javascript" src="<?php echo DOMAIN; ?>js/darkorbit/jquery.flashembed.js"></script>
   <script type='text/javascript'>

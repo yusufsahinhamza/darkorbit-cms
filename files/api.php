@@ -14,6 +14,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
 		if (isset($_POST['company'])) {
 			echo Functions::CompanySelect(Functions::s($_POST['company']));
 		}
+	} else if ($request === 'search_clan') {
+		if (isset($_POST['keywords'])) {
+			echo Functions::SearchClan(Functions::s($_POST['keywords']));
+		}
+	} else if ($request === 'send_clan_application') {
+		if (isset($_POST['clanId'], $_POST['text'])) {
+			echo Functions::SendClanApplication(Functions::s($_POST['clanId']), Functions::s($_POST['text']));
+		}
 	} else {
     require_once(EXTERNALS . 'error.php');
   }
