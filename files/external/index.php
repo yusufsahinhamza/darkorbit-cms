@@ -16,20 +16,14 @@
                     <div class="row">
                       <div class="input-field col s12">
                         <i class="material-icons prefix">person</i>
-                        <input type="text" name="username" id="l-username" class="validate" max-maxlength="20">
+                        <input type="text" name="username" id="l-username" maxlength="20" required>
                         <label for="l-username">Username</label>
-                        <span class="helper-text" data-error="Enter a valid username!">Enter your username.</span>
                       </div>
-                    </div>
-                    <div class="row">
                       <div class="input-field col s12">
                         <i class="material-icons prefix">lock</i>
-                        <input type="password" name="password" id="l-password" class="validate" max-maxlength="45">
+                        <input type="password" name="password" id="l-password" maxlength="45" required>
                         <label for="l-password">Password</label>
-                        <span class="helper-text" data-error="Enter a valid password!">Enter your password.</span>
                       </div>
-                    </div>
-                    <div class="row">
                       <div class="input-field col s12">
                         <button class="btn-large grey darken-3 waves-effect waves-light col s12">LOG IN</button>
                       </div>
@@ -42,28 +36,22 @@
                     <div class="row">
                       <div class="input-field col s12">
                         <i class="material-icons prefix">person</i>
-                        <input type="text" name="username" id="r-username" class="validate" max-maxlength="20" required>
+                        <input type="text" name="username" id="r-username" class="validate" maxlength="20" required>
                         <label for="r-username">Username</label>
                         <span class="helper-text" data-error="Enter a valid username!">Enter your username.</span>
                       </div>
-                    </div>
-                    <div class="row">
                       <div class="input-field col s12">
                         <i class="material-icons prefix">lock</i>
-                        <input type="email" name="email" id="r-email" class="validate" max-maxlength="260" required>
+                        <input type="email" name="email" id="r-email" class="validate" maxlength="260" required>
                         <label for="r-email">Email</label>
                         <span class="helper-text" data-error="Enter a valid e-mail address!">Enter your e-mail address (you'll need this for verification and recovering account).</span>
                       </div>
-                    </div>
-                    <div class="row">
                       <div class="input-field col s12">
                         <i class="material-icons prefix">lock</i>
-                        <input type="password" name="password" id="r-password" class="validate" max-maxlength="45" required>
+                        <input type="password" name="password" id="r-password" class="validate" maxlength="45" required>
                         <label for="r-password">Password</label>
                         <span class="helper-text" data-error="Enter a valid password!">Enter your password.</span>
                       </div>
-                    </div>
-                    <div class="row">
                       <div class="input-field col s12">
                         <p>
                           <label>
@@ -72,15 +60,12 @@
                           </label>
                         </p>
                       </div>
-                    </div>
-                    <div class="row">
                       <div class="input-field col s12">
                         <button class="btn-large grey darken-3 waves-effect waves-light col s12">REGISTER</button>
                       </div>
                     </div>
                   </div>
                 </form>
-
                 <div class="card-action">
                   <a id="reset-password" href="#" class="grey-text text-darken-2">FORGOT PASSWORD</a>
                 </div>

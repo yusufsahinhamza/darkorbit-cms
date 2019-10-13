@@ -39,7 +39,7 @@ class Functions {
 					$path = EXTERNALS . $page[0] . '.php';
 
 					if ($player['factionId'] == 0) {
-						$page[0] = 'company-select';
+						$page[0] = 'company_select';
 						$path = EXTERNALS . 'company_select.php';
 					} else if ($page[0] == 'index') {
 						$page[0] = 'home';
@@ -137,7 +137,7 @@ class Functions {
 
           $mysqli->commit();
         } catch (Exception $e) {
-          $json['message'] = 'Something went wrong!';
+          $json['message'] = 'An error occurred. Please try again later.';
           $mysqli->rollback();
         }
 
@@ -146,6 +146,8 @@ class Functions {
       } else {
         $json['message'] = 'This username is already taken.';
       }
+    } else {
+    	$json['message'] = 'Something went wrong!';
     }
 
     return json_encode($json);
@@ -154,61 +156,48 @@ class Functions {
 	public static function Login($username, $password) {
 		$mysqli = Database::GetInstance();
 
+		$username = $mysqli->real_escape_string($username);
+		$password = $mysqli->real_escape_string($password);
+
 		$json = [
-      'inputs' => [
-        'username' => ['validate' => 'valid', 'error' => 'Enter a valid username!'],
-        'password' => ['validate' => 'valid', 'error' => 'Enter a valid password!']
-      ],
+			'status' => false,
 			'message' => ''
     ];
 
-		if (!preg_match('/^[A-Za-z0-9_.]+$/', $username)) {
-      $json['inputs']['username']['validate'] = 'invalid';
-    }
+		$statement = $mysqli->query('SELECT userId, password, verification FROM player_accounts WHERE username = "'.$username.'"');
+		$fetch = $statement->fetch_assoc();
 
-    if (strlen($username) < 4 || strlen($username) > 20) {
-      $json['inputs']['username']['validate'] = 'invalid';
-    }
+		if ($statement->num_rows >= 1) {
+			if (password_verify($password, $fetch['password'])) {
+				if (json_decode($fetch['verification'])->verified) {
+					$sessionId = Functions::GenerateRandom(32);
 
-    if (strlen($password) < 8 || strlen($password) > 45) {
-      $json['inputs']['password']['validate'] = 'invalid';
-    }
+					$_SESSION['account']['id'] = $fetch['userId'];
+					$_SESSION['account']['session'] = $sessionId;
 
-		if ($json['inputs']['username']['validate'] === 'valid' && $json['inputs']['password']['validate'] === 'valid') {
-			$statement = $mysqli->query('SELECT userId, password, verification FROM player_accounts WHERE username = "'.$username.'"');
-			$fetch = $statement->fetch_assoc();
+					$mysqli->begin_transaction();
 
-			if ($statement->num_rows >= 1) {
-				if (password_verify($password, $fetch['password'])) {
-					if (json_decode($fetch['verification'])->verified) {
-						$sessionId = Functions::GenerateRandom(32);
+					try {
+						$mysqli->query('UPDATE player_accounts SET sessionId = "'.$sessionId.'" WHERE userId = '.$fetch['userId'].'');
 
-						$_SESSION['account']['id'] = $fetch['userId'];
-						$_SESSION['account']['session'] = $sessionId;
+						$json['status'] = true;
 
-						$mysqli->begin_transaction();
-
-		        try {
-							$mysqli->query('UPDATE player_accounts SET sessionId = "'.$sessionId.'" WHERE userId = '.$fetch['userId'].'');
-
-		          $mysqli->commit();
-		        } catch (Exception $e) {
-		          $json['message'] = 'Something went wrong!';
-		          $mysqli->rollback();
-		        }
-
-		        $mysqli->close();
-
-						$json['message'] = '1';
-					} else {
-						$json['message'] = 'This account is not verified, please verify it from your e-mail address.';
+						$mysqli->commit();
+					} catch (Exception $e) {
+						$json['message'] = 'An error occurred. Please try again later.';
+						$mysqli->rollback();
 					}
+
+					$mysqli->close();
+
 				} else {
-					$json['message'] = 'Wrong password.';
+					$json['message'] = 'This account is not verified, please verify it from your e-mail address.';
 				}
 			} else {
-				$json['message'] = 'No account with this username/password combination was found.';
+				$json['message'] = 'Wrong password.';
 			}
+		} else {
+			$json['message'] = 'No account with this username/password combination was found.';
 		}
 
 		return json_encode($json);
@@ -217,37 +206,75 @@ class Functions {
 	public static function CompanySelect($company) {
 		$mysqli = Database::GetInstance();
 
-		$json = ['message' => 'Something went wrong!'];
+		$json = [
+			'status' => false,
+			'message' => ''
+		];
 
-		if (Functions::IsLoggedIn()) {
-			$player = Functions::GetPlayer();
+		$player = Functions::GetPlayer();
 
-			$factionId = 0;
+		$factionId = 0;
 
-			if ($company === 'mmo') {
-				$factionId = 1;
-			} else if ($company === 'eic') {
-				$factionId = 2;
-			} else if ($company === 'vru') {
-				$factionId = 3;
-			}
+		if ($company === 'mmo') {
+			$factionId = 1;
+		} else if ($company === 'eic') {
+			$factionId = 2;
+		} else if ($company === 'vru') {
+			$factionId = 3;
+		}
 
-			if (!in_array($player['factionId'], [1, 2, 3]) && in_array($factionId, [1, 2, 3]) && $factionId !== 0) {
+		if (in_array($factionId, [1, 2, 3], true) && $player['factionId'] != $factionId) {
+			if (!in_array($player['factionId'], [1, 2, 3])) {
 				$mysqli->begin_transaction();
 
 				try {
 					$mysqli->query('UPDATE player_accounts SET factionId = '.$factionId.' WHERE userId = '.$player['userId'].'');
-					$json['message'] = '1';
+					$json['status'] = true;
 					$mysqli->commit();
 				} catch (Exception $e) {
-					$json['message'] = 'Something went wrong!';
+					$json['message'] = 'An error occurred. Please try again later.';
 					$mysqli->rollback();
 				}
 
 				$mysqli->close();
 			} else {
-				$json['message'] = 'Something went wrong!';
+				$data = json_decode($player['data']);
+
+				if ($data->uridium >= 5000) {
+					$NotOnlineOrOnlineAndInEquipZone = !Socket::Get('IsOnline', array('UserId' => $player['userId'], 'Return' => false)) || (Socket::Get('IsOnline', array('UserId' => $player['userId'], 'Return' => false)) && Socket::Get('IsInEquipZone', array('UserId' => $player['userId'], 'Return' => false)));
+
+					if ($NotOnlineOrOnlineAndInEquipZone) {
+						$data->uridium -= 5000;
+						$data->honor /= 2;
+
+						$data->honor = ceil($data->honor);
+
+						$mysqli->begin_transaction();
+
+						try {
+							$mysqli->query("UPDATE player_accounts SET factionId = ".$factionId.", data = '".json_encode($data)."' WHERE userId = ".$player['userId']."");
+
+							$json['status'] = true;
+							$mysqli->commit();
+						} catch (Exception $e) {
+							$json['message'] = 'An error occurred. Please try again later.';
+							$mysqli->rollback();
+						}
+
+						$mysqli->close();
+					} else {
+						$json['message'] = 'Change of company is not possible. You must be at a location with a hangar facility!';
+					}
+				} else {
+					$json['message'] = "You don't have enough Uridium.";
+				}
 			}
+		} else {
+			$json['message'] = 'Something went wrong!';
+		}
+
+		if ($json['status']) {
+			Socket::Send('ChangeCompany', array('UserId' => $player['userId'], 'FactionId' => $factionId, 'UridiumPrice' => 5000, 'HonorPrice' => $data->honor));
 		}
 
 		return json_encode($json);
@@ -269,7 +296,7 @@ class Functions {
 
 		$clans = [];
 
-		foreach ($mysqli->query('SELECT * FROM server_clan WHERE tag like "%'.$keywords.'%" OR name like "%'.$keywords.'%"')->fetch_all(MYSQLI_ASSOC) as $key => $value) {
+		foreach ($mysqli->query('SELECT * FROM server_clans WHERE tag like "%'.$keywords.'%" OR name like "%'.$keywords.'%"')->fetch_all(MYSQLI_ASSOC) as $key => $value) {
 			$clans[$key]['id'] = $value['id'];
 			$clans[$key]['members'] = count($mysqli->query('SELECT userId FROM player_accounts WHERE clanId = '.$value['id'].'')->fetch_all(MYSQLI_ASSOC));
 			$clans[$key]['tag'] = $value['tag'];
@@ -293,19 +320,300 @@ class Functions {
 			'message' => ''
 		];
 
+		$recruiting = $mysqli->query('SELECT recruiting FROM server_clans WHERE id = '.$clanId.'')->fetch_assoc()['recruiting'];
 		$statement = $mysqli->query('SELECT id FROM server_clan_applications WHERE clanId = '.$clanId.' AND userId = '.$player['userId'].'');
 
-		if ($statement->num_rows <= 0) {
+		if ($recruiting && $statement->num_rows <= 0 && $player['clanId'] == 0) {
 			$mysqli->begin_transaction();
 
 			try {
 				$mysqli->query('INSERT INTO server_clan_applications (clanId, userId, text) VALUES ('.$clanId.', '.$player['userId'].', "'.$text.'")');
 
 				$json['status'] = true;
+				$json['message'] = 'Your application was sent to the clan leader.';
 
 				$mysqli->commit();
 			} catch (Exception $e) {
-				$json['message'] = 'Something went wrong!';
+				$json['message'] = 'An error occurred. Please try again later.';
+				$mysqli->rollback();
+			}
+
+			$mysqli->close();
+		} else {
+			$json['message'] = 'Something went wrong!';
+		}
+
+		return json_encode($json);
+	}
+
+	public static function FoundClan($name, $tag, $description) {
+		$mysqli = Database::GetInstance();
+
+		$player = Functions::GetPlayer();
+		$name = $mysqli->real_escape_string($name);
+		$tag = $mysqli->real_escape_string($tag);
+		$description = $mysqli->real_escape_string($description);
+
+    $json = [
+      'inputs' => [
+        'name' => ['validate' => 'valid', 'error' => 'Enter a valid clan name!'],
+        'tag' => ['validate' => 'valid', 'error' => 'Enter a valid clan tag!'],
+        'description' => ['validate' => 'valid', 'error' => 'Enter a valid clan description!'],
+      ],
+			'status' => false,
+      'message' => ''
+    ];
+
+    if (strlen($name) < 1 || strlen($name) > 50) {
+      $json['inputs']['name']['validate'] = 'invalid';
+      $json['inputs']['name']['error'] = 'Your clan name should be between 1 and 50 characters.';
+    }
+
+    if (strlen($tag) < 1 || strlen($tag) > 4) {
+      $json['inputs']['tag']['validate'] = 'invalid';
+      $json['inputs']['tag']['error'] = 'Your clan tag should be between 1 and 4 characters.';
+    }
+
+		if (strlen($description) > 16000) {
+			$json['inputs']['description']['validate'] = 'invalid';
+			$json['inputs']['description']['error'] = 'Your clan description should be max 16000 characters.';
+		}
+
+		if ($json['inputs']['name']['validate'] === 'valid' && $json['inputs']['tag']['validate'] === 'valid' && $json['inputs']['description']['validate'] === 'valid' && $player['clanId'] == 0) {
+      $statement = $mysqli->query('SELECT id FROM server_clans WHERE name = "'.$name.'"');
+
+      if ($statement->num_rows <= 0) {
+				$statement = $mysqli->query('SELECT id FROM server_clans WHERE tag = "'.$tag.'"');
+
+	      if ($statement->num_rows <= 0) {
+					$mysqli->begin_transaction();
+
+					try {
+						$join_dates = [
+							$player['userId'] => date('Y-m-d H:i:s')
+						];
+
+						$mysqli->query("INSERT INTO server_clans (name, tag, description, factionId, recruiting, leaderId, join_dates) VALUES ('".$name."', '".$tag."', '".$description."', ".$player['factionId'].", 1, ".$player['userId'].", '".json_encode($join_dates)."')");
+
+						$clanId = $mysqli->insert_id;
+
+						$mysqli->query('UPDATE player_accounts SET clanId = '.$clanId.' WHERE userId = '.$player['userId'].'');
+
+						$json['status'] = true;
+
+						$mysqli->commit();
+					} catch (Exception $e) {
+						$json['message'] = 'An error occurred. Please try again later.';
+						$mysqli->rollback();
+					}
+
+					$mysqli->close();
+				} else {
+					$json['message'] = 'This clan tag is already taken.';
+				}
+			} else {
+				$json['message'] = 'This clan name is already taken.';
+			}
+		} else {
+			$json['message'] = 'Something went wrong!';
+		}
+
+		return json_encode($json);
+	}
+
+	public static function WithdrawPendingApplication($clanId) {
+		$mysqli = Database::GetInstance();
+
+		$player = Functions::GetPlayer();
+		$clanId = $mysqli->real_escape_string($clanId);
+
+		$json = [
+			'status' => false,
+			'message' => ''
+		];
+
+		$statement = $mysqli->query('SELECT id FROM server_clan_applications WHERE clanId = '.$clanId.' AND userId = '.$player['userId'].'');
+
+		if ($statement->num_rows >= 1) {
+			$mysqli->begin_transaction();
+
+			try {
+				$mysqli->query('DELETE FROM server_clan_applications WHERE clanId = '.$clanId.' AND userId = '.$player['userId'].'');
+
+				$json['status'] = true;
+				$json['message'] = 'Application deleted.';
+
+				$mysqli->commit();
+			} catch (Exception $e) {
+				$json['message'] = 'An error occurred. Please try again later.';
+				$mysqli->rollback();
+			}
+
+			$mysqli->close();
+		} else {
+			$json['message'] = 'Something went wrong!';
+		}
+
+		return json_encode($json);
+	}
+
+	public static function DeleteClan() {
+		$mysqli = Database::GetInstance();
+
+		$player = Functions::GetPlayer();
+		$clan = $mysqli->query('SELECT * FROM server_clans WHERE id = '.$player['clanId'].'')->fetch_assoc();
+
+		$json = [
+			'status' => false,
+			'message' => ''
+		];
+
+		if ($clan !== NULL && $clan['leaderId'] == $player['userId']) {
+			$mysqli->begin_transaction();
+
+			try {
+				$mysqli->query('DELETE FROM server_clans WHERE id = '.$player['clanId'].' AND leaderId = '.$player['userId'].'');
+				$mysqli->query('UPDATE player_accounts SET clanId = 0 WHERE clanId = '.$clan['id'].'');
+
+				$json['status'] = true;
+
+				$mysqli->commit();
+			} catch (Exception $e) {
+				$json['message'] = 'An error occurred. Please try again later.';
+				$mysqli->rollback();
+			}
+
+			$mysqli->close();
+		} else {
+			$json['message'] = 'Something went wrong!';
+		}
+
+		return json_encode($json);
+	}
+
+	public static function DismissClanMember($userId) {
+		$mysqli = Database::GetInstance();
+
+		$player = Functions::GetPlayer();
+		$userId = $mysqli->real_escape_string($userId);
+		$user = $mysqli->query('SELECT * FROM player_accounts WHERE userId = '.$userId.'')->fetch_assoc();
+		$clan = $mysqli->query('SELECT * FROM server_clans WHERE id = '.$player['clanId'].'')->fetch_assoc();
+
+		$json = [
+			'status' => false,
+			'message' => ''
+		];
+
+		if ($clan !== NULL && $user !== NULL && $clan['leaderId'] == $player['userId'] && $user['clanId'] != 0) {
+			$mysqli->begin_transaction();
+
+			try {
+				$mysqli->query('UPDATE player_accounts SET clanId = 0 WHERE userId = '.$user['userId'].'');
+
+				$join_dates = json_decode($clan['join_dates']);
+
+				if (property_exists($join_dates, $user['userId'])) {
+					unset($join_dates->{$user['userId']});
+				}
+
+				$mysqli->query("UPDATE server_clans SET join_dates = '".json_encode($join_dates)."' WHERE id = ".$clan['id']."");
+
+				$json['status'] = true;
+				$json['message'] = 'Member deleted.';
+
+				$mysqli->commit();
+			} catch (Exception $e) {
+				$json['message'] = 'An error occurred. Please try again later.';
+				$mysqli->rollback();
+			}
+
+			$mysqli->close();
+		} else {
+			$json['message'] = 'Something went wrong!';
+		}
+
+		return json_encode($json);
+	}
+
+	public static function AcceptClanApplication($userId) {
+		$mysqli = Database::GetInstance();
+
+		$player = Functions::GetPlayer();
+		$userId = $mysqli->real_escape_string($userId);
+		$user = $mysqli->query('SELECT * FROM player_accounts WHERE userId = '.$userId.'')->fetch_assoc();
+		$clan = $mysqli->query('SELECT * FROM server_clans WHERE id = '.$player['clanId'].'')->fetch_assoc();
+
+		$json = [
+			'status' => false,
+			'message' => '',
+			'acceptedUser' => [
+				'userId' => $user['userId'],
+				'shipName' => $user['shipName'],
+				'experience' => number_format(json_decode($user['data'])->experience),
+				'rank' => [
+					'id' => $user['rankID'],
+					'name' => Functions::GetRankName($user['rankID'])
+				],
+				'joined_date' => date('Y.m.d'),
+				'company' => $user['factionId'] == 1 ? 'MMO' : ($user['factionId'] == 2 ? 'EIC' : 'VRU')
+			]
+		];
+
+		if ($clan !== NULL && $user !== NULL && $clan['leaderId'] == $player['userId'] && $user['clanId'] == 0) {
+			$mysqli->begin_transaction();
+
+			try {
+				$mysqli->query('UPDATE player_accounts SET clanId = '.$clan['id'].' WHERE userId = '.$user['userId'].'');
+
+				$join_dates = json_decode($clan['join_dates']);
+				$join_dates->{$user['userId']} = date('Y-m-d H:i:s');
+
+				$mysqli->query("UPDATE server_clans SET join_dates = '".json_encode($join_dates)."' WHERE id = ".$clan['id']."");
+
+				$mysqli->query('DELETE FROM server_clan_applications WHERE userId = '.$user['userId'].'');
+
+				$json['status'] = true;
+				$json['message'] = 'Clan joined: ' . $user['shipName'];
+
+				$mysqli->commit();
+			} catch (Exception $e) {
+				$json['message'] = 'An error occurred. Please try again later.';
+				$mysqli->rollback();
+			}
+
+			$mysqli->close();
+		} else {
+			$json['message'] = 'Something went wrong!';
+		}
+
+		return json_encode($json);
+	}
+
+	public static function DeclineClanApplication($userId) {
+		$mysqli = Database::GetInstance();
+
+		$player = Functions::GetPlayer();
+		$userId = $mysqli->real_escape_string($userId);
+		$user = $mysqli->query('SELECT * FROM player_accounts WHERE userId = '.$userId.'')->fetch_assoc();
+		$clan = $mysqli->query('SELECT * FROM server_clans WHERE id = '.$player['clanId'].'')->fetch_assoc();
+
+		$json = [
+			'status' => false,
+			'message' => ''
+		];
+
+		if ($clan !== NULL && $user !== NULL && $clan['leaderId'] == $player['userId'] && $user['clanId'] == 0) {
+			$mysqli->begin_transaction();
+
+			try {
+				$mysqli->query('DELETE FROM server_clan_applications WHERE clanId = '.$clan['id'].' AND userId = '.$user['userId'].'');
+
+				$json['status'] = true;
+				$json['message'] = 'This user was declined: ' . $user['shipName'];
+
+				$mysqli->commit();
+			} catch (Exception $e) {
+				$json['message'] = 'An error occurred. Please try again later.';
 				$mysqli->rollback();
 			}
 
@@ -356,7 +664,7 @@ class Functions {
 
 	          $mysqli->commit();
 	        } catch (Exception $e) {
-	          $message = 'Something went wrong!';
+	          $message = 'An error occurred. Please try again later.';
 	          $mysqli->rollback();
 	        }
 
@@ -373,6 +681,100 @@ class Functions {
 		}
 
 		return $message;
+	}
+
+	public static function Buy($itemId) {
+		$mysqli = Database::GetInstance();
+
+		$player = Functions::GetPlayer();
+		$itemId = $mysqli->real_escape_string($itemId);
+
+		$json = [
+			'status' => false,
+			'message' => ''
+		];
+
+		if (in_array($itemId, [1,2])) {
+			$items = json_decode($mysqli->query('SELECT items FROM player_equipment WHERE userId = '.$player['userId'].'')->fetch_assoc()['items']);
+			$data = json_decode($player['data']);
+
+			if ($itemId == 1) {
+				if (!$items->apis) {
+					if ($data->uridium >= 100000) {
+						$data->uridium -= 100000;
+						$items->apis = true;
+
+						$mysqli->begin_transaction();
+
+						try {
+							$mysqli->query("UPDATE player_accounts SET data = '".json_encode($data)."' WHERE userId = ".$player['userId']."");
+							$mysqli->query("UPDATE player_equipment SET items = '".json_encode($items)."' WHERE userId = ".$player['userId']."");
+
+							$json['status'] = true;
+
+							$json['uridium'] = number_format($data->uridium);
+
+							$json['message'] = 'Drone Apis purchased';
+
+							if (Socket::Get('IsOnline', array('UserId' => $player['userId'], 'Return' => false))) {
+								Socket::Send('BuyItem', array('UserId' => $player['userId'], 'ItemType' => 'drone', 'DataType' => 0, 'Amount' => 100000));
+							}
+
+							$mysqli->commit();
+						} catch (Exception $e) {
+							$json['message'] = 'An error occurred. Please try again later.';
+							$mysqli->rollback();
+						}
+
+						$mysqli->close();
+					} else {
+						$json['message'] = "You don't have enough Uridium.";
+					}
+				} else {
+					$json['message'] = 'You already have an Apis Drone.';
+				}
+			} else if ($itemId == 2) {
+				if (!$items->zeus) {
+					if ($data->uridium >= 100000) {
+						$data->uridium -= 100000;
+						$items->zeus = true;
+
+						$mysqli->begin_transaction();
+
+						try {
+							$mysqli->query("UPDATE player_accounts SET data = '".json_encode($data)."' WHERE userId = ".$player['userId']."");
+							$mysqli->query("UPDATE player_equipment SET items = '".json_encode($items)."' WHERE userId = ".$player['userId']."");
+
+							$json['status'] = true;
+
+							$json['uridium'] = number_format($data->uridium);
+
+							$json['message'] = 'Drone Zeus purchased';
+
+							if (Socket::Get('IsOnline', array('UserId' => $player['userId'], 'Return' => false))) {
+								Socket::Send('BuyItem', array('UserId' => $player['userId'], 'ItemType' => 'drone', 'DataType' => 0, 'Amount' => 100000));
+							}
+							
+							$mysqli->commit();
+						} catch (Exception $e) {
+							$json['message'] = 'An error occurred. Please try again later.';
+							$mysqli->rollback();
+						}
+
+						$mysqli->close();
+					} else {
+						$json['message'] = "You don't have enough Uridium.";
+					}
+				} else {
+					$json['message'] = 'You already have an Zeus Drone.';
+				}
+			}
+
+		} else {
+			$json['message'] = 'Something went wrong!';
+		}
+
+		return json_encode($json);
 	}
 
   public static function GetUniqueShipName($shipName) {

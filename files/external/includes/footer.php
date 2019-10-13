@@ -21,9 +21,9 @@
   $('#register').submit(function(e) {
     e.preventDefault();
 
-    if ($('#register input[name=agreement]').prop('checked')) {
-      var form = $(this);
+    var form = $(this);
 
+    if ($('#register input[name=agreement]').prop('checked')) {
       $.ajax({
         type: 'POST',
         url: '<?php echo DOMAIN; ?>api/',
@@ -59,18 +59,10 @@
       success: function(response) {
         var json = jQuery.parseJSON(response);
 
-        for (var input in json.inputs) {
-          $('#login input[name='+input+'] + label + span').attr('data-error', json.inputs[input].error);
-          $('#login input[name='+input+']').removeClass('valid invalid');
-          $('#login input[name='+input+']').addClass(json.inputs[input].validate);
-        }
-
-        if (json.message != '') {
-          if (json.message == '1') {
-            location.reload();
-          } else {
-            M.toast({html: '<span>'+ json.message +'</span>'});
-          }
+        if (json.status) {
+          location.reload();
+        } else if (json.message != '') {
+          M.toast({html: '<span>'+ json.message +'</span>'});
         }
       }
     });
@@ -78,7 +70,7 @@
 </script>
 <?php } ?>
 
-<?php if (Functions::IsLoggedIn() && isset($page[0]) && $page[0] === 'company-select') { ?>
+<?php if (Functions::IsLoggedIn() && isset($page[0]) && $page[0] === 'company_select') { ?>
 <script type="text/javascript">
   $('.company').click(function() {
     var company = $(this).attr('class').split(' ')[1];
@@ -90,12 +82,10 @@
       success: function(response) {
         var json = jQuery.parseJSON(response);
 
-        if (json.message != '') {
-          if (json.message == '1') {
-            location.reload();
-          } else {
-            M.toast({html: '<span>'+ json.message +'</span>'});
-          }
+        if (json.status) {
+          location.reload();
+        } else if (json.message != '') {
+          M.toast({html: '<span>'+ json.message +'</span>'});
         }
       }
     });
@@ -103,9 +93,98 @@
 </script>
 <?php } ?>
 
+<?php if (Functions::IsLoggedIn() && isset($page[0]) && $page[0] === 'shop') { ?>
+<script type="text/javascript">
+  var currentItemId = 0;
+  var currentItemName = "%item_name%";
+  var currentItemPrice = "%item_price%";
+
+  $('.buy').click(function() {
+    var itemId = $(this).data('item-id');
+
+    if (currentItemId != itemId) {
+      currentItemId = itemId;
+
+      var itemName = $('#item-'+ currentItemId +'').find('.card-title').text();
+      var itemPrice = $('#item-'+ currentItemId +'').find('.card-content p').text();
+
+      $('#modal p').text($('#modal p').text().replace(currentItemName, itemName)).text($('#modal p').text().replace(currentItemPrice, itemPrice));
+
+      currentItemName = itemName;
+      currentItemPrice = itemPrice;
+    }
+  });
+
+  $('#confirm-buy').click(function() {
+    if (currentItemId != 0) {
+      $.ajax({
+        url: '<?php echo DOMAIN; ?>api/',
+        data: { action: 'buy', itemId: currentItemId },
+        type: 'POST',
+        success:function(response) {
+          var json = jQuery.parseJSON(response);
+
+          if (json.status) {
+            $('#data #uridium').text(json.uridium);
+          }
+
+          if (json.message != '') {
+            M.toast({html: '<span>'+ json.message +'</span>'});
+          }
+        }
+      });
+    }
+  });
+</script>
+<?php } ?>
+
 <?php if (Functions::IsLoggedIn() && isset($page[1]) && $page[1] === 'join') { ?>
 <script type="text/javascript">
-  $('input[name=search_clan]').on('keyup keypress keydown click', function(e) {
+  var currentWpClanName = '%clan_name%';
+  var currentWpClanId = 0;
+
+  $('.withdraw-pending').click(function() {
+    var clanId = $(this).data('clan-id');
+
+    if (currentWpClanId != clanId) {
+      var name = $(this).data('clan-name');
+
+      $('#modal p').text($('#modal p').text().replace(currentWpClanName, name));
+
+      currentWpClanId = clanId;
+      currentWpClanName = name;
+    }
+  });
+
+  $('#withdraw').click(function() {
+    if (currentWpClanId != 0) {
+      var table = $('#open-clan-applications');
+
+      $.ajax({
+        type: 'POST',
+        url: '<?php echo DOMAIN; ?>api/',
+        data: { action: 'withdraw_pending_application', clanId: currentWpClanId },
+        success: function(response) {
+          var json = jQuery.parseJSON(response);
+
+          if (json.status) {
+            if (table.find('tbody tr').length <= 1) {
+              table.prev().remove();
+              table.remove();
+            } else {
+              table.find('#pending-application-'+ currentWpClanId +'').remove();
+            }
+          }
+
+          if (json.message != '') {
+            M.toast({html: '<span>'+ json.message +'</span>'});
+          }
+        }
+      });
+    }
+  });
+
+  $('input[name=search_clan]').on('keyup keypress keydown click', function() {
     if ($('input[name=search_clan]').val() != '') {
       $.ajax({
         url: '<?php echo DOMAIN; ?>api/',
@@ -151,6 +230,223 @@
         }
 
         if (json.message != '') {
+          M.toast({html: '<span>'+ json.message +'</span>'});
+        }
+      }
+    });
+  });
+</script>
+<?php } ?>
+
+<?php if (Functions::IsLoggedIn() && isset($page[1]) && $page[1] === 'found') { ?>
+<script type="text/javascript">
+  $('#found_clan').submit(function(e) {
+    e.preventDefault();
+
+    var form = $(this);
+
+    $.ajax({
+      url: '<?php echo DOMAIN; ?>api/',
+      data: form.serialize() + '&action=found_clan',
+      type: 'POST',
+      success:function(response) {
+        var json = jQuery.parseJSON(response);
+
+        for (var input in json.inputs) {
+          var inputType = input !== 'description' ? 'input' : 'textarea';
+          $('#found_clan '+inputType+'[name='+input+'] + label + span').attr('data-error', json.inputs[input].error);
+          $('#found_clan '+inputType+'[name='+input+']').removeClass('valid invalid');
+          $('#found_clan '+inputType+'[name='+input+']').addClass(json.inputs[input].validate);
+        }
+
+        if (json.status) {
+          location.reload();
+        } else if (json.message != '') {
+          M.toast({html: '<span>'+ json.message +'</span>'});
+        }
+      }
+    });
+  });
+</script>
+<?php } ?>
+
+<?php if (Functions::IsLoggedIn() && isset($page[1]) && $page[1] === 'company') { ?>
+<script type="text/javascript">
+  var currentFactionCode = "";
+  var currentFactionName = "%faction_name%";
+
+  $('.company').click(function() {
+    var factionCode = $(this).attr('class').split(' ')[1];
+
+    if (currentFactionCode != factionCode) {
+      var factionName = $(this).data('faction-name');
+
+      $('#modal h6').text($('#modal h6').text().replace(currentFactionName, factionName));
+
+      currentFactionCode = factionCode;
+      currentFactionName = factionName;
+    }
+  });
+
+  $('#confirm-company-change').click(function() {
+    if (currentFactionCode != "") {
+      $.ajax({
+        type: 'POST',
+        url: '<?php echo DOMAIN; ?>api/',
+        data: { action: 'company_select', company: currentFactionCode },
+        success: function(response) {
+          var json = jQuery.parseJSON(response);
+
+          if (json.status) {
+            location.reload();
+          } else if (json.message != '') {
+            M.toast({html: '<span>'+ json.message +'</span>'});
+          }
+        }
+      });
+    }
+  });
+</script>
+<?php } ?>
+
+<?php if (Functions::IsLoggedIn() && isset($page[1], $clan) && $page[1] === 'members' && $clan !== NULL && $clan['leaderId'] == $player['userId']) { ?>
+<script type="text/javascript">
+  var currentVUserName = '%user_name%';
+  var currentVUserText = '%user_text%';
+  var currentVUserId = 0;
+
+  $('.view-application').click(function() {
+    var userId = $(this).data('user-id');
+
+    if (currentVUserId != userId) {
+      var name = $(this).data('user-name');
+      var text = $(this).data('user-text');
+
+      $('#modal h6').text($('#modal h6').text().replace(currentVUserName, name));
+      $('#modal p').text($('#modal p').text().replace(currentVUserText, text));
+
+      currentVUserId = userId;
+      currentVUserName = name;
+      currentVUserText = text;
+    }
+  });
+
+  $('#accept').click(function() {
+    if (currentVUserId != 0) {
+      $.ajax({
+        type: 'POST',
+        url: '<?php echo DOMAIN; ?>api/',
+        data: { action: 'accept_clan_application', userId: currentVUserId },
+        success: function(response) {
+          var json = jQuery.parseJSON(response);
+
+          if (json.status) {
+            var user = json.acceptedUser;
+            $('#members').append('<div class="col s12">
+                  <div id="user-'+ user.userId +'" class="card white-text grey darken-3 padding-5">
+                    <div class="row">
+                      <div class="col s4">
+                        <h6>'+ user.shipName +'</h6>
+                        <p>EP: '+ user.experience +'</p>
+                        <p>Rank: <img src="<?php echo DOMAIN; ?>img/ranks/rank_'+ user.rank.id +'.png"> '+ user.rank.name +'</p>
+                      </div>
+                      <div class="col s4">
+                        <p>Joined: '+ user.joined_date +'</p>
+                        <p>Function: Member</p>
+                        <p>Position: </p>
+                      </div>
+                      <div class="col s4">
+                        <p>Company: '+ user.company +'</p>
+                        <a data-user-id="'+ user.userId +'" class="dismiss-member btn grey darken-2 waves-effect waves-light s6 modal-trigger" href="#modal1">DISMISS CLAN MEMBER</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>');
+
+            if ($('#applications').length <= 1) {
+              $('#applications').prev().remove();
+              $('#applications').remove();
+            } else {
+              $('#applications').find('#application-user-'+ currentWpClanId +'').remove();
+            }
+          }
+
+          if (json.message != '') {
+            M.toast({html: '<span>'+ json.message +'</span>'});
+          }
+        }
+      });
+    }
+  });
+
+  $('#decline').click(function() {
+    if (currentVUserId != 0) {
+      $.ajax({
+        type: 'POST',
+        url: '<?php echo DOMAIN; ?>api/',
+        data: { action: 'decline_clan_application', userId: currentVUserId },
+        success: function(response) {
+          var json = jQuery.parseJSON(response);
+
+          if (json.status) {
+            if ($('#applications').length <= 1) {
+              $('#applications').prev().remove();
+              $('#applications').remove();
+            } else {
+              $('#applications').find('#application-user-'+ currentWpClanId +'').remove();
+            }
+          }
+
+          if (json.message != '') {
+            M.toast({html: '<span>'+ json.message +'</span>'});
+          }
+        }
+      });
+    }
+  });
+
+  var dismissMemberId = 0;
+
+  $('body').on('click', '.dismiss-member', function() {
+    var userId = $(this).data('user-id');
+
+    if (dismissMemberId != userId) {
+      dismissMemberId = userId;
+    }
+  });
+
+  $('#confirm-dismiss-member').click(function() {
+    if (dismissMemberId != 0) {
+      $.ajax({
+        url: '<?php echo DOMAIN; ?>api/',
+        data: { action: 'dismiss_clan_member', userId: dismissMemberId },
+        type: 'POST',
+        success:function(response) {
+          var json = jQuery.parseJSON(response);
+
+          if (json.status) {
+            $('#user-'+ dismissMemberId +'').parent().remove();
+          }
+
+          if (json.message != '') {
+            M.toast({html: '<span>'+ json.message +'</span>'});
+          }
+        }
+      });
+    }
+  });
+
+  $('#confirm-delete-clan').click(function() {
+    $.ajax({
+      url: '<?php echo DOMAIN; ?>api/',
+      data: { action: 'delete_clan' },
+      type: 'POST',
+      success:function(response) {
+        var json = jQuery.parseJSON(response);
+
+        if (json.status) {
+          location.reload();
+        } else if (json.message != '') {
           M.toast({html: '<span>'+ json.message +'</span>'});
         }
       }

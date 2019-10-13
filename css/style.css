@@ -124,6 +124,43 @@ table.striped>tbody>tr:nth-child(odd) {
   padding: 15px !important;
 }
 
+.padding-5 {
+  padding: 5px !important;
+}
+
 table tbody tr td a {
   color: #fff !important;
+}
+
+input[type=text]:not(.browser-default).invalid ~ .helper-text[data-error] {
+  color: transparent !important;
+}
+
+#data {
+  padding: 10px 25px;
+}
+
+#profile, #hall-of-fame {
+  padding: 15px;
+}
+
+#drones .card .card-image img {
+  width: unset;
+  display: unset;
+}
+
+#data label {
+  font-size: unset;
+  color: unset;
+}
+
+@media only screen and (max-width: 992px) {
+  nav .brand-logo {
+    left: unset !important;
+    -webkit-transform: unset !important;
+    transform: unset !important;
+  }
+  .hide-on-med-and-down {
+    display: unset !important;
+  }
 }

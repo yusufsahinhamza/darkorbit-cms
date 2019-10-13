@@ -1,7 +1,7 @@
 <?php
 $clans_per_page = 10;
 $page_n = isset($page[2]) && preg_match('/^[1-9][0-9]*$/', $page[2]) && $page[2] >= 1 ? intval($page[2] - 1) : 0;
-$clans = $mysqli->query('SELECT * FROM server_clan')->fetch_all(MYSQLI_ASSOC);
+$clans = $mysqli->query('SELECT * FROM server_clans')->fetch_all(MYSQLI_ASSOC);
 $number_of_pages = intval(count($clans) / $clans_per_page) + 1;
 
 if ($page_n + 1 > $number_of_pages) {
@@ -23,10 +23,11 @@ if ($page_n + 1 > $number_of_pages) {
   <?php
   $array = $mysqli->query('SELECT clanId FROM server_clan_applications WHERE userId = '.$player['userId'].'')->fetch_all(MYSQLI_ASSOC);
 
-  if (count($array) >= 1) { ?>
+  if (count($array) >= 1) {
+  ?>
 
   <h5>OPEN CLAN APPLICATIONS</h5>
-  <table class="striped highlight">
+  <table id="open-clan-applications" class="striped highlight">
     <thead>
       <tr>
         <th>Name</th>
@@ -38,13 +39,13 @@ if ($page_n + 1 > $number_of_pages) {
     <tbody>
       <?php
       foreach ($array as $value) {
-        $pendingClan = $mysqli->query('SELECT * FROM server_clan WHERE id = '.$value['clanId'].'')->fetch_assoc();
+        $pendingClan = $mysqli->query('SELECT * FROM server_clans WHERE id = '.$value['clanId'].'')->fetch_assoc();
       ?>
-      <tr>
+      <tr id="pending-application-<?php echo $pendingClan['id']?>">
         <td><a href="<?php echo DOMAIN; ?>clan/clan-details/<?php echo $pendingClan['id']?>">[<?php echo $pendingClan['tag']; ?>] <?php echo $pendingClan['name']; ?></a></td>
         <td><?php echo count($mysqli->query('SELECT userId FROM player_accounts WHERE clanId = '.$pendingClan['id'].'')->fetch_all(MYSQLI_ASSOC)); ?></td>
         <td><?php echo $pendingClan['rank']; ?></td>
-        <td>Pending</td>
+        <td><a class="modal-trigger withdraw-pending" href="#modal" data-clan-id="<?php echo $pendingClan['id']; ?>" data-clan-name="<?php echo $pendingClan['name']; ?>">Pending</a></td>
       </tr>
       <?php } ?>
     </tbody>
@@ -97,4 +98,15 @@ if ($page_n + 1 > $number_of_pages) {
       <?php } ?>
     <?php } ?>
   </ul>
+</div>
+
+<div id="modal" class="modal grey darken-4 white-text">
+  <div class="modal-content">
+    <h4>Withdraw your application</h4>
+    <p>Would you really like to withdraw your application from %clan_name%?</p>
+  </div>
+  <div class="modal-footer grey darken-4">
+    <a class="modal-close waves-effect waves-light btn grey darken-2">Cancel</a>
+    <a id="withdraw" class="modal-close waves-effect waves-light btn grey darken-3">Ok</a>
+  </div>
 </div>

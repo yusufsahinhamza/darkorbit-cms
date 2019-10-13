@@ -2,7 +2,7 @@
 require_once('../files/config.php');
 $mysqli = Database::GetInstance();
 
-if (Functions::IsLoggedIn()) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && Functions::IsLoggedIn()) {
 	$player = Functions::GetPlayer();
 
 	$equipment = $mysqli->query("SELECT * FROM player_equipment WHERE userId = {$player['userId']}")->fetch_assoc();

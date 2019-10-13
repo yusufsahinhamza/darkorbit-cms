@@ -22,6 +22,32 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
 		if (isset($_POST['clanId'], $_POST['text'])) {
 			echo Functions::SendClanApplication(Functions::s($_POST['clanId']), Functions::s($_POST['text']));
 		}
+	} else if ($request === 'withdraw_pending_application') {
+		if (isset($_POST['clanId'])) {
+			echo Functions::WithdrawPendingApplication(Functions::s($_POST['clanId']));
+		}
+	} else if ($request === 'found_clan') {
+		if (isset($_POST['name'], $_POST['tag'], $_POST['description'])) {
+			echo Functions::FoundClan(Functions::s($_POST['name']), Functions::s($_POST['tag']), Functions::s($_POST['description']));
+		}
+	} else if ($request === 'dismiss_clan_member') {
+		if (isset($_POST['userId'])) {
+			echo Functions::DismissClanMember(Functions::s($_POST['userId']));
+		}
+	} else if ($request === 'accept_clan_application') {
+		if (isset($_POST['userId'])) {
+			echo Functions::AcceptClanApplication(Functions::s($_POST['userId']));
+		}
+	} else if ($request === 'decline_clan_application') {
+		if (isset($_POST['userId'])) {
+			echo Functions::DeclineClanApplication(Functions::s($_POST['userId']));
+		}
+	} else if ($request === 'buy') {
+		if (isset($_POST['itemId'])) {
+			echo Functions::Buy(Functions::s($_POST['itemId']));
+		}
+	} else if ($request === 'delete_clan') {
+		echo Functions::DeleteClan();
 	} else {
     require_once(EXTERNALS . 'error.php');
   }
