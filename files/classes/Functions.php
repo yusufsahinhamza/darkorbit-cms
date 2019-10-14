@@ -245,9 +245,11 @@ class Functions {
 
 					if ($NotOnlineOrOnlineAndInEquipZone) {
 						$data->uridium -= 5000;
-						$data->honor /= 2;
 
-						$data->honor = ceil($data->honor);
+						if ($data->honor > 0) {
+							$data->honor /= 2;
+							$data->honor = floor($data->honor);
+						}
 
 						$mysqli->begin_transaction();
 
@@ -274,7 +276,7 @@ class Functions {
 		}
 
 		if ($json['status']) {
-			Socket::Send('ChangeCompany', array('UserId' => $player['userId'], 'FactionId' => $factionId, 'UridiumPrice' => 5000, 'HonorPrice' => $data->honor));
+			Socket::Send('ChangeCompany', ['UserId' => $player['userId'], 'UridiumPrice' => 5000, 'HonorPrice' => $data->honor]);
 		}
 
 		return json_encode($json);
@@ -401,6 +403,8 @@ class Functions {
 
 						$json['status'] = true;
 
+						Socket::Send('CreateClan', ['UserId' => $player['userId'], 'ClanId' => $clanId, 'FactionId' => $player['factionId'], 'Name' => $name, 'Tag' => $tag]);
+
 						$mysqli->commit();
 					} catch (Exception $e) {
 						$json['message'] = 'An error occurred. Please try again later.';
@@ -477,6 +481,8 @@ class Functions {
 
 				$json['status'] = true;
 
+				Socket::Send('DeleteClan', ['ClanId' => $clan['id']]);
+
 				$mysqli->commit();
 			} catch (Exception $e) {
 				$json['message'] = 'An error occurred. Please try again later.';
@@ -520,6 +526,8 @@ class Functions {
 
 				$json['status'] = true;
 				$json['message'] = 'Member deleted.';
+
+				Socket::Send('LeaveFromClan', array('UserId' => $user['userId']));
 
 				$mysqli->commit();
 			} catch (Exception $e) {
@@ -574,6 +582,10 @@ class Functions {
 
 				$json['status'] = true;
 				$json['message'] = 'Clan joined: ' . $user['shipName'];
+
+				if (Socket::Get('IsOnline', ['UserId' => $user['userId'], 'Return' => false])) {
+					Socket::Send('JoinToClan', ['UserId' => $user['userId'], 'ClanId' => $clan['id']]);
+				}
 
 				$mysqli->commit();
 			} catch (Exception $e) {
@@ -716,8 +728,8 @@ class Functions {
 
 							$json['message'] = 'Drone Apis purchased';
 
-							if (Socket::Get('IsOnline', array('UserId' => $player['userId'], 'Return' => false))) {
-								Socket::Send('BuyItem', array('UserId' => $player['userId'], 'ItemType' => 'drone', 'DataType' => 0, 'Amount' => 100000));
+							if (Socket::Get('IsOnline', ['UserId' => $player['userId'], 'Return' => false])) {
+								Socket::Send('BuyItem', ['UserId' => $player['userId'], 'ItemType' => 'drone', 'DataType' => 0, 'Amount' => 100000]);
 							}
 
 							$mysqli->commit();
@@ -751,10 +763,10 @@ class Functions {
 
 							$json['message'] = 'Drone Zeus purchased';
 
-							if (Socket::Get('IsOnline', array('UserId' => $player['userId'], 'Return' => false))) {
-								Socket::Send('BuyItem', array('UserId' => $player['userId'], 'ItemType' => 'drone', 'DataType' => 0, 'Amount' => 100000));
+							if (Socket::Get('IsOnline', ['UserId' => $player['userId'], 'Return' => false])) {
+								Socket::Send('BuyItem', ['UserId' => $player['userId'], 'ItemType' => 'drone', 'DataType' => 0, 'Amount' => 100000]);
 							}
-							
+
 							$mysqli->commit();
 						} catch (Exception $e) {
 							$json['message'] = 'An error occurred. Please try again later.';
