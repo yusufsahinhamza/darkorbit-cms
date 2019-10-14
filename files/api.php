@@ -42,6 +42,14 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
 		if (isset($_POST['userId'])) {
 			echo Functions::DeclineClanApplication(Functions::s($_POST['userId']));
 		}
+	} else if ($request === 'change_pilot_name') {
+		if (isset($_POST['pilotName'])) {
+			echo Functions::ChangePilotName(Functions::s($_POST['pilotName']));
+		}
+	} else if ($request === 'change_version') {
+		if (isset($_POST['version'])) {
+			echo Functions::ChangeVersion(Functions::s($_POST['version']));
+		}
 	} else if ($request === 'buy') {
 		if (isset($_POST['itemId'])) {
 			echo Functions::Buy(Functions::s($_POST['itemId']));
@@ -58,7 +66,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
 	$request = $page[1];
 
 	if ($request === 'verify') {
-		if (isset($page[2], $page[3]) && (!isset($page[4]) || isset($page[4]) && $page[4] === '')) {
+		if (isset($page[2], $page[3])) {
     	echo Functions::VerifyEmail(Functions::s($page[2]), Functions::s($page[3]));
 		}
 	} else if ($request === 'logout') {

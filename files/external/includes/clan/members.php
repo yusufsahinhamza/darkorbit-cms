@@ -7,7 +7,7 @@
       <div id="user-<?php echo $value['userId']?>" class="card white-text grey darken-3 padding-5">
         <div class="row">
           <div class="col s4">
-            <h6><?php echo $value['shipName']; ?></h6>
+            <h6><?php echo $value['pilotName']; ?></h6>
             <p>EP: <?php echo number_format(json_decode($value['data'])->experience); ?></p>
             <p>Rank: <img src="<?php echo DOMAIN; ?>img/ranks/rank_<?php echo $value['rankId']; ?>.png"> <?php echo Functions::GetRankName($value['rankId']); ?></p>
           </div>
@@ -50,7 +50,7 @@
       <div id="application-user-<?php echo $user['userId']?>" class="card white-text grey darken-3 padding-5">
         <div class="row">
           <div class="col s4">
-            <h6><?php echo $user['shipName']; ?></h6>
+            <h6><?php echo $user['pilotName']; ?></h6>
             <p>EP: <?php echo number_format($userData->experience); ?></p>
           </div>
           <div class="col s4">
@@ -60,7 +60,7 @@
           <div class="col s4">
             <p>Date: <?php echo date('Y.m.d', strtotime($value['date'])); ?></p>
             <?php if ($clan['leaderId'] == $player['userId'] && $value['userId'] != $clan['leaderId']) { ?>
-            <a data-user-id="<?php echo $user['userId']?>" data-user-name="<?php echo $user['shipName']?>" data-user-text="<?php echo $value['text']?>" class="view-application btn grey darken-2 waves-effect waves-light s6 modal-trigger" href="#modal">VIEW</a>
+            <a data-user-id="<?php echo $user['userId']; ?>" data-user-name="<?php echo $user['pilotName']; ?>" data-user-text="<?php echo $value['text']; ?>" class="view-application btn grey darken-2 waves-effect waves-light s6 modal-trigger" href="#modal">VIEW</a>
             <?php } ?>
           </div>
         </div>

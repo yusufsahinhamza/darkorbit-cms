@@ -242,6 +242,51 @@
 </script>
 <?php } ?>
 
+<?php if (Functions::IsLoggedIn() && isset($page[0]) && $page[0] === 'settings') { ?>
+<script type="text/javascript">
+  $('#change_pilot_name').submit(function(e) {
+    e.preventDefault();
+
+    var form = $(this);
+
+    $.ajax({
+      url: '<?php echo DOMAIN; ?>api/',
+      data: form.serialize() + '&action=change_pilot_name',
+      type: 'POST',
+      success:function(response) {
+        var json = jQuery.parseJSON(response);
+
+        for (var input in json.inputs) {
+          $('#change_pilot_name input[name='+input+'] + label + span').attr('data-error', json.inputs[input].error);
+          $('#change_pilot_name input[name='+input+']').removeClass('valid invalid');
+          $('#change_pilot_name input[name='+input+']').addClass(json.inputs[input].validate);
+        }
+
+        if (json.message != '') {
+          M.toast({html: '<span>'+ json.message +'</span>'});
+        }
+      }
+    });
+  });
+
+  $('input[name=version]').change(function() {
+    var version = $(this).prop('checked');
+    $.ajax({
+      url: '<?php echo DOMAIN; ?>api/',
+      data: { action: 'change_version', version: version },
+      type: 'POST',
+      success:function(response) {
+        var json = jQuery.parseJSON(response);
+
+        if (json.message != '') {
+          M.toast({html: '<span>'+ json.message +'</span>'});
+        }
+      }
+    });
+  });
+</script>
+<?php } ?>
+
 <?php if (Functions::IsLoggedIn() && isset($page[1]) && $page[1] === 'found') { ?>
 <script type="text/javascript">
   $('#found_clan').submit(function(e) {
@@ -351,7 +396,7 @@
                   <div id="user-'+ user.userId +'" class="card white-text grey darken-3 padding-5">
                     <div class="row">
                       <div class="col s4">
-                        <h6>'+ user.shipName +'</h6>
+                        <h6>'+ user.pilotName +'</h6>
                         <p>EP: '+ user.experience +'</p>
                         <p>Rank: <img src="<?php echo DOMAIN; ?>img/ranks/rank_'+ user.rank.id +'.png"> '+ user.rank.name +'</p>
                       </div>

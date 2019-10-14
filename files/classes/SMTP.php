@@ -9,7 +9,7 @@ if (defined('ROOT')) {
 }
 
 define('SERVER_NAME', 'InfinityOrbit');
-define('SMTP_HOST', 'smtp.yandex.com');
+define('SMTP_HOST', 'smtp.yandex.com.tr');
 define('SMTP_USERNAME', 'verification@infinityorbit.com');
 define('SMTP_PASSWORD', 'FDKofks0942k!da');
 define('SMTP_PORT', '465');

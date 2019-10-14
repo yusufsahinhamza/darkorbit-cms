@@ -17,7 +17,7 @@ $pendingAlready = $mysqli->query('SELECT id FROM server_clan_applications WHERE 
         <p>Name: <?php echo $clan['name']; ?></p>
         <p>Tag: <?php echo $clan['tag']; ?></p>
         <p>Founding Date: <?php echo date('Y.m.d', strtotime($clan['date'])); ?></p>
-        <p>Clan Leader: <?php echo $mysqli->query('SELECT shipName FROM player_accounts where userId = '.$clan['leaderId'].'')->fetch_assoc()['shipName']; ?></p>
+        <p>Clan Leader: <?php echo $mysqli->query('SELECT pilotName FROM player_accounts where userId = '.$clan['leaderId'].'')->fetch_assoc()['pilotName']; ?></p>
       </div>
     </div>
     <div class="col s6">

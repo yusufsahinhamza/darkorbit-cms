@@ -140,10 +140,6 @@ input[type=text]:not(.browser-default).invalid ~ .helper-text[data-error] {
   padding: 10px 25px;
 }
 
-#profile, #hall-of-fame {
-  padding: 15px;
-}
-
 #drones .card .card-image img {
   width: unset;
   display: unset;

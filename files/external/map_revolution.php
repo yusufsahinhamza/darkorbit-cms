@@ -1,4 +1,7 @@
-<?php ob_end_flush(); ?>
+<?php
+ob_end_flush();
+$gamePlayerSettings = json_decode($mysqli->query('SELECT * FROM player_settings WHERE userId = '.$player['userId'].'')->fetch_assoc()['gameplay']);
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,7 +77,7 @@
             "userID": "<?php echo $player['userId']; ?>",
             "sessionID": "<?php echo $player['sessionId']; ?>",
             "basePath": "spacemap",
-            "pid": "563",
+            "pid": "0",
             "boardLink": "",
             "helpLink": "",
             "loadingClaim": "LOADING",
@@ -96,8 +99,8 @@
             "gameclientAllowedInitDelay": "10",
             "eventStreamContext": "",
             "useDeviceFonts": "0",
-            "display2d": "1",
-            "autoStartEnabled": "1",
+            "display2d": "<?php echo ($player['version'] ? '1' : '2'); ?>",
+            "autoStartEnabled": "<?php echo (int)($gamePlayerSettings != null ? $gamePlayerSettings->autoStartEnabled : true); ?>",
             "mapID": "1",
             "allowChat": "1"
           });

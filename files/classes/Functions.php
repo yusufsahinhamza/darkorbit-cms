@@ -77,33 +77,29 @@ class Functions {
       $json['inputs']['username']['error'] = 'Your username is not valid.';
     }
 
-    if (strlen($username) < 4 || strlen($username) > 20) {
+    if (mb_strlen($username) < 4 || mb_strlen($username) > 20) {
       $json['inputs']['username']['validate'] = 'invalid';
       $json['inputs']['username']['error'] = 'Your username should be between 4 and 20 characters.';
     }
 
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL) || strlen($email) > 260) {
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL) || mb_strlen($email) > 260) {
       $json['inputs']['email']['validate'] = 'invalid';
       $json['inputs']['email']['error'] = 'Your e-mail should be max 260 characters.';
     }
 
-    if (strlen($password) < 8 || strlen($password) > 45) {
+    if (mb_strlen($password) < 8 || mb_strlen($password) > 45) {
       $json['inputs']['password']['validate'] = 'invalid';
       $json['inputs']['password']['error'] = 'Your password should be between 8 and 45 characters.';
     }
 
     if ($json['inputs']['username']['validate'] === 'valid' && $json['inputs']['password']['validate'] === 'valid' && $json['inputs']['email']['validate'] === 'valid') {
-      $statement = $mysqli->query('SELECT userId FROM player_accounts WHERE username = "'.$username.'"');
-
-      if ($statement->num_rows <= 0) {
+      if ($mysqli->query('SELECT userId FROM player_accounts WHERE username = "'.$username.'"')->num_rows <= 0) {
         $ip = Functions::GetIP();
         $sessionId = Functions::GetUniqueSessionId();
-        $shipName = $username;
+        $pilotName = $username;
 
-        $statement = $mysqli->query('SELECT userId FROM player_accounts WHERE shipName = "'.$shipName.'"');
-
-        if ($statement->num_rows >= 1) {
-          $shipName = Functions::GetUniqueShipName($shipName);
+        if ($mysqli->query('SELECT userId FROM player_accounts WHERE pilotName = "'.$pilotName.'"')->num_rows >= 1) {
+          $pilotName = Functions::GetUniquePilotName($pilotName);
         }
 
         $mysqli->begin_transaction();
@@ -120,7 +116,7 @@ class Functions {
             'hash' => $sessionId
           ];
 
-          $mysqli->query("INSERT INTO player_accounts (sessionId, username, shipName, email, password, info, verification) VALUES ('".$sessionId."', '".$username."', '".$shipName."', '".$email."',  '".password_hash($password, PASSWORD_DEFAULT)."', '".json_encode($info)."', '".json_encode($verification)."')");
+          $mysqli->query("INSERT INTO player_accounts (sessionId, username, pilotName, email, password, info, verification) VALUES ('".$sessionId."', '".$username."', '".$pilotName."', '".$email."',  '".password_hash($password, PASSWORD_DEFAULT)."', '".json_encode($info)."', '".json_encode($verification)."')");
 
           $userId = $mysqli->insert_id;
 
@@ -144,8 +140,6 @@ class Functions {
       } else {
         $json['message'] = 'This username is already taken.';
       }
-    } else {
-    	$json['message'] = 'Something went wrong!';
     }
 
     return json_encode($json);
@@ -320,10 +314,9 @@ class Functions {
 			'message' => ''
 		];
 
-		$recruiting = $mysqli->query('SELECT recruiting FROM server_clans WHERE id = '.$clanId.'')->fetch_assoc()['recruiting'];
-		$statement = $mysqli->query('SELECT id FROM server_clan_applications WHERE clanId = '.$clanId.' AND userId = '.$player['userId'].'');
+    $clan = $mysqli->query('SELECT * FROM server_clans WHERE id = '.$clanId.'')->fetch_assoc();
 
-		if ($recruiting && $statement->num_rows <= 0 && $player['clanId'] == 0) {
+		if ($clan !== NULL & $clan['recruiting'] && $mysqli->query('SELECT id FROM server_clan_applications WHERE clanId = '.$clanId.' AND userId = '.$player['userId'].'')->num_rows <= 0 && $player['clanId'] == 0) {
 			$mysqli->begin_transaction();
 
 			try {
@@ -364,28 +357,24 @@ class Functions {
       'message' => ''
     ];
 
-    if (strlen($name) < 1 || strlen($name) > 50) {
+    if (mb_strlen($name) < 1 || mb_strlen($name) > 50) {
       $json['inputs']['name']['validate'] = 'invalid';
       $json['inputs']['name']['error'] = 'Your clan name should be between 1 and 50 characters.';
     }
 
-    if (strlen($tag) < 1 || strlen($tag) > 4) {
+    if (mb_strlen($tag) < 1 || mb_strlen($tag) > 4) {
       $json['inputs']['tag']['validate'] = 'invalid';
       $json['inputs']['tag']['error'] = 'Your clan tag should be between 1 and 4 characters.';
     }
 
-		if (strlen($description) > 16000) {
+		if (mb_strlen($description) > 16000) {
 			$json['inputs']['description']['validate'] = 'invalid';
 			$json['inputs']['description']['error'] = 'Your clan description should be max 16000 characters.';
 		}
 
 		if ($json['inputs']['name']['validate'] === 'valid' && $json['inputs']['tag']['validate'] === 'valid' && $json['inputs']['description']['validate'] === 'valid' && $player['clanId'] == 0) {
-      $statement = $mysqli->query('SELECT id FROM server_clans WHERE name = "'.$name.'"');
-
-      if ($statement->num_rows <= 0) {
-				$statement = $mysqli->query('SELECT id FROM server_clans WHERE tag = "'.$tag.'"');
-
-	      if ($statement->num_rows <= 0) {
+      if ($mysqli->query('SELECT id FROM server_clans WHERE name = "'.$name.'"')->num_rows <= 0) {
+	      if ($mysqli->query('SELECT id FROM server_clans WHERE tag = "'.$tag.'"')->num_rows <= 0) {
 					$mysqli->begin_transaction();
 
 					try {
@@ -416,8 +405,6 @@ class Functions {
 			} else {
 				$json['message'] = 'This clan name is already taken.';
 			}
-		} else {
-			$json['message'] = 'Something went wrong!';
 		}
 
 		return json_encode($json);
@@ -434,9 +421,7 @@ class Functions {
 			'message' => ''
 		];
 
-		$statement = $mysqli->query('SELECT id FROM server_clan_applications WHERE clanId = '.$clanId.' AND userId = '.$player['userId'].'');
-
-		if ($statement->num_rows >= 1) {
+		if ($mysqli->query('SELECT id FROM server_clan_applications WHERE clanId = '.$clanId.' AND userId = '.$player['userId'].'')->num_rows >= 1) {
 			$mysqli->begin_transaction();
 
 			try {
@@ -554,15 +539,15 @@ class Functions {
 
 		$player = Functions::GetPlayer();
 		$userId = $mysqli->real_escape_string($userId);
-		$user = $mysqli->query('SELECT * FROM player_accounts WHERE userId = '.$userId.'')->fetch_assoc();
-		$clan = $mysqli->query('SELECT * FROM server_clans WHERE id = '.$player['clanId'].'')->fetch_assoc();
+    $clan = $mysqli->query('SELECT * FROM server_clans WHERE id = '.$player['clanId'].'')->fetch_assoc();
+		$user = $mysqli->query('SELECT * FROM player_accounts WHERE userId = '.$userId.' AND clanId = '.$clan['id'].'')->fetch_assoc();
 
 		$json = [
 			'status' => false,
 			'message' => ''
 		];
 
-		if ($clan !== NULL && $user !== NULL && $clan['leaderId'] == $player['userId'] && $user['clanId'] != 0) {
+		if ($clan !== NULL && $user !== NULL && $clan['leaderId'] == $player['userId']) {
 			$mysqli->begin_transaction();
 
 			try {
@@ -605,18 +590,7 @@ class Functions {
 
 		$json = [
 			'status' => false,
-			'message' => '',
-			'acceptedUser' => [
-				'userId' => $user['userId'],
-				'shipName' => $user['shipName'],
-				'experience' => number_format(json_decode($user['data'])->experience),
-				'rank' => [
-					'id' => $user['rankId'],
-					'name' => Functions::GetRankName($user['rankId'])
-				],
-				'joined_date' => date('Y.m.d'),
-				'company' => $user['factionId'] == 1 ? 'MMO' : ($user['factionId'] == 2 ? 'EIC' : 'VRU')
-			]
+			'message' => ''
 		];
 
 		if ($clan !== NULL && $user !== NULL && $clan['leaderId'] == $player['userId'] && $user['clanId'] == 0) {
@@ -633,7 +607,20 @@ class Functions {
 				$mysqli->query('DELETE FROM server_clan_applications WHERE userId = '.$user['userId'].'');
 
 				$json['status'] = true;
-				$json['message'] = 'Clan joined: ' . $user['shipName'];
+
+        $json['acceptedUser'] = [
+          'userId' => $user['userId'],
+          'pilotName' => $user['pilotName'],
+          'experience' => number_format(json_decode($user['data'])->experience),
+          'rank' => [
+            'id' => $user['rankId'],
+            'name' => Functions::GetRankName($user['rankId'])
+          ],
+          'joined_date' => date('Y.m.d'),
+          'company' => $user['factionId'] == 1 ? 'MMO' : ($user['factionId'] == 2 ? 'EIC' : 'VRU')
+        ];
+
+				$json['message'] = 'Clan joined: ' . $user['pilotName'];
 
 				if (Socket::Get('IsOnline', ['UserId' => $user['userId'], 'Return' => false])) {
 					Socket::Send('JoinToClan', ['UserId' => $user['userId'], 'ClanId' => $clan['id']]);
@@ -666,14 +653,14 @@ class Functions {
 			'message' => ''
 		];
 
-		if ($clan !== NULL && $user !== NULL && $clan['leaderId'] == $player['userId'] && $user['clanId'] == 0) {
+		if ($clan !== NULL && $user !== NULL && $clan['leaderId'] == $player['userId']) {
 			$mysqli->begin_transaction();
 
 			try {
 				$mysqli->query('DELETE FROM server_clan_applications WHERE clanId = '.$clan['id'].' AND userId = '.$user['userId'].'');
 
 				$json['status'] = true;
-				$json['message'] = 'This user was declined: ' . $user['shipName'];
+				$json['message'] = 'This user was declined: ' . $user['pilotName'];
 
 				$mysqli->commit();
 			} catch (Exception $e) {
@@ -694,9 +681,7 @@ class Functions {
 
 		$sessionId = Functions::GenerateRandom(32);
 
-    $statement = $mysqli->query('SELECT userId FROM player_accounts WHERE sessionId = "'.$sessionId.'"');
-
-    if ($statement->num_rows >= 1)
+    if ($mysqli->query('SELECT userId FROM player_accounts WHERE sessionId = "'.$sessionId.'"')->num_rows >= 1)
       $sessionId = GetUniqueSessionId();
 
 		return $sessionId;
@@ -710,9 +695,7 @@ class Functions {
 
 		$message = '';
 
-		$statement = $mysqli->query('SELECT userId FROM player_accounts WHERE userId = "'.$userId.'"');
-
-		if ($statement->num_rows >= 1) {
+		if ($mysqli->query('SELECT userId FROM player_accounts WHERE userId = '.$userId.'')->num_rows >= 1) {
 			$verification = json_decode($mysqli->query('SELECT verification FROM player_accounts WHERE userId = '.$userId.'')->fetch_assoc()['verification']);
 
 			if (!$verification->verified) {
@@ -724,7 +707,7 @@ class Functions {
 	        try {
 	          $mysqli->query("UPDATE player_accounts SET verification = '".json_encode($verification)."' WHERE userId = ".$userId."");
 
-	          $message = 'You account is now verified.';
+	          $message = 'Your account is now verified.';
 
 	          $mysqli->commit();
 	        } catch (Exception $e) {
@@ -758,7 +741,7 @@ class Functions {
 			'message' => ''
 		];
 
-		if (in_array($itemId, [1,2])) {
+		if (in_array($itemId, [1, 2])) {
 			$items = json_decode($mysqli->query('SELECT items FROM player_equipment WHERE userId = '.$player['userId'].'')->fetch_assoc()['items']);
 			$data = json_decode($player['data']);
 
@@ -841,6 +824,88 @@ class Functions {
 		return json_encode($json);
 	}
 
+  public static function ChangePilotName($newPilotName) {
+    $mysqli = Database::GetInstance();
+
+    $player = Functions::GetPlayer();
+		$newPilotName = $mysqli->real_escape_string($newPilotName);
+
+    $json = [
+      'inputs' => [
+        'pilotName' => ['validate' => 'valid', 'error' => 'Enter a valid pilot name!']
+      ],
+      'message' => ''
+    ];
+
+    if (mb_strlen($newPilotName) < 4 || mb_strlen($newPilotName) > 20) {
+      $json['inputs']['pilotName']['validate'] = 'invalid';
+      $json['inputs']['pilotName']['error'] = 'Your pilot name should be between 4 and 20 characters.';
+    }
+
+    if ($json['inputs']['pilotName']['validate'] === 'valid') {
+      $oldPilotNames = json_decode($player['oldPilotNames']);
+
+      if (count($oldPilotNames) <= 0 || ((new DateTime(date('d.m.Y H:i:s')))->diff(new DateTime(end($oldPilotNames)->date))->days >= 2)) {
+        if ($mysqli->query('SELECT userId FROM player_accounts WHERE pilotName = "'.$newPilotName.'"')->num_rows <= 0) {
+          $mysqli->begin_transaction();
+
+          try {
+            array_push($oldPilotNames, ['name' => $player['pilotName'], 'date' => date('d.m.Y H:i:s')]);
+
+            $mysqli->query("UPDATE player_accounts SET pilotName = '".$newPilotName."', oldPilotNames = '".json_encode($oldPilotNames, JSON_UNESCAPED_UNICODE)."' WHERE userId = ".$player['userId']."");
+
+            $json['message'] = 'Your Pilot name has been changed.';
+
+            $mysqli->commit();
+          } catch (Exception $e) {
+            $message = 'An error occurred. Please try again later.';
+            $mysqli->rollback();
+          }
+
+          $mysqli->close();
+        } else {
+          $json['message'] = 'This Pilot name is already in use.';
+        }
+      } else {
+        $json['message'] = 'You can only rename your Pilot once every 48 hours. <br> (Your last name change: '.date('d.m.Y H:i', strtotime(end($oldPilotNames)->date)).')';
+      }
+    }
+
+    return json_encode($json);
+  }
+
+  public static function ChangeVersion($version) {
+    $mysqli = Database::GetInstance();
+
+    $player = Functions::GetPlayer();
+    $version = $mysqli->real_escape_string($version);
+
+    $json = [
+      'message' => ''
+    ];
+
+    if ($version === 'false' || $version === 'true') {
+      $mysqli->begin_transaction();
+
+      try {
+        $mysqli->query('UPDATE player_accounts SET version = '.$version.' WHERE userId = '.$player['userId'].'');
+
+        $json['message'] = 'Your version has been changed.';
+
+        $mysqli->commit();
+      } catch (Exception $e) {
+        $message = 'An error occurred. Please try again later.';
+        $mysqli->rollback();
+      }
+
+      $mysqli->close();
+    } else {
+      $json['message'] = 'Something went wrong!';
+    }
+
+    echo json_encode($json);
+  }
+
 	public static function GetLevel($exp) {
 		$lvl = 1;
 		$expNext = 10000;
@@ -853,17 +918,15 @@ class Functions {
 		return $lvl;
 	}
 
-  public static function GetUniqueShipName($shipName) {
+  public static function GetUniquePilotName($pilotName) {
     $mysqli = Database::GetInstance();
 
-		$newShipName = $shipName .= Functions::GenerateRandom(4, true, false, false);
+		$newPilotName = $pilotName .= Functions::GenerateRandom(4, true, false, false);
 
-    $statement = $mysqli->query('SELECT userId FROM player_accounts WHERE shipName = "'.$newShipName.'"');
+    if ($mysqli->query('SELECT userId FROM player_accounts WHERE pilotName = "'.$newPilotName.'"')->num_rows >= 1)
+      $newPilotName = GetUniquePilotName($pilotName);
 
-    if ($statement->num_rows >= 1)
-      $newShipName = GetUniqueShipName($shipName);
-
-		return $newShipName;
+		return $newPilotName;
 	}
 
   public static function GetIP() {
@@ -896,7 +959,7 @@ class Functions {
 		$str = '';
 		$c = 0;
 		while ($c < $length){
-			$str .= substr($chars, rand(0, strlen($chars) -1), 1);
+			$str .= substr($chars, rand(0, mb_strlen($chars) -1), 1);
 			$c++;
 		}
 
