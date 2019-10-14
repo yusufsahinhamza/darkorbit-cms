@@ -48,6 +48,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
 		}
 	} else if ($request === 'delete_clan') {
 		echo Functions::DeleteClan();
+	} else if ($request === 'leave_clan') {
+		echo Functions::LeaveClan();
 	} else {
     require_once(EXTERNALS . 'error.php');
   }

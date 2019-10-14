@@ -477,7 +477,10 @@ class Functions {
 
 			try {
 				$mysqli->query('DELETE FROM server_clans WHERE id = '.$player['clanId'].' AND leaderId = '.$player['userId'].'');
+
 				$mysqli->query('UPDATE player_accounts SET clanId = 0 WHERE clanId = '.$clan['id'].'');
+
+				$mysqli->query('DELETE FROM server_clan_applications WHERE clanId = '.$clan['id'].'');
 
 				$json['status'] = true;
 
@@ -490,6 +493,57 @@ class Functions {
 			}
 
 			$mysqli->close();
+		} else {
+			$json['message'] = 'Something went wrong!';
+		}
+
+		return json_encode($json);
+	}
+
+	public static function LeaveClan() {
+		$mysqli = Database::GetInstance();
+
+		$player = Functions::GetPlayer();
+		$clan = $mysqli->query('SELECT * FROM server_clans WHERE id = '.$player['clanId'].'')->fetch_assoc();
+
+		$json = [
+			'status' => false,
+			'message' => ''
+		];
+
+		$NotOnlineOrOnlineAndInEquipZone = !Socket::Get('IsOnline', array('UserId' => $player['userId'], 'Return' => false)) || (Socket::Get('IsOnline', array('UserId' => $player['userId'], 'Return' => false)) && Socket::Get('IsInEquipZone', array('UserId' => $player['userId'], 'Return' => false)));
+
+		if ($clan !== NULL && $clan['leaderId'] != $player['userId']) {
+			if ($NotOnlineOrOnlineAndInEquipZone) {
+				$mysqli->begin_transaction();
+
+				try {
+					$mysqli->query('UPDATE player_accounts SET clanId = 0 WHERE userId = '.$player['userId'].'');
+
+					$join_dates = json_decode($clan['join_dates']);
+
+					if (property_exists($join_dates, $player['userId'])) {
+						unset($join_dates->{$player['userId']});
+					}
+
+					$mysqli->query("UPDATE server_clans SET join_dates = '".json_encode($join_dates)."' WHERE id = ".$clan['id']."");
+
+					$json['status'] = true;
+
+					if (Socket::Get('IsOnline', ['UserId' => $player['userId'], 'Return' => false])) {
+						Socket::Send('LeaveFromClan', ['UserId' => $player['userId']]);
+					}
+
+					$mysqli->commit();
+				} catch (Exception $e) {
+					$json['message'] = 'An error occurred. Please try again later.';
+					$mysqli->rollback();
+				}
+
+				$mysqli->close();
+			} else {
+				$json['message'] = 'You must be at your corporate HQ station to leave your Clan.';
+			}
 		} else {
 			$json['message'] = 'Something went wrong!';
 		}
@@ -787,6 +841,18 @@ class Functions {
 		}
 
 		return json_encode($json);
+	}
+
+	public static function GetLevel($exp) {
+		$lvl = 1;
+		$expNext = 10000;
+
+		while ($exp >= $expNext) {
+				$expNext *= 2;
+				$lvl++;
+		}
+
+		return $lvl;
 	}
 
   public static function GetUniqueShipName($shipName) {

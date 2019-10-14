@@ -10,7 +10,7 @@
                 <img src="/img/avatar.png">
                 <div class="inline-right">
                   <h5><?php echo $player['shipName']; ?></h5>
-                  <p>Clan: <?php echo ($player['userId'] == 0 ? 'Free Agent' : $mysqli->query('SELECT name FROM server_clans WHERE id = '.$player['clanId'].'')->fetch_assoc()['name']);?></p>
+                  <p>Clan: <?php echo ($player['clanId'] == 0 ? 'Free Agent' : $mysqli->query('SELECT name FROM server_clans WHERE id = '.$player['clanId'].'')->fetch_assoc()['name']);?></p>
                   <p>Rank: <img src="<?php echo DOMAIN; ?>img/ranks/rank_<?php echo $player['rankID']; ?>.png"> <?php echo Functions::GetRankName($player['rankID']); ?></p>
                   <p>ID: <?php echo $player['userId']; ?></p>
                 </div>

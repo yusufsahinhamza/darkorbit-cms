@@ -140,6 +140,8 @@
 
 <?php if (Functions::IsLoggedIn() && isset($page[1]) && $page[1] === 'join') { ?>
 <script type="text/javascript">
+  <?php if (count($array) >= 1) { ?>
+
   var currentWpClanName = '%clan_name%';
   var currentWpClanId = 0;
 
@@ -183,6 +185,8 @@
       });
     }
   });
+
+  <?php } ?>
 
   $('input[name=search_clan]').on('keyup keypress keydown click', function() {
     if ($('input[name=search_clan]').val() != '') {
@@ -309,8 +313,9 @@
 </script>
 <?php } ?>
 
-<?php if (Functions::IsLoggedIn() && isset($page[1], $clan) && $page[1] === 'members' && $clan !== NULL && $clan['leaderId'] == $player['userId']) { ?>
+<?php if (Functions::IsLoggedIn() && isset($page[1], $clan) && $page[1] === 'members' && $clan !== NULL) { ?>
 <script type="text/javascript">
+  <?php if ($clan['leaderId'] == $player['userId']) { ?>
   var currentVUserName = '%user_name%';
   var currentVUserText = '%user_text%';
   var currentVUserId = 0;
@@ -452,6 +457,27 @@
       }
     });
   });
+
+  <?php } else { ?>
+
+  $('#confirm-leave-clan').click(function() {
+    $.ajax({
+      url: '<?php echo DOMAIN; ?>api/',
+      data: { action: 'leave_clan' },
+      type: 'POST',
+      success:function(response) {
+        var json = jQuery.parseJSON(response);
+
+        if (json.status) {
+          location.reload();
+        } else if (json.message != '') {
+          M.toast({html: '<span>'+ json.message +'</span>'});
+        }
+      }
+    });
+  });
+
+  <?php } ?>
 </script>
 <?php } ?>
 

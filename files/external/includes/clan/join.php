@@ -100,6 +100,8 @@ if ($page_n + 1 > $number_of_pages) {
   </ul>
 </div>
 
+<?php if (count($array) >= 1) { ?>
+
 <div id="modal" class="modal grey darken-4 white-text">
   <div class="modal-content">
     <h4>Withdraw your application</h4>
@@ -110,3 +112,5 @@ if ($page_n + 1 > $number_of_pages) {
     <a id="withdraw" class="modal-close waves-effect waves-light btn grey darken-3">Ok</a>
   </div>
 </div>
+
+<?php } ?>
