@@ -14,12 +14,6 @@ define('MYSQL_USER', 'root');
 define('MYSQL_PASSWORD', '');
 define('MYSQL_DATABASE', 'server');
 
-define('SERVER_NAME', 'InfinityOrbit');
-define('SMTP_HOST', 'smtp.yandex.com.tr');
-define('SMTP_USERNAME', 'verification@infinityorbit.com');
-define('SMTP_PASSWORD', 'FDKofks0942k!da');
-define('SMTP_PORT', '465');
-
 define('DOMAIN', ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') && (isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == 443) ? 'https' : 'http') . '://' . $_SERVER['SERVER_NAME'] . '/');
 
 define('CLASSES', ROOT . 'classes' . DIRECTORY_SEPARATOR);
@@ -27,6 +21,7 @@ define('EXTERNALS', ROOT . 'external' . DIRECTORY_SEPARATOR);
 define('INCLUDES', EXTERNALS . 'includes' . DIRECTORY_SEPARATOR);
 define('CRONJOBS', EXTERNALS . 'cronjobs' . DIRECTORY_SEPARATOR);
 
+require_once(CLASSES . 'SMTP.php');
 require_once(CLASSES . 'Functions.php');
 require_once(CLASSES . 'Database.php');
 require_once(CLASSES . 'Socket.php');

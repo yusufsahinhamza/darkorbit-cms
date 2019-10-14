@@ -66,9 +66,10 @@
                     </div>
                   </div>
                 </form>
-                <div class="card-action">
+                <!--<div class="card-action">
                   <a id="reset-password" href="#" class="grey-text text-darken-2">FORGOT PASSWORD</a>
                 </div>
+                -->
               </div>
            </div>
           </div>

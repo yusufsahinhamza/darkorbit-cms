@@ -1,14 +1,4 @@
 <?php
-
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-
-if (defined('ROOT')) {
-	require ROOT . 'packages/PHPMailer/src/Exception.php';
-	require ROOT . 'packages/PHPMailer/src/PHPMailer.php';
-	require ROOT . 'packages/PHPMailer/src/SMTP.php';
-}
-
 class Functions {
   public static function ObStart()
   {
@@ -40,6 +30,8 @@ class Functions {
         $path = ROOT . 'api.php';
       } else if ($page[0] == 'cronjobs') {
 				$path = CRONJOBS . $page[1] . '.php';
+			} else if ($page[0] == 'company_select' && (isset($player) && $player['factionId'] != 0)) {
+				$path = EXTERNALS . 'home.php';
 			} else {
 				if (isset($player)) {
 					$path = EXTERNALS . $page[0] . '.php';
@@ -137,7 +129,7 @@ class Functions {
           $mysqli->query('INSERT INTO player_titles (userID) VALUES ('.$userId.')');
           $mysqli->query('INSERT INTO player_skilltree (userID) VALUES ('.$userId.')');
 
-					Functions::SendMail($email, $username, 'E-mail verification', 'Hi '.$username.', Click this link to activate your account: <a href="'.DOMAIN.'api/verify/'.$userId.'/'.$verification['hash'].'">Activate</a>');
+					SMTP::SendMail($email, $username, 'E-mail verification', 'Hi '.$username.', Click this link to activate your account: <a href="'.DOMAIN.'api/verify/'.$userId.'/'.$verification['hash'].'">Activate</a>');
 
           $json['message'] = 'You successfully registered, please verify your e-mail address.';
 
@@ -276,13 +268,13 @@ class Functions {
 				} else {
 					$json['message'] = "You don't have enough Uridium.";
 				}
+
+        if ($json['status']) {
+          Socket::Send('ChangeCompany', ['UserId' => $player['userId'], 'UridiumPrice' => 5000, 'HonorPrice' => $data->honor]);
+        }
 			}
 		} else {
 			$json['message'] = 'Something went wrong!';
-		}
-
-		if ($json['status']) {
-			Socket::Send('ChangeCompany', ['UserId' => $player['userId'], 'UridiumPrice' => 5000, 'HonorPrice' => $data->honor]);
 		}
 
 		return json_encode($json);
@@ -872,31 +864,6 @@ class Functions {
       $newShipName = GetUniqueShipName($shipName);
 
 		return $newShipName;
-	}
-
-	public static function SendMail($email, $head, $subject, $message) {
-		$mail = new PHPMailer(true);
-
-		try {
-		    $mail->isSMTP();
-		    $mail->Host       = SMTP_HOST;
-		    $mail->SMTPAuth   = true;
-		    $mail->Username   = SMTP_USERNAME;
-		    $mail->Password   = SMTP_PASSWORD;
-		    $mail->SMTPSecure = 'ssl';
-		    $mail->Port       = SMTP_PORT;
-
-		    $mail->setFrom(SMTP_USERNAME, SERVER_NAME);
-		    $mail->addAddress($email, SERVER_NAME . ' | ' . $head);
-
-		    $mail->isHTML(true);
-		    $mail->Subject = SERVER_NAME . ' | ' . $subject;
-		    $mail->Body    = $message;
-
-		    $mail->send();
-		} catch (Exception $e) {
-		    unset($e);
-		}
 	}
 
   public static function GetIP() {

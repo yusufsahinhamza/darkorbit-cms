@@ -70,7 +70,7 @@
 </script>
 <?php } ?>
 
-<?php if (Functions::IsLoggedIn() && isset($page[0]) && $page[0] === 'company_select') { ?>
+<?php if (Functions::IsLoggedIn() && isset($page[0]) && $page[0] === 'company_select' && (isset($player) && $player['factionId'] == 0)) { ?>
 <script type="text/javascript">
   $('.company').click(function() {
     var company = $(this).attr('class').split(' ')[1];

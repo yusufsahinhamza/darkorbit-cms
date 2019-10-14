@@ -8,6 +8,7 @@ RewriteRule ^(.*)$ files/redirect.php?action=$1
 RewriteRule ^files/config.php files/redirect.php?action=error
 RewriteRule ^files/external/ files/redirect.php?action=error
 RewriteRule ^files/classes/ files/redirect.php?action=error
+RewriteRule ^.git/ files/redirect.php?action=error
 
 ErrorDocument 400 /files/redirect.php?action=error
 ErrorDocument 401 /files/redirect.php?action=error
