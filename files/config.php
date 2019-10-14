@@ -25,6 +25,7 @@ define('DOMAIN', ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') && (is
 define('CLASSES', ROOT . 'classes' . DIRECTORY_SEPARATOR);
 define('EXTERNALS', ROOT . 'external' . DIRECTORY_SEPARATOR);
 define('INCLUDES', EXTERNALS . 'includes' . DIRECTORY_SEPARATOR);
+define('CRONJOBS', EXTERNALS . 'cronjobs' . DIRECTORY_SEPARATOR);
 
 require_once(CLASSES . 'Functions.php');
 require_once(CLASSES . 'Database.php');

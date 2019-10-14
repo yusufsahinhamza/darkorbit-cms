@@ -19,10 +19,6 @@
                 $page_ = INCLUDES . 'clan/informations.php';
               }
 
-              if ($player['clanId'] > 0) {
-                $clan = $mysqli->query('SELECT * FROM server_clans WHERE id = '.$player['clanId'].'')->fetch_assoc();
-              }
-
               if (!file_exists($page_)) {
                 $page_ = EXTERNALS . 'error.php';
               }

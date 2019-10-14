@@ -9,7 +9,7 @@
           <div class="col s4">
             <h6><?php echo $value['shipName']; ?></h6>
             <p>EP: <?php echo number_format(json_decode($value['data'])->experience); ?></p>
-            <p>Rank: <img src="<?php echo DOMAIN; ?>img/ranks/rank_<?php echo $value['rankID']; ?>.png"> <?php echo Functions::GetRankName($value['rankID']); ?></p>
+            <p>Rank: <img src="<?php echo DOMAIN; ?>img/ranks/rank_<?php echo $value['rankId']; ?>.png"> <?php echo Functions::GetRankName($value['rankId']); ?></p>
           </div>
           <div class="col s4">
             <p>Joined: <?php echo date('Y.m.d', strtotime(json_decode($clan['join_dates'])->{$value['userId']})); ?></p>

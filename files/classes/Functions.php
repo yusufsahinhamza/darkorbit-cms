@@ -26,6 +26,10 @@ class Functions {
 		if (Functions::IsLoggedIn()) {
 			$player = Functions::GetPlayer();
 			$data = json_decode($player['data']);
+
+			if ($player['clanId'] > 0) {
+				$clan = $mysqli->query('SELECT * FROM server_clans WHERE id = '.$player['clanId'].'')->fetch_assoc();
+			}
 		}
 
     $page = explode('/', str_replace('-', '_', Functions::s($variable)));
@@ -34,7 +38,9 @@ class Functions {
     if (isset($page[0])) {
       if ($page[0] == 'api') {
         $path = ROOT . 'api.php';
-      } else {
+      } else if ($page[0] == 'cronjobs') {
+				$path = CRONJOBS . $page[1] . '.php';
+			} else {
 				if (isset($player)) {
 					$path = EXTERNALS . $page[0] . '.php';
 
@@ -248,7 +254,7 @@ class Functions {
 
 						if ($data->honor > 0) {
 							$data->honor /= 2;
-							$data->honor = floor($data->honor);
+							$data->honor = round($data->honor);
 						}
 
 						$mysqli->begin_transaction();
@@ -613,8 +619,8 @@ class Functions {
 				'shipName' => $user['shipName'],
 				'experience' => number_format(json_decode($user['data'])->experience),
 				'rank' => [
-					'id' => $user['rankID'],
-					'name' => Functions::GetRankName($user['rankID'])
+					'id' => $user['rankId'],
+					'name' => Functions::GetRankName($user['rankId'])
 				],
 				'joined_date' => date('Y.m.d'),
 				'company' => $user['factionId'] == 1 ? 'MMO' : ($user['factionId'] == 2 ? 'EIC' : 'VRU')
