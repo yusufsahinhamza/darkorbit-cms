@@ -142,6 +142,9 @@
               </ol>
               <br>
               <p>We are committed to conducting our business in accordance with these principles in order to ensure that the confidentiality of personal information is protected and maintained.</p>
+              <br>
+              <div><b><?php echo SERVER_NAME; ?></b> is an independent project (Nonprofit goal) © <?php echo date('Y'); ?>. <br> <a class="blue-text" target="_blank" href="http://darkorbit.com/">DarkOrbit</a> is a registered trademark of <a class="blue-text" target="_blank" href="http://bigpoint.com/">BigPoint GmbH</a>. All rights reserved to their respective owner(s). <br> We are not endorsed, affiliated or offered by <a class="blue-text" target="_blank" href="http://bigpoint.com/">BigPoint GmbH</a>.
+              </div>
             </div>
           </div>
           <div class="modal-footer">

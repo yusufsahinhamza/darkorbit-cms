@@ -2,7 +2,11 @@
   <div class="footer-copyright">
     <div class="container">
     © <?php echo date('Y'); ?> <?php echo SERVER_NAME; ?>
-    <a class="grey-text text-lighten-4 right" href="https://elitepvpers.com/" target="_blank">Elitepvpers</a>
+    <div class="right">
+      <a class="grey-text text-lighten-4" href="https://darkorbit.com/" target="_blank">DarkOrbit</a>
+      |
+      <a class="grey-text text-lighten-4" href="https://elitepvpers.com/" target="_blank">Elitepvpers</a>
+    </div>
     </div>
   </div>
 </footer>
