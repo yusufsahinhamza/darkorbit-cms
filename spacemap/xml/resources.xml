@@ -607,16 +607,7 @@
     <file version="1" type="jxr" name="freighter_02" location="graphics_backgrounds_basic" id="freighter_02" hash="6ea539fedf8468e5029bc2bb08385d00" debugView="false"/>
     <file version="1" type="atf" name="freighter_02_atf" location="graphics_backgrounds_basic" id="freighter_02_atf" hash="ff46e912984b5b2b8c99798274b70d00" debugView="false"/>
     <file version="1" type="swf" name="frostedGatesEffect" location="graphics_effects" id="frostedGatesEffect" hash="46b39cdcada5c8979e7a860a7ec07600" debugView="false"/>
-    <file debugView="false" hash="beba7994faf717b9042f9c94bbe48700" id="ship_a-elite_design_a_elite_blaze" location="graphics_ships" name="ship_a-elite_design_a_elite_blaze" type="swf" version="1"/>
-    <file debugView="false" hash="61b63169757123315cb9134b42cfcc00" id="ship_a-elite_design_a_elite_lava" location="graphics_ships" name="ship_a-elite_design_a_elite_lava" type="swf" version="1"/>
-    <file debugView="false" hash="e27f5c08234dc1e54b2fd19366f6ea00" id="ship_a-elite_design_a_elite_ocean" location="graphics_ships" name="ship_a-elite_design_a_elite_ocean" type="swf" version="1"/>
-    <file debugView="false" hash="33ffb38f40fe7620fdd9f077c99cb200" id="ship_a-elite_design_a_elite_sandstorm" location="graphics_ships" name="ship_a-elite_design_a_elite_sandstorm" type="swf" version="1"/>
-    <file debugView="false" hash="b271c2a5fe0c6a42800df1d2592d8a00" id="ship_a_elite_design_a_elite_poison" location="graphics_ships" name="ship_a_elite_design_a_elite_poison" type="swf" version="1"/>
     <file version="1" type="xml" name="frostedGatesEffect_atlasXml" location="graphics_effects" id="frostedGatesEffect_atlasXml" hash="4727585750b1fecf6268a9bfeb0bf600" debugView="false"/>
-    <file debugView="false" hash="810bd933bda707a070d8e26848c78d00" id="ship_cyborg" location="graphics_ships" name="ship_cyborg" type="swf" version="1"/>
-    <file debugView="false" hash="92f8895867c6eabc0710531c25964800" id="ship_cyborg_design_cyborg-blaze" location="graphics_ships" name="ship_cyborg_design_cyborg-blaze" type="swf" version="1"/>
-    <file debugView="false" hash="4f5d9023cb9add14d816dbb051d0f900" id="ship_cyborg_design_cyborg-carbonite" location="graphics_ships" name="ship_cyborg_design_cyborg-carbonite" type="swf" version="1"/>
-    <file debugView="false" hash="4ca84556dda7ff1bbcd235c1f4bd7e00" id="ship_cyborg_design_cyborg-lava" location="graphics_ships" name="ship_cyborg_design_cyborg-lava" type="swf" version="1"/>
     <file version="1" type="png" name="frostedGatesEffect_texture" location="graphics_effects" id="frostedGatesEffect_texture" hash="f06a42247d2ee73ba42f1977612fe700" debugView="false"/>
     <file version="1" type="swf" name="gameclientCommonUI" location="graphics_ui" id="gameclientCommonUI" hash="f898945558f632a41df1f38390a58600" debugView="false"/>
     <file version="1" type="xml" name="gameclientCommonUIStructure" location="graphics_ui" id="gameclientCommonUIStructure" hash="3776dd2222a7374bfb634d2597ccaf00" debugView="false"/>
@@ -1719,24 +1710,6 @@
     <file version="1" type="swf" name="ship45" location="graphics_ships" id="ship45" hash="b12505d11c7387f13d38629659916900" debugView="false"/>
     <file version="1" type="swf" name="ship46" location="graphics_ships" id="ship46" hash="248a3f6919bffd41ca54e66f48ae9900" debugView="false"/>
     <file version="1" type="swf" name="ship48" location="graphics_ships" id="ship48" hash="acbf81b1829ddfd91f0483c18472c600" debugView="false"/>
-    <file debugView="false" hash="8f4623c2bbafc1dc67502c40a6912500" id="ship_diminisher_argon" location="graphics_ships" name="ship_diminisher_argon" type="swf" version="1"/>
-    <file debugView="false" hash="9a6aa0b639ca98a6aeb03af171d4f700" id="ship_diminisher_lava" location="graphics_ships" name="ship_diminisher_lava" type="swf" version="1"/>
-    <file debugView="false" hash="aeff9aebefd144ee4653b735a34b2f00" id="ship_diminisher_legend" location="graphics_ships" name="ship_diminisher_legend" type="swf" version="1"/>
-    <file debugView="false" hash="5b46a1ea87c1c01ba12260afe5460200" id="ship_goliath-solace-blaze" location="graphics_ships" name="ship_goliath-solace-blaze" type="swf" version="1"/>
-    <file debugView="false" hash="7e5bb446f814058291cb040ed1a23800" id="ship_solace_design_solace-argon" location="graphics_ships" name="ship_solace_design_solace-argon" type="swf" version="1"/>
-    <file debugView="false" hash="ad3067e0b8ed8aa9704f3107b583e000" id="ship_solace_design_solace-borealis" location="graphics_ships" name="ship_solace_design_solace-borealis" type="swf" version="1"/>
-    <file debugView="false" hash="0ee9d893e87316e112bec003bbdf8000" id="ship_solace_design_solace-ocean" location="graphics_ships" name="ship_solace_design_solace-ocean" type="swf" version="1"/>
-    <file debugView="false" hash="4a7f1e91a3e065e01fec371e071b5200" id="ship_solace_design_solace-poison" location="graphics_ships" name="ship_solace_design_solace-poison" type="swf" version="1"/>
-    <file debugView="false" hash="2238c6c446d965159c68a49a92349f00" id="ship_spectrum_blaze" location="graphics_ships" name="ship_spectrum_blaze" type="swf" version="1"/>
-    <file debugView="false" hash="8af9edca3cb8b359b418e1fd2595e400" id="ship_spectrum_design-dusklight" location="graphics_ships" name="ship_spectrum_design-dusklight" type="swf" version="1"/>
-    <file debugView="false" hash="7c1c3aa2d3a828c9d392a4bc35eef200" id="ship_spectrum_lava" location="graphics_ships" name="ship_spectrum_lava" type="swf" version="1"/>
-    <file debugView="false" hash="ec2cbf390dcab15083ecc42dcc04ac00" id="ship_spectrum_legend" location="graphics_ships" name="ship_spectrum_legend" type="swf" version="1"/>
-    <file debugView="false" hash="3d3e67e4c0af48eeb07aed3e8d36a600" id="ship_spectrum_ocean" location="graphics_ships" name="ship_spectrum_ocean" type="swf" version="1"/>
-    <file debugView="false" hash="501b36154e8d7f1cf9d4a4d13100c600" id="ship_spectrum_poison" location="graphics_ships" name="ship_spectrum_poison" type="swf" version="1"/>
-    <file debugView="false" hash="bc3824b3caac5037b676a9031d7dd200" id="ship_spectrum_sandstorm" location="graphics_ships" name="ship_spectrum_sandstorm" type="swf" version="1"/>
-    <file debugView="false" hash="869c7d6b6445f79b8715f54de5efae00" id="ship_sentinel_design_sentinel-argon" location="graphics_ships" name="ship_sentinel_design_sentinel-argon" type="swf" version="1"/>
-    <file debugView="false" hash="7cc843a616e5d14c1e40a0c3668e6200" id="ship_sentinel_design_sentinel-lava" location="graphics_ships" name="ship_sentinel_design_sentinel-lava" type="swf" version="1"/>
-    <file debugView="false" hash="f3efafc0fdf3139883498f2100654400" id="ship_sentinel_design_sentinel-legend" location="graphics_ships" name="ship_sentinel_design_sentinel-legend" type="swf" version="1"/>
     <file version="1" type="swf" name="ship49_Emed" location="graphics_expansions" id="ship49_Emed" hash="e79c5ffd10dc79f77183171b23f70c00" debugView="false"/>
     <file version="1" type="swf" name="ship49_factions" location="graphics_factions" id="ship49_factions" hash="f81b966667840b9cd8123edc869a6e00" debugView="false"/>
     <file version="1" type="swf" name="ship49_pod" location="graphics_items" id="ship49_pod" hash="095035e412a3d24f4b1d3ed293d78800" debugView="false"/>
@@ -1850,37 +1823,7 @@
     <file version="1" type="swf" name="ship_goliath_design_gold" location="graphics_ships" id="ship_goliath_design_gold" hash="e2749a9cb41494c625b7eca7d3b5a300" debugView="false"/>
     <file version="1" type="swf" name="ship_goliath_design_iron" location="graphics_ships" id="ship_goliath_design_iron" hash="7ba84e74886325914de866567f0c2f00" debugView="false"/>
     <file version="1" type="swf" name="ship_goliath_design_peacemaker" location="graphics_ships" id="ship_goliath_design_peacemaker" hash="0aed58258fdd393bd096393423591100" debugView="false"/>
-    <file debugView="false" hash="8ed27cd54121f8a3cf224927957e7600" id="ship_g-champion_design_g-champion_argon" location="graphics_ships" name="ship_g-champion_design_g-champion_argon" type="swf" version="1"/>
-    <file debugView="false" hash="2544ebaaa6b38e15313ec17b8944de00" id="ship_g-champion_design_g-champion_dusklight" location="graphics_ships" name="ship_g-champion_design_g-champion_dusklight" type="swf" version="1"/>
-    <file debugView="false" hash="f28e41292a75fe89f4cc6ea4e238ae00" id="ship_g-champion_design_g-champion_lava" location="graphics_ships" name="ship_g-champion_design_g-champion_lava" type="swf" version="1"/>
-    <file debugView="false" hash="cbf2fdcd107ba749a0c147536e340b00" id="ship_g-champion_design_g-champion_legend" location="graphics_ships" name="ship_g-champion_design_g-champion_legend" type="swf" version="1"/>
-    <file debugView="false" hash="aee6aa611c76140b01691ebeef86e500" id="ship_g-surgeon_design_g-surgeon-cicada" location="graphics_ships" name="ship_g-surgeon_design_g-surgeon-cicada" type="swf" version="1"/>
-    <file debugView="false" hash="d22e6b9f647807ea32dfb48b099a0e00" id="ship_g-surgeon" location="graphics_ships" name="ship_g-surgeon" type="swf" version="1"/>
-    <file debugView="false" hash="5bc2ac9b27fe9ff1a2fe391c70e94d00" id="ship_g-surgeon_design_g-surgeon-locust" location="graphics_ships" name="ship_g-surgeon_design_g-surgeon-locust" type="swf" version="1"/>
-    <file debugView="false" hash="6719289cca7d8ba6ee1fc769b9f88300" id="ship_g-champion" location="graphics_ships" name="ship_g-champion" type="swf" version="1"/>
-    <file debugView="false" hash="807a64bae696a6de5c8ceb2fda2eab00" id="ship_g-champion_design_g-champion_albania" location="graphics_ships" name="ship_g-champion_design_g-champion_albania" type="swf" version="1"/>
-    <file debugView="false" hash="ce8a24c7ec1029627b8cf876b8264d00" id="ship_g-champion_design_g-champion_austria" location="graphics_ships" name="ship_g-champion_design_g-champion_austria" type="swf" version="1"/>
-    <file debugView="false" hash="5b7ace3907bd5a97d7b19977afb8df00" id="ship_g-champion_design_g-champion_belgium" location="graphics_ships" name="ship_g-champion_design_g-champion_belgium" type="swf" version="1"/>
-    <file debugView="false" hash="4ab427958d7120c88af58e8724721f00" id="ship_g-champion_design_g-champion_croatia" location="graphics_ships" name="ship_g-champion_design_g-champion_croatia" type="swf" version="1"/>
-    <file debugView="false" hash="a7d4a188f3e5fc8c0f780762943e4a00" id="ship_g-champion_design_g-champion_czech_republic" location="graphics_ships" name="ship_g-champion_design_g-champion_czech_republic" type="swf" version="1"/>
-    <file debugView="false" hash="1a31336dcd4f981748a5f636e6907200" id="ship_g-champion_design_g-champion_england" location="graphics_ships" name="ship_g-champion_design_g-champion_england" type="swf" version="1"/>
-    <file debugView="false" hash="ed207406666114b0eeda775ccbdfd000" id="ship_g-champion_design_g-champion_france" location="graphics_ships" name="ship_g-champion_design_g-champion_france" type="swf" version="1"/>
-    <file debugView="false" hash="f68efa433cf08d41676799da2f2a2900" id="ship_g-champion_design_g-champion_germany" location="graphics_ships" name="ship_g-champion_design_g-champion_germany" type="swf" version="1"/>
-    <file debugView="false" hash="90c15a88de3ea04e97e5bad8f36ce600" id="ship_g-champion_design_g-champion_hungary" location="graphics_ships" name="ship_g-champion_design_g-champion_hungary" type="swf" version="1"/>
-    <file debugView="false" hash="4e0e884a0555a141956de2090eb45a00" id="ship_g-champion_design_g-champion_iceland" location="graphics_ships" name="ship_g-champion_design_g-champion_iceland" type="swf" version="1"/>
-    <file debugView="false" hash="45a567e81cba2b81da34a4413f43f800" id="ship_g-champion_design_g-champion_italy" location="graphics_ships" name="ship_g-champion_design_g-champion_italy" type="swf" version="1"/>
-    <file debugView="false" hash="0d2e024be60fb46c4193d3d9925db200" id="ship_g-champion_design_g-champion_northern_ireland" location="graphics_ships" name="ship_g-champion_design_g-champion_northern_ireland" type="swf" version="1"/>
-    <file debugView="false" hash="90cba2afd3e56473f2025d88895e7600" id="ship_g-champion_design_g-champion_poland" location="graphics_ships" name="ship_g-champion_design_g-champion_poland" type="swf" version="1"/>
-    <file debugView="false" hash="c39768170a1cc2bd1d40063086850f00" id="ship_g-champion_design_g-champion_portugal" location="graphics_ships" name="ship_g-champion_design_g-champion_portugal" type="swf" version="1"/>
-    <file debugView="false" hash="3e940db26d5c2d125c4ba55982ef9500" id="ship_g-champion_design_g-champion_republic_of_ireland" location="graphics_ships" name="ship_g-champion_design_g-champion_republic_of_ireland" type="swf" version="1"/>
-    <file debugView="false" hash="0c9c4397390018827e2a0247b1b79b00" id="ship_g-champion_design_g-champion_romania" location="graphics_ships" name="ship_g-champion_design_g-champion_romania" type="swf" version="1"/>
-    <file debugView="false" hash="252018d0a616ed86ae4fde66a3bd4700" id="ship_g-champion_design_g-champion_russia" location="graphics_ships" name="ship_g-champion_design_g-champion_russia" type="swf" version="1"/>
-    <file debugView="false" hash="a8cdc4af7027c58dc862184e2a1fad00" id="ship_g-champion_design_g-champion_slovakia" location="graphics_ships" name="ship_g-champion_design_g-champion_slovakia" type="swf" version="1"/>
-    <file debugView="false" hash="d2b52baede90430f99718be14b69a400" id="ship_g-champion_design_g-champion_spain" location="graphics_ships" name="ship_g-champion_design_g-champion_spain" type="swf" version="1"/>
-    <file debugView="false" hash="f5bc1f2d9784e8ccef3a5abbf1b80f00" id="ship_g-champion_design_g-champion_sweden" location="graphics_ships" name="ship_g-champion_design_g-champion_sweden" type="swf" version="1"/>
-    <file debugView="false" hash="ba176ba78badd90c511b89632a812200" id="ship_g-champion_design_g-champion_switzerland" location="graphics_ships" name="ship_g-champion_design_g-champion_switzerland" type="swf" version="1"/>
-    <file debugView="false" hash="7050f6d7a89ac13d335e6247364c7c00" id="ship_g-champion_design_g-champion_ukraine" location="graphics_ships" name="ship_g-champion_design_g-champion_ukraine" type="swf" version="1"/>
-    <file debugView="false" hash="8d5dc59cdff996471cc6b37cb717a000" id="ship_g-champion_design_g-champion_wales" location="graphics_ships" name="ship_g-champion_design_g-champion_wales" type="swf" version="1"/>
+    <file version="1" type="swf" name="ship_goliath_design_surgeon" location="graphics_ships" id="ship_goliath_design_surgeon" hash="d22e6b9f647807ea32dfb48b099a0e00" debugView="false"/>
     <file version="1" type="swf" name="ship_goliath_design_goliath-razer" location="graphics_ships" id="ship_goliath_design_goliath-razer" hash="9032bd2bf6ad36a56f7f23dea7094700" debugView="false"/>
     <file version="1" type="swf" name="ship_goliath_design_silver" location="graphics_ships" id="ship_goliath_design_silver" hash="2195395e350ad7d7df455c3fc3c3d700" debugView="false"/>
     <file version="1" type="swf" name="ship_goliath_design_sovereign" location="graphics_ships" id="ship_goliath_design_sovereign" hash="e9e4bb5672b549e8a5d705e688329d00" debugView="false"/>

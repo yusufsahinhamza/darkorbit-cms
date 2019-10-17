@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CollectorEvent xmlns="http://www.darkorbit.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.darkorbit.com eventProgress.xsd">
+
+	<attributes>
+    	<titleKey>window_event_progress_title</titleKey>
+    	<descriptionKey>window_event_progress_label_description</descriptionKey>
+	    <resetPrice uridium="15000" />
+    </attributes>
+
+    <!--
+    <item name="window_event_progress_title"><![CDATA[Hatching Out!]]></item>
+    <item name="window_event_progress_button_confirmation_collect_rewards"><![CDATA[Collect]]></item>
+    <item name="window_event_progress_button_confirmation_collect_restart"><![CDATA[Restart]]></item>
+    <item name="window_event_progress_label_event_ends"><![CDATA[Event Ends in:]]></item>
+    <item name="window_event_progress_tabbar_eventprogress"><![CDATA[Progress]]></item>
+    <item name="window_event_progress_tabbar_explanation"><![CDATA[Sources]]></item>
+    <item name="window_event_progress_label_nextreward"><![CDATA[Next Reward:]]></item>
+    <item name="window_event_progress_tooltip_package01_hatching_out"><![CDATA[15 Khyalon and 50 Bifenon]]></item>
+    <item name="window_event_progress_tooltip_package02_hatching_out"><![CDATA[40 Khyalon and 60 Tetrathrin]]></item>
+    <item name="window_event_progress_label_timeleft"><![CDATA[Time left:]]></item>
+    <item name="window_event_progress_label_description"><![CDATA[Help remove the viral infection by collecting Viral Purge points. The more you collect, the better the rewards. With factions agreeing to award all who complete the process an LF-4. The more times you complete the process the more awards you will gain. So, its time to prepare for action.]]></item>
+    <item name="window_event_progress_label_event_collection_points_hatchingout_event"><![CDATA[You can collect Viral Purge points from: Eggs, Gygerthralls, Killing the HITAC, Event Missions and Alpha, Beta and Gamma Gates.]]></item>
+    <item name="ttip_event_progress"><![CDATA[Progress]]></item>
+    -->
+    <rewards class="java.util.ArrayList">
+        <reward lootid="resource_extra-energy" amount="100" unlockRequirement="1000" />
+        <reward lootid="ammunition_laser_rsb-75" amount="5000" unlockRequirement="3000" />
+        <reward packageid="package_event_progress-hatchingout01" packageItemIds="resource_collectable_kyhalon,resource_collectable_bifenon" itemShowTimeInSec="3" amount="1" unlockRequirement="6000"  tooltipkey="window_event_progress_tooltip_package01_hatching_out"/>
+        <reward packageid="package_event_progress-hatchingout02" packageItemIds="resource_collectable_kyhalon,resource_collectable_tetrathrin" itemShowTimeInSec="3" amount="1" unlockRequirement="12000" tooltipkey="window_event_progress_tooltip_package02_hatching_out"/>
+        <reward lootid="equipment_weapon_laser_lf-4" amount="1" unlockRequirement="20000"/>
+    </rewards> 
+	<triggers class="java.util.ArrayList" />   
+
+</CollectorEvent>

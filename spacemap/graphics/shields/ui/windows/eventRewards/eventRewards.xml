@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+    <libraries>
+        <library id="gameclientCommonUI"/>
+        <library id="eventRewardsUI"/>
+        <library id="header_label"/>
+    </libraries>
+
+    <textstyle name="eventrewards_textstyle_title"
+               background="false"
+               textColor="0xFFCC00"
+               type="dynamic"
+               selectable="false"
+               fontName="EurostileHeaFl"
+               wordWrap="true"
+               align="center"
+               embedFonts="true"
+               fontSize="30"
+            />
+
+    <textstyle name="eventrewards_textstyle_place"
+               background="false"
+               textColor="0xFFFFFF"
+               type="dynamic"
+               selectable="false"
+               fontName="EurostileTMed"
+               wordWrap="true"
+               align="center"
+               embedFonts="true"
+               fontSize="20"
+            />
+
+    <textstyle
+            name="eventrewards_textstyle_default"
+            textColor="0xBFBFBF"
+            type="dynamic"
+            fontSize="12"
+            autoSize="center"
+            wordWrap="true"
+            multiline="true"
+            embedFonts="false"
+            fontName="Verdana"
+            align="center"/>
+
+    <textstyle
+            name="eventrewards_textstyle_rewardpanel"
+            textColor="0xFFFFFF"
+            type="dynamic"
+            fontSize="9"
+            autoSize="center"
+            wordWrap="true"
+            multiline="true"
+            embedFonts="false"
+            fontName="Verdana"
+            align="center"/>
+
+    <skin name="eventRewardsBG" library="eventRewardsUI" classname="BasicSkin">
+        <layer classname="BitmapLayer" libraryID="icon_bg_blue">normal</layer>
+    </skin>
+
+    <skin name="list_mask_rewards" classname="BasicSkin">
+        <layer classname="FilledBoxLayer" fillColor="0x358BAC" fillAlpha="1">mask</layer>
+    </skin>
+
+    <container name="root" mouseEnabled="true" mouseChildren="true" >
+        <container name="contentContainer"
+                mouseEnabled   = "false"
+                width          = "726"
+                height         = "410"
+                autoSizeMode   = "children"
+                >
+            <container name           = "infoContainer"
+                    mouseEnabled   = "false"
+                    width          = "726"
+                    layout         = "vertical"
+                    autoSizeHeight = "true"
+                    autoSizeMode   = "children"
+                    >
+
+                <!--<result name="title" y="35" registeredTextStyleName="traininggrounds_victoryTextStyle" align="left" width="726" height="60"/>-->
+
+
+
+                <label name="title"
+                       text="localize:event_rewards_window_headline"
+                       registeredSkinName="commonui_default_label"
+                       width="726"
+                       marginTop="7"
+                       height="50"
+                       alignX="left"
+                       alignY="center"
+                       registeredTextStyleName="eventrewards_textstyle_title"
+                       decorate="default.orangeGlowShadow"
+                        />
+
+                <label name="message"
+                       text=""
+                       registeredSkinName="commonui_default_label"
+                       width="526"
+                       height="50"
+                       alignX="center"
+                       marginTop="4"
+                       registeredTextStyleName="eventrewards_textstyle_default"
+                       useHTML="true"
+                       autoSizeTextHeight="true"
+                        />
+
+                <label name="place"
+                       text="localize:event_rewards_window_place"
+                       registeredSkinName="commonui_default_label"
+                       width="300"
+                       height="32"
+                       alignX="center"
+                       registeredTextStyleName="eventrewards_textstyle_place"
+                       useHTML="true"
+                       autoSizeTextHeight="true"
+                       decorate="default.lightBlueGlow"
+                       marginTop="10"
+                        />
+
+                <container name="rewards_container"  width="693" height="156" layout = "vertical" marginTop="15" marginRight="16" marginLeft="16">
+                    <itemlist name="eventRewardsList"
+                              width="693"
+                              itemGap="0"
+                              height="156"
+                              mouseChildren="true"
+                              mouseEnabled="true"
+                              autoSizeWidth="false"
+                              layout="horizontal_centered"
+                              cacheSkinMaskAsBitmap="false"
+                              registeredSkinName="list_mask_rewards"
+                            >
+                        <itemrenderer width="98" autoSizeWidth="false" height="156" mouseEnabled="true" mouseChildren="true">
+                            <coreponent name="background" width="98" height="156" alignX="center" alignY="center" registeredSkinName="eventRewardsBG">
+
+                            </coreponent>
+                            <coreponent name="pic" width="75" height="75" alignX="center" alignY="center"/>
+                            <label name="item_description" marginBottom="10" width="75" registeredTextStyleName="eventrewards_textstyle_rewardpanel"
+                                   mouseChildren="true" alignX="center" height="35" alignY="bottom"/>
+                        </itemrenderer>
+                    </itemlist>
+
+                    <scrollbar name="rewardsScrollbar" height="5" autoSizeWidth="true" direction="horizontal"
+                               marginTop="1"
+                               alignX="right"
+                               registeredSkinName="commonui_scrollbar_bgnd" visible="true">
+                        <button name="buttonSlider" alignY="center" width="10" height="5"
+                                registeredSkinName="commonui_scrollbar_slider" visible="true"/>
+                    </scrollbar>
+
+                    <bind source="rewardsScrollbar" target="eventRewardsList"/>
+
+                </container>
+
+            </container>
+            <container name= "confirmContainer" alignY="bottom" marginBottom="8" alignX="center" mouseEnabled="true"  mouseChildren="true" autoSizeWidth="true" height="62">
+                <button name="confirmBtn" text="localize:event_rewards_window_confirmBtn" mouseEnabled="true" width="160" height="62" alignX="center" registeredSkinName="commonui_confirmationbutton_green" registeredTextStyleName="commonui_confirmationbutton_green_normal"/>
+            </container>
+
+        </container>
+    </container>
+</root>

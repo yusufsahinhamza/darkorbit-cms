@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+    <!-- LIBS -->
+    <libraries>
+        <library id="plagueWindow"/>
+        <library id="plagueProgressView"/>
+        <library id="plagueGenericImg"/>
+        <library id="plagueOtherMapView"/>
+    </libraries>
+    <!-- TEXT STYLES -->
+
+
+    <!--  -->
+    <!--  -->
+    <!--  -->
+
+    <textstyle
+            name="plague_window_infected_textstyle"
+            textColor="0x00cbff"
+            type="dynamic"
+            align="center"
+            fontSize="24"
+            embedFonts="false"
+            fontName="Verdana"/>
+    <textstyle
+            name="plague_window_infected_timer_textstyle"
+            textColor="0xffcb00"
+            type="dynamic"
+            align="center"
+            fontSize="10"
+            embedFonts="false"
+            fontName="Verdana"/>
+    <textstyle
+            name="plague_window_buffs_textstyle_left"
+            textColor="0xbfbfbf"
+            type="dynamic"
+            fontSize="10"
+            autoSize="left"
+            embedFonts="false"
+            fontName="Verdana"/>
+    <textstyle
+            name="plague_window_buffs_textstyle_right"
+            textColor="0xbfbfbf"
+            type="dynamic"
+            fontSize="10"
+            autoSize="right"
+            embedFonts="false"
+            fontName="Verdana"/>
+
+    <textstyle
+            name="plague_window_points_textstyle"
+            textColor="0xfffefe"
+            type="dynamic"
+            fontName="EurostileTHea"
+            fontSize="20"
+            embedFonts="true"
+            align="left"/>
+    <textstyle
+            name="plague_window_headline_textstyle"
+            align="center"
+            textColor="0xBFBFBF"
+            type="dynamic"
+            fontSize="14"
+            embedFonts="false"
+            fontName="Verdana"/>
+
+    <skin
+            name="infectedImg"
+            library="plagueWindow"
+            classname="BasicSkin">
+        <layer
+                classname="BitmapLayer"
+                libraryID="infected">normal
+        </layer>
+    </skin>
+    <skin
+            name="notInfectedImg"
+            library="plagueWindow"
+            classname="BasicSkin">
+        <layer
+                classname="BitmapLayer"
+                libraryID="notInfected">normal
+        </layer>
+    </skin>
+
+    <skin
+            name="plague_window_horizontal_divider"
+            library="plagueWindow"
+            classname="BasicSkin">
+        <layer
+                classname="BitmapLayer"
+                libraryID="separator">normal
+        </layer>
+    </skin>
+
+    <skin
+            name="plague_label_skin"
+            classname="LabelSkin"
+            />
+
+    <!-- CONTENT -->
+    <container
+            name="contentContainer"
+            mouseEnabled="false"
+            layout="vertical"
+            width="262">
+        <container
+                layout="vertical"
+                width="262"
+                height="90"
+                mouseEnabled="true"
+                name="header">
+            <label
+                    autoSizeWidth="true"
+                    text="localize:plague_window_headline"
+                    alignX="left"
+                    height="18"
+                    registeredSkinName="plague_label_skin"
+                    registeredTextStyleName="plague_window_headline_textstyle"/>
+            <label
+                    autoSizeWidth="true"
+                    name="infected"
+                    alignX="left"
+                    text="localize:plague_window_infected"
+                    height="40"
+                    registeredSkinName="plague_label_skin"
+                    registeredTextStyleName="plague_window_infected_textstyle"/>
+            <label
+                    autoSizeWidth="true"
+                    name="timer"
+                    text="00:00"
+                    alignX="left"
+                    height="14"
+                    registeredSkinName="plague_label_skin"
+                    registeredTextStyleName="plague_window_infected_timer_textstyle"/>
+            <container name="buffs"
+                       width="240"
+                       height="60"
+                       layout="vertical"
+                       alignX="left">
+                <container name="speed_container"
+                           width="240"
+                           height="10"
+                           x="10"
+                           alignX="left">
+                    <label
+                            autoSizeWidth="true"
+                            text="localize:ttip_speed"
+                            alignX="left"
+                            registeredSkinName="plague_label_skin"
+                            registeredTextStyleName="plague_window_buffs_textstyle_left"/>
+                    <label
+                            name="label"
+                            autoSizeWidth="true"
+                            text="-"
+                            alignX="right"
+                            registeredSkinName="plague_label_skin"
+                            registeredTextStyleName="plague_window_buffs_textstyle_right"/>
+                </container>
+                <container name="dmg_container"
+                           width="240"
+                           height="10"
+                           x="10"
+                           alignX="left">
+                    <label
+                            autoSizeWidth="true"
+                            text="localize:ttip_dmg"
+                            alignX="left"
+                            registeredSkinName="plague_label_skin"
+                            registeredTextStyleName="plague_window_buffs_textstyle_left"/>
+                    <label
+                            name="label"
+                            autoSizeWidth="true"
+                            text="-"
+                            alignX="right"
+                            registeredSkinName="plague_label_skin"
+                            registeredTextStyleName="plague_window_buffs_textstyle_right"/>
+                </container>
+                <container name="hp_container"
+                           width="240"
+                           height="10"
+                           x="10"
+                           alignX="left">
+                    <label
+                            autoSizeWidth="true"
+                            text="localize:ttip_hitpoints"
+                            alignX="left"
+                            registeredSkinName="plague_label_skin"
+                            registeredTextStyleName="plague_window_buffs_textstyle_left"/>
+                    <label
+                            name="label"
+                            autoSizeWidth="true"
+                            text="-"
+                            alignX="right"
+                            registeredSkinName="plague_label_skin"
+                            registeredTextStyleName="plague_window_buffs_textstyle_right"/>
+                </container>
+            </container>
+        </container>
+        <container name="center"
+                   mouseEnabled="true"
+                   width="262"
+                   marginTop="10"
+                   marginBottom="10"
+                   alignX="center">
+        </container>
+        <container name="footer"
+                   mouseEnabled="true"
+                   layout="horizontal"
+                   width="262"
+                   height="55"
+                   marginTop="10">
+            <container
+                    name="notInfectedContainer"
+                    layout="horizontal"
+                    width="131"
+                    height="55"
+                    alignX="left"
+                    marginTop="5">
+                <coreponent
+                        registeredSkinName="notInfectedImg"/>
+                <label
+                        name="points"
+                        text="1594"
+                        height="24"
+                        width="50"
+                        marginLeft="5"
+                        registeredSkinName="plague_label_skin"
+                        registeredTextStyleName="plague_window_points_textstyle"/>
+            </container>
+            <container
+                    name="infectedContainer"
+                    layout="horizontal"
+                    width="131"
+                    height="55"
+                    alignX="right"
+                    toolTip="1234"
+                    marginTop="5">
+                <coreponent
+                        registeredSkinName="infectedImg"/>
+                <label
+                        name="points"
+                        text="239"
+                        height="24"
+                        width="50"
+                        marginLeft="5"
+                        registeredSkinName="plague_label_skin"
+                        registeredTextStyleName="plague_window_points_textstyle"/>
+            </container>
+
+        </container>
+    </container>
+</root>

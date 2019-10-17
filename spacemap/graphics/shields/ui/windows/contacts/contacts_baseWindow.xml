@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+	<!-- STEP 0 - define libraries used / id from resources.xml -->
+	<libraries>
+		<library id="contactsWindowUI"/>
+		<library id="gameclientCommonUI"/>
+	</libraries>
+	
+	<textstyle  name               = "contactlist_selectedUsernameTextStyle" 
+				textColor          = "0xFEFEFE" 
+				borderColor        = "0x555555"  
+				backgroundColor    = "0x000000" 
+				selectionTextColor = "0x333344"
+				type               = "input" 
+				selectable         = "true" 
+				marginLeft         = "5" 
+				fontName           = "Arial"
+				embedFonts         = "false"
+				border             = "false" 
+				background         = "false" 
+				maxChars           = "128"
+				/>
+	<textstyle 	name           = "contactlist_blackTextStyle" 
+				textColor      = "0x000000" 
+				type           = "dynamic" 
+				selectable     = "false" 
+				fontName       = "EurostileT"
+				background     = "true" 
+				backgroundColor="0x000000" 
+				/>
+	<textstyle 	name       = "contactlist_usernameEntryTextStyle" 
+				background = "false"
+				textColor  = "0xFFFFFF" 
+				type       = "dynamic" 
+				selectable = "false"  
+				fontName   = "Arial"
+				embedFonts = "false"
+				/>
+	<textstyle 	name       = "contactlist_checkboxDescriptionTextStyle" 
+				background = "false"
+				textColor  = "0x979797" 
+				type       = "dynamic" 
+				fontName   = "EurostileT" 
+				fontSize   = "12"
+				selectable = "false"
+				/>
+	
+	<!-- STEP I - define skins -->
+	<skins>
+		<skin name="contactlist_window_add_button" library="contactsWindowUI" classname="FadableButtonSkin">
+			<layer classname="BitmapLayer" libraryID="contactlist_button_add_normal"   >normal</layer>
+			<layer classname="BitmapLayer" libraryID="contactlist_button_add_hover"    >over</layer>
+			<layer classname="BitmapLayer" libraryID="contactlist_button_add_active"   >clicked</layer>
+			<layer classname="BitmapLayer" libraryID="contactlist_button_add_inactive" >disabled</layer>
+		</skin>
+		<skin name="contactlist_window_block_button" library="contactsWindowUI" classname="FadableButtonSkin">
+			<layer classname="BitmapLayer" libraryID="contactlist_button_block_normal"   >normal</layer>
+			<layer classname="BitmapLayer" libraryID="contactlist_button_block_hover"    >over</layer>
+			<layer classname="BitmapLayer" libraryID="contactlist_button_block_active"   >clicked</layer>
+			<layer classname="BitmapLayer" libraryID="contactlist_button_block_inactive" >disabled</layer>
+		</skin>
+		<skin name="contactlist_window_invite_button" library="contactsWindowUI" classname="FadableButtonSkin">
+			<layer classname="BitmapLayer" libraryID="contactlist_button_invite_normal"   >normal</layer>
+			<layer classname="BitmapLayer" libraryID="contactlist_button_invite_hover"    >over</layer>
+			<layer classname="BitmapLayer" libraryID="contactlist_button_invite_active"   >clicked</layer>
+			<layer classname="BitmapLayer" libraryID="contactlist_button_invite_inactive" >disabled</layer>
+		</skin>
+		<skin name="contactlist_window_remove_button" library="contactsWindowUI" classname="FadableButtonSkin">
+			<layer classname="BitmapLayer" libraryID="contactlist_button_remove_normal"   >normal</layer>
+			<layer classname="BitmapLayer" libraryID="contactlist_button_remove_hover"    >over</layer>
+			<layer classname="BitmapLayer" libraryID="contactlist_button_remove_active"   >clicked</layer>
+			<layer classname="BitmapLayer" libraryID="contactlist_button_remove_inactive" >disabled</layer>
+		</skin>
+		<skin name="contactlist_window_accept_button" library="contactsWindowUI" classname="FadableButtonSkin">
+			<layer classname="BitmapLayer" libraryID="contactlist_button_thumb_up_normal"   >normal</layer>
+			<layer classname="BitmapLayer" libraryID="contactlist_button_thumb_up_hover"    >over</layer>
+			<layer classname="BitmapLayer" libraryID="contactlist_button_thumb_up_active"   >clicked</layer>
+			<layer classname="BitmapLayer" libraryID="contactlist_button_thumb_up_inactive" >disabled</layer>
+		</skin>
+		<skin name="contactlist_window_decline_button" library="contactsWindowUI" classname="FadableButtonSkin">
+			<layer classname="BitmapLayer" libraryID="contactlist_button_thumb_down_normal"   >normal</layer>
+			<layer classname="BitmapLayer" libraryID="contactlist_button_thumb_down_hover"    >over</layer>
+			<layer classname="BitmapLayer" libraryID="contactlist_button_thumb_down_active"   >clicked</layer>
+			<layer classname="BitmapLayer" libraryID="contactlist_button_thumb_down_inactive" >disabled</layer>
+		</skin>
+		<skin name="contactlist_window_unblock_button" library="contactsWindowUI" classname="FadableButtonSkin">
+			<layer classname="BitmapLayer" libraryID="contactlist_button_unblock_normal"   >normal</layer>
+			<layer classname="BitmapLayer" libraryID="contactlist_button_unblock_hover"    >over</layer>
+			<layer classname="BitmapLayer" libraryID="contactlist_button_unblock_active"   >clicked</layer>
+			<layer classname="BitmapLayer" libraryID="contactlist_button_unblock_inactive" >disabled</layer>
+		</skin>	
+
+		<skin name="contactlist_label" classname="LabelSkin" library="contactsWindowUI" />
+		<skin name="contactlist_label_truncate" classname="LabelSkin" library="contactsWindowUI" truncateText="true" />
+		
+		<skin name="contactlist_window_horizontal_divider" library="contactsWindowUI" classname="BasicSkin">
+			<layer classname="BitmapLayer" libraryID="contactlist_horizontal_divider"   >normal</layer>
+		</skin>
+		
+		<skin name="contactlist_window_buddy_offline" library="contactsWindowUI" classname="BasicSkin" >
+			<layer classname="BitmapLayer" libraryID="contactlist_buddy_offline" >normal</layer>
+		</skin>
+		<skin name="contactlist_window_buddy_on_map" library="contactsWindowUI" classname="BasicSkin" >
+			<layer classname="BitmapLayer" libraryID="contactlist_buddy_on_map" >normal</layer>
+		</skin>
+		<skin name="contactlist_window_buddy_online" library="contactsWindowUI" classname="BasicSkin" >
+			<layer classname="BitmapLayer" libraryID="contactlist_buddy_online" >normal</layer>
+		</skin>
+		<skin name="contactlist_window_buddy_pending" library="contactsWindowUI" classname="BasicSkin" >
+			<layer classname="BitmapLayer" libraryID="contactlist_buddy_pending" >normal</layer>
+		</skin>
+		<skin name="contactlist_window_buddy_blocked" library="contactsWindowUI" classname="BasicSkin" >
+			<layer classname="BitmapLayer" libraryID="contactlist_buddy_blocked" >normal</layer>
+		</skin>
+		<skin name="contactlist_window_buddy_myrequest_pending" library="contactsWindowUI" classname="BasicSkin" >
+			<layer classname="BitmapLayer" libraryID="contactlist_buddy_myrequest_pending" >normal</layer>
+		</skin>
+		<skin name="contactlist_window_buddy_myrequest_declined" library="contactsWindowUI" classname="BasicSkin" >
+			<layer classname="BitmapLayer" libraryID="contactlist_buddy_myrequest_declined" >normal</layer>
+		</skin>
+		<skin name="contactlist_window_clan_fist_green" library="contactsWindowUI" classname="BasicSkin" >
+			<layer classname="BitmapLayer" libraryID="contactlist_clan_green" >normal</layer>
+		</skin>
+		<skin name="contactlist_window_clan_fist_red" library="contactsWindowUI" classname="BasicSkin" >
+			<layer classname="BitmapLayer" libraryID="contactlist_clan_red" >normal</layer>
+		</skin>
+		<skin name="contactlist_list_skin"  library="gameclientCommonUI" classname="BasicSkin">
+			<layer classname="BitmapLayer" libraryID="debug_mask_rounded_edges_3x3"  scale9grid="3,3,4,4" >mask</layer>
+		</skin>
+		
+	</skins>
+	
+	<container
+		name   = "windowContentContainer"
+		width  = "320"
+		height = "400"
+		mouseEnabled = "false"
+		>
+		<container
+			name           = "contactContentContainer"
+			autoSizeWidth  ="true" 
+			autoSizeHeight ="true" 
+			mouseEnabled   = "false"
+			>
+			<checkbox name="showContacts" x="20" y="32" selection="true" registeredSkinName="commonui_checkbox16x16_blue" tooltipTemplateID="commonui_tooltip_simple" tooltipData="localize:ttip_display_contacts" />
+			<label name="showContactsDesc" x="40" y="31" marginLeft="40" autoSizeWidth="true" height="50" text="" registeredSkinName="contactlist_label" registeredTextStyleName="contactlist_checkboxDescriptionTextStyle"/>
+			
+			<checkbox name="showRequests" x="180" y="32" selection="true" registeredSkinName="commonui_checkbox16x16_blue" tooltipTemplateID="commonui_tooltip_simple" tooltipData="localize:ttip_display_requests" />
+			<label name="showRequestsDesc" x="200" y="31" marginLeft="200" autoSizeWidth="true" height="20" text="" registeredSkinName="contactlist_label" registeredTextStyleName="contactlist_checkboxDescriptionTextStyle"/>
+			
+			<checkbox name="showClanmembers" x="20" y="62" selection="true" registeredSkinName="commonui_checkbox16x16_blue" tooltipTemplateID="commonui_tooltip_simple" tooltipData="localize:ttip_display_clan" />
+			<label name="showClanmembersDesc" x="40" y="61" marginLeft="40" autoSizeWidth="true" height="20" text="" registeredSkinName="contactlist_label" registeredTextStyleName="contactlist_checkboxDescriptionTextStyle"/>
+			
+			<checkbox name="showBlacklisted" x="180" y="62" selection="false" registeredSkinName="commonui_checkbox16x16_blue" tooltipTemplateID="commonui_tooltip_simple" tooltipData="localize:ttip_display_blacklist" />
+			<label name="showBlacklistedDesc" x="200" y="61" marginLeft="200" autoSizeWidth="true" height="20" text="" registeredSkinName="contactlist_label" registeredTextStyleName="contactlist_checkboxDescriptionTextStyle"/>
+			<!-- 
+			<label name="selectedUsername" x="22" y="91" autoSizeWidth="true" marginLeft="22" marginRight="100" height="18" text=""  registeredSkinName="contactlist_label" registeredTextStyleName="contactlist_selectedUsernameTextStyle" mouseEnabled="true" tooltipTemplateID="commonui_tooltip_simple" tooltipData="localize:ttip_selectedUser" />
+			 -->
+			<input name="selectedUsername" x="22" y="91" autoSizeWidth="true" marginLeft="22" marginRight="100" height="18" text=""  registeredSkinName="commonui_input_blue" registeredTextStyleName="contactlist_selectedUsernameTextStyle" mouseEnabled="true" tooltipTemplateID="commonui_tooltip_simple" tooltipData="localize:ttip_selectedUser" />
+			<button name="inviteButton"  y="91"  alignX="right" marginRight="60"  registeredSkinName="contactlist_window_invite_button" tooltipTemplateID="commonui_tooltip_simple" tooltipData="localize:ttip_add_contact_button" />
+			<button name="removeButton"  y="91"  alignX="right" marginRight="40"  registeredSkinName="contactlist_window_remove_button" tooltipTemplateID="commonui_tooltip_simple" tooltipData="localize:ttip_remove_contact_button" />
+			<button name="blockButton"   y="91"  alignX="right" marginRight="20"  registeredSkinName="contactlist_window_block_button"  tooltipTemplateID="commonui_tooltip_simple" tooltipData="localize:ttip_block_contact_button" />
+			
+			<coreponent name="horizontalDivider" x="22" y="120" autoSizeWidth="true" marginLeft="22" marginRight="20" registeredSkinName="contactlist_window_horizontal_divider"  />
+			<itemlist registeredSkinName="contactlist_list_skin" layout="vertical" marginLeft="20" marginRight="20" autoSizeWidth="true" autoSizeHeight="true" marginTop="130" marginBottom="50" cacheSkinMaskAsBitmap="false" mouseEnabled="true" mouseChildren="true" name="contactItemlist">
+				<itemrenderer height="20" mouseEnabled="true" mouseChildren="true" >
+					<coreponent name="hitlayer"                   registeredSkinName="commonui_hitlayer"                mouseEnabled="true" mouseChildren="true" autoSizeWidth="true"  autoSizeHeight="true" alpha="0" tooltipTemplateID="commonui_tooltip_simple"/>
+					<label      name="background"                 registeredSkinName="contactlist_label"                x="0"  y="0" text=""         autoSizeWidth="true" alpha="0.3"     marginLeft="0" mouseEnabled="false" mouseChildren="false" marginRight="0" height="20"  registeredTextStyleName="contactlist_blackTextStyle" />
+					<label      name="label"                      registeredSkinName="contactlist_label_truncate"       x="30" y="0" marginLeft="30" autoSizeWidth="true" marginRight="60" height="20"   mouseEnabled="false" mouseChildren="false" registeredTextStyleName="contactlist_usernameEntryTextStyle"/>
+					<coreponent name="statusIcon_buddy_offline"   registeredSkinName="contactlist_window_buddy_offline" alignY="center" mouseEnabled="true" tooltipTemplateID="commonui_tooltip_simple" />
+					<coreponent name="statusIcon_buddy_on_map"    registeredSkinName="contactlist_window_buddy_on_map"  alignY="center" mouseEnabled="true" tooltipTemplateID="commonui_tooltip_simple" />
+					<coreponent name="statusIcon_buddy_online"    registeredSkinName="contactlist_window_buddy_online"  alignY="center" mouseEnabled="true" tooltipTemplateID="commonui_tooltip_simple" />
+					<coreponent name="statusIcon_buddy_pending"   registeredSkinName="contactlist_window_buddy_pending" alignY="center" mouseEnabled="true" tooltipTemplateID="commonui_tooltip_simple" />
+					<coreponent name="statusIcon_buddy_blocked"   registeredSkinName="contactlist_window_buddy_blocked" alignY="center" mouseEnabled="true" tooltipTemplateID="commonui_tooltip_simple" />
+					<coreponent name="statusIcon_buddy_myrequest_pending"  registeredSkinName="contactlist_window_buddy_myrequest_pending"   mouseEnabled="true" tooltipTemplateID="commonui_tooltip_simple" />
+					<coreponent name="statusIcon_buddy_myrequest_declined" registeredSkinName="contactlist_window_buddy_myrequest_declined"  mouseEnabled="true" tooltipTemplateID="commonui_tooltip_simple" />
+					<coreponent name="statusIcon_clan_green"      registeredSkinName="contactlist_window_clan_fist_green" alignY="center" x="16" mouseEnabled="true" tooltipTemplateID="commonui_tooltip_simple" />
+					<coreponent name="statusIcon_clan_red"        registeredSkinName="contactlist_window_clan_fist_red"   alignY="center" x="16" mouseEnabled="true" tooltipTemplateID="commonui_tooltip_simple" />
+					<button     name="button_add_contact"         registeredSkinName="contactlist_window_add_button"     alignX="right" alignY="center" tooltipTemplateID="commonui_tooltip_simple" tooltipData="localize:ttip_groupinvite_contact_button" />
+					<button     name="button_remove_contact"      registeredSkinName="contactlist_window_remove_button"  alignX="right" alignY="center" tooltipTemplateID="commonui_tooltip_simple" tooltipData="localize:ttip_remove_contact_button" />
+					<button     name="button_accept_contact"      registeredSkinName="contactlist_window_accept_button"  alignX="right" alignY="center" marginRight="24" tooltipTemplateID="commonui_tooltip_simple" tooltipData="localize:ttip_accept_contact_request_button" />
+					<button     name="button_decline_contact"     registeredSkinName="contactlist_window_decline_button" alignX="right" alignY="center" tooltipTemplateID="commonui_tooltip_simple" tooltipData="localize:ttip_decline_contact_request_button" />
+					<button     name="button_unblock_contact"     registeredSkinName="contactlist_window_unblock_button" alignX="right" alignY="center" tooltipTemplateID="commonui_tooltip_simple" tooltipData="localize:ttip_unblock_contact_button" />
+				</itemrenderer>
+			</itemlist>
+			<scrollbar name="scrollbar"      width="10" autoSizeHeight="true" alignX="right"  registeredSkinName="commonui_scrollbar_bgnd" marginRight="10" marginBottom="50" marginTop="140" >
+				<button name="buttonSlider"  width="6"  height="28"           alignX="center" registeredSkinName="commonui_scrollbar_slider" y ="0"                                             />
+			</scrollbar>
+			<checkbox name="hideNotifications" x="20" alignY="bottom" marginBottom="13" selection="false" registeredSkinName="commonui_checkbox16x16_blue" tooltipTemplateID="commonui_tooltip_simple" tooltipData="localize:ttip_block_all_notifications" />
+			<label name="hideNotificationsDesc" marginLeft="40" marginRight="20" alignY="bottom" marginBottom="8" autoSizeWidth="true" height="20" text="" registeredSkinName="contactlist_label" registeredTextStyleName="contactlist_checkboxDescriptionTextStyle"/>
+		</container>
+		
+		<!--
+		<coreponent name="cogBigContainer" alignY="center" alignX="center" x="-20" y="-30" alpha="0" mouseEnabled = "false" mouseChildren="false" >
+			<movieclip name="cogBig" library="contactsWindowUI" libraryID="contactlist_cog_big" />
+		</coreponent>
+		<coreponent name="cogSmallContainer" alignY="center" alignX="center" x="27" y="27" alpha="0" mouseEnabled = "false" mouseChildren="false" >
+			<movieclip name="cogSmall" library="contactsWindowUI" libraryID="contactlist_cog_small" />
+		</coreponent>
+		-->
+		
+	</container>
+</root>

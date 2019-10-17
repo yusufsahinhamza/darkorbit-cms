@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+	<libraries>
+		<library id="influenceWindowUILibrary" />
+		<library id="gameclientCommonUI" />
+	</libraries>
+
+	<textstyle
+			name="domination_window_info_textstyle"
+			textColor="0x999898"
+			type="dynamic"
+			fontSize="10"
+			wordWrap="true"
+			multiline="true"
+			embedFonts="false"
+			fontName="Verdana"
+			autoSize="left"/>
+	<textstyle
+			name="domination_window_headline_textstyle"
+			textColor="0xBFBFBF"
+			type="dynamic"
+			fontSize="14"
+			embedFonts="false"
+			fontName="Verdana"
+			align="center"/>
+
+	<textstyle
+			name="domination_window_score_bar_textstyle"
+			textColor="0xBFBFBF"
+			type="dynamic"
+			fontName="Verdana"
+			embedFonts="false"
+			align="right"
+			marginRight="0"
+			fontSize="10" />
+	<textstyle
+			name="domination_window_score_player_textstyle"
+			textColor="0xaaaaaa"
+			type="dynamic"
+			align="center"
+			fontName="EurostileHeaFl"
+			fontSize="20"
+			/>
+	<textstyle
+			name="domination_window_score_player_textstyle_leading"
+			textColor="0xffffff"
+			type="dynamic"
+            align="center"
+			fontName="EurostileHeaFl"
+			fontSize="20"
+			/>
+	<skin
+			name="domination_window_horizontal_divider"
+			library="influenceWindowUILibrary"
+			classname="BasicSkin">
+		<layer
+				classname="BitmapLayer"
+				libraryID="separator">normal</layer>
+	</skin>
+	<skin
+			name="domination_window_hint_symbole"
+			library="influenceWindowUILibrary"
+			classname="BasicSkin">
+		<layer
+				classname="BitmapLayer"
+				libraryID="info_icon">normal</layer>
+	</skin>
+
+	<skin
+			name="domination_label_skin"
+			classname="LabelSkin" />
+	<skin
+			name="domination_window_list_item_skin"
+			library="influenceWindowUILibrary"
+			classname="BasicStateSkin">
+		<layer
+				classname="BitmapLayer"
+				libraryID="icon_mmo">normal</layer>
+		<layer
+				classname="BitmapLayer"
+				libraryID="icon_mmo">mmo</layer>
+		<layer
+				classname="BitmapLayer"
+				libraryID="icon_eic">eic</layer>
+		<layer
+				classname="BitmapLayer"
+				libraryID="icon_vru">vru</layer>
+	</skin>
+
+	<skin
+			name="domination_window_scrollcontainerskin"
+			classname="ContainerSkin">
+		<layer
+				classname="FilledBoxLayer"
+				fillColor="0x358BAC"
+				fillAlpha="1">mask</layer>
+	</skin>
+
+	<skin
+			name="domination_window_progressbar_skin"
+			library="influenceWindowUILibrary"
+			classname="ProgressBarSkin">
+		<layer
+				libraryID="scale_blue"
+				classname="BitmapLayer"
+				scale9grid="4,4,5,5">normal</layer>
+		<layer
+				libraryID="scale_blue_inner"
+				classname="BitmapLayer"
+				scale9grid="4,4,5,5">bar</layer>
+	</skin>
+
+	<skin
+			name="domination_window_progressbar_skin_mmo"
+			library="influenceWindowUILibrary"
+			classname="ProgressBarSkin"
+			tweenTime="1">
+		<layer
+				libraryID="scale_grey"
+				classname="BitmapLayer"
+				scale9grid="4,4,5,5">normal</layer>
+		<layer
+				libraryID="scale_red_inner"
+				classname="BitmapLayer"
+				scale9grid="4,4,5,5">bar</layer>
+	</skin>
+
+	<skin
+			name="domination_window_progressbar_skin_eic"
+			library="influenceWindowUILibrary"
+			classname="ProgressBarSkin"
+			tweenTime="1">
+		<layer
+				libraryID="scale_grey"
+				classname="BitmapLayer"
+				scale9grid="4,4,5,5">normal</layer>
+		<layer
+				libraryID="scale_blue_inner"
+				classname="BitmapLayer"
+				scale9grid="4,4,5,5">bar</layer>
+	</skin>
+
+	<skin
+			name="domination_window_progressbar_skin_vru"
+			library="influenceWindowUILibrary"
+			classname="ProgressBarSkin"
+			tweenTime="1">
+		<layer
+				libraryID="scale_grey"
+				classname="BitmapLayer"
+				scale9grid="4,4,5,5">normal</layer>
+		<layer
+				libraryID="scale_green_inner"
+				classname="BitmapLayer"
+				scale9grid="4,4,5,5">bar</layer>
+	</skin>
+	<skin
+			name="domination_window_progressbar_skin_mmo_leading"
+			library="influenceWindowUILibrary"
+			classname="ProgressBarSkin"
+			tweenTime="1">
+		<layer
+				libraryID="scale_red"
+				classname="BitmapLayer"
+				scale9grid="4,4,5,5">normal</layer>
+		<layer
+				libraryID="scale_red_inner"
+				classname="BitmapLayer"
+				scale9grid="4,4,5,5">bar</layer>
+	</skin>
+
+	<skin
+			name="domination_window_progressbar_skin_eic_leading"
+			library="influenceWindowUILibrary"
+			classname="ProgressBarSkin"
+			tweenTime="1">
+		<layer
+				libraryID="scale_blue"
+				classname="BitmapLayer"
+				scale9grid="4,4,5,5">normal</layer>
+		<layer
+				libraryID="scale_blue_inner"
+				classname="BitmapLayer"
+				scale9grid="4,4,5,5">bar</layer>
+	</skin>
+
+	<skin
+			name="domination_window_progressbar_skin_vru_leading"
+			library="influenceWindowUILibrary"
+			classname="ProgressBarSkin"
+			tweenTime="1">
+		<layer
+				libraryID="scale_green"
+				classname="BitmapLayer"
+				scale9grid="4,4,5,5">normal</layer>
+		<layer
+				libraryID="scale_green_inner"
+				classname="BitmapLayer"
+				scale9grid="4,4,5,5">bar</layer>
+	</skin>
+
+	<container
+			name="windowContentContainer"
+			x="24"
+			y="25"
+			width="233"
+			height="209"
+			layout="vertical"
+			mouseEnabled="false">
+		<label
+				autoSizeWidth="true"
+				text="localize:label_domination_status"
+				alignX="center"
+				height="18"
+				registeredSkinName="domination_label_skin"
+				registeredTextStyleName="domination_window_headline_textstyle" />
+		<container
+				name="statusContainer"
+				width="159"
+				x="12"
+				height="50"
+				gap="30"
+				layout="horizontal"
+				mouseChildren="false"
+				mouseEnabled="false">
+			<container
+					name="mmoStatusContainer"
+					width="50"
+					autoSizeHeight="true"
+					layout="vertical"
+					mouseEnabled="false">
+				<coreponent
+						name="company_img"
+						registeredSkinName="domination_window_list_item_skin"
+						alignX="center" />
+				<label
+						name="score"
+						autoSizeWidth="true"
+						text="0"
+						alignX="center"
+						height="18"
+						registeredSkinName="domination_label_skin"
+						registeredTextStyleName="domination_window_score_player_textstyle" />
+			</container>
+
+			<container
+					name="eicStatusContainer"
+					width="50"
+					autoSizeHeight="true"
+					layout="vertical"
+					mouseEnabled="false">
+				<coreponent
+						name="company_img"
+						registeredSkinName="domination_window_list_item_skin"
+						alignX="center" />
+				<label
+						name="score"
+						autoSizeWidth="true"
+						text="0"
+						alignX="center"
+						height="18"
+						registeredSkinName="domination_label_skin"
+						registeredTextStyleName="domination_window_score_player_textstyle" />
+			</container>
+
+			<container
+					name="vruStatusContainer"
+					width="50"
+					autoSizeHeight="true"
+					layout="vertical"
+					mouseEnabled="false">
+				<coreponent
+						name="company_img"
+						registeredSkinName="domination_window_list_item_skin"
+						alignX="center" />
+				<label
+						name="score"
+						autoSizeWidth="true"
+						text="0"
+						alignX="center"
+						height="18"
+						registeredSkinName="domination_label_skin"
+						registeredTextStyleName="domination_window_score_player_textstyle" />
+			</container>
+		</container>
+		<coreponent
+				marginTop="0"
+				marginBottom="0"
+				name="horizontalDivider"
+				alignX="center"
+				autoSizeWidth="true"
+				height="2"
+				registeredSkinName="domination_window_horizontal_divider" />
+
+		<label
+				autoSizeWidth="true"
+				text="localize:label_domination_faction_influence"
+				alignX="center"
+				height="24"
+				registeredSkinName="domination_label_skin"
+				registeredTextStyleName="domination_window_headline_textstyle" />
+		<itemlist
+				name="dominationItemlist"
+				marginTop="-6"
+				marginLeft="0"
+				marginRight="0"
+				marginBottom="10"
+				autoSizeWidth="true"
+				height="86"
+				cacheSkinMaskAsBitmap="false">
+
+			<itemrenderer
+					height="37"
+					mouseEnabled="false"
+					mouseChildren="false">
+
+				<container
+						name="itemrendererContainer"
+						mouseEnabled="false"
+						height="37"
+						autoSizeWidth="true">
+					<coreponent
+							name="company_img"
+							registeredSkinName="domination_window_list_item_skin"
+							marginLeft="5"
+							marginTop="12" />
+					<progressbar
+							name="progressbar"
+							marginLeft="25"
+							marginTop="15"
+							registeredSkinName="domination_window_progressbar_skin"
+							autoSizeWidth="true"
+							height="13" />
+					<label
+							name="score"
+							registeredSkinName="domination_label_skin"
+							registeredTextStyleName="domination_window_score_bar_textstyle"
+							marginTop="0"
+							marginLeft="25"
+							height="10"
+							autoSizeHeight="true"
+							autoSizeWidth="true" />
+
+				</container>
+			</itemrenderer>
+		</itemlist>
+
+
+
+		<coreponent
+				marginTop="10"
+				marginBottom="10"
+				name="horizontalDivider"
+				alignX="center"
+				autoSizeWidth="true"
+				height="2"
+				registeredSkinName="domination_window_horizontal_divider" />
+
+		<container
+				name="infoContainer"
+				autoSizeWidth="true"
+				height="60"
+				marginLeft="2">
+			<scrollcontainer
+					name="scrollContainer"
+					autoSizeWidth="true"
+					autoSizeHeight="true"
+					mouseEnabled="true"
+					registeredSkinName="domination_window_scrollcontainerskin">
+				<coreponent registeredSkinName="domination_window_hint_symbole" />
+				<container
+						name="content"
+						autoSizeWidth="true">
+					<label
+							name="info"
+							autoSizeWidth="true"
+							marginLeft="30"
+							marginRight="30"
+							registeredTextStyleName="domination_window_info_textstyle"
+							registeredSkinName="domination_label_skin" />
+				</container>
+			</scrollcontainer>
+			<scrollbar
+					name="scrollbar"
+					width="10"
+					autoSizeHeight="true"
+					alignX="right"
+					marginRight="6"
+					marginBottom="6"
+					marginTop="6"
+					registeredSkinName="commonui_scrollbar_bgnd">
+				<button
+						name="buttonSlider"
+						width="6"
+						height="6"
+						alignX="center"
+						y="0"
+						registeredSkinName="commonui_scrollbar_slider" />
+			</scrollbar>
+		</container>
+	</container>
+
+
+</root>
+	
+	

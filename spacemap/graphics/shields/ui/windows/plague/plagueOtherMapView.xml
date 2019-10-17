@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+    <textstyle
+            name="plague_window_summon_textstyle"
+            textColor="0xbfbfbf"
+            type="dynamic"
+            fontName="Verdana"
+            embedFonts="false"
+            fontSize="10"
+            autoSize="center"/>
+    <textstyle
+            name="plague_window_summon_maps_textstyle"
+            textColor="0xFFFEFE"
+            type="dynamic"
+            fontName="EurostileFl"
+            fontSize="10"
+            align="center"
+            multiline="true"
+            wordWrap="true"
+            autoSize="center"/>
+    <skin
+            name="plague_label_skin"
+            classname="LabelSkin"
+            />
+
+    <container layout="vertical"
+               height="70"
+               width="262">
+        <coreponent
+                marginTop="10"
+                marginBottom="10"
+                name="horizontalDivider"
+                alignX="center"
+                autoSizeWidth="true"
+                height="2"
+                registeredSkinName="plague_window_horizontal_divider"/>
+        <label
+                text="localize:plague_window_summon_info"
+                height="14"
+                alignX="center"
+                registeredSkinName="plague_label_skin"
+                registeredTextStyleName="plague_window_summon_textstyle"/>
+        <label
+                name="label"
+                width="262"
+                alignX="center"
+                height="18"
+                registeredSkinName="plague_label_skin"
+                registeredTextStyleName="plague_window_summon_maps_textstyle"/>
+        <coreponent
+                marginTop="10"
+                marginBottom="10"
+                name="horizontalDivider"
+                alignX="center"
+                autoSizeWidth="true"
+                height="2"
+                registeredSkinName="plague_window_horizontal_divider"/>
+    </container>
+</root>

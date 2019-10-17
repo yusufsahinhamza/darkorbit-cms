@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+    <container
+            height="10"
+            width="262"
+            anlignX="center"
+            marginTop="0">
+        <coreponent
+                marginTop="10"
+                marginBottom="10"
+                name="horizontalDivider"
+                alignX="center"
+                autoSizeWidth="true"
+                height="2"
+                registeredSkinName="plague_window_horizontal_divider"/>
+    </container>
+
+</root>

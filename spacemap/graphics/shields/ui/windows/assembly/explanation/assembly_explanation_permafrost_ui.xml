@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+    <!-- LIBS -->
+    <libraries>
+        <library id="assembly_explanation_permafrost_library"/>
+        <library id="gameclientCommonUI"/>
+    </libraries>
+
+    <textstyle
+            name="assembly_default"
+            textColor="0xCCCCCC"
+            type="dynamic"
+            fontSize="10"
+            wordWrap="true"
+            multiline="true"
+            embedFonts="false"
+            fontName="Verdana"
+            autoSize="center"
+            />
+    <textstyle
+            name="assembly_default_centered"
+            textColor="0xCCCCCC"
+            type="dynamic"
+            align="center"
+            fontSize="10"
+            wordWrap="true"
+            multiline="true"
+            embedFonts="false"
+            fontName="Verdana"
+            autoSize="center"
+            />
+    <textstyle
+            name="assembly_explanation_permafrost_headline"
+            textColor="0xededed"
+            type="dynamic"
+            fontSize="12"
+            bold="true"
+            wordWrap="false"
+            multiline="false"
+            embedFonts="false"
+            fontName="Verdana"
+            marginLeft="18"
+            autoSize="left"/>
+
+    <skin name="assembly_explanation_permafrost_infolayer" classname="BasicSkin" library="assembly_explanation_permafrost_library">
+        <layer classname="BitmapLayer" libraryID="assembly_explanation_permafrost_infolayer">normal</layer>
+    </skin>
+
+    <skin name="assembly_explanation_windowicon" classname="BasicSkin" library="assembly_explanation_permafrost_library">
+        <layer classname="BitmapLayer" libraryID="win_progress_normal" >normal</layer>
+    </skin>
+
+    <!-- CONTENT -->
+    <container name="globalContainer">
+    <coreponent registeredSkinName="assembly_explanation_windowicon" width="24" height="24" y="-28"/>
+    <container name="root" width="448" height="420" layout="vertical" autoHeightMode="children">                 <!-- autoSizeMode = children -->
+        <label name="headline"
+               registeredSkinName      = "marquee_texfield_skin"
+               registeredTextStyleName = "assembly_explanation_permafrost_headline"
+               height                  = "16"
+               width                   = "306"
+                />
+        <container
+                name="textContainer"
+                alignX="left"
+                mouseEnabled="false"
+                autoSizeWidth="true"
+                marginRight="4"
+                maxHeight="76"
+                height="70"
+                >
+
+                <scrollcontainer mouseEnabled="true" alignY="center" name="assemblyExpScrollContainerText"
+                                 autoSizeHeight="true"
+                                 autoSizeWidth="true" marginRight="22" marginLeft="17" registeredSkinName="assembly_scrollcontainer">
+                    <label name="content" autoSizeWidth="true" useHTML="true" mouseEnabled="true"
+                           registeredTextStyleName="assembly_default" autoSizeTextHeight="true" />
+                </scrollcontainer>
+                <scrollbar name="assemblyExpScrollbarText" width="10" autoSizeHeight="true" alignX="right"
+                           marginRight="6" marginBottom="6" marginTop="6"
+                           registeredSkinName="commonui_scrollbar_bgnd">
+                    <button name="buttonSlider" width="6" height="6"
+                            alignX="center" registeredSkinName="commonui_scrollbar_slider"/>
+                </scrollbar>
+                <bind source="assemblyExpScrollbarText" target="assemblyExpScrollContainerText" type="scrollcontainer"/>
+
+        </container>
+
+        <container name="itemcontainer" autoSizeWidth="true" height="194">
+            <button alpha="0" name="invisibleTooltipButton" x="86" tooltipData="localize:window_assembly_explanation_iteminfo" width="62" height="210" registeredSkinName="commonui_confirmationbutton_green" tooltipTemplateID="commonui_tooltip_simple" />
+            <coreponent registeredSkinName="assembly_explanation_permafrost_infolayer"
+                            name      = "infoGfx"
+                            width     = "422"
+                            height    = "194"
+                            alignX    = "left"
+                            marginLeft= "17"
+                        />
+            <videoplayer name="videoplayer" marginRight="11" marginTop="2" width="130" height="130" alignX="right" alignY="top"/>
+            <!--
+            <container
+                    name="textContainer"
+                    alignX="right"
+                    alignY="bottom"
+                    marginRight="10"
+                    marginLeft="4"
+                    mouseEnabled="false"
+                    width="132"
+                    height="48"
+                    >
+
+                <scrollcontainer mouseEnabled="true" alignY="center" name="assemblyExpDetailScrollContainerText"
+                                 marginTop="4" marginBottom="4" marginRight="10"
+                                 autoSizeHeight="true"
+                                 autoSizeWidth="true" registeredSkinName="assembly_scrollcontainer">
+                    <label name="content" autoSizeWidth="true" useHTML="true" mouseEnabled="true"
+                           registeredTextStyleName="assembly_default_centered" autoSizeTextHeight="true"/>
+                </scrollcontainer>
+                <scrollbar name="assemblyExpDetailScrollbarText" width="6" autoSizeHeight="true" alignX="right"
+                           marginBottom="6" marginTop="6" marginRight="2"
+                           registeredSkinName="commonui_scrollbar_bgnd">
+                    <button name="buttonSlider" width="6" height="6"
+                            alignX="center" registeredSkinName="commonui_scrollbar_slider"/>
+                </scrollbar>
+                <bind source="assemblyExpDetailScrollbarText" target="assemblyExpDetailScrollContainerText" type="scrollcontainer"/>
+            </container>
+            -->
+        </container>
+    </container>
+    </container>
+</root>

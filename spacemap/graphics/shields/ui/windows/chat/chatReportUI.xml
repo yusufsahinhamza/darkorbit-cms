@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+    <!-- LIBS -->
+    <libraries>
+        <library id="gameclientCommonUI"/>
+        <library id="chatWindowUIAssets"/>
+        <library id="module_equipment_lib"/>
+    </libraries>
+
+
+    <textstyle
+            name="chat_window_left_textstyle"
+            textColor="0xEEEEEE"
+            bold="false"
+            type="dynamic"
+            fontSize="11"
+            autoSize="left"
+            wordWrap="true"
+            multiline="true"
+            embedFonts="false"
+            fontName="TAHOMA"
+            align="left"/>
+
+    <textstyle
+            name="chat_report_headline"
+            textColor="0xEEEEEE"
+            bold="false"
+            type="dynamic"
+            fontSize="14"
+            autoSize="left"
+            wordWrap="true"
+            multiline="true"
+            embedFonts="false"
+            fontName="TAHOMA"
+            align="left"/>
+
+    <textstyle
+            name="chat_reason_textstyle"
+            textColor="0x0cabd4"
+            bold="true"
+            type="dynamic"
+            fontSize="11"
+            autoSize="left"
+            wordWrap="true"
+            multiline="true"
+            embedFonts="false"
+            fontName="TAHOMA"
+            align="left"/>
+
+    <textstyle
+            name="chat_reason_textstyle_over"
+            textColor="0xffffff"
+            bold="true"
+            type="dynamic"
+            fontSize="11"
+            autoSize="left"
+            wordWrap="true"
+            multiline="true"
+            embedFonts="false"
+            fontName="TAHOMA"
+            align="left"/>
+
+    <textstyle
+            name="chat_report_reason_detail"
+            textColor="0x838384"
+            bold="true"
+            type="dynamic"
+            fontSize="11"
+            autoSize="center"
+            wordWrap="true"
+            multiline="true"
+            embedFonts="false"
+            fontName="TAHOMA"
+            align="left"/>
+
+
+    <skin name="chat_report_background" library="gameclientCommonUI" classname="BasicSkin">
+        <layer classname="BitmapLayer" libraryID="input_background_blue" scale9grid="4,4,6,5">normal</layer>
+    </skin>
+
+    <skin name="chat_report_msg_background" library="gameclientCommonUI" classname="BasicStateSkin">
+        <!--<layer classname="BitmapLayer" libraryID="input_background_blue" scale9grid="4,4,6,5">normal</layer>-->
+        <layer classname="FilledBoxLayer" fillColor="0x000000" fillAlpha="0.6">dark</layer>
+        <layer classname="FilledBoxLayer" fillColor="0x000000" fillAlpha="0.3">normal</layer>
+
+    </skin>
+
+    <skin
+            name="chat_report_msg_label"
+            classname="LabelSkin"
+            truncateText="true">
+        <layer classname="BitmapLayer" libraryID="input_background_blue" scale9grid="4,4,6,5">mask</layer>
+    </skin>
+
+
+    <skin name="chat_report_overlay" classname="BasicSkin">
+        <layer classname="FilledBoxLayer" fillColor="0xffffff" fillAlpha="1" lineAlpha="0">normal</layer>
+    </skin>
+
+    <skin name="chat_report_container_blue_outline" classname="BasicSkin">
+        <layer classname="FilledBoxLayer" fillColor="0x13323E" fillAlpha="0" lineAlpha="1" lineColor="0x00ccff">normal
+        </layer>
+    </skin>
+
+
+    <skin name="chat_report_dropdown_checkbox" library="chatWindowUIAssets" classname="CheckBoxSkin">
+        <layer classname="BitmapLayer" libraryID="arrow_normal">normal</layer>
+        <layer classname="BitmapLayer" libraryID="arrow_hover">over</layer>
+        <layer classname="BitmapLayer" libraryID="arrow_active">clicked</layer>
+
+        <layer classname="BitmapLayer" libraryID="selected_arrow_normal">normal.selected</layer>
+        <layer classname="BitmapLayer" libraryID="selected_arrow_hover">over.selected</layer>
+        <layer classname="BitmapLayer" libraryID="selected_arrow_active">clicked.selected</layer>
+    </skin>
+
+    <skin name="chat_report_hover" classname="FadableButtonSkin">
+        <layer classname="FilledBoxLayer" fillColor="0x32e629" fillAlpha="0">normal</layer>
+        <layer classname="FilledBoxLayer" fillColor="0xffffff" fillAlpha="0.1">over</layer>
+        <layer classname="FilledBoxLayer" fillColor="0xffffff" fillAlpha="0.3">clicked</layer>
+        <layer classname="FilledBoxLayer" lineColor="0xffcc00" fillAlpha="0" lineAlpha="1">disabled</layer>
+    </skin>
+
+    <skin name="chat_report_list_mask" classname="BasicSkin">
+        <layer classname="FilledBoxLayer" fillColor="0x358BAC" fillAlpha="1">mask</layer>
+        <!--<layer classname="FilledBoxLayer" fillColor="0x13323E" fillAlpha="0" lineAlpha="1" lineColor="0x00ccff">normal</layer>-->
+    </skin>
+
+
+    <skin name="chat_report_reason_overlay" library="gameclientCommonUI" classname="BasicStateSkin">
+        <!--<layer classname="BitmapLayer" libraryID="input_background_blue" scale9grid="4,4,6,5">normal</layer>-->
+        <layer classname="FilledBoxLayer" fillColor="0x000000" fillAlpha="0.6">dark</layer>
+        <layer classname="FilledBoxLayer" fillColor="0x000000" fillAlpha="0.3">normal</layer>
+    </skin>
+
+    <skin name="chat_report_fake_checkbox" library="gameclientCommonUI" classname="FadableButtonSkin">
+        <layer classname="BitmapLayer" libraryID="radio_buttons16x16" region="0,0,16,16">normal</layer>
+        <layer classname="BitmapLayer" libraryID="radio_buttons16x16" region="0,16,16,16">over</layer>
+        <layer classname="BitmapLayer" libraryID="radio_buttons16x16" region="0,32,16,16">clicked</layer>
+        <layer classname="BitmapLayer" libraryID="radio_buttons16x16" region="0,48,16,16">disabled</layer>
+    </skin>
+
+    <skin name="chat_repor_scrollcontainer" classname="FadableButtonSkin">
+        <layer classname="FilledBoxLayer" fillColor="0x13323E" fillAlpha="0">mask</layer>
+        <!--<layer classname="FilledBoxLayer" lineColor="0x0cabd4" fillAlpha="0" lineAlpha="1">normal</layer>-->
+    </skin>
+
+
+    <container name="contentContainer" width="500" height="580" mouseEnabled="true" mouseChildren="true">
+
+        <container
+                name="msgContainer" width="480"
+                height="253" mouseChildren="true">
+
+            <label text="localize:reportview_message_info:chat" width="500" height="20"
+                   registeredSkinName="chat_label_skin"
+                   registeredTextStyleName="chat_report_headline"/>
+
+            <itemlist name="messages" registeredSkinName="chat_report_list_mask" layout="vertical"
+                      alignX="left" width="434" marginLeft="20" height="200"
+                      marginTop="30" mouseEnabled="true" mouseChildren="true"
+                      cacheSkinMaskAsBitmap="false" gap="0">
+                <itemrenderer height="50" registeredSkinName="chat_report_msg_background" width="434"
+                              autoSizeWidth="false" mouseEnabled="true" mouseChildren="true">
+                    <container name="labelContainer" marginLeft="40" height="50" registeredSkinName="commonui_list_mask"
+                               width="380">
+                        <label name="msg" registeredSkinName="chat_report_msg_label" useHTML="true"
+                               registeredTextStyleName="chat_window_left_textstyle" mouseEnabled="false"
+                               alignY="center" height="10"
+                               mouseChildren="false" width="380" text="?"/>
+                    </container>
+                    <coreponent width="419" height="49" mouseEnabled="false" registeredSkinName="chat_report_overlay"
+                                name="overlay" visible="false"/>
+                    <button height="16" width="16" name="checkbox" alignY="center" alignX="left" marginLeft="10"
+                            registeredSkinName="chat_report_fake_checkbox"/>
+                    <button width="420" height="50" mouseEnabled="true"
+                            registeredSkinName="chat_report_hover" name="hitlayer"/>
+
+                </itemrenderer>
+            </itemlist>
+
+
+            <scrollbar name="chatMessagesScrollBar" width="5" autoSizeHeight="false" height="200" x="456"
+                       marginTop="30" registeredSkinName="commonui_scrollbar_bgnd">
+                <button name="buttonSlider" width="5" height="6"
+                        alignX="center" registeredSkinName="commonui_scrollbar_slider"/>
+            </scrollbar>
+            <bind source="chatMessagesScrollBar" target="messages" type="scrollcontainer"/>
+            <coreponent height="2" autoSizeWidth="true" registeredSkinName="commonui_horizontal_divider"
+                        alignY="bottom"/>
+
+        </container>
+
+
+        <container
+                name="reasonContainer"
+                width="500"
+                height="400"
+                y="262"
+                mouseChildren="true">
+
+
+            <label text="localize:reportview_label_reason:chat" width="500" height="30"
+                   registeredSkinName="chat_label_skin"
+                   registeredTextStyleName="chat_report_headline"/>
+
+            <itemlist name="reasons" x="20" y="28" layout="vertical" width="180" gap="0" height="250" alignX="left">
+                <itemrenderer height="40"
+                              autoSizeHeight="false" autoSizeWidth="true"
+                              mouseEnabled="true" mouseChildren="true">
+                    <label name="label" registeredSkinName="chat_label_skin" marginLeft="30"
+                           registeredTextStyleName="chat_reason_textstyle" mouseEnabled="false"
+                           mouseChildren="false" height="40" autoSizeWidth="true" text="?"/>
+                    <coreponent height="19" autoSizeWidth="true" mouseEnabled="false"
+                                registeredSkinName="chat_report_reason_overlay"
+                                name="overlay"/>
+                    <coreponent height="40"
+                                autoSizeHeight="false" autoSizeWidth="true" mouseEnabled="true"
+                                registeredSkinName="commonui_hitlayer_invisible" name="hitlayer"/>
+                    <button height="16" width="16" name="checkbox" alignY="top" alignX="left"
+                            registeredSkinName="chat_report_fake_checkbox"/>
+
+
+                </itemrenderer>
+            </itemlist>
+
+            <coreponent name="chat_report_reason_help" registeredSkinName="commonui_info_icon" y="28" alignX="right" marginRight="285" visible="false"/>
+            <scrollcontainer mouseEnabled="true" name="chat_report_reason_desc_container"
+                             width="285" height="250" y="40" alignX="right" marginRight="0"
+                             registeredSkinName="chat_repor_scrollcontainer">
+                <label name="content" alignX="right" useHTML="true" width="280" mouseEnabled="true"
+                       registeredTextStyleName="chat_report_reason_detail" autoSizeTextHeight="true"/>
+            </scrollcontainer>
+            <scrollbar name="chat_report_reason_desc_scrollbar" width="5" y="40" height="250" alignX="right"
+                       registeredSkinName="commonui_scrollbar_bgnd">
+                <button name="buttonSlider" width="5" height="6"
+                        alignX="center" registeredSkinName="commonui_scrollbar_slider"/>
+            </scrollbar>
+            <bind source="chat_report_reason_desc_scrollbar" target="chat_report_reason_desc_container" type="scrollcontainer"/>
+
+
+        </container>
+
+        <container name="report_button_container"
+                   width="330" height="50"
+                   alignY="bottom"
+                   alignX="center"
+                   mouseEnabled="false"
+                   mouseChildren="true">
+
+            <button name="report" registeredTextStyleName="commonui_confirmationbutton_blue_normal"
+                    height="50" width="150"
+                    text="localize:popup_bswin_btn_confirm_module_removal" alignY="bottom" alignX="right"
+                    marginRight="0" registeredSkinName="commonui_confirmationbutton_green"/>
+            <button name="cancel" registeredTextStyleName="commonui_confirmationbutton_red_normal"
+                    height="50" width="150"
+                    text="localize:btn_traininggrounds_cancel" alignY="bottom" alignX="left"
+                    marginLeft="0" registeredSkinName="commonui_confirmationbutton_blue"/>
+        </container>
+
+    </container>
+</root>

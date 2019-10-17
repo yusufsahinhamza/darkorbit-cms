@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<huntEvent>
+
+	<eventType>MORDON_HUNTING</eventType>
+
+	<npcsToKill>
+		<npc npcId="4" pointsPlayer="2" pointsClan="2" /> <!-- npcType="MORDON" -->
+	</npcsToKill>
+
+	<rewardPlayers>event_external_rewards_piratehunt2017rewards-players</rewardPlayers>
+	<rewardClans>event_external_rewards_piratehunt2017rewards-clans</rewardClans>
+
+</huntEvent>

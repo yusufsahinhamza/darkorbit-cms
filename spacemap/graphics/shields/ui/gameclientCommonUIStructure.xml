@@ -1,0 +1,781 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+	<!-- STEP 0 - define libraries used / id from resources.xml -->
+	<libraries>
+		<library id="gameclientCommonUI"/>
+	</libraries>
+
+	<textstyle
+			name="commonui_info_textstyle"
+			textColor="0x999898"
+			type="dynamic"
+			fontSize="10"
+			autoSize="center"
+			wordWrap="true"
+			multiline="true"
+			embedFonts="false"
+			fontName="Verdana" />
+	<textstyle
+			name="commonui_default_headline_textstyle"
+			textColor="0xBFBFBF"
+			type="dynamic"
+			fontSize="14"
+			embedFonts="false"
+			fontName="Verdana"
+			align="center"
+			/>
+	<textstyle
+			name="commonui_default_headline_textstyle_yellow"
+			textColor="0xFFCC00"
+			type="dynamic"
+			fontSize="14"
+			embedFonts="false"
+			fontName="Verdana"
+			align="center"
+			/>
+
+	<!-- STEP 1 - define common used TEXTSTYLES -->
+	<textstyle name            = "commonui_tooltip_textstyle"
+			   border          = "true"
+			   borderColor     = "0x2E84A5"
+			   textColor       = "0xFFFFFF"
+			   embedFonts      = "false"
+			   selectable      = "false"
+			   autoSize        = "left"
+			   background      = "true"
+			   backgroundColor = "0x000000"
+			   fontName        = "Tahoma"
+			   fontSize        = "12"
+			/>
+
+	<!-- confirmationbutton GREEN -->
+	<textstyle  name        = "commonui_confirmationbutton_green_normal"
+				textColor   = "0xF1FBEC"
+				fontSize    = "18"
+				type        = "dynamic"
+				fontName    = "EurostileHeaFl"
+				embedFonts  = "true"
+				autoSize    = "center"
+			/>
+	<textstyle  name        = "commonui_confirmationbutton_green_over"
+				textColor   = "0xF1FBEC"
+				fontSize    = "18"
+				type        = "dynamic"
+				fontName    = "EurostileHeaFl"
+				embedFonts  = "true"
+				autoSize    = "center"
+			/>
+	<textstyle  name        = "commonui_confirmationbutton_green_clicked"
+				textColor   = "0xF1FBEC"
+				fontSize    = "18"
+				type        = "dynamic"
+				fontName    = "EurostileHeaFl"
+				embedFonts  = "true"
+				autoSize    = "center"
+			/>
+
+    <!-- confirmationbutton GREEN -->
+    <textstyle  name        = "commonui_confirmationbutton_long_green_normal"
+                textColor   = "0xF1FBEC"
+                fontSize    = "14"
+                type        = "dynamic"
+                fontName    = "EurostileHeaFl"
+                embedFonts  = "true"
+                autoSize    = "center"
+            />
+    <textstyle  name        = "commonui_confirmationbutton_long_green_over"
+                textColor   = "0xF1FBEC"
+                fontSize    = "14"
+                type        = "dynamic"
+                fontName    = "EurostileHeaFl"
+                embedFonts  = "true"
+                autoSize    = "center"
+            />
+    <textstyle  name        = "commonui_confirmationbutton_long_green_clicked"
+                textColor   = "0xF1FBEC"
+                fontSize    = "14"
+                type        = "dynamic"
+                fontName    = "EurostileHeaFl"
+                embedFonts  = "true"
+                autoSize    = "center"
+            />
+
+	<!-- confirmationbutton RED -->
+	<textstyle  name        = "commonui_confirmationbutton_red_normal"
+				textColor   = "0xF1FBEC"
+				fontSize    = "18"
+				type        = "dynamic"
+				fontName    = "EurostileHeaFl"
+				embedFonts  = "true"
+				autoSize    = "center"
+			/>
+	<textstyle  name        = "commonui_confirmationbutton_red_over"
+				textColor   = "0xF1FBEC"
+				fontSize    = "18"
+				type        = "dynamic"
+				fontName    = "EurostileHeaFl"
+				embedFonts  = "true"
+				autoSize    = "center"
+			/>
+	<textstyle  name        = "commonui_confirmationbutton_red_clicked"
+				textColor   = "0xF1FBEC"
+				fontSize    = "18"
+				type        = "dynamic"
+				fontName    = "EurostileHeaFl"
+				embedFonts  = "true"
+				autoSize    = "center"
+			/>
+
+	<!-- confirmationbutton BLUE -->
+	<textstyle  name        = "commonui_confirmationbutton_blue_normal"
+				textColor   = "0xF1FBEC"
+				fontSize    = "18"
+				type        = "dynamic"
+				fontName    = "EurostileHeaFl"
+				embedFonts  = "true"
+				autoSize    = "center"
+			/>
+	<textstyle  name        = "commonui_confirmationbutton_blue_over"
+				textColor   = "0xF1FBEC"
+				fontSize    = "18"
+				type        = "dynamic"
+				fontName    = "EurostileHeaFl"
+				embedFonts  = "true"
+				autoSize    = "center"
+			/>
+	<textstyle  name        = "commonui_confirmationbutton_blue_clicked"
+				textColor   = "0xF1FBEC"
+				fontSize    = "18"
+				type        = "dynamic"
+				fontName    = "EurostileHeaFl"
+				embedFonts  = "true"
+				autoSize    = "center"
+			/>
+
+	<textstyle  name        = "commonui_popup_title"
+				textColor   = "0xEBE0C2"
+				fontSize    = "14"
+				type        = "dynamic"
+				fontName    = "EurostileHeaFl"
+				embedFonts  = "true"
+				autoSize    = "left"
+			/>
+
+	<textstyle 	name       = "commonui_popup_message"
+				  background = "false"
+				  textColor  = "0xFFFFFF"
+				  type       = "dynamic"
+				  fontName   = "EurostileFl"
+				  fontSize    = "12"
+				  wordWrap   = "true"
+				  align      = "left"
+				  embedFonts = "true"
+				  multiline  = "true"
+			/>
+
+	<textstyle  name        = "commonui_button_whitetxt_16pt"
+				textColor   = "0xFFFFFF"
+				fontSize    = "16"
+				type        = "dynamic"
+				fontName    = "EurostileHeaFl"
+				embedFonts  = "true"
+				autoSize    = "center"
+			/>
+	<!-- textstyles -->
+
+	<!-- Verdana 10PX-->
+	<textstyle	name="textstyle_button_align_left_verdana_10"
+				  autoSize="left"
+				  textColor="0xBFBFBF"
+				  type="dynamic"
+				  fontSize="10"
+				  embedFonts="false"
+				  fontName="Verdana"
+				  />
+
+	<textstyle	  	name="textstyle_button_align_left_multine_verdana_10"
+					align="left"
+				  	autoSize="left"
+				  	textColor="0xBFBFBF"
+				  	type="dynamic"
+				  	fontSize="10"
+				  	embedFonts="false"
+				  	fontName="Verdana"
+					wordWrap="true"
+					multiline="true"
+			      	/>
+	<textstyle	  	name="textstyle_button_align_center_multine_verdana_10"
+					  align="center"
+					  autoSize="left"
+					  textColor="0xBFBFBF"
+					  type="dynamic"
+					  fontSize="10"
+					  embedFonts="false"
+					  fontName="Verdana"
+					  wordWrap="true"
+					  multiline="true"
+			/>
+
+	<textstyle	name="textstyle_button_align_center_verdana_10"
+				  autoSize="center"
+				  textColor="0xBFBFBF"
+				  type="dynamic"
+				  fontSize="10"
+				  embedFonts="false"
+				  fontName="Verdana"
+			/>
+	<textstyle	name="textstyle_button_align_right_verdana_10"
+				  autoSize="right"
+				  textColor="0xBFBFBF"
+				  type="dynamic"
+				  fontSize="10"
+				  embedFonts="false"
+				  fontName="Verdana"
+			/>
+
+	<!-- EurostileFl 12PX embedded-->
+	<textstyle 	name       = "textstyle_align_left_eurostilefl_12"
+				  background = "false"
+				  textColor  = "0xFFFFFF"
+				  type       = "dynamic"
+				  selectable = "true"
+				  fontName   = "EurostileFl"
+				  wordWrap   = "true"
+				  align      = "left"
+				  embedFonts = "true"
+				  fontSize   = "12"
+			/>
+	<textstyle 	name       = "textstyle_align_center_eurostilefl_12"
+				  background = "false"
+				  textColor  = "0xFFFFFF"
+				  type       = "dynamic"
+				  selectable = "true"
+				  fontName   = "EurostileFl"
+				  wordWrap   = "true"
+				  align      = "center"
+				  embedFonts = "true"
+				  fontSize   = "12"
+			/>
+	<textstyle 	name       = "textstyle_align_right_eurostilefl_12"
+				  background = "false"
+				  textColor  = "0xFFFFFF"
+				  type       = "dynamic"
+				  selectable = "true"
+				  fontName   = "EurostileFl"
+				  wordWrap   = "true"
+				  align      = "right"
+				  embedFonts = "true"
+				  fontSize   = "12"
+			/>
+
+	<!-- EurostileFl 14PX embedded-->
+	<textstyle 	name       = "textstyle_align_left_eurostilefl_14"
+				  background = "false"
+				  textColor  = "0xFFFFFF"
+				  type       = "dynamic"
+				  selectable = "true"
+				  fontName   = "EurostileFl"
+				  wordWrap   = "true"
+				  align      = "left"
+				  embedFonts = "true"
+				  fontSize   = "14"
+			/>
+	<textstyle 	name       = "textstyle_align_center_eurostilefl_14"
+				  background = "false"
+				  textColor  = "0xFFFFFF"
+				  type       = "dynamic"
+				  selectable = "true"
+				  fontName   = "EurostileFl"
+				  wordWrap   = "true"
+				  align      = "center"
+				  embedFonts = "true"
+				  fontSize   = "14"
+			/>
+	<textstyle 	name       = "textstyle_align_center_eurostilefl_14_multiline"
+				  background = "false"
+				  textColor  = "0xFFFFFF"
+				  type       = "dynamic"
+				  selectable = "true"
+				  fontName   = "EurostileFl"
+				  wordWrap   = "true"
+				  align      = "center"
+				  embedFonts = "true"
+				  fontSize   = "14"
+				  multiline  = "true"
+			/>
+	<textstyle 	name       = "textstyle_align_right_eurostilefl_14"
+				  background = "false"
+				  textColor  = "0xFFFFFF"
+				  type       = "dynamic"
+				  selectable = "true"
+				  fontName   = "EurostileFl"
+				  wordWrap   = "true"
+				  align      = "right"
+				  embedFonts = "true"
+				  fontSize   = "14"
+			/>
+
+
+	<!-- EurostileFl 16PX embedded-->
+	<textstyle 	name       = "textstyle_align_left_eurostilefl_16"
+				  background = "false"
+				  textColor  = "0xFFFFFF"
+				  type       = "dynamic"
+				  selectable = "true"
+				  fontName   = "EurostileFl"
+				  wordWrap   = "true"
+				  align      = "left"
+				  embedFonts = "true"
+				  fontSize   = "16"
+			/>
+	<textstyle 	name       = "textstyle_align_center_eurostilefl_16"
+				  background = "false"
+				  textColor  = "0xFFFFFF"
+				  type       = "dynamic"
+				  selectable = "true"
+				  fontName   = "EurostileFl"
+				  wordWrap   = "true"
+				  align      = "center"
+				  embedFonts = "true"
+				  fontSize   = "16"
+			/>
+	<textstyle 	name       = "textstyle_align_right_eurostilefl_16"
+				  background = "false"
+				  textColor  = "0xFFFFFF"
+				  type       = "dynamic"
+				  selectable = "true"
+				  fontName   = "EurostileFl"
+				  wordWrap   = "true"
+				  align      = "right"
+				  embedFonts = "true"
+				  fontSize   = "16"
+			/>
+
+	<!-- Verdana 12PX-->
+	<textstyle	name="textstyle_button_align_left_verdana_12"
+				  autoSize="left"
+				  textColor="0xBFBFBF"
+				  type="dynamic"
+				  fontSize="12"
+				  embedFonts="false"
+				  fontName="Verdana"
+			/>
+	<textstyle	name="textstyle_button_align_center_verdana_12"
+				  autoSize="center"
+				  textColor="0xBFBFBF"
+				  type="dynamic"
+				  fontSize="12"
+				  embedFonts="false"
+				  fontName="Verdana"
+			/>
+	<textstyle	name="textstyle_button_align_right_verdana_12"
+				  autoSize="right"
+				  textColor="0xBFBFBF"
+				  type="dynamic"
+				  fontSize="12"
+				  embedFonts="false"
+				  fontName="Verdana"
+			/>
+
+
+	<!-- STEP 2 - define common used SKINS -->
+	<skins>
+
+		<!-- hitlayer, debug layers -->
+		<skin name="commonui_hitlayer" classname="BasicSkin" library="hintSystemUI">
+			<layer classname="FilledBoxLayer"  fillColor="0xFFFFFF" fillAlpha="1"  >normal</layer>
+		</skin>
+		<skin name="commonui_hitlayer_invisible" classname="BasicSkin" library="hintSystemUI">
+			<layer classname="FilledBoxLayer"  fillColor="0xFFFFFF" fillAlpha="0"  >normal</layer>
+		</skin>
+        <skin name="commonui_light_darklayer" classname="BasicSkin" library="hintSystemUI">
+            <layer classname="FilledBoxLayer"  fillColor="0x000000" fillAlpha="0.3"  >normal</layer>
+        </skin>
+		<skin name="commonui_darklayer" classname="BasicSkin" library="hintSystemUI">
+			<layer classname="FilledBoxLayer"  fillColor="0x000000" fillAlpha="0.5"  >normal</layer>
+		</skin>
+		<skin name="debug_edges" library="gameclientCommonUI" classname="BasicSkin">
+			<layer classname="BitmapLayer" libraryID="debug_edges" scale9grid="2,2,3,3" >normal</layer>
+		</skin>
+		<skin name="debug_edges_input" library="gameclientCommonUI" classname="InputSkin">
+			<layer classname="BitmapLayer" libraryID="debug_edges" scale9grid="2,2,3,3" >normal</layer>
+		</skin>
+
+		<skin name="commonui_info_icon" library="gameclientCommonUI" classname="BasicSkin">
+			<layer classname="BitmapLayer" libraryID="btn_info_normal" >normal</layer>
+		</skin>
+
+		<!-- check boxes -->
+		<skin name="commonui_checkbox18x19" library="gameclientCommonUI" classname="CheckBoxSkin">
+			<layer classname="BitmapLayer" libraryID="checkbox18x19_normal_selected"   >normal.selected</layer>
+			<layer classname="BitmapLayer" libraryID="checkbox18x19_normal_unselected" >normal</layer>
+			<layer classname="BitmapLayer" libraryID="checkbox18x19_over_selected"     >over.selected</layer>
+			<layer classname="BitmapLayer" libraryID="checkbox18x19_over_unselected"   >over</layer>
+		</skin>
+		<skin name="commonui_checkbox16x16_blue" library="gameclientCommonUI" classname="CheckBoxSkin">
+			<layer classname="BitmapLayer" libraryID="checkbox16x16_blue_normal_selected"   >normal.selected</layer>
+			<layer classname="BitmapLayer" libraryID="checkbox16x16_blue_normal_unselected" >normal</layer>
+			<layer classname="BitmapLayer" libraryID="checkbox16x16_blue_over_selected"     >over.selected</layer>
+			<layer classname="BitmapLayer" libraryID="checkbox16x16_blue_over_unselected"   >over</layer>
+			<layer classname="BitmapLayer" libraryID="checkbox16x16_blue_disabled"     		>disabled</layer>
+			<layer classname="BitmapLayer" libraryID="checkbox16x16_blue_disabled"     		>disabled.selected</layer>
+		</skin>
+
+		<!-- radio button skins -->
+		<skin name="commonui_tabbarbutton" library="gameclientCommonUI" classname="FadableButtonSkin" >
+			<layer classname="BitmapLayer" libraryID="tabbar74x15_normal"   scale9grid="2,2,71,13" >normal</layer>
+			<layer classname="BitmapLayer" libraryID="tabbar74x15_over"     scale9grid="2,2,71,13" >over</layer>
+			<layer classname="BitmapLayer" libraryID="tabbar74x15_normal"   scale9grid="2,2,71,13" >clicked</layer>
+		</skin>
+
+		<skin name="commonui_tabbarbutton.selected" library="gameclientCommonUI" classname="FadableButtonSkin" >
+			<layer classname="BitmapLayer" libraryID="tabbar74x15_selected" scale9grid="2,2,71,13" >normal</layer>
+			<layer classname="BitmapLayer" libraryID="tabbar74x15_over" scale9grid="2,2,71,13">over</layer>
+			<layer classname="BitmapLayer" libraryID="tabbar74x15_selected" scale9grid="2,2,71,13" >clicked</layer>
+		</skin>
+
+		<skin name="commonui_tabbarbutton.left" library="gameclientCommonUI" classname="FadableButtonSkin" >
+			<layer classname="BitmapLayer" libraryID="tabbar74x15left_normal"   scale9grid="18,6,81,9" >normal</layer>
+			<layer classname="BitmapLayer" libraryID="tabbar74x15left_over"     scale9grid="18,6,81,9" >over</layer>
+			<layer classname="BitmapLayer" libraryID="tabbar74x15left_normal"   scale9grid="18,6,81,9" >clicked</layer>
+		</skin>
+
+		<skin name="commonui_tabbarbutton.left.selected" library="gameclientCommonUI" classname="FadableButtonSkin" >
+			<layer classname="BitmapLayer" libraryID="tabbar74x15left_selected" scale9grid="18,6,81,9" >normal</layer>
+			<layer classname="BitmapLayer" libraryID="tabbar74x15left_over" scale9grid="18,6,81,9" >over</layer>
+			<layer classname="BitmapLayer" libraryID="tabbar74x15left_selected" scale9grid="18,6,81,9" >clicked</layer>
+		</skin>
+
+		<!-- input -->
+		<skin name="commonui_input_blue" library="gameclientCommonUI" classname="InputSkin">
+			<layer classname="BitmapLayer" libraryID="input_background_blue"    scale9grid="4,4,6,5"    >normal</layer>
+		</skin>
+		<skin name="commonui_input_invalid" library="gameclientCommonUI" classname="BasicSkin">
+			<layer classname="BitmapLayer" libraryID="input_background_invalid" scale9grid="19,8,21,31" >normal</layer>
+		</skin>
+		<template name="commonui_input_invalid_popup" >
+			<root>
+				<container name="popup" width="268" height="40" layout = "vertical" autoHeightMode="children" registeredSkinName="commonui_input_invalid" >
+					<coreponent height="10" />
+					<label  name="message" text="" marginLeft="18"  marginRight="8" autoSizeWidth="true" autoSizeTextHeight="true" registeredTextStyleName="textstyle_align_left_eurostilefl_12" />
+					<coreponent height="10" />
+				</container>
+			</root>
+		</template>
+		<textstyle  name               = "commonui_input_textstyle"
+					textColor          = "0xFEFEFE"
+					borderColor        = "0x555555"
+					backgroundColor    = "0x000000"
+					selectionTextColor = "0x333344"
+					type               = "input"
+					selectable         = "true"
+					marginLeft         = "5"
+					fontName           = "Arial"
+					embedFonts         = "false"
+					border             = "false"
+					background         = "false"
+					maxChars           = "128"
+				/>
+
+		<!-- spin box-->
+		<textstyle  name               = "commonui_spinbox_input_textstyle"
+					textColor          = "0xFEFEFE"
+					borderColor        = "0x555555"
+					backgroundColor    = "0x000000"
+					selectionTextColor = "0x333344"
+					type               = "input"
+					selectable         = "true"
+					marginLeft         = "5"
+					fontName           = "Arial"
+					embedFonts         = "false"
+					border             = "false"
+					background         = "false"
+					maxChars           = "20"
+					align              = "center"
+				/>
+		<skin name="commonui_spinbox_button_arrow_lef" library="gameclientCommonUI" classname="FadableButtonSkin" >
+			<layer classname="BitmapLayer" libraryID="button_left_normal"   >normal</layer>
+			<layer classname="BitmapLayer" libraryID="button_left_rollover" >over</layer>
+			<layer classname="BitmapLayer" libraryID="button_left_clicked"  >clicked</layer>
+		</skin>
+		<skin name="commonui_spinbox_button_arrow_right" library="gameclientCommonUI" classname="FadableButtonSkin" >
+			<layer classname="BitmapLayer" libraryID="button_right_normal"   >normal</layer>
+			<layer classname="BitmapLayer" libraryID="button_right_rollover" >over</layer>
+			<layer classname="BitmapLayer" libraryID="button_right_clicked"  >clicked</layer>
+		</skin>
+		<skin name="commonui_spinbox_button_symbol_plus" library="gameclientCommonUI" classname="FadableButtonSkin" >
+			<layer classname="BitmapLayer" libraryID="button_plus_normal"   >normal</layer>
+			<layer classname="BitmapLayer" libraryID="button_plus_rollover" >over</layer>
+			<layer classname="BitmapLayer" libraryID="button_plus_clicked"  >clicked</layer>
+		</skin>
+		<skin name="commonui_spinbox_button_symbol_minus" library="gameclientCommonUI" classname="FadableButtonSkin" >
+			<layer classname="BitmapLayer" libraryID="button_minus_normal"   >normal</layer>
+			<layer classname="BitmapLayer" libraryID="button_minus_rollover" >over</layer>
+			<layer classname="BitmapLayer" libraryID="button_minus_clicked"  >clicked</layer>
+		</skin>
+		<skin name="commonui_spinbox_background" library="gameclientCommonUI" classname="InputSkin" >
+			<layer classname="BitmapLayer" libraryID="spinbox.background" scale9grid="4,3,6,16" >normal</layer>
+		</skin>
+
+		<template name="commonui.spinbox.horizontal.arrows">
+			<root>
+				<button name="decreaseButton" width="16" height="16" registeredSkinName="commonui_spinbox_button_arrow_lef" />
+				<input  name="valueInput"     width="*"  height="17" registeredSkinName="commonui_spinbox_background" registeredTextStyleName="commonui_spinbox_input_textstyle" />
+				<button name="increaseButton" width="16" height="16" registeredSkinName="commonui_spinbox_button_arrow_right" />
+			</root>
+		</template>
+
+		<template name="commonui.spinbox.horizontal.mathsymbols">
+			<root>
+				<button name="decreaseButton" width="16" height="16" registeredSkinName="commonui_spinbox_button_symbol_minus" />
+				<input  name="valueInput"     width="*"  height="17" registeredSkinName="commonui_spinbox_background" registeredTextStyleName="commonui_spinbox_input_textstyle" />
+				<button name="increaseButton" width="16" height="16" registeredSkinName="commonui_spinbox_button_symbol_plus" />
+			</root>
+		</template>
+
+		<!-- confirmation buttons -->
+        <skin name="commonui_confirmationbutton_long_green" library="gameclientCommonUI" classname="FadableButtonSkin" >
+            <layer classname="BitmapLayer" libraryID="confirmation_button_green_long_normal">normal</layer>
+            <layer classname="BitmapLayer" libraryID="confirmation_button_green_long_over">over</layer>
+            <layer classname="BitmapLayer" libraryID="confirmation_button_green_long_clicked">clicked</layer>
+            <layer classname="BitmapLayer" libraryID="confirmation_button_long_disabled">disabled</layer>
+        </skin>
+
+		<skin name="commonui_confirmationbutton_green" library="gameclientCommonUI" classname="FadableButtonSkin" >
+			<layer classname="BitmapLayer" libraryID="confirmation_button_green_normal"  scale9grid="22,24,140,40" >normal</layer>
+			<layer classname="BitmapLayer" libraryID="confirmation_button_green_over"    scale9grid="22,24,140,40" >over</layer>
+			<layer classname="BitmapLayer" libraryID="confirmation_button_green_clicked" scale9grid="22,24,140,40" >clicked</layer>
+			<layer classname="BitmapLayer" libraryID="confirmation_button_disabled"      scale9grid="22,24,140,40" >disabled</layer>
+		</skin>
+
+		<skin name="commonui_confirmationbutton_blue" library="gameclientCommonUI" classname="FadableButtonSkin" >
+			<layer classname="BitmapLayer" libraryID="confirmation_button_blue_normal"  scale9grid="22,24,140,40" >normal</layer>
+			<layer classname="BitmapLayer" libraryID="confirmation_button_blue_over"    scale9grid="22,24,140,40" >over</layer>
+			<layer classname="BitmapLayer" libraryID="confirmation_button_blue_clicked" scale9grid="22,24,140,40" >clicked</layer>
+			<layer classname="BitmapLayer" libraryID="confirmation_button_disabled"     scale9grid="22,24,140,40" >disabled</layer>
+		</skin>
+
+		<skin name="commonui_confirmationbutton_red" library="gameclientCommonUI" classname="FadableButtonSkin" >
+			<layer classname="BitmapLayer" libraryID="confirmation_button_red_normal"  scale9grid="22,24,140,40" >normal</layer>
+			<layer classname="BitmapLayer" libraryID="confirmation_button_red_over"    scale9grid="22,24,140,40" >over</layer>
+			<layer classname="BitmapLayer" libraryID="confirmation_button_red_clicked" scale9grid="22,24,140,40" >clicked</layer>
+			<layer classname="BitmapLayer" libraryID="confirmation_button_disabled"    scale9grid="22,24,140,40" >disabled</layer>
+		</skin>
+
+
+		<template name="commonui.window.inProgressOverlay">
+			<root>
+				<coreponent name="darkLayer" marginLeft="4" marginRight="4" marginBottom="4" autoSizeWidth="true" autoSizeHeight="true" registeredSkinName="commonui_darklayer" />
+				<coreponent name="cogBigContainer" alignY="center" alignX="center" x="-20" y="-30" alpha="0" mouseEnabled = "false" mouseChildren="false" >
+					<movieclip name="cogBig" library="gameclientCommonUI" libraryID="cog_big" />
+				</coreponent>
+				<coreponent name="cogSmallContainer" alignY="center" alignX="center" x="27" y="27" alpha="0" mouseEnabled = "false" mouseChildren="false" >
+					<movieclip name="cogSmall" library="gameclientCommonUI" libraryID="cog_small" />
+				</coreponent>
+			</root>
+		</template>
+
+
+		<!-- small standard buttons -->
+		<!-- blue textcolor -->
+		<textstyle  name        = "button_small_blue_standard_normal"
+					textColor   = "0x44CFFA"
+					fontSize    = "9"
+					type        = "dynamic"
+					fontName    = "Verdana"
+					embedFonts  = "false"
+					autoSize    = "center"
+				/>
+		<textstyle  name        = "button_small_blue_standard_over"
+					textColor   = "0xBBDFFF"
+					fontSize    = "9"
+					type        = "dynamic"
+					fontName    = "Verdana"
+					embedFonts  = "false"
+					autoSize    = "center"
+				/>
+		<textstyle  name        = "button_small_blue_standard_clicked"
+					textColor   = "0xEBE0C2"
+					fontSize    = "9"
+					type        = "dynamic"
+					fontName    = "Verdana"
+					embedFonts  = "false"
+					autoSize    = "center"
+				/>
+
+		<!-- red textcolor -->
+		<textstyle  name        = "button_small_red_standard_normal"
+					textColor   = "0xAE2727"
+					fontSize    = "9"
+					type        = "dynamic"
+					fontName    = "Verdana"
+					embedFonts  = "false"
+					autoSize    = "center"
+				/>
+		<textstyle  name        = "button_small_red_standard_over"
+					textColor   = "0xDE3535"
+					fontSize    = "9"
+					type        = "dynamic"
+					fontName    = "Verdana"
+					embedFonts  = "false"
+					autoSize    = "center"
+				/>
+		<textstyle  name        = "button_small_red_standard_clicked"
+					textColor   = "0xFFDD80"
+					fontSize    = "9"
+					type        = "dynamic"
+					fontName    = "Verdana"
+					embedFonts  = "false"
+					autoSize    = "center"
+				/>
+
+		<!-- green textcolor -->
+		<textstyle  name        = "button_small_green_standard_normal"
+					textColor   = "0x7EFF00"
+					fontSize    = "9"
+					type        = "dynamic"
+					autoSize    = "center"
+					fontName    = "Verdana"
+					embedFonts  = "false"
+				/>
+		<textstyle  name        = "button_small_green_standard_over"
+					textColor   = "0x26D52A"
+					fontSize    = "9"
+					type        = "dynamic"
+					fontName    = "Verdana"
+					embedFonts  = "false"
+					autoSize    = "center"
+				/>
+		<textstyle  name        = "button_small_green_standard_clicked"
+					textColor   = "0xDEFFD9"
+					fontSize    = "9"
+					type        = "dynamic"
+					fontName    = "Verdana"
+					embedFonts  = "false"
+					autoSize    = "center"
+				/>
+
+		<!-- grey textcolor -->
+		<textstyle  name        = "button_small_grey_standard"
+					textColor   = "0x999999"
+					fontSize    = "9"
+					type        = "dynamic"
+					fontName    = "Verdana"
+					embedFonts  = "false"
+					autoSize    = "center"
+				/>
+
+		<skin name="commonui_smallbutton_blue" library="gameclientCommonUI" classname="FadableButtonSkin" >
+			<layer classname="BitmapLayer" libraryID="button_small_blue_116x16_normal"    registeredTextStyleName="button_small_blue_standard_normal"  scale9grid="7,6,110,10" >normal</layer>
+			<layer classname="BitmapLayer" libraryID="button_small_blue_116x16_over"      registeredTextStyleName="button_small_blue_standard_over"    scale9grid="7,6,110,10" >over</layer>
+			<layer classname="BitmapLayer" libraryID="button_small_blue_116x16_clicked"   registeredTextStyleName="button_small_blue_standard_clicked" scale9grid="7,6,110,10" >clicked</layer>
+			<layer classname="BitmapLayer" libraryID="_button_small_grey_116x16_disabled" registeredTextStyleName="button_small_grey_standard"         scale9grid="7,6,110,10" >disabled</layer>
+		</skin>
+
+		<skin name="commonui_smallbutton_red" library="gameclientCommonUI" classname="FadableButtonSkin" >
+			<layer classname="BitmapLayer" libraryID="button_small_red_116x16_normal"     registeredTextStyleName="button_small_red_standard_normal"  scale9grid="7,6,110,10" >normal</layer>
+			<layer classname="BitmapLayer" libraryID="button_small_red_116x16_over"       registeredTextStyleName="button_small_red_standard_over"    scale9grid="7,6,110,10" >over</layer>
+			<layer classname="BitmapLayer" libraryID="button_small_red_116x16_clicked"    registeredTextStyleName="button_small_red_standard_clicked" scale9grid="7,6,110,10" >clicked</layer>
+			<layer classname="BitmapLayer" libraryID="_button_small_grey_116x16_disabled" registeredTextStyleName="button_small_grey_standard"        scale9grid="7,6,110,10" >disabled</layer>
+		</skin>
+
+		<skin name="commonui_smallbutton_green" library="gameclientCommonUI" classname="FadableButtonSkin" >
+			<layer classname="BitmapLayer" libraryID="button_small_green_116x16_normal"   registeredTextStyleName="button_small_green_standard_normal"  scale9grid="7,6,110,10" >normal</layer>
+			<layer classname="BitmapLayer" libraryID="button_small_green_116x16_over"     registeredTextStyleName="button_small_green_standard_over"    scale9grid="7,6,110,10" >over</layer>
+			<layer classname="BitmapLayer" libraryID="button_small_green_116x16_clicked"  registeredTextStyleName="button_small_green_standard_clicked" scale9grid="7,6,110,10" >clicked</layer>
+			<layer classname="BitmapLayer" libraryID="_button_small_grey_116x16_disabled" registeredTextStyleName="button_small_grey_standard"          scale9grid="7,6,110,10" >disabled</layer>
+		</skin>
+
+		<!-- toggle button -->
+		<skin name="commonui_togglebutton_dark" library="gameclientCommonUI" classname="ToggleButtonSkin">
+			<layer classname="BitmapLayer" libraryID="togglebutton_dark_background"   scale9grid="8,8,25,9" >background</layer>
+			<layer classname="BitmapLayer" libraryID="togglebutton_dark_switch_normal" >normal</layer>
+			<layer classname="BitmapLayer" libraryID="togglebutton_dark_switch_over" >over</layer>
+		</skin>
+
+
+		<!-- scroll components (scrollbar, scrollcontainer, ...) related skins -->
+		<skin name="commonui_scrollbar_bgnd" classname="FadableButtonSkin" library="hintSystemUI">
+			<layer classname="FilledBoxLayer"  fillColor="0x13323E" fillAlpha="0.45"  >normal</layer>
+		</skin>
+
+		<skin name="commonui_scrollbar_slider" classname="FadableButtonSkin" library="hintSystemUI">
+			<layer classname="FilledBoxLayer"  fillColor="0x358BAC" fillAlpha="0.45" >normal</layer>
+			<layer classname="FilledBoxLayer"  fillColor="0x358BAC" fillAlpha="1"    >over</layer>
+			<layer classname="FilledBoxLayer"  fillColor="0x358BAC" fillAlpha="0.7"  >clicked</layer>
+		</skin>
+
+		<skin name="commonui_default_label" classname="LabelSkin" />
+
+		<skin name="commonui_tooltip_label" classname="LabelSkin"    library="contactsWindowUI" />
+
+		<skin name="marquee_texfield_skin" classname="MarqueeLabelSkin" library="gameclientCommonUI">
+			<layer classname="BitmapLayer" libraryID="fadeinoutmask"  >mask</layer>
+		</skin>
+
+		<skin
+				name       = "commonui_progressbar_skin"
+				library    = "gameclientCommonUI"
+				tweenTime  = "1"
+				classname  = "ProgressBarSkin">
+				<layer
+						libraryID  = "commonui_progress_outer_9x9"
+						classname  = "BitmapLayer"
+						scale9grid = "4,4,5,5">normal
+				</layer>
+				<layer
+						libraryID  = "commonui_progress_inner_9x9"
+						classname  = "BitmapLayer"
+						scale9grid = "4,4,5,5">bar
+				</layer>
+		</skin>
+		<!--<skin name="commonui_btn_info" classname="FadableButtonSkin" library="gameclientCommonUI">-->
+			<!--<layer classname="BitmapLayer" libraryID="btn_info_normal">normal</layer>-->
+			<!--<layer classname="BitmapLayer" libraryID="btn_info_hover">over</layer>-->
+			<!--<layer classname="BitmapLayer" libraryID="btn_info_active">clicked</layer>-->
+		<!--</skin>-->
+	</skins>
+
+	<!-- STEP 3 - define common used TOOLTIPS -->
+	<template name="commonui_tooltip_simple">
+		<root>
+			<label       name="label"      autoSize="left" text="tooltip" registeredSkinName="commonui_tooltip_label" registeredTextStyleName="commonui_tooltip_textstyle"/>
+		</root>
+	</template>
+	<skin name="commonui_tooltip_background" classname="BasicSkin" library="gameclientCommonUI">
+		<layer classname="BitmapLayer" libraryID="horizontal_divider" >normal</layer>
+	</skin>
+
+	<skin name="commonui_horizontal_divider" classname="BasicSkin" library="gameclientCommonUI">
+		<layer classname="BitmapLayer" libraryID="horizontal_divider">normal</layer>
+	</skin>
+
+	<skin name="commonui_list_mask" classname="BasicSkin">
+		<layer classname="FilledBoxLayer" fillColor="0x358BAC" fillAlpha="1">mask</layer>
+		<!--<layer classname="FilledBoxLayer" fillColor="0x13323E" fillAlpha="0">normal</layer>-->
+	</skin>
+
+	<!-- STEP 4 - define common used template structures -->
+	<template name="commonui.window.inProgressOverlay">
+		<root>
+			<coreponent name="darkLayer" marginLeft="4" marginRight="4" marginBottom="4" autoSizeWidth="true" autoSizeHeight="true" registeredSkinName="commonui_darklayer" />
+			<coreponent name="cogBigContainer" alignY="center" alignX="center" x="-20" y="-30" alpha="0" mouseEnabled = "false" mouseChildren="false" >
+				<movieclip name="cogBig" library="gameclientCommonUI" libraryID="cog_big" />
+			</coreponent>
+			<coreponent name="cogSmallContainer" alignY="center" alignX="center" x="27" y="27" alpha="0" mouseEnabled = "false" mouseChildren="false" >
+				<movieclip name="cogSmall" library="gameclientCommonUI" libraryID="cog_small" />
+			</coreponent>
+		</root>
+	</template>
+
+	<mousecursor cursorID="cursor_move"              library="gameclientCommonUI" libraryID="cursor_move"               offsetX="9" offsetY="9" />
+	<mousecursor cursorID="cursor_regular"           library="gameclientCommonUI" libraryID="cursor_regular"            offsetX="0" offsetY="0" />
+	<mousecursor cursorID="cursor_resize_diagonal"   library="gameclientCommonUI" libraryID="cursor_resize_diagonal"    offsetX="0" offsetY="0" />
+	<mousecursor cursorID="cursor_resize_horizontal" library="gameclientCommonUI" libraryID="cursor_resize_horizontal"  offsetX="0" offsetY="0" />
+	<mousecursor cursorID="cursor_resize_vertical"   library="gameclientCommonUI" libraryID="cursor_resize_vertical"    offsetX="0" offsetY="0" />
+	<mousecursor cursorID="cursor_dragndrop"         library="gameclientCommonUI" libraryID="cursor_dragndrop"          offsetX="0" offsetY="0" />
+	<mousecursor cursorID="cursor_hand"              library="gameclientCommonUI" libraryID="cursor_hand"               offsetX="4" offsetY="1" />
+	<mousecursor cursorID="cursor_cross"             library="gameclientCommonUI" libraryID="cursor_cross"              offsetX="4" offsetY="4" />
+
+</root>

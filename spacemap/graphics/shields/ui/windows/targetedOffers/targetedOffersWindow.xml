@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+
+	<libraries>
+		<library id="gameclientCommonUI"/>
+		<library id="targetedOfferUI"/>
+	</libraries>
+
+	<skins>
+		<skin name="targetedOffer_button_buy" classname="FadableButtonSkin" library="targetedOfferUI" >
+			<layer classname="BitmapLayer" libraryID="offerBtn_normal" >normal</layer>
+			<layer classname="BitmapLayer" libraryID="offerBtn_over"   >over</layer>
+			<layer classname="BitmapLayer" libraryID="offerBtn_clicked">clicked</layer>
+			<layer classname="BitmapLayer" libraryID="offerBtn_normal"  >disabled</layer>
+		</skin>
+	</skins>
+
+	<textstyle  name        = "textstyle_targetedOffer_Title"
+				textColor   = "0xFDF6D0"
+				fontSize    = "34"
+				type        = "dynamic"
+				fontName    = "EurostileTMed"
+				embedFonts  = "true"
+				autoSize    = "center"
+				wordWrap	= "true"
+				multiline 	= "true"
+				align		="center"
+			/>
+
+	<textstyle  name        = "textstyle_targetedOffer_Price"
+				textColor   = "0xFDF6D0"
+				fontSize    = "31"
+				type        = "dynamic"
+				fontName	= "EurostileTMed"
+				embedFonts	= "true"
+				autoSize    = "center"
+			/>
+
+	<textstyle  name        = "textstyle_targetedOffer_Button"
+				textColor   = "0xFDF6D0"
+				fontSize    = "22"
+				type        = "dynamic"
+				fontName    = "EurostileTMed"
+				embedFonts  = "true"
+				autoSize    = "center"
+				bold 		= "true"
+			/>
+
+
+	<container
+			name           = "windowContainer"
+			width  ="256"
+			height ="565"
+			>
+
+		<container
+				name           	= "imageBackgroundContainer"
+				autoSize		="true"
+				mouseEnabled   = "true"
+				marginRight = "0"
+				marginLeft = "0"
+				marginTop = "0"
+				/>
+
+		<label
+				name = "label_topText"
+				marginTop = "35"
+				width  ="256"
+				registeredTextStyleName = "textstyle_targetedOffer_Title"
+				text="localize:targeted_offer_headline"
+				alignY="top"
+				autoSizeHeight="true"
+				/>
+
+		<container
+				name           = "videoContainer"
+				autoSizeWidth  ="true"
+				height = "250"
+				y = "150"
+				marginRight = "0"
+				marginLeft = "0"
+				mouseEnabled = "true">
+
+			<videoplayer name   = "videoplayer"
+						 height = "250"
+						 width  ="250"
+						 alignX = "center"
+						 alignY = "center"
+						 mouseEnabled   = "true"
+					/>
+
+			<videoplayer name   = "videoplayer2"
+						 height = "250"
+						 width  ="250"
+						 alignX = "center"
+						 alignY = "center"
+						 mouseEnabled   = "true"
+					/>
+
+			<container
+					name = "percentageTextContainer"
+					height = "50"
+					width  ="150"
+					x = "0"
+					y = "0"
+					alignX = "right"
+					alignY = "bottom"
+					marginBottom = "0"
+					marginRight = "15"
+					mouseEnabled   = "true"
+					/>
+
+			<container
+					name = "amountTextContainer"
+					height = "50"
+					width  ="150"
+					x = "0"
+					y = "10"
+					alignX = "left"
+					alignY = "top"
+					marginTop = "40"
+					marginLeft = "-15"
+					mouseEnabled   = "true"
+					/>
+		</container>
+
+		<container
+				name           = "bottomTextContainer"
+				y = "362"
+				height = "230"
+				mouseEnabled   = "false"
+				autoSizeWidth  ="true"
+				alignX = "center"
+
+				marginBottom = "20"
+				marginRight = "15"
+				marginLeft = "15"
+				marginTop = "10"
+				/>
+
+		<container
+				name	= "itemListContainer"
+				y = "365"
+				height = "230"
+				mouseEnabled   = "false"
+				autoSizeWidth  ="true"
+				alignX = "center"
+
+				marginBottom = "20"
+				marginRight = "15"
+				marginLeft = "25"
+				marginTop = "10"
+				/>
+
+		<label
+				name = "label_price"
+				autoSizeWidth = "true"
+				registeredTextStyleName = "textstyle_targetedOffer_Price"
+				text = ""
+				alignY 	= "bottom"
+				marginBottom = "110"
+				alignX 	= "center"
+				/>
+
+		<button name				= "buy_button"
+				width				= "200"
+				height				= "40"
+				alignY 				= "bottom"
+				alignX 				= "center"
+				marginBottom 		= "20"
+				text				= "localize:targeted_offer_buy_button"
+				textMarginX			= "12"
+				registeredSkinName	="targetedOffer_button_buy"
+				registeredTextStyleName ="textstyle_targetedOffer_Button"/>
+	</container>
+
+</root>

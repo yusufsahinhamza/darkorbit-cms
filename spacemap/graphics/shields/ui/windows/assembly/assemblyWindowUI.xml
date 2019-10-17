@@ -1,0 +1,628 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+    <!-- LIBS -->
+    <libraries>
+        <library id="assemblyWindow"/>
+        <library id="module_equipment_lib"/>
+        <library id="gameclientCommonUI"/>
+    </libraries>
+    <!-- TEXT STYLES -->
+
+
+    <textstyle
+            name="assembly_combobox_filter"
+            type="dynamic"
+            selectable="false"
+            fontName="Verdana"
+            embedFonts="false"
+            autoSize="left"
+            align="left"
+            textColor="0xC2BDC3"
+            fontSize="10"/>
+
+    <textstyle name="equipment_combobox_inventory_filter"
+               type="dynamic"
+               selectable="false"
+               fontName="Verdana"
+               embedFonts="false"
+               autoSize="left"
+               align="left"
+               textColor="0xC2BDC3"
+               fontSize="10"
+            />
+
+    <textstyle
+            name="equipment_checkbox_inventory_filter"
+            type="dynamic"
+            align="left"
+            autoSize="left"
+            wordWrap="false"
+            selectable="false"
+            fontName="Verdana"
+            embedFonts="false"
+            textColor="0x6A7275"
+            fontSize="10"
+            />
+
+
+    <textstyle
+            name="assembly_label_filter"
+            background="false"
+            textColor="0xBFBFBF"
+            type="dynamic"
+            selectable="false"
+            fontName="Verdana"
+            embedFonts="false"
+            fontSize="10"/>
+
+    <textstyle
+            name="assembly_default"
+            textColor="0xCCCCCC"
+            type="dynamic"
+            fontSize="10"
+            wordWrap="true"
+            multiline="true"
+            embedFonts="false"
+            fontName="Verdana"
+            autoSize="center"/>
+
+    <textstyle
+            name="assembly_warning"
+            textColor="0xffcc00"
+            type="dynamic"
+            fontSize="12"
+            align="center"
+            wordWrap="true"
+            multiline="true"
+            embedFonts="false"
+            fontName="Verdana"
+            autoSize="center"/>
+
+    <textstyle
+            name="assembly_timer"
+            textColor="0x00ccff"
+            type="dynamic"
+            align="center"
+            fontSize="10"
+            wordWrap="true"
+            multiline="true"
+            embedFonts="false"
+            fontName="Verdana"
+            autoSize="center"/>
+
+    <textstyle
+            name="assembly_timer_details"
+            bold="true"
+            textColor="0x65e0ff"
+            type="dynamic"
+            align="left"
+            fontSize="8"
+            wordWrap="true"
+            multiline="true"
+            embedFonts="false"
+            fontName="Verdana"
+            autoSize="center"/>
+
+    <textstyle
+            name="assembly_detail_headline"
+            textColor="0xededed"
+            type="dynamic"
+            fontSize="12"
+            bold="true"
+            wordWrap="false"
+            multiline="false"
+            embedFonts="false"
+            fontName="Verdana"
+            marginLeft="15"
+            autoSize="left"/>
+    <textstyle
+            name="assembly_ingredients"
+            textColor="0xededed"
+            type="dynamic"
+            fontSize="10"
+            wordWrap="false"
+            multiline="false"
+            embedFonts="false"
+            fontName="Verdana"
+            autoSize="left"/>
+
+    <skin name="assembly_itemlist_green" classname="FadableButtonSkin">
+        <layer classname="FilledBoxLayer" fillColor="0x32e629" fillAlpha="0">normal</layer>
+        <layer classname="FilledBoxLayer" fillColor="0xffffff" fillAlpha="0.1">over</layer>
+        <layer classname="FilledBoxLayer" fillColor="0xffffff" fillAlpha="0.3">clicked</layer>
+        <layer classname="FilledBoxLayer" lineColor="0xffcc00" fillAlpha="0" lineAlpha="1">disabled</layer>
+    </skin>
+    <skin name="assembly_ingridient_outline" classname="BasicSkin">
+        <layer classname="FilledBoxLayer" lineColor="0x00ccff" fillAlpha="0" lineAlpha="1">normal</layer>
+    </skin>
+    <skin name="assembly_itemlist_crafable" classname="BasicSkin">
+        <layer classname="FilledBoxLayer" fillColor="0x32e629" fillAlpha="0.2">normal</layer>
+    </skin>
+    <skin name="assembly_itemlist_new" classname="BasicSkin">
+        <layer classname="FilledBoxLayer" lineColor="0x32e629" fillAlpha="0" lineAlpha="1">normal</layer>
+    </skin>
+    <skin name="assembly_itemlist_building" classname="BasicSkin" library="assemblyWindow">
+        <layer classname="BitmapLayer" libraryID="icon_cogs">normal</layer>
+    </skin>
+    <skin name="assembly_itemlist_collect" classname="BasicSkin" library="assemblyWindow">
+        <layer classname="BitmapLayer" libraryID="icon_check">normal</layer>
+    </skin>
+    <skin name="assembly_itemlist_time" classname="BasicSkin" library="assemblyWindow">
+        <layer classname="BitmapLayer" libraryID="indicator_time">normal</layer>
+    </skin>
+
+
+    <skin name="assembly_details_timer" classname="BasicSkin" library="assemblyWindow">
+        <layer classname="BitmapLayer" libraryID="icon_time">normal</layer>
+    </skin>
+    <skin name="assembly_itemlist_multibuild" classname="BasicSkin" library="assemblyWindow">
+        <layer classname="BitmapLayer" libraryID="indicator_more">normal</layer>
+    </skin>
+    <!--<skin name="assembly_itemlist_disabled" classname="BasicSkin" library="assemblyWindow">-->
+    <!--<layer classname="FilledBoxLayer" lineColor="0x32e629" lineAlpha="1"-->
+    <!--fillColor="0x32e629" fillAlpha="0.2">normal</layer>-->
+    <!--</skin>-->
+
+
+    <skin name="assembly_scrollcontainer" classname="FadableButtonSkin">
+        <layer classname="FilledBoxLayer" fillColor="0x13323E" fillAlpha="0">mask</layer>
+    </skin>
+
+    <skin name="details_bg" classname="BasicSkin" library="assemblyWindow">
+        <layer classname="BitmapLayer" libraryID="frame_top">normal</layer>
+    </skin>
+
+    <skin name="build_bg" classname="BasicSkin" library="assemblyWindow">
+        <layer classname="BitmapLayer" libraryID="frame_btm">normal</layer>
+    </skin>
+
+    <skin name="not_possible" classname="BasicSkin" library="assemblyWindow">
+        <layer classname="BitmapLayer" libraryID="caution_Sign">normal</layer>
+    </skin>
+
+    <skin name="list_mask" classname="BasicSkin">
+        <layer classname="FilledBoxLayer" fillColor="0x358BAC" fillAlpha="1">mask</layer>
+        <!--<layer classname="FilledBoxLayer" fillColor="0x13323E" fillAlpha="0">normal</layer>-->
+    </skin>
+
+    <skin name="assembly_arrow_right" classname="FadableButtonSkin" library="assemblyWindow">
+        <layer classname="BitmapLayer" libraryID="arrow_r_normal">normal</layer>
+        <layer classname="BitmapLayer" libraryID="arrow_r_hover">over</layer>
+        <layer classname="BitmapLayer" libraryID="arrow_r_select">clicked</layer>
+    </skin>
+
+    <skin name="assembly_arrow_left" classname="FadableButtonSkin" library="assemblyWindow">
+        <layer classname="BitmapLayer" libraryID="arrow_l_normal">normal</layer>
+        <layer classname="BitmapLayer" libraryID="arrow_l_hover">over</layer>
+        <layer classname="BitmapLayer" libraryID="arrow_l_select">clicked</layer>
+    </skin>
+
+    <skin name="assembly_shop" classname="FadableButtonSkin" library="assemblyWindow">
+        <layer classname="BitmapLayer" libraryID="btn_buy_normal">normal</layer>
+        <layer classname="BitmapLayer" libraryID="btn_buy_hover">over</layer>
+        <layer classname="BitmapLayer" libraryID="btn_buy_active">clicked</layer>
+    </skin>
+
+    <skin name="assembly_info" classname="FadableButtonSkin" library="assemblyWindow">
+        <layer classname="BitmapLayer" libraryID="btn_info_normal">normal</layer>
+        <layer classname="BitmapLayer" libraryID="btn_info_hover">over</layer>
+        <layer classname="BitmapLayer" libraryID="btn_info_active">clicked</layer>
+    </skin>
+
+    <skin name="assebly_label_default" classname="LabelSkin"/>
+    <skin name="assembly_window_progressbar_skin" classname="ProgressBarSkin" library="assemblyWindow">
+        <layer classname="BitmapLayer" libraryID="item_progress_inner" scale9grid="1,1,2,4">bar</layer>
+        <layer classname="BitmapLayer" libraryID="item_progress_outer" scale9grid="1,1,2,4">normal</layer>
+    </skin>
+    <skin name="assembly_window_progressbar_building_skin" tweenTime="0" classname="ProgressBarSkin"
+          library="assemblyWindow">
+        <layer classname="BitmapLayer" libraryID="progress_bar_fill_scale9" scale9grid="3,4,4,5">bar</layer>
+        <layer classname="BitmapLayer" libraryID="progress_bar_base_scale9" scale9grid="5,4,6,5">normal</layer>
+    </skin>
+
+    <skin name="assembly_divider" classname="BasicSkin" library="gameclientCommonUI">
+        <layer classname="BitmapLayer" libraryID="horizontal_divider">normal</layer>
+    </skin>
+    <skin name="assembly_recipe_list_skin" classname="BasicSkin">
+        <layer classname="FilledBoxLayer" fillColor="0x000000" fillAlpha="0.3">normal</layer>
+    </skin>
+
+
+    <!-- Filter combobox -->
+    <skin name="assembly_combobox_filter" library="module_equipment_lib" classname="FadableButtonSkin">
+        <layer classname="BitmapLayer" scale9grid="4,3,17,16" libraryID="equipment_combobox_filter_normal">normal
+        </layer>
+        <layer classname="BitmapLayer" scale9grid="4,3,17,16" libraryID="equipment_combobox_filter_hover">over</layer>
+        <layer classname="BitmapLayer" scale9grid="4,3,17,16" libraryID="equipment_combobox_filter_active">clicked
+        </layer>
+    </skin>
+
+    <skin name="equipment_combobox_filter" library="module_equipment_lib" classname="FadableButtonSkin">
+        <layer classname="BitmapLayer" scale9grid="4,3,17,16" libraryID="equipment_combobox_filter_normal">normal
+        </layer>
+        <layer classname="BitmapLayer" scale9grid="4,3,17,16" libraryID="equipment_combobox_filter_hover">over</layer>
+        <layer classname="BitmapLayer" scale9grid="4,3,17,16" libraryID="equipment_combobox_filter_active">clicked
+        </layer>
+    </skin>
+
+    <skin name="equipment_button_close_inventory_filter_popup" library="module_equipment_lib"
+          classname="FadableButtonSkin">
+        <layer classname="BitmapLayer" libraryID="equipment_inventoryfilter_close_button_normal">normal</layer>
+        <layer classname="BitmapLayer" libraryID="equipment_inventoryfilter_close_button_rollover">over</layer>
+        <layer classname="BitmapLayer" libraryID="equipment_inventoryfilter_close_button_click">clicked</layer>
+    </skin>
+
+    <skin name="assembly_background_inventory_filter_popup" library="module_equipment_lib" classname="BasicSkin">
+        <layer classname="BitmapLayer" libraryID="equipment_background_filter_inventory2" scale9grid="11,18,15,25">
+            normal
+        </layer>
+    </skin>
+    <skin name="assembly_tiled_no_items_bg" library="assemblyWindow" classname="BasicSkin">
+        <layer classname="BitmapLayer" libraryID="item_empty" scale9grid="0,0,36,36,repeatXY">
+            normal
+        </layer>
+    </skin>
+
+    <skin name="assembly_progress" classname="FadableButtonSkin" library="assemblyWindow">
+        <layer classname="BitmapLayer" libraryID="btn_progress_normal">normal</layer>
+        <layer classname="BitmapLayer" libraryID="btn_progress_hover">over</layer>
+        <layer classname="BitmapLayer" libraryID="btn_progress_active">clicked</layer>
+    </skin>
+
+    <!--
+    btn_progress_inactive
+    -->
+
+    <template name="assembly_build">
+        <container name="build" width="150" height="100">
+            <spinbox name="spinBox" templateName="commonui.spinbox.horizontal.mathsymbols" alignX="center" alignY="top"
+                     type="horizontal" width="90" height="16" marginTop="20"/>
+            <label marginTop="40" width="150" name="label" registeredTextStyleName="assembly_timer" alignY="top"/>
+            <button name="btn" alignX="center" alignY="bottom" width="120" height="50"
+                    text="localize:assembly_button_ready"
+                    registeredSkinName="commonui_confirmationbutton_green"
+                    registeredTextStyleName="commonui_confirmationbutton_green_normal"/>
+        </container>
+    </template>
+    <template name="assembly_collect">
+        <container name="collect" width="150" height="100">
+            <label marginTop="20" width="150" name="label" registeredTextStyleName="assembly_default" alignX="center"
+                   alignY="top"/>
+            <button name="btn" width="120" height="50" text="localize:assembly_button_collect"
+                    alignX="center" alignY="bottom"
+                    registeredSkinName="commonui_confirmationbutton_green"
+                    registeredTextStyleName="commonui_confirmationbutton_green_normal"/>
+        </container>
+    </template>
+    <template name="assembly_building">
+        <container name="building" width="150" height="100">
+            <label marginTop="10" width="150" name="label" registeredTextStyleName="assembly_default" alignY="top"
+                   useHTML="true"/>
+            <progressbar
+                    name="progressbar"
+                    marginLeft="10"
+                    marginRight="10"
+                    alignY="center"
+                    registeredSkinName="assembly_window_progressbar_building_skin"
+                    height="9"
+                    autoSizeWidth="true"/>
+            <label name="time" registeredTextStyleName="assembly_timer" y="55" width="150"/>
+        </container>
+    </template>
+
+    <template name="assembly_not_possible">
+        <container name="not_possible" width="150" height="100">
+            <coreponent registeredSkinName="not_possible" name="img" alignY="center" alignX="center"/>
+            <label name="label" alignY="center" alignX="center" autoSizeTextHeight="true" width="150"
+                   registeredTextStyleName="assembly_default"/>
+        </container>
+    </template>
+
+    <template name="assembly_warning">
+        <container visible="false" name="assembly_warning" width="360" height="100" marginRight="20" marginLeft="20"
+                   marginTop="120" registeredSkinName="build_bg">
+            <coreponent registeredSkinName="not_possible" name="img" alignY="center" alignX="center"/>
+            <label name="label" marginLeft="20" alignY="center" alignX="center" autoSizeTextHeight="true" width="360"
+                   registeredTextStyleName="assembly_warning"/>
+        </container>
+    </template>
+
+    <template name="assembly_template_inventory_filter_popup">
+        <root registeredSkinName="assembly_background_inventory_filter_popup"
+              height="134"
+                >
+            <container name="inventory.filter"
+                       y="30"
+                       layout="vertical"
+                       gap="5"
+                       autoSizeWidth="true"
+                       autoWidthMode="children"
+                       autoHeightMode="children"
+                       mouseEnabled="true"
+                    />
+            <!-- parse rows into this container on the fly -->
+
+            <button name="inventory.closeButton"
+                    alignX="right"
+                    x="1"
+                    y="5"
+
+                    registeredSkinName="equipment_button_close_inventory_filter_popup"
+                    />
+
+            <checkbox name="inventory.selectAllCheckbox"
+                      alignX="left"
+                      marginLeft="3"
+                      marginTop="9"
+                      width="122"
+                      height="17"
+                      registeredSkinName="equipment_combobox_filter"
+                    >
+            </checkbox>
+
+            <bitmap name="led.off" library="module_equipment_lib" libraryID="equipment_led_off" x="5" y="9"/>
+            <bitmap name="led.on" library="module_equipment_lib" libraryID="equipment_led_on" x="5" y="9" alpha="0"/>
+            <label name="inventory.selectAllLabel"
+                   x="21"
+                   y="9"
+                   registeredTextStyleName="equipment_combobox_inventory_filter"
+                   text="localize:equipment_inventory_popup.filtering_label_showall:eic"
+                   autoSizeTextWidth="true"
+                    />
+        </root>
+    </template>
+
+    <template name="equipment_template_inventory.filterset.row">
+        <root>
+            <container name="row"
+                       autoSizeWidth="true"
+                       marginLeft="5"
+                       marginRight="5"
+                       height="16"
+                    >
+
+                <checkbox name="cb.filter.left"
+                          registeredSkinName="commonui_checkbox16x16_blue"
+                        />
+                <label name="label.filter.left"
+                       height="14"
+                       registeredTextStyleName="equipment_checkbox_inventory_filter"
+                       text="localize:equipment_inventory_popup.filtering_label_showall:eic"
+                       autoSizeTextWidth="true"
+                        />
+
+                <checkbox name="cb.filter.right"
+                          registeredSkinName="commonui_checkbox16x16_blue"
+                        />
+                <label name="label.filter.right"
+                       height="14"
+                       autoSizeTextWidth="true"
+                       registeredTextStyleName="equipment_checkbox_inventory_filter"
+                       text="localize:equipment_inventory_popup.filtering_label_showall:eic"
+                        />
+            </container>
+        </root>
+    </template>
+
+    <!-- CONTENT -->
+    <container name="globalContainer" width="430" height="430">
+        <reference name="assembly_warning" template="assembly_warning"/>
+        <container
+                name="contentContainer"
+                mouseEnabled="false"
+                layout="vertical"
+                width="430" height="430">
+
+            <container name="filterComboboxContainer"
+                       autoSizeWidth="true"
+                       height="21"
+                       mouseEnabled="false"
+                       marginRight="28">
+
+                <checkbox name="progressButton" width="19" height="17" marginLeft="21" alignX="left" alignY="center" registeredSkinName="assembly_progress"/>
+
+                <ComboBox name="combobox.filters"
+                          width="98"
+                          height="17"
+                          registeredSkinName="assembly_combobox_filter"
+                          alignX="right"
+                          alignY="bottom"
+                          marginRight="20"
+                          marginBottom="1"
+                          popupTemplate="assembly_template_inventory_filter_popup"
+                        />
+                <label name="label.combobox.filters"
+                       alignY="bottom"
+                       alignX="right"
+                       width="98"
+                       height="17"
+                       marginBottom="2"
+                       marginRight="18"
+                       registeredTextStyleName="assembly_label_filter"
+                       text="localize:assembly_label_filter"
+                        />
+                <container name="arrowContainer"
+                           alignY="bottom"
+                           alignX="right"
+                           width="10"
+                           height="10"
+                           marginBottom="0"
+                           marginRight="26"
+                           rotation="180"
+                        >
+                    <container name="arrowRotationContainer"
+                               rotation="180">
+
+                        <bitmap x="-5" y="-5" library="module_equipment_lib" libraryID="equipment_arrow_down_active"/>
+                        <bitmap x="-5" y="-5" library="module_equipment_lib" libraryID="equipment_arrow_down_hover"/>
+                        <bitmap x="-5" y="-5" library="module_equipment_lib" libraryID="equipment_arrow_down_normal"/>
+                    </container>
+                </container>
+            </container>
+            <coreponent width="360" height="2" registeredSkinName="assembly_divider" marginRight="20"
+                        marginLeft="20"/>
+            <container
+                    name="itemListContainer"
+                    mouseEnabled="false"
+                    width="400" height="50">
+                <coreponent registeredSkinName="assembly_recipe_list_skin" width="364"
+                            height="40"
+                            marginRight="18"
+                            marginLeft="18"/>
+                <coreponent registeredSkinName="assembly_tiled_no_items_bg"
+                            width="360"
+                            height="35"
+                            marginRight="20"
+                            marginLeft="20"
+                            marginTop="2"/>
+
+                <itemlist name="recipes"
+                          width="360"
+                          itemGap="0"
+                          height="35"
+                          marginRight="20"
+                          marginLeft="20"
+                          marginTop="2"
+                          mouseChildren="true"
+                          mouseEnabled="true"
+                          autoSizeWidth="false"
+                          layout="horizontal"
+                          cacheSkinMaskAsBitmap="false"
+                          registeredSkinName="list_mask"
+                        >
+                    <itemrenderer width="36" autoSizeWidth="false" height="35" mouseEnabled="true" mouseChildren="true">
+                        <!--<container name="itemContainer" width="50" height="50">-->
+                        <coreponent name="hitlayer" registeredSkinName="commonui_hitlayer" mouseEnabled="true"
+                                    mouseChildren="true" autoSizeWidth="true" autoSizeHeight="true" alpha="0"
+                                    tooltipTemplateID="commonui_tooltip_simple"/>
+                        <coreponent name="pic" width="30" height="30" alignX="center" alignY="center"/>
+                        <coreponent registeredSkinName="assembly_itemlist_time" name="timed"
+                                    marginLeft="2.5" width="10" height="10" alignY="center" alignX="left"/>
+                        <coreponent registeredSkinName="assembly_itemlist_building" name="building" width="30"
+                                    height="30"
+                                    alignX="center" alignY="center"/>
+                        <coreponent registeredSkinName="assembly_itemlist_collect" name="collect" width="30" height="30"
+                                    alignX="center" alignY="center"/>
+                        <!--<coreponent registeredSkinName="assembly_itemlist_green" name="disabled" width="30" height="30" alignX="center" alignY="center"/>-->
+                        <coreponent registeredSkinName="assembly_itemlist_multibuild" name="multibuild" marginTop="5"
+                                    marginLeft="5" width="5" height="5"/>
+                        <coreponent registeredSkinName="assembly_itemlist_crafable" name="craftable" width="30"
+                                    height="30"
+                                    alignX="center" alignY="center"/>
+                        <coreponent registeredSkinName="assembly_itemlist_new" name="isNew" width="30" height="30"
+                                    alignX="center" alignY="center"/>
+                        <progressbar
+                                name="progress"
+                                alignY="bottom"
+                                alignX="center"
+                                marginBottom="3"
+                                registeredSkinName="assembly_window_progressbar_skin"
+                                height="5"
+                                width="28"/>
+                        <button name="hover" width="30" height="30" alignX="center" alignY="center"
+                                registeredSkinName="assembly_itemlist_green"/>
+
+                        <!--</container>-->
+                    </itemrenderer>
+                </itemlist>
+
+                <scrollbar name="item_bar" height="10" autoSizeWidth="true" x="192" direction="horizontal"
+                           alignX="center"
+                           alignY="bottom"
+                           marginRight="20"
+                           marginLeft="20"
+                           registeredSkinName="commonui_scrollbar_bgnd">
+                    <button name="buttonSlider" alignY="center" width="6" height="10"
+                            registeredSkinName="commonui_scrollbar_slider"/>
+                </scrollbar>
+                <button name="left" alignY="center" alignX="left" width="13" height="24"
+                        registeredSkinName="assembly_arrow_left"/>
+                <button name="right" width="13" height="24" alignY="center" alignX="right"
+                        registeredSkinName="assembly_arrow_right"/>
+                <bind source="item_bar" target="recipes" type="scrollcontainer"/>
+            </container>
+            <coreponent width="360" height="2" registeredSkinName="assembly_divider" marginRight="20"
+                        marginLeft="20"/>
+            <container
+                    marginLeft="20"
+                    name="detailsContainer" mouseChildren="true"
+                    mouseEnabled="false" height="140"
+                    registeredSkinName="details_bg"
+                    width="360">
+                <videoplayer marginLeft="3" name="vid" width="130" height="130" alignX="left" alignY="center"/>
+                <label name="headline"  registeredSkinName="marquee_texfield_skin"
+                       registeredTextStyleName="assembly_detail_headline"
+                        height="30" width="206" marginLeft="155"/>
+                <coreponent name="icon" marginLeft="15" marginTop="5" registeredSkinName="assembly_details_timer" mouseEnabled="true"
+                            alignX="left" alignY="top" tooltipData="localize:assembly_item_timer_ttip" tooltipTemplateID="commonui_tooltip_simple"/>
+                <label name="time" marginLeft="30" marginTop="0" width="100" alignX="left" alignY="top" height="100" mouseEnabled="true"
+                       useHTML="true" tooltipData="localize:assembly_item_timer_ttip" registeredTextStyleName="assembly_timer_details" tooltipTemplateID="commonui_tooltip_simple"/>
+                <container
+                        marginTop="30"
+                        name="textContainer" alignX="right"
+                        mouseEnabled="false" height="100"
+                        width="190">
+
+                    <scrollcontainer mouseEnabled="true" alignY="center" name="assemblyScrollContainerText" height="105"
+                                     autoSizeHeight="false"
+                                     width="150" marginRight="20" registeredSkinName="assembly_scrollcontainer">
+                        <label name="content" width="150" useHTML="true" mouseEnabled="true"
+                               registeredTextStyleName="assembly_default" autoSizeTextHeight="true"/>
+                    </scrollcontainer>
+                    <scrollbar name="assemblyScrollbarText" width="10" autoSizeHeight="true" alignX="right"
+                               marginRight="6" marginBottom="6" marginTop="6"
+                               registeredSkinName="commonui_scrollbar_bgnd">
+                        <button name="buttonSlider" width="6" height="6"
+                                alignX="center" registeredSkinName="commonui_scrollbar_slider"/>
+                    </scrollbar>
+                    <bind source="assemblyScrollbarText" target="assemblyScrollContainerText" type="scrollcontainer"/>
+                </container>
+            </container>
+            <container registeredSkinName="build_bg" marginLeft="20" name="buildContainer"
+                       mouseEnabled="false" height="113" width="360">
+
+                <itemlist name="ingredients_container" width="190" autoSizeHeight="false" height="108"
+                          cacheSkinMaskAsBitmap="false" registeredSkinName="list_mask" mouseEnabled="false"
+                          marginLeft="3">
+                    <itemrenderer height="35" autoSizeWidth="true" autoSizeHeight="false" mouseEnabled="false"
+                                  mouseChildren="true">
+                        <container
+                                name="content"
+                                mouseEnabled="false" height="30" alignY="center"
+                                width="190">
+                            <coreponent name="img" alignX="left"/>
+                            <label height="10" name="item_name" alignX="left"
+                                   alignY="top"
+                                   marginLeft="40" registeredTextStyleName="assembly_ingredients"/>
+                            <label height="10" name="amount" alignX="left"
+                                   marginBottom="5" alignY="bottom"
+                                   marginLeft="40" registeredTextStyleName="assembly_ingredients"/>
+                            <button name="help" alignX="right" marginRight="20"
+                                    registeredSkinName="assembly_info"/>
+                            <button name="shop" visible="false" alignX="right" registeredSkinName="assembly_shop"
+                                    tooltipData="localize:assembly_item_tooltip_shop"/>
+                            <coreponent registeredSkinName="assembly_ingridient_outline" width="29" height="29" alignX="left"/>
+                        </container>
+                    </itemrenderer>
+                </itemlist>
+                <scrollbar name="ingredients_bar" width="10" height="103" x="192" alignY="center"
+                           marginRight="6" marginTop="6" registeredSkinName="commonui_scrollbar_bgnd">
+                    <button name="buttonSlider" width="6" height="6"
+                            alignX="center" registeredSkinName="commonui_scrollbar_slider"/>
+                </scrollbar>
+                <bind source="ingredients_bar" target="ingredients_container" type="scrollcontainer"/>
+                <container
+                        name="actions"
+                        mouseEnabled="true" height="100"
+                        width="150" alignX="right">
+                    <reference name="build" template="assembly_build"/>
+                    <reference name="collect" template="assembly_collect"/>
+                    <reference name="building" template="assembly_building"/>
+                    <reference name="not_possible" template="assembly_not_possible"/>
+
+                </container>
+            </container>
+        </container>
+    </container>
+</root>

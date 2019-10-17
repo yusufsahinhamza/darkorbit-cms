@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="bitmapFont_texture.png">
+	<!-- Created with Adobe Animate version 15.2.1.95 -->
+	<!-- http://www.adobe.com/products/animate.html -->
+	<SubTexture name="%" x="0" y="0" width="6" height="6" pivotX="0" pivotY="0"/>
+	<SubTexture name="+" x="6" y="0" width="5" height="5" pivotX="0" pivotY="0"/>
+	<SubTexture name="0" x="11" y="0" width="5" height="7" pivotX="0" pivotY="0"/>
+	<SubTexture name="1" x="16" y="0" width="4" height="7" pivotX="0" pivotY="0"/>
+	<SubTexture name="2" x="20" y="0" width="5" height="7" pivotX="0" pivotY="0"/>
+	<SubTexture name="3" x="25" y="0" width="5" height="7" pivotX="0" pivotY="0"/>
+	<SubTexture name="4" x="0" y="7" width="5" height="7" pivotX="0" pivotY="0"/>
+	<SubTexture name="5" x="5" y="7" width="5" height="7" pivotX="0" pivotY="0"/>
+	<SubTexture name="6" x="10" y="7" width="5" height="7" pivotX="0" pivotY="0"/>
+	<SubTexture name="7" x="15" y="7" width="5" height="7" pivotX="0" pivotY="0"/>
+	<SubTexture name="8" x="20" y="7" width="5" height="7" pivotX="0" pivotY="0"/>
+	<SubTexture name="9" x="25" y="7" width="5" height="7" pivotX="0" pivotY="0"/>
+</TextureAtlas>

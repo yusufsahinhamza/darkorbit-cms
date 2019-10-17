@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+	<!-- LIBS -->
+	<libraries>
+		<library id="influenceWindowUILibrary" />
+	</libraries>
+	<!-- TEXT STYLES -->
+
+
+	<!--  -->
+	<!--  -->
+	<!--  -->
+	<textstyle
+			name="influence_window_info_textstyle"
+			textColor="0x999898"
+			type="dynamic"
+			fontSize="10"
+			autoSize="center"
+			wordWrap="true"
+			multiline="true"
+			embedFonts="false"
+			fontName="Verdana" />
+
+	<textstyle
+			name="influence_window_headline_textstyle"
+			align="center"
+			textColor="0xBFBFBF"
+			type="dynamic"
+			fontSize="14"
+			embedFonts="false"
+			fontName="Verdana" />
+
+	<textstyle
+			name="influence_window_score_bar_textstyle"
+			textColor="0xBFBFBF"
+			type="dynamic"
+			fontName="Verdana"
+			embedFonts="false"
+			autoSize="right"
+			marginRight="0"
+			fontSize="10" />
+	<textstyle
+			name="influence_window_score_player_textstyle"
+			textColor="0xFFFEFE"
+			type="dynamic"
+			fontName="EurostileHeaFl"
+			fontSize="20"
+			autoSize="center"
+			align="center" />
+
+	<skin
+			name="influence_window_horizontal_divider"
+			library="influenceWindowUILibrary"
+			classname="BasicSkin">
+		<layer
+				classname="BitmapLayer"
+				libraryID="separator">normal</layer>
+	</skin>
+	<skin
+			name="influence_window_hint_symbole"
+			library="influenceWindowUILibrary"
+			classname="BasicSkin">
+		<layer
+				classname="BitmapLayer"
+				libraryID="info_icon">normal</layer>
+	</skin>
+
+	<skin
+			name="influence_label_skin"
+			classname="LabelSkin"
+			/>
+	<skin
+			name="influence_window_list_item_skin"
+			library="influenceWindowUILibrary"
+			classname="BasicStateSkin">
+		<layer
+				classname="BitmapLayer"
+				libraryID="icon_mmo">normal</layer>
+		<layer
+				classname="BitmapLayer"
+				libraryID="icon_mmo">mmo</layer>
+		<layer
+				classname="BitmapLayer"
+				libraryID="icon_eic">eic</layer>
+		<layer
+				classname="BitmapLayer"
+				libraryID="icon_vru">vru</layer>
+	</skin>
+
+	<skin
+			name="influence_window_scrollcontainerskin"
+			classname="ContainerSkin">
+		<layer
+				classname="FilledBoxLayer"
+				fillColor="0x358BAC"
+				fillAlpha="1">mask</layer>
+	</skin>
+
+	<skin
+			name="influence_window_progressbar_skin"
+			library="influenceWindowUILibrary"
+			classname="ProgressBarSkin">
+		<layer
+				libraryID="scale_blue"
+				classname="BitmapLayer"
+				scale9grid="4,4,5,5">normal</layer>
+		<layer
+				libraryID="scale_blue_inner"
+				classname="BitmapLayer"
+				scale9grid="4,4,5,5">bar</layer>
+	</skin>
+
+	<skin
+			name="influence_window_progressbar_skin_mmo"
+			library="influenceWindowUILibrary"
+			classname="ProgressBarSkin"
+			tweenTime="1">
+		<layer
+				libraryID="scale_grey"
+				classname="BitmapLayer"
+				scale9grid="4,4,5,5">normal</layer>
+		<layer
+				libraryID="scale_red_inner"
+				classname="BitmapLayer"
+				scale9grid="4,4,5,5">bar</layer>
+	</skin>
+
+	<skin
+			name="influence_window_progressbar_skin_eic"
+			library="influenceWindowUILibrary"
+			classname="ProgressBarSkin"
+			tweenTime="1">
+		<layer
+				libraryID="scale_grey"
+				classname="BitmapLayer"
+				scale9grid="4,4,5,5">normal</layer>
+		<layer
+				libraryID="scale_blue_inner"
+				classname="BitmapLayer"
+				scale9grid="4,4,5,5">bar</layer>
+	</skin>
+
+	<skin
+			name="influence_window_progressbar_skin_vru"
+			library="influenceWindowUILibrary"
+			classname="ProgressBarSkin"
+			tweenTime="1">
+		<layer
+				libraryID="scale_grey"
+				classname="BitmapLayer"
+				scale9grid="4,4,5,5">normal</layer>
+		<layer
+				libraryID="scale_green_inner"
+				classname="BitmapLayer"
+				scale9grid="4,4,5,5">bar</layer>
+	</skin>
+	<skin
+			name="influence_window_progressbar_skin_mmo_leading"
+			library="influenceWindowUILibrary"
+			classname="ProgressBarSkin"
+			tweenTime="1">
+		<layer
+				libraryID="scale_red"
+				classname="BitmapLayer"
+				scale9grid="4,4,5,5">normal</layer>
+		<layer
+				libraryID="scale_red_inner"
+				classname="BitmapLayer"
+				scale9grid="4,4,5,5">bar</layer>
+	</skin>
+
+	<skin
+			name="influence_window_progressbar_skin_eic_leading"
+			library="influenceWindowUILibrary"
+			classname="ProgressBarSkin"
+			tweenTime="1">
+		<layer
+				libraryID="scale_blue"
+				classname="BitmapLayer"
+				scale9grid="4,4,5,5">normal</layer>
+		<layer
+				libraryID="scale_blue_inner"
+				classname="BitmapLayer"
+				scale9grid="4,4,5,5">bar</layer>
+	</skin>
+
+	<skin
+			name="influence_window_progressbar_skin_vru_leading"
+			library="influenceWindowUILibrary"
+			classname="ProgressBarSkin"
+			tweenTime="1">
+		<layer
+				libraryID="scale_green"
+				classname="BitmapLayer"
+				scale9grid="4,4,5,5">normal</layer>
+		<layer
+				libraryID="scale_green_inner"
+				classname="BitmapLayer"
+				scale9grid="4,4,5,5">bar</layer>
+	</skin>
+	<!--  -->
+	<!--  -->
+	<!--  -->
+
+
+	<!-- CONTENT -->
+	<container
+			name="contentContainer"
+			mouseEnabled="false"
+			layout="vertical"
+			width="262"
+			height="320">
+
+		<label
+				autoSizeWidth="true"
+				text="localize:influence_window_headline_faction"
+				alignX="center"
+				autoSizeTextHeight="true"
+				registeredSkinName="influence_label_skin"
+				registeredTextStyleName="influence_window_headline_textstyle" />
+		<itemlist
+				marginTop="0"
+				marginLeft="0"
+				marginRight="0"
+				marginBottom="10"
+				autoSizeWidth="true"
+				height="100"
+				cacheSkinMaskAsBitmap="false"
+				name="influenceItemlist">
+
+			<itemrenderer
+					height="37"
+					mouseEnabled="false"
+					mouseChildren="false">
+
+				<container
+						name="itemrendererContainer"
+						mouseEnabled="false"
+						height="37"
+						autoSizeWidth="true">
+					<coreponent
+							name="company_img"
+							registeredSkinName="influence_window_list_item_skin"
+							marginLeft="5"
+							marginTop="12" />
+					<progressbar
+							marginLeft="25"
+							marginTop="15"
+							name="progressbar"
+							registeredSkinName="influence_window_progressbar_skin"
+							autoSizeWidth="true"
+							height="13" />
+					<label
+							name="score"
+							marginTop="0"
+							marginRight="0"
+							registeredSkinName="influence_label_skin"
+							height="10"
+							autoSizeHeight="true"
+							alignX="right"
+							registeredTextStyleName="influence_window_score_bar_textstyle" />
+				</container>
+			</itemrenderer>
+		</itemlist>
+
+
+
+		<container
+				name="infoContainer1"
+				autoSizeWidth="true"
+				height="55"
+				>
+			<scrollcontainer
+					name="scrollContainer1"
+					autoSizeWidth="true"
+					height="55"
+					marginLeft="5"
+					registeredSkinName="influence_window_scrollcontainerskin">
+				<coreponent registeredSkinName="influence_window_hint_symbole" />
+				<container
+						name="content"
+						autoSizeWidth="true">
+					<label
+							name="faction_info"
+							autoSizeWidth="true"
+							autoSizeTextHeight="true"
+							marginLeft="30"
+							marginRight="30"
+							localizedText="influence_window_faction_info"
+							registeredTextStyleName="influence_window_info_textstyle"
+							/>
+
+				</container>
+			</scrollcontainer>
+			<scrollbar
+					name="scrollbar1"
+					width="10"
+					autoSizeHeight="true"
+					alignX="right"
+					marginRight="6"
+					marginBottom="6"
+					marginTop="6"
+					registeredSkinName="commonui_scrollbar_bgnd">
+				<button
+						name="buttonSlider"
+						width="6"
+						height="6"
+						alignX="center"
+						y="0"
+						registeredSkinName="commonui_scrollbar_slider" />
+			</scrollbar>
+		</container>
+
+		<coreponent
+				marginTop="10"
+				marginBottom="10"
+				name="horizontalDivider"
+				alignX="center"
+				autoSizeWidth="true"
+				height="2"
+				registeredSkinName="influence_window_horizontal_divider" />
+		<label
+				autoSizeTextHeight="true"
+				autoSizeWidth="true"
+				text="localize:influence_window_headline_player"
+				alignX="center"
+				registeredSkinName="influence_label_skin"
+				registeredTextStyleName="influence_window_headline_textstyle" />
+
+		<label
+				marginTop="5"
+				marginBottom="5"
+				name="playerScore"
+				marginLeft="85"
+				marginRight="15"
+				height="20"
+				text="0"
+				alignX="center"
+				registeredSkinName="influence_label_skin"
+				registeredTextStyleName="influence_window_score_player_textstyle" />
+
+		<container
+				name="infoContainer2"
+				autoSizeWidth="true"
+				height="37"
+				marginLeft="5">
+			<scrollcontainer
+					name="scrollContainer2"
+					autoSizeWidth="true"
+					height="37"
+					registeredSkinName="influence_window_scrollcontainerskin">
+				<coreponent registeredSkinName="influence_window_hint_symbole" />
+				<container
+						name="content"
+						autoSizeWidth="true">
+					<label
+							name="faction_info"
+							autoSizeWidth="true"
+							autoSizeTextHeight="true"
+							marginLeft="30"
+							marginRight="30"
+							registeredTextStyleName="influence_window_info_textstyle"
+							text="localize:influence_window_player_info"
+							/>
+				</container>
+			</scrollcontainer>
+			<scrollbar
+					name="scrollbar2"
+					width="10"
+					autoSizeHeight="true"
+					alignX="right"
+					marginRight="6"
+					marginBottom="6"
+					marginTop="6"
+					registeredSkinName="commonui_scrollbar_bgnd">
+				<button
+						name="buttonSlider"
+						width="6"
+						height="6"
+						alignX="center"
+						y="0"
+						registeredSkinName="commonui_scrollbar_slider" />
+			</scrollbar>
+		</container>
+	</container>
+	<!-- CONTENT -->
+</root>

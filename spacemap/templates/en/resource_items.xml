@@ -484,7 +484,7 @@
  <item name="items_ammunition_rocket_plt-3030_code"><![CDATA[PLT-3030]]></item>
  <item name="items_ammunition_rocket_plt-3030_short"><![CDATA[LONG-RANGE ROCKET]]></item>
  <item name="items_ammunition_specialammo_pld-8_fullname"><![CDATA[PLD-8]]></item>
- <item name="items_ammunition_specialammo_pld-8_description"><![CDATA[This plasma charger causes a 40% reduction of your target's accuracy for 5 seconds.]]></item>
+ <item name="items_ammunition_specialammo_pld-8_description"><![CDATA[This plasma charger temporarily reduces the accuracy of your enemy's weapons system, offering you a number of tactical advantages.]]></item>
  <item name="items_ammunition_specialammo_pld-8_tooltip_description"><![CDATA[40% reduction of target's accuracy for 5 seconds]]></item>
  <item name="items_ammunition_specialammo_pld-8_code"><![CDATA[PLD-8]]></item>
  <item name="items_ammunition_specialammo_pld-8_short"><![CDATA[PLASMA CHARGER]]></item>
@@ -1176,8 +1176,6 @@
  <item name="items_ability_spearhead_ultimate-cloak_code"><![CDATA[Ultimate Cloaking]]></item>
  <item name="items_ability_spearhead_ultimate-cloak_description"><![CDATA[This skill cloaks you, removes you from the minimap and prevents you from being targeted by other players.]]></item>
  <item name="items_ability_spearhead_ultimate-cloak_tooltip_description"><![CDATA[This skill cloaks you, removes you from the minimap and prevents you from being targeted by other players.]]></item>
- <item name="items_ability_admin-ultimate-cloaking_fullname"><![CDATA[Ultimate Cloaking]]></item>
- <item name="items_ability_admin-ultimate-cloaking_tooltip_description"><![CDATA[This skill cloaks you, removes you from the minimap and prevents you from being targeted by other players.]]></item>
  <item name="items_ability_spearhead_jam-x_fullname"><![CDATA[JAMX]]></item>
  <item name="items_ability_spearhead_jam-x_code"><![CDATA[JAMX]]></item>
  <item name="items_ability_spearhead_jam-x_description"><![CDATA[This ability emits an interference field which paralyzes enemy ships' functions. All effects which they are currently using will be compromised.]]></item>
@@ -1246,7 +1244,4 @@
  <item name="items_resource_premium-weeks-2_description"><![CDATA[Two Weeks of Premium Status:<br>For two weeks, you too can fire your rockets twice as fast, make repairs for free, and enjoy other Premium perks!]]></item>
  <item name="items_resource_premium-weeks-2_tooltip_description"><![CDATA[Two Weeks of Premium Status:<br>You are awarded Premium status for two weeks.]]></item>
  <item name="items_resource_premium-weeks-2_code"><![CDATA[Premium for 2 weeks]]></item>
- <item name="items_resource_lottery-capsule_fullname"><![CDATA[Lottery Capsule]]></item>
- <item name="items_resource_key_access-scg_fullname"><![CDATA[Solar Clash Gate Key]]></item>
- <item name="items_resource_key_access-hsg_fullname"><![CDATA[High Score Gate Key]]></item>
 </resource>

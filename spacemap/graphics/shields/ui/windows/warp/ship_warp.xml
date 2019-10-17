@@ -1,0 +1,324 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+    <!-- LIBS -->
+    <libraries>
+        <library id="module_equipment_lib"/>
+        <library id="gameclientCommonUI"/>
+    </libraries>
+
+    <textstyle name="warp_label"
+               background="false"
+               textColor="0xEDEDED"
+               type="dynamic"
+               align="center"
+               selectable="false"
+               fontName="Verdana"
+               embedFonts="false"
+               wordWrap="true"
+               multiline="true"
+               fontSize="10"/>
+
+    <textstyle name="warp_price_label"
+               background="false"
+               textColor="0x00CCFF"
+               type="dynamic"
+               bold="true"
+               align="center"
+               selectable="false"
+               fontName="Verdana"
+               embedFonts="false"
+               fontSize="12"/>
+
+    <textstyle name="warp_price_background"
+               textColor="0xFEFEFE"
+               borderColor="0x555555"
+               backgroundColor="0x000000"
+               selectionTextColor="0x333344"
+               type="input"
+               selectable="false"
+               marginLeft="5"
+               fontName="Verdana"
+               embedFonts="false"
+               border="false"
+               background="false"
+               maxChars="128"/>
+
+    <textstyle name="warp_price_status_info"
+               background="false"
+               textColor="0x999898"
+               type="dynamic"
+               align="left"
+               selectable="false"
+               fontName="Verdana"
+               embedFonts="false"
+               fontSize="10"
+               wordWrap="true"
+               multiline="true"
+               />
+
+    <skin name="list_mask" classname="BasicSkin">
+        <layer classname="FilledBoxLayer" fillColor="0x358BAC" fillAlpha="1">mask</layer>
+        <!--<layer classname="FilledBoxLayer" fillColor="0x13323E" fillAlpha="0">normal</layer>-->
+    </skin>
+
+    <skin name="warp_arrow_right" classname="FadableButtonSkin" library="assemblyWindow">
+        <layer classname="BitmapLayer" libraryID="arrow_r_normal">normal</layer>
+        <layer classname="BitmapLayer" libraryID="arrow_r_hover">over</layer>
+        <layer classname="BitmapLayer" libraryID="arrow_r_select">clicked</layer>
+    </skin>
+
+    <skin name="warp_arrow_left" classname="FadableButtonSkin" library="assemblyWindow">
+        <layer classname="BitmapLayer" libraryID="arrow_l_normal">normal</layer>
+        <layer classname="BitmapLayer" libraryID="arrow_l_hover">over</layer>
+        <layer classname="BitmapLayer" libraryID="arrow_l_select">clicked</layer>
+    </skin>
+
+    <skin name="warp_itemlist_green" classname="FadableButtonSkin">
+        <layer classname="FilledBoxLayer" fillColor="0x32e629" fillAlpha="0">normal</layer>
+        <layer classname="FilledBoxLayer" fillColor="0xffffff" fillAlpha="0.1">over</layer>
+        <layer classname="FilledBoxLayer" fillColor="0xffffff" fillAlpha="0.3">clicked</layer>
+        <layer classname="FilledBoxLayer" lineColor="0xffcc00" fillAlpha="0" lineAlpha="1" inverted="true">disabled</layer>
+    </skin>
+
+    <skin name="commonui_input_blue" library="gameclientCommonUI" classname="InputSkin">
+        <layer classname="BitmapLayer" libraryID="input_background_blue" scale9grid="4,4,6,5">normal</layer>
+    </skin>
+
+    <skin name="warp_divider" classname="BasicSkin" library="gameclientCommonUI">
+        <layer classname="BitmapLayer" libraryID="horizontal_divider">normal</layer>
+    </skin>
+
+    <skin name="warp_info" classname="FadableButtonSkin" library="assemblyWindow">
+        <layer classname="BitmapLayer" libraryID="btn_info_normal">normal</layer>
+    </skin>
+
+    <!-- CONTENT -->
+
+    <container
+            name="contentContainer"
+            mouseEnabled="false"
+            layout="vertical"
+            marginTop="17"
+            width="475"
+            height="327">
+
+        <container
+                name="itemListContainer"
+                mouseEnabled="false"
+                marginLeft="28"
+                width="445"
+                height="133">
+
+            <coreponent name="lightDarkLayer"
+                        height="123"
+                        width="409"
+                        marginLeft="18"
+                        registeredSkinName="commonui_light_darklayer"/>
+
+            <itemlist name="ships"
+                      itemGap="0"
+                      height="135"
+                      width="401"
+                      marginLeft="22"
+                      marginTop="5"
+                      mouseChildren="true"
+                      mouseEnabled="true"
+                      autoSizeWidth="false"
+                      layout="horizontal"
+                      cacheSkinMaskAsBitmap="false"
+                      registeredSkinName="list_mask">
+
+                <itemrenderer autoSizeWidth="false"
+                              height="115"
+                              width="100"
+                              mouseEnabled="true"
+                              mouseChildren="true">
+
+                    <coreponent name="darkLayer"
+                                height="115"
+                                width="99"
+                                alignX="center"
+                                alignY="center"
+                                registeredSkinName="commonui_darklayer"/>
+
+                    <coreponent name="hitlayer"
+                                registeredSkinName="commonui_hitlayer"
+                                mouseEnabled="true"
+                                mouseChildren="true"
+                                autoSizeWidth="true"
+                                autoSizeHeight="true"
+                                alpha="0"
+                                tooltipTemplateID="commonui_tooltip_simple"/>
+
+                    <coreponent name="pic"
+                                width="98"
+                                height="90"
+                                alignX="center"
+                                marginTop="0"/>
+
+                    <button name="hover"
+                            width="99"
+                            height="115"
+                            alignX="center"
+                            alignY="center"
+                            registeredSkinName="warp_itemlist_green"/>
+
+                    <container
+                            name="warpShipLabelContainer"
+                            mouseEnabled="false"
+                            mouseChildren="false"
+                            marginLeft="10"
+                            marginBottom="8"
+                            alignY="bottom"
+                            height="30"
+                            width="98"
+                            alignX="center">
+
+                        <label name="warpShipLabel"
+                               alignY="center"
+                               alignX="center"
+                               height="30"
+                               width="98"
+                               registeredTextStyleName="warp_label"/>
+
+                    </container>
+
+                </itemrenderer>
+
+            </itemlist>
+
+            <scrollbar name="item_bar"
+                       height="7"
+                       x="192"
+                       autoSizeWidth="true"
+                       direction="horizontal"
+                       alignX="center"
+                       alignY="bottom"
+                       marginRight="17"
+                       marginLeft="17"
+                       registeredSkinName="commonui_scrollbar_bgnd">
+
+                <button name="buttonSlider"
+                        alignY="center"
+                        width="6"
+                        height="7"
+                        registeredSkinName="commonui_scrollbar_slider"/>
+
+            </scrollbar>
+
+            <button name="left"
+                    alignY="center"
+                    alignX="left"
+                    width="13"
+                    height="24"
+                    registeredSkinName="warp_arrow_left"/>
+
+            <button name="right"
+                    width="13"
+                    height="24"
+                    alignY="center"
+                    alignX="right"
+                    registeredSkinName="warp_arrow_right"/>
+
+            <bind source="item_bar"
+                  target="ships"
+                  type="scrollcontainer"/>
+
+        </container>
+
+        <!-- commonui_input_blue -->
+
+        <container name="warpButtons"
+                   mouseEnabled="false"
+                   layout="horizontal"
+                   height="33"
+                   marginLeft="88"
+                   marginTop="5">
+
+            <container name="warpPrice"
+                       mouseEnabled="false"
+                       alignY="center"
+                       alignX="center"
+                       width="133"
+                       height="33">
+
+                <input name="warpPriceBackground"
+                       width="133"
+                       height="24"
+                       alignY="center"
+                       tooltipTemplateID="commonui_tooltip_simple"
+                       tooltipData="localize:ttip_warp_win_price_field"
+                       registeredSkinName="commonui_input_blue"
+                       registeredTextStyleName="warp_price_background"
+                       mouseEnabled="false"/>
+
+                <label name="warpCost"
+                       alignX="center"
+                       marginTop="7"
+                       height="24"
+                       width="133"
+                       registeredTextStyleName="warp_price_label"/>
+
+            </container>
+
+            <button name="btnWarpConformation"
+                    width="190"
+                    height="33"
+                    marginTop="8"
+                    marginLeft="4"
+                    enabled="false"
+                    alignY="center"
+                    text="localize:warp_win_warp_btn"
+                    registeredSkinName="commonui_confirmationbutton_long_green"
+                    registeredTextStyleName="commonui_confirmationbutton_long_green_normal"/>
+
+        </container>
+
+        <container name="jumpCreditCostContainer"
+               mouseEnabled="false"
+               height="20"
+               width="360"
+               alignX="left"
+               marginTop="1"
+               marginLeft="85"
+               layout="horizontal">
+
+            <label name="jumpCreditCost"
+                   width="360"
+                   alignY="top"
+                   autoSizeTextHeight="true"
+                   registeredTextStyleName="warp_price_status_info"/>
+
+        </container>
+
+        <coreponent width="410"
+                    height="2"
+                    marginTop="7"
+                    marginLeft="40"
+                    registeredSkinName="warp_divider"/>
+
+        <container name="warpInfoContainer"
+                   mouseEnabled="false"
+                   marginLeft="40"
+                   marginTop="5"
+                   width="420"
+                   height="30"
+                   layout="horizontal">
+
+            <button name="help"
+                    alignY="top"
+                    registeredSkinName="warp_info"/>
+
+            <label name="warpInfo"
+                   autoSizeTextHeight="true"
+                   alignY="top"
+                   width="350"
+                   text="localize:desc_shipwarp_only_favourite_ships_info"
+                   registeredTextStyleName="warp_price_status_info"/>
+
+        </container>
+
+    </container>
+
+</root>

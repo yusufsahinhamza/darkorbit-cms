@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+	<!-- LIBS -->
+	<libraries>
+		<library id="gameclientCommonUI" />
+		<library id="settingsWindowFUI" />
+	</libraries>
+	<!-- TEXT STYLES -->
+
+
+	<textstyle 	name           = "popup_whiteTextStyleButton"
+				  textColor      = "0xFFFFFF"
+				  type           = "dynamic"
+				  selectable     = "false"
+				  fontName       = "EurostileTHea"
+				  align		   = "center"
+				  fontSize	   = "16"
+			/>
+
+	<textstyle
+			name="popup_info_left_textstyle"
+			textColor="0x999898"
+			type="dynamic"
+			fontSize="10"
+			autoSize="left"
+			wordWrap="true"
+			multiline="true"
+			embedFonts="false"
+			fontName="Verdana"
+			align="left"/>
+
+	<skin name="confirmation_label_skin" classname="LabelSkin" />
+
+	<skin name="popup_label_button_green" classname="FadableButtonSkin" library="settingsWindowFUI" >
+		<layer classname="BitmapLayer" libraryID="btn_green_normal" >normal</layer>
+		<layer classname="BitmapLayer" libraryID="btn_green_hover" >over</layer>
+		<layer classname="BitmapLayer" libraryID="btn_inactive" >disabled</layer>
+	</skin>
+	<skin name="popup_label_button_red" classname="FadableButtonSkin" library="settingsWindowFUI" >
+		<layer classname="BitmapLayer" libraryID="btn_red_normal" >normal</layer>
+		<layer classname="BitmapLayer" libraryID="btn_red_hover" >over</layer>
+		<layer classname="BitmapLayer" libraryID="btn_inactive" >disabled</layer>
+	</skin>
+
+<!--  -->
+<!--  -->
+<!--  -->	
+
+<!--  -->
+<!--  -->
+<!--  -->
+
+
+	<!-- CONTENT -->
+	<container
+		name="contentContainer"
+		mouseEnabled="false"
+		width="262"
+		height="120">
+
+		<label
+				name="label"
+				marginTop="10"
+				autoSizeWidth="true"
+				localizedText="label_switch_2d3d_restart"
+				alignX="left"
+				height="14"
+				registeredSkinName="confirmation_label_skin"
+				registeredTextStyleName="popup_info_left_textstyle" />
+
+		<button name="okButton" width="100" height="30" marginTop="100" alignX="center" text="localize:btn_ok" registeredSkinName="popup_label_button_green" registeredTextStyleName="commonui_button_whitetxt_16pt"/>
+
+	</container>
+	<!-- CONTENT -->
+</root>

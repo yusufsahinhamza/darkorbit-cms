@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--  ROOT ELEMENT
+	The name of the root element need allways the CollectorEvent. Further need this CollectorEvent file 
+	allways stored in this folder, where this file are. Files where not stored in this folder, will not be 
+	useable for the EventProgressLayer Event. 
+ -->
+<CollectorEvent>
+
+	<!--  REQUIRED. Section with the base information of the event -->
+	<attributes>
+		
+		<!-- REQUIRED. The Localization Key for the Eventtitle who will be shown by the flash client. -->
+    	<titleKey>text_key_for_event_title</titleKey>
+    	
+    	<!-- REQUIRED. The Localization Key for the Event Description who will be shown by the flash client -->
+    	<descriptionKey>text_key_for_event_description</descriptionKey>
+    	
+    	<!-- REQUIRED.
+    		The Amount of selected Currency the user need to reset the ProgressLayer.
+    		Currently Available CurrencyTypes are Uridium and Credits (or both of them)
+    		You can use:
+    		uridium="xxx" and/or credits="xxx"
+    	 -->
+	    <resetPrice uridium="10000" />
+	    
+    </attributes>
+
+	<!--  REQUIRED. 
+		This Section stores all Rewards we want to distribute to the users. This Section
+		need to be store min. 1 Reward. The End of the Amount of Rewards are open. Each
+		Line of an Reward is a Stage inside the Game.
+		The class Attribute is also Required and needed for Java. So Please add this allways to the
+		reward section     
+	-->
+    <rewards class="java.util.ArrayList">
+    
+    	<!--  REQUIRED are lootid, amount and unlockRequirement
+    		lootid 				= unique lootif of a item
+   			amount				= the amount the user get
+    		unlockRequirement 	= the amount of EventProgressPoints the user need to disable the stage (reward). 
+    	 -->
+        <reward lootid="rewardlootid" amount="1" unlockRequirement="10000"/>
+        <reward lootid="rewardlootid" amount="10" unlockRequirement="1000"/>
+        <reward lootid="rewardlootid" amount="2" unlockRequirement="5000"/>
+        <reward lootid="rewardlootid" amount="1" unlockRequirement="8000"/>
+    </rewards>
+    
+    <!--  Required, but only relevant for Java --> 
+	<triggers class="java.util.ArrayList" />   
+
+</CollectorEvent>

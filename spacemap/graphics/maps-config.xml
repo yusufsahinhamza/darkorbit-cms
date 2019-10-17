@@ -185,7 +185,7 @@
 		</planets>
 	</map>
 	<map id="10" name="3-2" music="3">
-		<gameserverIP>25.1.14.147</gameserverIP>
+		<gameserverIP>beta.darkstars.org</gameserverIP>
 		<starfield>true</starfield>
 		<backgrounds>
 			<background typeID="2001" pFactor="10" layer="0" hideLensflare="false" scale="2.5" />
@@ -206,7 +206,7 @@
 		</planets>
 	</map>
 	<map id="11" name="3-3" music="3">
-		<gameserverIP>25.1.14.147</gameserverIP>
+		<gameserverIP>beta.darkstars.org</gameserverIP>
 		<starfield>true</starfield>
 		<backgrounds>
 			<background typeID="2001" pFactor="10" layer="0" hideLensflare="false" scale="2.5" />
@@ -227,7 +227,7 @@
 	</map>
 
 	<map id="12" name="3-4" music="3">
-		<gameserverIP>25.1.14.147</gameserverIP>
+		<gameserverIP>beta.darkstars.org</gameserverIP>
 		<starfield>true</starfield>
 		<backgrounds>
 			<background typeID="2001" pFactor="10" layer="0" hideLensflare="false" scale="2.5" />
@@ -247,7 +247,7 @@
 	</map>
 
 	<map id="13" name="4-1" music="4">
-		<gameserverIP>25.1.14.147</gameserverIP>
+		<gameserverIP>localhost</gameserverIP>
 		<starfield>true</starfield>
 		<backgrounds>
 			<background typeID="2001" pFactor="10" layer="0" hideLensflare="false" scale="2.5" />
@@ -265,7 +265,7 @@
 		</planets>
 	</map>
 	<map id="14" name="4-2" music="4">
-		<gameserverIP>25.1.14.147</gameserverIP>
+		<gameserverIP>localhost</gameserverIP>
 		<starfield>true</starfield>
 		<backgrounds>
 			<background typeID="2001" pFactor="10" layer="0" hideLensflare="false" scale="2.5" />
@@ -283,7 +283,7 @@
 		</planets>
 	</map>
 	<map id="15" name="4-3" music="4">
-		<gameserverIP>25.1.14.147</gameserverIP>
+		<gameserverIP>localhost</gameserverIP>
 		<starfield>true</starfield>
 		<backgrounds>
 			<background typeID="2001" pFactor="10" layer="0" hideLensflare="false" scale="2.5" />
@@ -301,7 +301,7 @@
 		</planets>
 	</map>
 	<map id="16" name="4-4" scaleFactor="2" music="4" minimap="16">
-		<gameserverIP>25.1.14.147</gameserverIP>
+		<gameserverIP>localhost</gameserverIP>
 		<starfield>true</starfield>
 		<backgrounds>
 			<background typeID="2001" pFactor="10" layer="0" hideLensflare="false" scale="1.6" />
@@ -398,7 +398,7 @@
 		</planets>
 	</map>
 	<map id="21" name="2-5" music="2">
-		<gameserverIP>25.1.14.147</gameserverIP>
+		<gameserverIP>localhost</gameserverIP>
 		<starfield>true</starfield>
 		<backgrounds>
 			<background typeID="2001" pFactor="10" layer="0" hideLensflare="false" scale="2.5" />
@@ -417,7 +417,7 @@
 		</planets>
 	</map>
 	<map id="22" name="2-6" music="2">
-		<gameserverIP>25.1.14.147</gameserverIP>
+		<gameserverIP>localhost</gameserverIP>
 		<starfield>true</starfield>
 		<backgrounds>
 			<background typeID="2001" pFactor="10" layer="0" hideLensflare="false" scale="2.5" />
@@ -436,7 +436,7 @@
 		</planets>
 	</map>
 	<map id="23" name="2-7" music="2">
-		<gameserverIP>25.1.14.147</gameserverIP>
+		<gameserverIP>localhost</gameserverIP>
 		<starfield>true</starfield>
 		<backgrounds>
 			<background typeID="2001" pFactor="10" layer="0" hideLensflare="false" scale="2.5" />
@@ -475,7 +475,7 @@
 		</planets>
 	</map>
 	<map id="25" name="3-5" music="3">
-		<gameserverIP>25.1.14.147</gameserverIP>
+		<gameserverIP>beta.darkstars.org</gameserverIP>
 		<starfield>true</starfield>
 		<backgrounds>
 			<background typeID="2001" pFactor="10" layer="0" hideLensflare="false" scale="2.5" />
@@ -494,7 +494,7 @@
 		</planets>
 	</map>
 	<map id="26" name="3-6" music="3">
-		<gameserverIP>25.1.14.147</gameserverIP>
+		<gameserverIP>beta.darkstars.org</gameserverIP>
 		<starfield>true</starfield>
 		<backgrounds>
 			<background typeID="2001" pFactor="10" layer="0" hideLensflare="false" scale="2.5" />
@@ -514,7 +514,7 @@
 		</planets>
 	</map>
 	<map id="27" name="3-7" music="3">
-		<gameserverIP>25.1.14.147</gameserverIP>
+		<gameserverIP>beta.darkstars.org</gameserverIP>
 		<starfield>true</starfield>
 		<backgrounds>
 			<background typeID="2001" pFactor="10" layer="0" hideLensflare="false" scale="2.5" />
@@ -560,7 +560,7 @@
 		</planets>
 	</map>
 	<map id="29" name="4-5" scaleFactor="2" music="4" minimap="29">
-		<gameserverIP>25.1.14.147</gameserverIP>
+		<gameserverIP>beta.darkstars.org</gameserverIP>
 		<starfield>true</starfield>
 		<backgrounds>
 			<background typeID="2001" pFactor="10" layer="0" hideLensflare="false" scale="1.6" />
@@ -577,14 +577,14 @@
 		</planets>
 	</map>
 	<map id="42" name="'''" music="0">
-		<gameserverIP>25.1.14.147</gameserverIP>
+		<gameserverIP>beta.darkstars.org</gameserverIP>
 		<starfield>true</starfield>
 		<backgrounds>
 			<background typeID="42" />
 		</backgrounds>
 	</map>
 	<map id="51" name="GG a" music="0">
-		<gameserverIP>25.1.14.147</gameserverIP>
+		<gameserverIP>localhost</gameserverIP>
 		<starfield>true</starfield>
 		<backgrounds>
 			<background typeID="2001" pFactor="10" layer="0" hideLensflare="false" scale="3" />
@@ -602,7 +602,7 @@
 		</planets>
 	</map>
 	<map id="52" name="GG b" music="0">
-		<gameserverIP>25.1.14.147</gameserverIP>
+		<gameserverIP>beta.darkstars.org</gameserverIP>
 		<starfield>true</starfield>
 		<backgrounds>
 			<background typeID="2001" pFactor="10" layer="0" hideLensflare="false" scale="3" />
@@ -621,7 +621,7 @@
 		</planets>
 	</map>
 	<map id="53" name="GG '" music="0">
-		<gameserverIP>25.1.14.147</gameserverIP>
+		<gameserverIP>beta.darkstars.org</gameserverIP>
 		<starfield>true</starfield>
 		<backgrounds>
 			<background typeID="2001" pFactor="10" layer="0" hideLensflare="false" scale="3" />
@@ -640,7 +640,7 @@
 		</planets>
 	</map>
 	<map id="54" name="GG NC" music="0">
-		<gameserverIP>25.1.14.147</gameserverIP>
+		<gameserverIP>localhost</gameserverIP>
 		<starfield>true</starfield>
 		<backgrounds>
 			<background typeID="54" layer="0" />
@@ -653,7 +653,7 @@
 		</planets>
 	</map>
 	<map id="55" name="GG d" music="0">
-		<gameserverIP>25.1.14.147</gameserverIP>
+		<gameserverIP>localhost</gameserverIP>
 		<starfield>true</starfield>
 		<backgrounds>
 			<background typeID="2001" pFactor="10" layer="0" hideLensflare="false" scale="3" />
@@ -671,7 +671,7 @@
 		</planets>
 	</map>
 	<map id="56" name="Galaxy Gate 6" music="0">
-		<gameserverIP>25.1.14.147</gameserverIP>
+		<gameserverIP>localhost</gameserverIP>
 		<starfield>true</starfield>
 		<backgrounds>
 			<background typeID="56" layer="0" />
@@ -684,7 +684,7 @@
 		</planets>
 	</map>
 	<map id="57" name="GG Y6" music="0">
-		<gameserverIP>25.1.14.147</gameserverIP>
+		<gameserverIP>localhost</gameserverIP>
 		<starfield>true</starfield>
 		<backgrounds>
 			<background typeID="2001" pFactor="10" layer="0" hideLensflare="false" scale="3" />
@@ -702,7 +702,7 @@
 		</planets>
 	</map>
 	<map id="58" name="HSG" music="0">
-		<gameserverIP>25.1.14.147</gameserverIP>
+		<gameserverIP>beta.darkstars.org</gameserverIP>
 		<starfield>true</starfield>
 		<backgrounds>
 			<background typeID="2001" pFactor="10" layer="0" hideLensflare="false" scale="2.0" />
@@ -717,7 +717,7 @@
 		</lensflares>
 	</map>
 	<map id="61" name="Invasion" music="0">
-		<gameserverIP>25.1.14.147</gameserverIP>
+		<gameserverIP>beta.darkstars.org</gameserverIP>
 		<starfield>true</starfield>
 		<backgrounds>
 			<background typeID="61" layer="0" />
@@ -733,7 +733,7 @@
 		</lensflares>
 	</map>
 	<map id="62" name="Invasion" music="0">
-		<gameserverIP>25.1.14.147</gameserverIP>
+		<gameserverIP>beta.darkstars.org</gameserverIP>
 		<starfield>true</starfield>
 		<backgrounds>
 			<background typeID="62" layer="0" />
@@ -749,7 +749,7 @@
 		</lensflares>
 	</map>
 	<map id="63" name="Invasion" music="0">
-		<gameserverIP>25.1.14.147</gameserverIP>
+		<gameserverIP>beta.darkstars.org</gameserverIP>
 		<starfield>true</starfield>
 		<backgrounds>
 			<background typeID="63" layer="0" />
@@ -765,7 +765,7 @@
 		</lensflares>
 	</map>
 	<map id="64" name="Invasion" music="0">
-		<gameserverIP>25.1.14.147</gameserverIP>
+		<gameserverIP>beta.darkstars.org</gameserverIP>
 		<starfield>true</starfield>
 		<backgrounds>
 			<background typeID="64" layer="0" />
@@ -781,7 +781,7 @@
 		</lensflares>
 	</map>
 	<map id="65" name="Invasion" music="0">
-		<gameserverIP>25.1.14.147</gameserverIP>
+		<gameserverIP>localhost</gameserverIP>
 		<starfield>true</starfield>
 		<backgrounds>
 			<background typeID="65" layer="0" />
@@ -797,7 +797,7 @@
 		</lensflares>
 	</map>
 	<map id="66" name="Invasion" music="0">
-		<gameserverIP>25.1.14.147</gameserverIP>
+		<gameserverIP>beta.darkstars.org</gameserverIP>
 		<starfield>true</starfield>
 		<backgrounds>
 			<background typeID="66" layer="0" />
@@ -813,7 +813,7 @@
 		</lensflares>
 	</map>
 	<map id="67" name="Invasion" music="0">
-		<gameserverIP>25.1.14.147</gameserverIP>
+		<gameserverIP>beta.darkstars.org</gameserverIP>
 		<starfield>true</starfield>
 		<backgrounds>
 			<background typeID="67" layer="0" />
@@ -971,7 +971,7 @@
 		</planets>
 	</map>
 	<map id="76" name="GG Kronos" music="0">
-		<gameserverIP>25.1.14.147</gameserverIP>
+		<gameserverIP>beta.darkstars.org</gameserverIP>
 		<starfield>true</starfield>
 		<backgrounds>
 			<background typeID="2001" pFactor="10" layer="0" hideLensflare="false" scale="3" />
@@ -989,7 +989,7 @@
 		</planets>
 	</map>
 	<map id="81" name="TDM I" music="0" scaleFactor="0.5" minimap="201">
-		<gameserverIP>25.1.14.147</gameserverIP>
+		<gameserverIP>localhost</gameserverIP>
 		<starfield>true</starfield>
 		<backgrounds>
 			<background typeID="2001" pFactor="10" layer="0" hideLensflare="false" scale="4" />
@@ -1004,7 +1004,7 @@
 		</planets>
 	</map>
 	<map id="82" name="TDM II" music="0" scaleFactor="0.5" minimap="201" >
-		<gameserverIP>25.1.14.147</gameserverIP>
+		<gameserverIP>beta.darkstars.org</gameserverIP>
 		<starfield>true</starfield>
 		<backgrounds>
 			<background typeID="2001" pFactor="10" layer="0" hideLensflare="false" scale="4" />
@@ -1019,7 +1019,7 @@
 		</planets>
 	</map>
 	<map id="91" name="5-1" scaleFactor="2" music="5" minimap="91">
-		<gameserverIP>25.1.14.147</gameserverIP>
+		<gameserverIP>beta.darkstars.org</gameserverIP>
 		<starfield>true</starfield>
 		<backgrounds>
 			<background typeID="2001" pFactor="10" layer="0" hideLensflare="false" scale="1.6" />
@@ -1039,7 +1039,7 @@
 		</planets>
 	</map>
 	<map id="92" name="5-2" music="5">
-		<gameserverIP>25.1.14.147</gameserverIP>
+		<gameserverIP>beta.darkstars.org</gameserverIP>
 		<starfield color="0x333333">true</starfield>
 		<backgrounds>
 			<background typeID="2001" pFactor="10" layer="0" hideLensflare="false" scale="2.2" maskID="4" />
@@ -1059,7 +1059,7 @@
 		</planets>
 	</map>
 	<map id="93" name="5-3" scaleFactor="2" music="5" minimap="93">
-		<gameserverIP>25.1.14.147</gameserverIP>
+		<gameserverIP>localhost</gameserverIP>
 		<starfield color="0xE3E3E3">true</starfield>
 		<backgrounds>
 			<background typeID="2001" pFactor="10" layer="0" hideLensflare="false" scale="1.6" />
@@ -1164,7 +1164,7 @@
 		<reference selector="map WHERE id==112" children="true" />
 	</map>
 	<map id="200" name="Lord of War" music="0">
-		<gameserverIP>25.1.14.147</gameserverIP>
+		<gameserverIP>localhost</gameserverIP>
 		<starfield>true</starfield>
 		<backgrounds>
 			<background typeID="2001" pFactor="10" layer="0" hideLensflare="false" scale="3" />

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CollectorEvent xmlns="http://www.darkorbit.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.darkorbit.com eventProgress.xsd">
+
+	<attributes>
+    	<titleKey>hatchingout_event_title</titleKey>
+    	<descriptionKey>hatchingout_event_description</descriptionKey>
+	    <resetPrice uridium="15000" />
+    </attributes>
+
+    <rewards class="java.util.ArrayList">
+        <reward lootid="resource_extra-energy" amount="10" unlockRequirement="1000"/>
+        <reward lootid="ammunition_laser_rsb-75" amount="5000" unlockRequirement="3000"/>
+        <reward packageid="rewardlootid" amount="1" unlockRequirement="6000"/>
+        <reward lootid="equipment_weapon_laser_lf-4" amount="1" unlockRequirement="20000"/>
+    </rewards> 
+	<triggers class="java.util.ArrayList" />   
+
+</CollectorEvent>

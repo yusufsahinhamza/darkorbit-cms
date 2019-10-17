@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<huntEvent>
+
+	<eventType>SAIMON_HUNTING</eventType>
+
+	<npcsToKill>
+		<npc npcId="6" pointsPlayer="2" pointsClan="2" /> <!-- npcType="SAIMON" -->
+	</npcsToKill>
+
+	<rewardPlayers>event_external_rewards_piratehunt2017rewards-players</rewardPlayers>
+	<rewardClans>event_external_rewards_piratehunt2017rewards-clans</rewardClans>
+
+</huntEvent>

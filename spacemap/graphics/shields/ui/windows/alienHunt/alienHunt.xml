@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+    <libraries>
+        <library id="gameclientCommonUI"/>
+        <library id="assemblyWindow"/>
+        <library id="chatWindowUIAssets"/>
+
+    </libraries>
+
+    <textstyle name="alienHunt_textstyle_score"
+               background="false"
+               textColor="0xFFFFFF"
+               type="dynamic"
+               selectable="false"
+               fontName="EurostileFl"
+               wordWrap="true"
+               align="center"
+               embedFonts="true"
+               fontSize="16"
+            />
+
+    <textstyle  name        = "alienhunt_confirmationbutton_blue_normal"
+                textColor   = "0xF1FBEC"
+                fontSize    = "16"
+                type        = "dynamic"
+                fontName    = "EurostileHeaFl"
+                embedFonts  = "true"
+                autoSize    = "center"
+            />
+
+
+    <textstyle name="alienhunt_info"
+               textColor="0x999898"
+               type="dynamic"
+               fontSize="9"
+               autoSize="left"
+               wordWrap="true"
+               multiline="true"
+               embedFonts="false"
+               fontName="Verdana"
+               align="left"/>
+
+    <textstyle
+            name="alienhunt_tab_center_modern_textstyle"
+            textColor="0x6FB2CB"
+            type="dynamic"
+            fontSize="9"
+            autoSize="center"
+            wordWrap="true"
+            multiline="true"
+            embedFonts="false"
+            fontName="Verdana"
+            align="center"/>
+    <textstyle
+            name="alienhunt_overview_left"
+            textColor="0xfefefe"
+            type="dynamic"
+            fontSize="9"
+            autoSize="right"
+            wordWrap="true"
+            multiline="true"
+            embedFonts="false"
+            fontName="Verdana"
+            align="left"/>
+    <textstyle
+            name="alienhunt_overview_yellow_left"
+            textColor="0xffe102"
+            type="dynamic"
+            fontSize="9"
+            autoSize="right"
+            wordWrap="true"
+            multiline="true"
+            embedFonts="false"
+            fontName="Verdana"
+            align="left"/>
+    <textstyle
+            name="alienhunt_overview_right"
+            textColor="0xfefefe"
+            type="dynamic"
+            fontSize="9"
+            autoSize="left"
+            wordWrap="true"
+            multiline="true"
+            embedFonts="false"
+            fontName="Verdana"
+            align="right"/>
+    <textstyle
+            name="alienhunt_overview_yellow_right"
+            textColor="0xffe102"
+            type="dynamic"
+            fontSize="9"
+            autoSize="left"
+            wordWrap="true"
+            multiline="true"
+            embedFonts="false"
+            fontName="Verdana"
+            align="right"/>
+
+    <textstyle
+            name="alienhunt_point_left"
+            textColor="0xfefefe"
+            type="dynamic"
+            fontSize="10"
+            autoSize="right"
+            wordWrap="false"
+            multiline="false"
+            embedFonts="false"
+            fontName="Verdana"
+            bold="true"
+            align="left"/>
+
+    <textstyle
+            name="alienhunt_point_right"
+            textColor="0xfefefe"
+            type="dynamic"
+            fontSize="10"
+            autoSize="left"
+            wordWrap="false"
+            multiline="false"
+            embedFonts="false"
+            fontName="Verdana"
+            bold="true"
+            align="right"/>
+
+    <skin name="alienhunt_info" classname="FadableButtonSkin" library="assemblyWindow">
+        <layer classname="BitmapLayer" libraryID="btn_info_normal">normal</layer>
+        <layer classname="BitmapLayer" libraryID="btn_info_hover">over</layer>
+        <layer classname="BitmapLayer" libraryID="btn_info_active">clicked</layer>
+    </skin>
+
+    <skin name="alienhunt_scrollbar_bgnd" classname="FadableButtonSkin">
+        <layer classname="FilledBoxLayer" fillColor="0x0" fillAlpha="0.3">normal</layer>
+    </skin>
+
+    <skin name="alienhunt_item_outline" classname="BasicSkin">
+        <layer classname="FilledBoxLayer" lineColor="0x00ccff" fillAlpha="0" lineAlpha="1">normal</layer>
+    </skin>
+
+
+    <template name="TABBAR">
+        <container name="tabbarContainer" height="20" width="370" marginTop="0" marginLeft="0"
+                   marginRight="0" pixelSnapping="true">
+            <itemlist name="tabsItemlist" registeredSkinName="commonui_list_mask" layout="horizontal" alignX="right"
+                      width="340" itemGap="0" height="20" mouseEnabled="true" mouseChildren="true"
+                      cacheSkinMaskAsBitmap="false">
+                <itemrenderer height="15" width="113" autoSizeWidth="false" mouseEnabled="true" mouseChildren="true">
+                    <button name="tab" registeredSkinName="commonui_tabbarbutton" mouseEnabled="true"
+                            autoSizeWidth="true" autoSizeHeight="true" mouseChildren="true"/>
+                    <button name="tab_selected" registeredSkinName="commonui_tabbarbutton" mouseEnabled="true"
+                            autoSizeWidth="true" visible="false" autoSizeHeight="true" mouseChildren="true"/>
+                    <label y="-1" name="tabLabel" registeredSkinName="commonui_default_label"
+                           registeredTextStyleName="alienhunt_tab_center_modern_textstyle" mouseEnabled="false"
+                           mouseChildren="false" autoSizeWidth="true" text="?"/>
+                </itemrenderer>
+            </itemlist>
+        </container>
+    </template>
+
+    <template name="OVERVIEW">
+        <container name="overview" visible="false" width="330" marginLeft="20" marginRight="20" marginTop="36"
+                   height="200"
+                   alignX="left">
+            <container name="top" width="330" marginLeft="0" marginRight="0" marginTop="0"
+                       registeredSkinName="commonui_darklayer" height="120" alignX="center">
+                <coreponent registeredSkinName="commonui_horizontal_divider" height="3" width="330" marginTop="48"/>
+                <container name="left" width="250" height="120" marginLeft="20">
+                    <label text="localize:alienhunt_tab_overview_timeleft" registeredSkinName="commonui_default_label"
+                           marginTop="15" autoSizeWidth="true"
+                           registeredTextStyleName="alienhunt_overview_yellow_left"/>
+                    <label text="localize:alienhunt_tab_overview_playerpoints"
+                           registeredSkinName="commonui_default_label"
+                           autoSizeWidth="true" registeredTextStyleName="alienhunt_overview_left" marginTop="63"/>
+                    <label text="localize:alienhunt_tab_overview_clanpoints" registeredSkinName="commonui_default_label"
+                           autoSizeWidth="true" registeredTextStyleName="alienhunt_overview_left" marginTop="87"/>
+                </container>
+                <container name="right" width="200" height="120" marginRight="20" alignX="right">
+                    <label name="time" autoSizeWidth="true" registeredSkinName="commonui_default_label" text="0"
+                           registeredTextStyleName="alienhunt_overview_yellow_right" marginTop="15"/>
+                    <label name="points" autoSizeWidth="true" registeredSkinName="commonui_default_label" text="0"
+                           registeredTextStyleName="alienhunt_overview_right" marginTop="63"/>
+                    <label name="clanpoints" autoSizeWidth="true" registeredSkinName="commonui_default_label" text="0"
+                           registeredTextStyleName="alienhunt_overview_right" marginTop="87"/>
+                </container>
+            </container>
+            <container name="bottom" width="300" marginLeft="0" marginRight="0" marginTop="130"
+                       height="80" alignX="center">
+                <button registeredSkinName="alienhunt_info" marginLeft="0" alignX="left" alignY="top"/>
+                <label text="localize:alienhunt_tab_overview_hint" registeredTextStyleName="alienhunt_info"
+                       alignX="left" alignY="top" marginLeft="30"
+                       registeredSkinName="commonui_default_label" width="260" autoSizeHeight="true"/>
+                <button name="HOF_btn" tooltipData="localize:alienhunt_tab_overview_button_ttip" marginTop="3" text="localize:alienhunt_tab_overview_button" width="160" alignY="bottom"
+                        alignX="center" height="50" registeredSkinName="commonui_confirmationbutton_blue"
+                        registeredTextStyleName="alienhunt_confirmationbutton_blue_normal"/>
+            </container>
+        </container>
+    </template>
+
+    <template name="POINTS">
+        <container name="points" width="330" marginLeft="20" marginRight="20" marginTop="36" height="200"
+                   visible="false"
+                   alignX="left" registeredSkinName="commonui_darklayer">
+            <coreponent registeredSkinName="commonui_horizontal_divider" height="3" width="330" marginTop="33"/>
+            <container width="290" marginTop="8" alignX="center">
+                <label text="localize:alienhunt_tab_points_headline_prey" registeredSkinName="commonui_default_label"
+                       autoSizeWidth="true" registeredTextStyleName="alienhunt_point_right"/>
+                <label text="localize:alienhunt_tab_points_headline_points" registeredSkinName="commonui_default_label"
+                       autoSizeWidth="true" registeredTextStyleName="alienhunt_point_left" marginRight="30"/>
+            </container>
+            <container name="body" width="330" marginTop="34" height="165" marginLeft="0">
+                <itemlist name="npcList" width="330"
+                          autoSizeHeight="true"
+                          autoSizeWidth="true"
+                          itemGap="0"
+                          mouseChildren="false"
+                          mouseEnabled="true"
+                          layout="vertical"
+                          cacheSkinMaskAsBitmap="false"
+                          registeredSkinName="commonui_list_mask">
+                    <itemrenderer width="330" autoSizeWidth="false" height="47" mouseEnabled="true"
+                                  mouseChildren="true">
+                        <coreponent name="bg" width="325" height="47" registeredSkinName="commonui_darklayer"/>
+                        <coreponent name="pic" width="41" marginLeft="20" height="41" alignY="center" alignX="left"/>
+                        <label name="npcName" text="test" registeredSkinName="commonui_default_label" marginTop="15"
+                               alignX="left" x="71" width="200" registeredTextStyleName="alienhunt_overview_left"/>
+                        <label name="points" text="test" registeredSkinName="commonui_default_label" marginTop="15"
+                               alignX="right" marginRight="70" width="50"
+                               registeredTextStyleName="alienhunt_overview_right"/>
+                        <coreponent width="330" height="47" mouseEnabled="true"
+                                    registeredSkinName="commonui_hitlayer_invisible"
+                                    name="hitlayer"/>
+                    </itemrenderer>
+                </itemlist>
+                <scrollbar name="npcScrollBar" width="5" autoSizeHeight="true" direction="vertical"
+                           marginTop="0"
+                           marginBottom="0"
+                           marginRight="0"
+                           alignX="right"
+                           registeredSkinName="alienhunt_scrollbar_bgnd">
+                    <button name="buttonSlider" alignX="center" width="5" height="10"
+                            registeredSkinName="commonui_scrollbar_slider"/>
+                </scrollbar>
+                <bind source="npcScrollBar" target="npcList"/>
+            </container>
+        </container>
+    </template>
+
+    <template name="REWARDS">
+        <container name="rewards" width="330" marginLeft="20" marginRight="20" marginTop="36" height="200"
+                   alignX="left" registeredSkinName="commonui_darklayer">
+            <coreponent registeredSkinName="commonui_horizontal_divider" height="3" width="330" marginTop="33"/>
+            <container width="290" marginTop="8" alignX="center">
+                <label text="localize:alienhunt_tab_rewards_headline_playerrewards"
+                       registeredSkinName="commonui_default_label"
+                       autoSizeWidth="true" registeredTextStyleName="alienhunt_point_right"/>
+                <label text="localize:alienhunt_tab_rewards_headline_clanrewards"
+                       registeredSkinName="commonui_default_label" marginLeft="160"
+                       autoSizeWidth="true" registeredTextStyleName="alienhunt_point_right"/>
+            </container>
+            <container name="body" width="330" marginTop="34" height="165" marginLeft="0">
+                <itemlist name="alienhunt_rewardlist" width="330"
+                          autoSizeHeight="true"
+                          autoSizeWidth="true"
+                          itemGap="0"
+                          mouseChildren="true"
+                          mouseEnabled="true"
+                          layout="vertical"
+                          cacheSkinMaskAsBitmap="false"
+                          registeredSkinName="commonui_list_mask">
+
+
+                    <itemrenderer width="330" autoSizeWidth="false" height="30" mouseEnabled="true"
+                                  mouseChildren="true">
+                        <container name="left" width="160" marginLeft="0" height="30" alignX="left">
+                            <coreponent name="bg" width="160" height="30" registeredSkinName="commonui_darklayer"/>
+                            <label name="place" text="test" registeredSkinName="commonui_default_label" marginTop="10"
+                                   alignX="left" y="-2" x="20" width="100" registeredTextStyleName="alienhunt_overview_left"/>
+                            <button name="btn" registeredSkinName="alienhunt_info" marginRight="8" alignX="right"
+                                    alignY="center"/>
+                        </container>
+
+                        <container name="right" width="160" marginRight="5" height="30" alignX="right">
+                            <coreponent name="bg" width="160" height="30" registeredSkinName="commonui_darklayer"/>
+                            <label name="place" text="test" registeredSkinName="commonui_default_label" marginTop="10"
+                                   alignX="left" y="-2" x="20" width="100" registeredTextStyleName="alienhunt_overview_left"/>
+                            <button name="btn" registeredSkinName="alienhunt_info" marginRight="8" alignX="right"
+                                    alignY="center"/>
+                        </container>
+                    </itemrenderer>
+
+
+                </itemlist>
+                <scrollbar name="alienhunt_rewardlist_scrollBar" width="5" autoSizeHeight="true" direction="vertical"
+                           marginTop="0"
+                           marginBottom="0"
+                           marginRight="0"
+                           alignX="right"
+                           registeredSkinName="alienhunt_scrollbar_bgnd">
+                    <button name="buttonSlider" alignX="center" width="5" height="10"
+                            registeredSkinName="commonui_scrollbar_slider"/>
+                </scrollbar>
+                <bind source="alienhunt_rewardlist_scrollBar" target="alienhunt_rewardlist"/>
+            </container>
+        </container>
+    </template>
+
+    <template name="alienhuntRewardToolTip">
+        <container name="container" width="250" autoSizeHeight="true" autoHeightMode="children">
+            <container name="wrapper" width="250" registeredSkinName="TAS_ttip_frame" autoSizeHeight="true" marginTop="20"
+                       autoHeightMode="children">
+                <itemlist layout="vertical" width="250" gap="0" name="list" autoSizeHeight="true" marginBottom="10"
+                          autoHeightMode="children">
+                    <itemrenderer height="40" marginTop="0" marginBottom="0">
+                        <coreponent name="img" registeredSkinName="alienhunt_item_outline" width="30" height="30" marginTop="10" marginLeft="10"/>
+                        <coreponent registeredSkinName="alienhunt_item_outline" width="31" height="31" marginTop="9" marginLeft="9"/>
+                        <label name="label" width="200" alignX="left" marginLeft="50" marginTop="11"
+                               height="29"
+                               registeredSkinName="traininggrounds_label"
+                               registeredTextStyleName="alienhunt_overview_left"/>
+                    </itemrenderer>
+                </itemlist>
+            </container>
+        </container>
+    </template>
+
+    <container name="root" width="370" height="272" mouseEnabled="false" mouseChildren="true">
+        <reference template="OVERVIEW"/>
+        <reference template="POINTS"/>
+        <reference template="REWARDS"/>
+        <reference template="TABBAR"/>
+    </container>
+</root>

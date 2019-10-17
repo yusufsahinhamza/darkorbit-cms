@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <resource>
- <item name="flashres_xtm_test_key"><![CDATA[XTM Test Key in the file flashres.xml]]></item>
  <item name="no_clan"><![CDATA[No clan]]></item>
  <item name="notloggedin"><![CDATA[Please log in again]]></item>
  <item name="nohitpoints"><![CDATA[No hit points left. Repair your ship in the hangar or buy a new ship!]]></item>
@@ -177,7 +176,6 @@ Return to a safe zone before you're destroyed.]]></item>
  <item name="setting_minimap_background_image"><![CDATA[Show minimap background]]></item>
  <item name="sett_setting22"><![CDATA[Change ammo/rocket type automatically]]></item>
  <item name="sett_setting23"><![CDATA[Show "Buy now" menu for ammo on the space map]]></item>
- <item name="sett_show_my_drones"><![CDATA[Show my drones]]></item>
  <item name="setting_disable_lensflares"><![CDATA[Show lens flare]]></item>
  <item name="setting_disable_meteors"><![CDATA[Show meteors]]></item>
  <item name="setting_disable_stardust"><![CDATA[Show space dust]]></item>
@@ -186,7 +184,6 @@ Return to a safe zone before you're destroyed.]]></item>
  <item name="setting_displayWindowsBackground"><![CDATA[Show background]]></item>
  <item name="setting_battleray_notifications"><![CDATA[Show Battleray notifications]]></item>
  <item name="setting_show_low_hp_warnings"><![CDATA[Show low HP warning]]></item>
- <item name="setting_autoEquip"><![CDATA[Auto-equip new items]]></item>
  <item name="setting_alwaysDraggableWindows"><![CDATA[Always allow draggable windows]]></item>
  <item name="setting_preloadShips"><![CDATA[Preload ships]]></item>
  <item name="setting_simpleShips"><![CDATA[Simplify ships]]></item>
@@ -234,8 +231,6 @@ Return to a safe zone before you're destroyed.]]></item>
  <item name="server_restart_n_minutes"><![CDATA[Game server will restart in %! minutes.]]></item>
  <item name="server_restart_n_seconds"><![CDATA[Game server will restart in %! seconds.]]></item>
  <item name="server_restarting"><![CDATA[Restarting game server]]></item>
- <item name="server_shutdown_n_minutes"><![CDATA[Game server will shut down in %! minutes.]]></item>
- <item name="server_shutdown_n_seconds"><![CDATA[Game server will shut down in %! seconds.]]></item>
  <item name="loot_theft"><![CDATA[Your cargo box was stolen by: %!]]></item>
  <item name="jp_attack_mode"><![CDATA[Attack protection was lifted - time for you to fight!]]></item>
  <item name="jp_no_attack_n_minutes"><![CDATA[%! minutes attack protection remaining]]></item>
@@ -303,29 +298,50 @@ Return to a safe zone before you're destroyed.]]></item>
  <item name="sg2_score_base"><![CDATA[Points]]></item>
  <item name="sg2_multiplier"><![CDATA[Multi]]></item>
  <item name="sg2_score_combined"><![CDATA[Total]]></item>
- <item name="title_1"><![CDATA[Master of the Orbit]]></item>
- <item name="title_2"><![CDATA[Space Cleaner]]></item>
- <item name="title_3"><![CDATA[Dark Pilot]]></item>
- <item name="title_4"><![CDATA[Emperor]]></item>
- <item name="title_5"><![CDATA[Newbie]]></item>
- <item name="title_6"><![CDATA[Goli Hunter]]></item>
- <item name="title_7"><![CDATA[Boss]]></item>
- <item name="title_8"><![CDATA[Alien Hunter]]></item>
- <item name="title_9"><![CDATA[Sharpshooter]]></item>
- <item name="title_10"><![CDATA[Space Whiz]]></item>
- <item name="title_11"><![CDATA[Orbit King]]></item>
- <item name="title_12"><![CDATA[Phoenix Shock]]></item>
- <item name="title_13"><![CDATA[Chaos Pilot]]></item>
- <item name="title_14"><![CDATA[Most Wanted]]></item>
- <item name="title_15"><![CDATA[Portal Guard]]></item>
- <item name="title_16"><![CDATA[Battle Master]]></item>
- <item name="title_17"><![CDATA[System Lord]]></item>
- <item name="title_18"><![CDATA[The Legend]]></item>
- <item name="title_19"><![CDATA[PvP Hunter of the Day]]></item>
- <item name="title_20"><![CDATA[Pirate Hunter]]></item>
- <item name="title_21"><![CDATA[Spring Fighter MMO 2]]></item>
- <item name="title_22"><![CDATA[Spring Fighter EIC 2]]></item>
- <item name="title_23"><![CDATA[Spring Fighter VRU 2]]></item>
+ <item name="title_1"><![CDATA[Developer]]></item>
+ <item name="title_2"><![CDATA[Donor]]></item>
+ <item name="title_3"><![CDATA[Cringe]]></item>
+ <item name="title_4"><![CDATA[Youtube Legend]]></item>
+ <item name="title_5"><![CDATA[AU! AU! AU!]]></item>
+ <item name="title_6"><![CDATA[Jackpot Battle Winner]]></item>
+ <item name="title_7"><![CDATA[Legend]]></item>
+ <item name="title_8"><![CDATA[Newbie]]></item>
+ <item name="title_9"><![CDATA[Most Wanted]]></item>
+ <item name="title_10"><![CDATA[V.I.P]]></item>
+ <item name="title_11"><![CDATA[JackPot Winner]]></item>
+ <item name="title_12"><![CDATA[Most Hated]]></item>
+ <item name="title_13"><![CDATA[Shodan System Lord]]></item>
+ <item name="title_14"><![CDATA[Turso Gate]]></item>
+ <item name="title_15"><![CDATA[Spring Fighter MMO]]></item>
+ <item name="title_16"><![CDATA[Spring Fighter VRU]]></item>
+ <item name="title_17"><![CDATA[Spring Fighter EIC]]></item>
+ <item name="title_18"><![CDATA[The Reaper]]></item>
+ <item name="title_19"><![CDATA[Boss of Bosses]]></item>
+ <item name="title_20"><![CDATA[Godfather]]></item>
+ <item name="title_21"><![CDATA[Supernova]]></item>
+ <item name="title_22"><![CDATA[Butcher]]></item>
+ <item name="title_23"><![CDATA[30 second battle]]></item>
+ <item name="title_24"><![CDATA[Game Manager Since 2011]></item>
+ <item name="title_25"><![CDATA[Chaos Pilot]]></item>
+ <item name="title_26"><![CDATA[Battle Master]]></item>
+ <item name="title_27"><![CDATA[Team Player]]></item>
+ <item name="title_28"><![CDATA[World Destroyer]]></item>
+ <item name="title_50"><![CDATA[Chaos Pilot]]></item>
+ <item name="title_51"><![CDATA[Most Wanted]]></item>
+ <item name="title_52"><![CDATA[Portal Guard]]></item>
+ <item name="title_53"><![CDATA[Battle Master]]></item>
+ <item name="title_54"><![CDATA[System Lord]]></item>
+ <item name="title_55"><![CDATA[The Legend]]></item>
+ <item name="title_56"><![CDATA[PvP Hunter of the Day]]></item>
+ <item name="title_57"><![CDATA[Pirate Hunter]]></item>
+ <item name="title_58"><![CDATA[Spring Fighter MMO 2]]></item>
+ <item name="title_59"><![CDATA[Spring Fighter EIC 2]]></item>
+ <item name="title_60"><![CDATA[Spring Fighter VRU 2]]></item>
+ <item name="title_200"><![CDATA[Master of the Orbit]]></item>
+ <item name="title_201"><![CDATA[King of OneUltimate]]></item>
+ <item name="title_202"><![CDATA[One-man Army]]></item>
+ <item name="title_203"><![CDATA[Hordebreaker]]></item>
+ <item name="title_204"><![CDATA[Humanity's Hero]]></item>
  <item name="title_100"><![CDATA[Spring Fighter MMO]]></item>
  <item name="title_101"><![CDATA[Spring Fighter VRU]]></item>
  <item name="title_102"><![CDATA[Spring Fighter EIC]]></item>
@@ -335,11 +351,6 @@ Return to a safe zone before you're destroyed.]]></item>
  <item name="title_107"><![CDATA[Spring King MMO]]></item>
  <item name="title_108"><![CDATA[Spring King EIC]]></item>
  <item name="title_109"><![CDATA[Spring King VRU]]></item>
- <item name="title_200"><![CDATA[Pirate-Hunting Champion]]></item>
- <item name="title_201"><![CDATA[Pirate Hunter]]></item>
- <item name="title_202"><![CDATA[Pirate Destroyer]]></item>
- <item name="title_203"><![CDATA[Pirate Annihilator]]></item>
- <item name="title_204"><![CDATA[All-Star]]></item>
  <item name="title_205"><![CDATA[Boss of Bosses]]></item>
  <item name="title_222"><![CDATA[Lord of Likes]]></item>
  <item name="title_299"><![CDATA[Time killer]]></item>
@@ -408,7 +419,6 @@ Return to a safe zone before you're destroyed.]]></item>
  <item name="title_362"><![CDATA[Scapegoat]]></item>
  <item name="title_363"><![CDATA[Indestructible]]></item>
  <item name="title_410"><![CDATA[Football Official]]></item>
- <item name="title_458"><![CDATA[Blizzard]]></item>
  <item name="atk_wave_started"><![CDATA[Attack wave %COUNT% started]]></item>
  <item name="galaxygate_placed"><![CDATA[%GATE% put in position]]></item>
  <item name="attack_wave"><![CDATA[Attack wave]]></item>
@@ -497,10 +507,9 @@ Thank you for your continued support!]]></item>
  <item name="tdm_jump_failed_level_too_high"><![CDATA[Your level is too high to play in this Team Deathmatch. Try out %MAP% map instead!]]></item>
  <item name="q2_condition_TIMER"><![CDATA[Your time is being recorded]]></item>
  <item name="q2_condition_TIMER_challenge"><![CDATA[Hurry up!]]></item>
- <item name="q2_condition_HASTE"><![CDATA[Complete in less than %TIME%]]></item>
+ <item name="q2_condition_HASTE"><![CDATA[Complete in under %TIME%]]></item>
  <item name="q2_condition_HONOR_REDEMPTION"><![CDATA[You must have at least 0 Honor!]]></item>
- <item name="q2_condition_REAL_TIME_HASTE"><![CDATA[Complete this mission within %TIME%!]]></item>
- <item name="q2_condition_REAL_TIME_DATE_HASTE"><![CDATA[This mission will expire in:]]></item>
+ <item name="q2_condition_REAL_TIME_HASTE"><![CDATA[Complete this mission in %TIME%!]]></item>
  <item name="q2_condition_ENDURANCE"><![CDATA[Hang in there for at least %TIME%]]></item>
  <item name="q2_condition_ENDURANCE_challenge"><![CDATA[Stick around as long as possible!]]></item>
  <item name="q2_condition_COUNTDOWN"><![CDATA[Stay for at least %TIME% consecutively]]></item>
@@ -532,7 +541,7 @@ Thank you for your continued support!]]></item>
  <item name="q2_condition_AVOID_KILL_PLAYERS_ship_none"><![CDATA[Don't destroy any %types%]]></item>
  <item name="q2_condition_AVOID_KILL_PLAYERS_faction"><![CDATA[Don't destroy more than %count% %faction% ships]]></item>
  <item name="q2_condition_AVOID_KILL_PLAYERS_faction_single"><![CDATA[Don't destroy more than one %faction% ship]]></item>
- <item name="q2_condition_AVOID_KILL_PLAYERS_faction_none"><![CDATA[Don't destroy any %faction% ships]]></item>
+ <item name="q2_condition_AVOID_KILL_PLAYERS_faction_none"><![CDATA[Don't destroy an %faction% ships]]></item>
  <item name="q2_condition_AVOID_KILL_PLAYERS_ship_faction"><![CDATA[Don't destroy more than %count% %faction% %types% ships]]></item>
  <item name="q2_condition_AVOID_KILL_PLAYERS_ship_faction_single"><![CDATA[Don't destroy more than one %faction% %types% ship]]></item>
  <item name="q2_condition_AVOID_KILL_PLAYERS_ship_faction_none"><![CDATA[Don't destroy any %faction% %types% ships]]></item>
@@ -660,7 +669,7 @@ Thank you for your continued support!]]></item>
  <item name="q2_condition_DAMAGE_NPCS_spec_laser"><![CDATA[Damage %npcs% with lasers]]></item>
  <item name="q2_condition_DAMAGE_NPCS_spec_rocket"><![CDATA[Damage %npcs% with rockets]]></item>
  <item name="q2_condition_DAMAGE_NPCS_spec_direct"><![CDATA[Damage %npcs% with lasers and rockets]]></item>
- <item name="q2_condition_DAMAGE_PLAYERS_any_any"><![CDATA[Damage any players]]></item>
+ <item name="q2_condition_DAMAGE_PLAYERS_any_any"><![CDATA[Damage the enemy companies' players]]></item>
  <item name="q2_condition_DAMAGE_PLAYERS_any_laser"><![CDATA[Damage the enemy companies' players with lasers]]></item>
  <item name="q2_condition_DAMAGE_PLAYERS_any_rocket"><![CDATA[Damage the enemy companies' players with rockets]]></item>
  <item name="q2_condition_DAMAGE_PLAYERS_any_mine"><![CDATA[Damage the enemy companies' players with mines]]></item>
@@ -698,12 +707,7 @@ Thank you for your continued support!]]></item>
  <item name="q2_condition_RESTRICT_AMMUNITION_KILL_NPC_anynpc_laser"><![CDATA[Destroy NPCs using %laser% laser ammo.]]></item>
  <item name="q2_condition_RESTRICT_AMMUNITION_KILL_NPC_npc_rocket"><![CDATA[Destroy %npc% enemies using %rocket% rockets.]]></item>
  <item name="q2_condition_RESTRICT_AMMUNITION_KILL_NPC_anynpc_rocket"><![CDATA[Destroy NPCs using %rocket% rockets.]]></item>
- <item name="q2_condition_EXCLUDE_AMMUNITION_KILL_NPC_npc_laser"><![CDATA[Destroy %npc% enemies without using lasers.]]></item>
- <item name="q2_condition_EXCLUDE_AMMUNITION_KILL_NPC_anynpc_laser"><![CDATA[Destroy NPCs without using lasers.]]></item>
- <item name="q2_condition_EXCLUDE_AMMUNITION_KILL_NPC_npc_rocket"><![CDATA[Destroy %npc% enemies without using rockets.]]></item>
- <item name="q2_condition_EXCLUDE_AMMUNITION_KILL_NPC_anynpc_rocket"><![CDATA[Destroy NPCs without using rockets.]]></item>  
  <item name="q2_condition_COLLECT_BONUS_BOX"><![CDATA[Collect %count% bonus boxes.]]></item>
- <item name="q2_condition_COLLECT_BONUS_BOX_TYPE"><![CDATA[Collect %count% %name%.]]></item>
  <item name="q2_condition_LEVEL"><![CDATA[Reach level %count%.]]></item>
  <item name="q2_condition_SELL_ORE_ore"><![CDATA[Sell %ore%.]]></item>
  <item name="q2_condition_GAIN_INFLUENCE"><![CDATA[Gain influence]]></item>
@@ -720,7 +724,6 @@ Thank you for your continued support!]]></item>
  <item name="q2_condition_CASE_mandatory"><![CDATA[Complete %count% of the following tasks]]></item>
  <item name="q2_condition_CASE_parallel"><![CDATA[Complete]]></item>
  <item name="q2_condition_CASE_sequence"><![CDATA[Complete in order:]]></item>
- <item name="q2_condition_AVOID_DAMAGE_PLAYERS"><![CDATA[Don't damage other player]]></item>
  <item name="q2_accepted_quest"><![CDATA["%quest_name%" accepted]]></item>
  <item name="q2_accomplished_quest"><![CDATA["%quest_name%" completed]]></item>
  <item name="q2_cancel_quest"><![CDATA["%quest_name%" canceled]]></item>
@@ -781,11 +784,7 @@ Have a blast!]]></item>
  <item name="q2_condition_BEACON_TAKEOVER_CAPTURE_THE_BEACON"><![CDATA[Capture %amount%x Beacons in "Capture the Beacon"]]></item>
  <item name="q2_condition_BEACON_TAKEOVER_SECTOR_CONTROL"><![CDATA[Capture %amount%x Sector Control Beacons]]></item>
  <item name="q2_condition_BEACON_TAKEOVER_DOMINATION"><![CDATA[Capture %amount%x Domination Beacons]]></item>
- <item name="q2_condition_VISIT_DISRUPTION_ZONE"><![CDATA[Visit P.E.T. disrupting zones on the following maps:]]></item>
- <item name="q2_condition_COLLECT_BUILT_RECIPE_any_single"><![CDATA[Collect an assembled item from the Assembly]]></item>
- <item name="q2_condition_COLLECT_BUILT_RECIPE_any_multi"><![CDATA[Collect %amount% assembled items from the Assembly]]></item>
- <item name="q2_condition_COLLECT_BUILT_RECIPE_recipeid_single"><![CDATA[Collect an assembled %recipeId% from the Assembly]]></item>
- <item name="q2_condition_COLLECT_BUILT_RECIPE_recipeid_multi"><![CDATA[Collect %amount% assembled %recipeId%s from the Assembly]]></item>
+ <item name="q2_condition_VISIT_DISRUPTION_ZONE"><![CDATA[Visit PET disrupting zones on the following maps:]]></item>
  <item name="booster_found"><![CDATA[%BOOSTERNAME% (%HOURS% hours) received]]></item>
  <item name="no_attack_on_start_maps"><![CDATA[You can't attack any friendly ships on your company's first two maps!]]></item>
  <item name="no_pvp_on_start_map"><![CDATA[You can't attack any players on a base map!]]></item>
@@ -941,7 +940,6 @@ Your DarkOrbit Team]]></item>
  <item name="title_firework"><![CDATA[Fireworks]]></item>
  <item name="title_cli"><![CDATA[Command line interface]]></item>
  <item name="title_repair"><![CDATA[Repair]]></item>
- <item name="title_module_equipment"><![CDATA[Equipment]]></item>
  <item name="ttip_aimCPU"><![CDATA[Targeting Guidance CPU: %TYPE%]]></item>
  <item name="ttip_arolCPU"><![CDATA[Auto Rocket CPU: %TYPE%]]></item>
  <item name="ttip_cloakCPU"><![CDATA[Cloaking CPU: %TYPE%]]></item>
@@ -1088,7 +1086,7 @@ Your DarkOrbit Team]]></item>
  <item name="label_grp_symbol_visible"><![CDATA[uncloaked]]></item>
  <item name="label_grp_follow"><![CDATA[fly to %name%]]></item>
  <item name="label_grp_follow_impossible"><![CDATA[location unknown: wrong map]]></item>
- <item name="label_grp_context_item_follow"><![CDATA[Go to!]]></item>
+ <item name="label_grp_context_item_follow"><![CDATA[Follow]]></item>
  <item name="label_grp_context_item_ping"><![CDATA[Ping]]></item>
  <item name="label_grp_context_item_kick"><![CDATA[Kick out]]></item>
  <item name="label_grp_context_item_leader"><![CDATA[Promote]]></item>
@@ -1165,8 +1163,8 @@ Your DarkOrbit Team]]></item>
  <item name="msg_accept_jobs_here"><![CDATA[Click here for more jobs!]]></item>
  <item name="msg_maybe_quest_at_nyx"><![CDATA[Fly to Mission Control to see if there are any missions for you.]]></item>
  <item name="httip_quickmenu"><![CDATA[The shortcut bar has 10 opens slots. You can drag & drop items into these slots to use them as shortcut buttons. The buttons are all numbered. Just press on that number on your keyboard to use the slot item.]]></item>
- <item name="httip_mainmenu"><![CDATA[The inventory bar has up to three levels. The 5 hexagons in the top level are permanent. They represent lasers, rockets, special ammo, CPUs and the “Buy now” function. If you click on one of these five hexagons, a second level and possibly a third level will open. The bars in the second-level icons change color depending on how much of each item you have in stock. Blue represents a healthy supply, red means less and gray means none. The third-level icons can be used to start an attack with the relevant weapon type, and can also be used to stop laser attacks only.]]></item>
- <item name="httip_log"><![CDATA[The log window is your logbook history. It shows all DO activities such as recent announcements, kills, countdowns, etc. You can resize it using the triangle symbol on the bottom right.]]></item>
+ <item name="httip_mainmenu"><![CDATA[The inventory bar has up to three levels. The 5 hexagons in the top level are permanent. They represent lasers, rockets, special ammo, CPUs and the “Buy now” function. If you click on one of these five hexagons, a second level and possibly a third level will open. The bars in the second-level icons change color depending on how much of each item you have in stock. Blue represents a healthy supply, red means less and gray means none. The third-level icons can all be used to start an attack with the relevant weapon type, and can also be used to stop laser attacks only.]]></item>
+ <item name="httip_log"><![CDATA[The log window is your logbook history. It shows all DO activities such as recent announcements, kills, countdowns, etc. You can resize it using the pentagon symbol on the bottom right.]]></item>
  <item name="httip_minimap"><![CDATA[The mini map is your panoramic view of the entire space map. The cross-axis shows your current coordinates and the danger bar on the left-hand side changes color and size to indicate your level of danger.]]></item>
  <item name="httip_spacemap"><![CDATA[The star system helps you find your way in the endless expanse of space. It shows how the different maps are connected and how you can travel between them.]]></item>
  <item name="httip_ship"><![CDATA[The ship window displays all important ship information such as HP, nanohull strength, cargo bay capacity, rockets, ammo and current configs. Click on the information to switch between graphical and digital displays.]]></item>
@@ -1276,8 +1274,6 @@ When the game is loaded, you will be automatically logged into the client, and o
  <item name="ttip_killscreen_logout_spawnpoint"><![CDATA[Caution! If you log out or let the countdown reach zero, you will be removed from the match.]]></item>
  <item name="ttip_killscreen_logout_hadesgate"><![CDATA[If you log out or run out of time, you will be removed from this Hades Gate server.]]></item>
  <item name="ttip_killscreen_logout_tdm"><![CDATA[Careful! If time is up or you log out, you'll be removed from the TDM server.]]></item>
- <item name="ttip_killscreen_logout_rzone"><![CDATA[Caution! After logging out, the repair option 'on the spot' is no longer available.]]></item>
- <item name="ttip_killscreen_rzone_repair_factionbase"><![CDATA[You can repair your ship at your factions arrival area.]]></item>
  <item name="btn_killscreen_repair_for_free"><![CDATA[Free repair]]></item>
  <item name="btn_killscreen_repair_voucher"><![CDATA[Use repair credit]]></item>
  <item name="btn_killscreen_repair_for_uri"><![CDATA[Repair (%COUNT% U.)]]></item>
@@ -1302,8 +1298,6 @@ You still have %COUNT% lives left.]]></item>
  <item name="desc_killscreen_free_repair_cause_sectorcontrol"><![CDATA[Careful! Repairing for free at your company's spawn point is only available for the next few seconds.]]></item>
  <item name="desc_killscreen_free_repair_cause_hadesgate"><![CDATA[You still have %COUNT% lives left for the Hades Gate.]]></item>
  <item name="desc_killscreen_free_repair_cause_tdm"><![CDATA[You still have %COUNT% life for the TDM match.]]></item>
- <item name="desc_killscreen_free_repair_cause_rzone"><![CDATA[You can repair your ship at your factions arrival area.]]></item>
- <item name="desc_killscreen_repair_location_cause_rzone"><![CDATA[You can pay an additional %COUNT% U. to make on-the-spot repairs.]]></item>
  <item name="desc_killscreen_repair_gate"><![CDATA[You can pay an additional %COUNT% U. to make repairs at the next jumpgate.]]></item>
  <item name="desc_killscreen_repair_location"><![CDATA[You can pay an additional %COUNT% U. to make on-the-spot repairs.]]></item>
  <item name="desc_killscreen_repair_gate_for_money"><![CDATA[You can pay an extra %COUNT% %CURRENCY% to be able to repair at the next jumpgate.]]></item>
@@ -1507,7 +1501,7 @@ You still have %COUNT% lives left.]]></item>
  <item name="msg_recovery_of_ceasefire_user"><![CDATA[%nick% regained attack protection]]></item>
  <item name="msg_recovery_of_ceasefire_hero"><![CDATA[Attack protection regained]]></item>
  <item name="log_msg_relaisstation_activated"><![CDATA[Relay station activated]]></item>
- <item name="transmission_groupgate_mission_start_1"><![CDATA[Headquarters to Delta squad:<br>Your mission is to infiltrate the pirate galaxy, collect intel and destroy the enemy by taking out the pirate leader, known as Century Falcon. Do you copy?]]></item>
+ <item name="transmission_groupgate_mission_start_1"><![CDATA[Headquarters to Delta squad:<br>Your mission is to infiltrate the pirate galaxy, collect intel and and destroy the enemy by taking out the pirate leader, known as Century Falcon. Do you copy?]]></item>
  <item name="transmission_groupgate_mission_start_2"><![CDATA[I'll keep you up to date on enemy positions.<br>Remember to watch your six - you're in enemy space now.<br>Good luck ... you're gonna need it.<br>Over and out!]]></item>
  <item name="transmission_groupgate_relay_station_1"><![CDATA[Nice work! According to our intel, the facility provided power to pirate headquarters before it was shut down.]]></item>
  <item name="transmission_groupgate_relay_station_2"><![CDATA[Use your laser cannons on the relay station - maybe the laser energy will bring the facility back online.]]></item>
@@ -1585,13 +1579,13 @@ You still have %COUNT% lives left.]]></item>
  <item name="ship_skill_DIMINISHER_name"><![CDATA[Diminisher Weaken Shield]]></item>
  <item name="ship_skill_SENTINEL_name"><![CDATA[Sentinel fortress]]></item>
  <item name="ship_skill_SPECTRUM_name"><![CDATA[Spectrum prismatic shielding]]></item>
- <item name="ship_skill_VENOM_name"><![CDATA[Singularity]]></item>
+ <item name="ship_skill_VENOM_name"><![CDATA[Venom singularity]]></item>
  <item name="ship_skill_LIGHTNING_name"><![CDATA[Lightning afterburner]]></item>
  <item name="ttip_SOLACE_skill"><![CDATA[Solace nano-cluster instant repair]]></item>
  <item name="ttip_DIMINISHER_skill"><![CDATA[Diminisher Weaken Shield]]></item>
  <item name="ttip_SENTINEL_skill"><![CDATA[Sentinel fortress]]></item>
  <item name="ttip_SPECTRUM_skill"><![CDATA[Spectrum prismatic shielding]]></item>
- <item name="ttip_VENOM_skill"><![CDATA[Singularity]]></item>
+ <item name="ttip_VENOM_skill"><![CDATA[Venom singularity]]></item>
  <item name="ttip_LIGHTNING_skill"><![CDATA[Lightning afterburner]]></item>
  <item name="ttip_AEGIS_REPAIRHP_skill"><![CDATA[HP repair
 gradually restores your ship's HP as well as the HP of selected ships.]]></item>
@@ -1640,7 +1634,6 @@ This skill doubles your recon range on the mini map.]]></item>
  <item name="label_selected_map"><![CDATA[Selected jump destination]]></item>
  <item name="label_jump-vouchers"><![CDATA[Jump credits: %COUNT%]]></item>
  <item name="ttip_jump-vouchers_count"><![CDATA[Jump credits: %COUNT%]]></item>
- <item name="ttip_repair-vouchers_count"><![CDATA[Repair vouchers: %COUNT%]]></item>
  <item name="label_jump_now"><![CDATA[Jump]]></item>
  <item name="ttip_jump_now"><![CDATA[Starts jump.
 
@@ -1678,7 +1671,6 @@ Level too low.]]></item>
  <item name="ttip_fuel"><![CDATA[Fuel]]></item>
  <item name="ttip_pet_kamikaze-gear_cooldown"><![CDATA[Kamikaze Detonator may not be selected until its cooldown has ended.]]></item>
  <item name="ttip_pet_combo-repair-gear_cooldown"><![CDATA[Combo-Ship-Repair-Gear is cooling down and may not be selected.]]></item>
- <item name="ttip_pet_g-fs1_cooldown"><![CDATA[Sacrificial Flame is cooling down and may not be selected.]]></item>
  <item name="ttip_pet_gear_cooldown_addendum"><![CDATA[Cooldown: %TIME%]]></item>
  <item name="label_buy_pet_fuel"><![CDATA[Buy P.E.T. fuel]]></item>
  <item name="msg_pet_activated"><![CDATA[P.E.T. activated]]></item>
@@ -1699,8 +1691,6 @@ Level too low.]]></item>
  <item name="msg_pet_attack_impossible"><![CDATA[Your P.E.T. can't attack this target.]]></item>
  <item name="msg_pet_kamikaze-gear_cooldown_ready"><![CDATA[Kamikaze Detonator cooldown time has elapsed.
 Detonator may now be selected.]]></item>
-<item name="msg_pet_friendly_sacrifice-gear_cooldown_ready"><![CDATA[Sacrificial Flame cooldown time has elapsed.
-Sacrificial Flame may now be selected.]]></item>
  <item name="msg_pet_kamikaze-gear_not_on_start_maps"><![CDATA[Kamikaze Detonator may not be used in this map.]]></item>
  <item name="title_request_fuel"><![CDATA[Get fuel]]></item>
  <item name="pet_gear_passive_mode_name"><![CDATA[Passive mode]]></item>
@@ -1715,13 +1705,12 @@ Sacrificial Flame may now be selected.]]></item>
  <item name="pet_gear_g-kk1_name"><![CDATA[Kamikaze Detonator]]></item>
  <item name="pet_gear_cgm-02_name"><![CDATA[Combo Guard Mode Gear]]></item>
  <item name="pet_gear_csr-02_name"><![CDATA[Combo Ship Repair Gear]]></item>
- <item name="pet_gear_g-fs1_name"><![CDATA[Sacrificial Flame]]></item>
  <item name="title_ranked_hunt"><![CDATA[Ranked hunt]]></item>
  <item name="title_pirate_hunt"><![CDATA[Pirate Hunt]]></item>
  <item name="title_ranked_hunt_mordon"><![CDATA[Ranked Mordon hunt]]></item>
  <item name="title_ranked_hunt_saimon"><![CDATA[Ranked Saimon hunt]]></item>
  <item name="title_ranked_hunt_lordakia"><![CDATA[Ranked Lordakia hunt]]></item>
- <item name="title_ranked_hunt_pirates"><![CDATA[Pirate Raid]]></item>
+ <item name="title_ranked_hunt_pirates"><![CDATA[Ranked Pirate hunt]]></item>
  <item name="ttip_bounty_points"><![CDATA[Bounty points]]></item>
  <item name="ttip_clan_bounty_points"><![CDATA[Clan bounty points]]></item>
  <item name="log_msg_bounty_points"><![CDATA[You received %AMOUNT% bounty points.]]></item>
@@ -1730,7 +1719,6 @@ Sacrificial Flame may now be selected.]]></item>
  <item name="log_msg_gather_bounty_point_p"><![CDATA[You received %AMOUNT% bounty points.]]></item>
  <item name="ttip_clan_bounty_points_updated_in_5_minute_cycle"><![CDATA[The bounty points will be updated every five minutes.]]></item>
  <item name="log_msg_gather_drone-design_s"><![CDATA[You received the %TYPE% drone design.]]></item>
- <item name="log_msg_gather_drone-design_p"><![CDATA[You received %COUNT% %TYPE% drone designs.]]></item>
  <item name="msg_target_slowdown_immunity"><![CDATA[This target is immune and can't be slowed down.]]></item>
  <item name="msg_afterburner_activated"><![CDATA[Afterburner activated. New speed: Supersonic speed.]]></item>
  <item name="msg_afterburner_stopped"><![CDATA[Afterburner deactivated. New speed: Standard speed.]]></item>
@@ -1746,8 +1734,8 @@ Sacrificial Flame may now be selected.]]></item>
  <item name="emptyrok"><![CDATA[No rockets left - buy new rockets.]]></item>
  <item name="log_msg_received_letter_s"><![CDATA[Collected word puzzle letter: %LETTER%]]></item>
  <item name="log_msg_received_lottery_ticket_s"><![CDATA[Word puzzle is complete. You have received a capsule.]]></item>
- <item name="log_msg_pet_disruption_on"><![CDATA[A foreign impulse has taken your P.E.T. out of battle.]]></item>
- <item name="log_msg_pet_disruption_off"><![CDATA[The impulse is out of range. Your P.E.T. is ready for battle again!]]></item>
+ <item name="log_msg_pet_disruption_on"><![CDATA[Your PET is disrupted]]></item>
+ <item name="log_msg_pet_disruption_off"><![CDATA[Your PET is no longer disrupted]]></item>
  <item name="getjackpot"><![CDATA[You received %! Jackpot Euros.]]></item>
  <item name="log_msg_gather_jackpot_s"><![CDATA[You received one jackpot %CURRENCY%.]]></item>
  <item name="log_msg_gather_jackpot_p"><![CDATA[You received %COUNT% jackpot %CURRENCY%s.]]></item>
@@ -1757,7 +1745,6 @@ Sacrificial Flame may now be selected.]]></item>
  <item name="log_msg_deduct_credit_s"><![CDATA[One Credit has been deducted.]]></item>
  <item name="log_msg_deduct_credit_p"><![CDATA[%COUNT% Credits have been deducted.]]></item>
  <item name="geturidium"><![CDATA[You received %! Uridium.]]></item>
- <item name="geteventprogresspoints"><![CDATA[You received %! Space Cup Points.]]></item>
  <item name="log_msg_gather_uridium_s"><![CDATA[You received one Uridium.]]></item>
  <item name="log_msg_gather_uridium_p"><![CDATA[You received %COUNT% Uridium.]]></item>
  <item name="log_msg_deduct_uridium_s"><![CDATA[One Uridium has been deducted.]]></item>
@@ -1771,7 +1758,6 @@ Sacrificial Flame may now be selected.]]></item>
  <item name="log_msg_deduct_experience_s"><![CDATA[One experience point has been deducted.]]></item>
  <item name="log_msg_deduct_experience_p"><![CDATA[%COUNT% experience points have been deducted.]]></item>
  <item name="gethp"><![CDATA[You received %! HP.]]></item>
- <item name="msg_galaxy_gate_cooldown_active"><![CDATA[You have already completed this Gate. You can try again in %HOURS% hours and %MINUTES% minutes.]]></item>
  <item name="log_msg_gather_hitpoint_s"><![CDATA[You received one hit point.]]></item>
  <item name="log_msg_gather_hitpoint_p"><![CDATA[You received %COUNT% hit points.]]></item>
  <item name="log_msg_gather_nanohull_s"><![CDATA[Your Nanohull Strength was increased by 1.]]></item>
@@ -1809,10 +1795,9 @@ Sacrificial Flame may now be selected.]]></item>
  <item name="log_msg_deduct_honor_p"><![CDATA[%COUNT% honor points have been deducted.]]></item>
  <item name="log_msg_gather_repair-voucher_s"><![CDATA[You received a repair voucher.]]></item>
  <item name="log_msg_gather_repair-voucher_p"><![CDATA[You received %COUNT% repair vouchers.]]></item>
- <item name="log_msg_gather_module_s"><![CDATA[You received a(n) %TYPE%.]]></item>
- <item name="log_msg_gather_module_p"><![CDATA[You received %COUNT% %TYPE%.]]></item>
+ <item name="log_msg_gather_module_s"><![CDATA[You received a(n) %TYPE% of Module.]]></item>
+ <item name="log_msg_gather_module_p"><![CDATA[You received %COUNT% %TYPE% type(s) of Module(s).]]></item>
  <item name="log_msg_farmed_ore_contained_item"><![CDATA[An item was found in the ore collected.]]></item>
- <item name="log_msg_gather_pet_gear_s"><![CDATA[You received a %TYPE% P.E.T. gear.]]></item>
  <item name="log_msg_gather_speed-generator_s"><![CDATA[You received a %TYPE% speed generator.]]></item>
  <item name="log_msg_gather_speed-generator_p"><![CDATA[You received %COUNT% %TYPE% speed generators.]]></item>
  <item name="log_msg_gather_shield-generator_s"><![CDATA[You received a %TYPE% shield generator.]]></item>
@@ -1832,7 +1817,7 @@ Sacrificial Flame may now be selected.]]></item>
  <item name="log_msg_gather_vengeance-design_s"><![CDATA[You received one %TYPE% Vengeance design.]]></item>
  <item name="log_msg_gather_ship_s"><![CDATA[You received a %TYPE% ship.]]></item>
  <item name="log_msg_gather_ship_p"><![CDATA[You received %COUNT% %TYPE% ship(s).]]></item>
- <item name="log_msg_gather_ore_s"><![CDATA[You received %TYPE%.]]></item>
+ <item name="log_msg_gather_ore_s"><![CDATA[You received 1 %TYPE%.]]></item>
  <item name="log_msg_gather_ore_p"><![CDATA[You received %COUNT% %TYPE%s.]]></item>
  <item name="log_msg_gather_drone_s"><![CDATA[You received a %TYPE% drone.]]></item>
  <item name="log_msg_gather_drone_p"><![CDATA[You received %COUNT% %TYPE% drones.]]></item>
@@ -2016,46 +2001,26 @@ Renew your Premium membership on the Uridium page at a special price!]]></item>
  <item name="ttip_booty-key-blue"><![CDATA[Blue booty key(s): %AMOUNT%]]></item>
  <item name="ttip_booty-key-red"><![CDATA[Red booty key(s): %AMOUNT%]]></item>
  <item name="ttip_booty-key-silver"><![CDATA[Silver Booty Keys: %AMOUNT%]]></item>
- <item name="ttip_booty-key-masque"><![CDATA[Apocalypse Booty Keys: %AMOUNT%]]></item>
  <item name="msg_loot_booty-green_init"><![CDATA[Green pirate booty collected.]]></item>
  <item name="msg_loot_booty-gold_init"><![CDATA[You can now collect golden pirate booty.]]></item>
  <item name="msg_loot_booty-blue_init"><![CDATA[Blue pirate booty collected.]]></item>
  <item name="msg_loot_booty-red_init"><![CDATA[Red pirate booty collected.]]></item>
  <item name="msg_loot_booty-silver_init"><![CDATA[Silver pirate booty collected.]]></item>
- <item name="msg_loot_booty-masque_init"><![CDATA[Apocalypse booty collected.]]></item>
- <item name="msg_loot_booty-streuner_init"><![CDATA[Streuner pirate booty collected.]]></item>
  <item name="msg_loot_failed_no_booty-key-green"><![CDATA[To collect the treasure, you need a green booty key.]]></item>
  <item name="msg_loot_failed_no_booty-key-blue"><![CDATA[To collect the treasure, you need a blue booty key.]]></item>
  <item name="msg_loot_failed_no_booty-key-red"><![CDATA[To collect the treasure, you need a red booty key.]]></item>
  <item name="msg_loot_failed_no_booty-key-silver"><![CDATA[To collect these, you need a silver Booty Key.]]></item>
- <item name="msg_loot_failed_no_booty-key-masque"><![CDATA[To collect these, you need a Apocalypse Booty Key.]]></item>
- <item name="msg_loot_failed_no_booty-key-prometheus"><![CDATA[To collect these, you need a Prometheus Fragment.]]></item>
  <item name="msg_booty-key-green_received_s"><![CDATA[You received a green booty key.]]></item>
  <item name="msg_booty-key-blue_received_s"><![CDATA[You received a blue booty key.]]></item>
  <item name="msg_booty-key-red_received_s"><![CDATA[You received a red booty key.]]></item>
  <item name="msg_booty-key-silver_received_s"><![CDATA[You have acquired a silver Booty Key.]]></item>
- <item name="msg_booty-key-masque_received_s"><![CDATA[You have acquired an Apocalypse Booty Key.]]></item>
  <item name="msg_booty-key-green_received_p"><![CDATA[You received %AMOUNT% green booty key(s).]]></item>
  <item name="msg_booty-key-blue_received_p"><![CDATA[You received %AMOUNT% blue booty key(s).]]></item>
  <item name="msg_booty-key-red_received_p"><![CDATA[You received %AMOUNT% red booty key(s).]]></item>
  <item name="msg_booty-key-silver_received_p"><![CDATA[You have acquired %AMOUNT% silver Booty Keys.]]></item>
- <item name="msg_booty-key-masque_received_p"><![CDATA[You have acquired %AMOUNT% Apocalypse Booty Keys.]]></item>
  <item name="msg_booty-key-green_auto_purchased"><![CDATA[A green booty key will be purchased automatically to open this booty.]]></item>
  <item name="msg_booty-key-green_auto_buy_not_active"><![CDATA[You do not have a green booty key. Purchase them in the shop or activate the auto purchase feature in settings.]]></item>
  <item name="msg_booty-key-green_no_uridium_for_auto_buy"><![CDATA[You do not have sufficient Uridium to automatically purchase a green booty key.]]></item>
- 
- <item name="msg_booty-key-prometheus_received_s"><![CDATA[You have acquired a Prometheus Fragments.]]></item>
- <item name="msg_booty-key-prometheus_received_p"><![CDATA[You have acquired %AMOUNT% Prometheus Fragments.]]></item>
- <item name="msg_loot_failed_no_booty-key-prometheus"><![CDATA[To collect these, you need a Prometheus Fragment.]]></item>
- <item name="ttip_booty-key-prometheus"><![CDATA[Prometheus Fragments: %AMOUNT%]]></item>
- <item name="msg_loot_booty-prometheus_init"><![CDATA[Prometheus Fragment collected.]]></item>
- 
- <item name="msg_booty-key-black_received_s"><![CDATA[Awesome! You've acquired an Obsidian Microchip. Essential for opening an Obsidian Booty Box.]]></item>
- <item name="msg_booty-key-black_received_p"><![CDATA[Wow pilot! You've managed to acquire %AMOUNT% Obsidian Microchips. How many Obsidian Booty Boxes can you open now?]]></item>
- <item name="msg_loot_failed_no_booty-key-black"><![CDATA[To learn the secrets of the Obsidian Booty Box you need to have gathered Obsidian Microchips.]]></item>
- <item name="ttip_booty-key-black"><![CDATA[Obsidian Microchips: %AMOUNT%]]></item>
- <item name="msg_loot_booty-black_init"><![CDATA[Obsidian Booty Box collected.]]></item>
- 
  <item name="ttip_highscoregate_time_left"><![CDATA[Remaining time]]></item>
  <item name="ttip_highscoregate_wave"><![CDATA[Current wave]]></item>
  <item name="ttip_highscoregate_score"><![CDATA[Current points]]></item>
@@ -2118,13 +2083,13 @@ Increases rocket damage by 25%, but also increases rocket launcher reload time b
  <item name="ttip_btn_droneFormation_PINCER"><![CDATA[Pincer Formation
 Increases laser damage by 3% against other players and provides an additional 5% honor point bonus. However, it reduces shield penetration by 10%.]]></item>
  <item name="ttip_btn_droneFormation_DOUBLE_ARROW"><![CDATA[Double Arrow Formation
-Increases shield penetration by 10%, but reduces shield power by 20%.]]></item>
+Increases shield penetration by 5%, but reduces shield power by 20%.]]></item>
  <item name="ttip_btn_droneFormation_DIAMOND"><![CDATA[Diamond Formation
 Your shield regenerates 1% of your max shield power per second, up to a maximum of 5,000 per second. But hit points are reduced by 30%.]]></item>
  <item name="ttip_btn_droneFormation_CHEVRON"><![CDATA[Chevron Formation
 Increases rocket damage by 50%, but ship hit points will be reduced by 20%.]]></item>
  <item name="ttip_btn_droneFormation_MOTH"><![CDATA[Moth Formation
-Increases shield penetration by 20%. Increases hit points by 20%, as well. But weakens your shield strength at a rate of 5% per second.]]></item>
+Increases shield penetration by 5%. Increases hit points by 20%, as well. But weakens your shield strength at a rate of 1% per second.]]></item>
  <item name="ttip_btn_droneFormation_CRAB"><![CDATA[Crab Formation
 Increases your shield absorption by 20%, but reduces your speed by 20%, as well.]]></item>
  <item name="ttip_btn_droneFormation_HEART"><![CDATA[Heart Formation
@@ -2136,11 +2101,11 @@ Increases you shield power by 10% and your hit points by 20%. Reduces, however, 
  <item name="ttip_btn_droneFormation_BAT"><![CDATA[Bat Formation
 Increases the damage you cause to NPCs by 8% and earns you 8% more XP, as well. Decreases your speed by 15%.]]></item>
  <item name="ttip_btn_droneFormation_RING"><![CDATA[Ring Formation
--25% Laser damage
-+85% Shields]]></item>
+Shield points are increased by 85%; however, speed is reduced by 5%, laser damage is reduced by 25%, and cooldown times for rockets and rocket launchers are increased by 25%.]]></item>
  <item name="ttip_btn_droneFormation_DRILL"><![CDATA[Drill Formation
--50% Schildwert und Schild-Absorbation
-+50% Laserschaden]]></item>
+Laser damage is increased by 20%; however, shield points are reduced by 25%, shield spread by 5%, and speed by 5%.]]></item>
+<item name="ttip_btn_droneFormation_WHEEL"><![CDATA[Wheel Formation
+Speed is increased by 5%; however, laser damage is reduced by 20%, and this formation drains shields by 5% per second.]]></item>
  <item name="ttip_btn_droneFormation_VETERAN"><![CDATA[Veteran Formation
 -20% Laserschaden, Schildwert und Hitpoints
 +50% Ehre]]></item>
@@ -2150,8 +2115,6 @@ Increases the damage you cause to NPCs by 8% and earns you 8% more XP, as well. 
  <item name="ttip_btn_droneFormation_DOUBLE_WHEEL"><![CDATA[Doppel Rad Formation
 -15% Laserschaden
 +10% Geschwindigkeit]]></item>
-<item name="ttip_btn_droneFormation_WHEEL"><![CDATA[Wheel Formation
-Speed is increased by 5%; however, laser damage is reduced by 20%, and this formation drains shields by 5% per second.]]></item>
  <item name="ttip_btn_droneFormation_X"><![CDATA[X Formation
 -30% Hitpoints
 +100% Raketenschaden (für standard Raketen und Raketenwerfer Raketen)]]></item>
@@ -2162,7 +2125,6 @@ Protze mit der Wellen Formation, diese Dronen wissen wie sie sich bewegen!)]]></
  <item name="msg_swnotallowed_map"><![CDATA[Warp not allowed on this map.]]></item>
  <item name="msg_swblocked"><![CDATA[Attention! Warp aborted.]]></item>
  <item name="msg_swstarted"><![CDATA[Connection activated. Beginning warp.]]></item>
- <item name="msg_sastarted"><![CDATA[Connection activated. Beginning activate.]]></item>
  <item name="msg_swnotallowed_fight"><![CDATA[No warping while engaged in combat!]]></item>
  <item name="ttip_shipWarp_btn"><![CDATA[Ship warp]]></item>
  <item name="warp_win_window_title"><![CDATA[Warp controls]]></item>
@@ -2176,8 +2138,6 @@ Protze mit der Wellen Formation, diese Dronen wissen wie sie sich bewegen!)]]></
  <item name="ttip_warp_win_close_btn"><![CDATA[Abort warp]]></item>
  <item name="msg_swcountdown_p"><![CDATA[Warp: %SECONDS%]]></item>
  <item name="msg_swcountdown_s"><![CDATA[Warp finished in 1 second]]></item>
- <item name="msg_sacountdown_p"><![CDATA[Activate: %SECONDS%]]></item>
- <item name="msg_sacountdown_s"><![CDATA[Activate finished in 1 second]]></item>
  <item name="msg_swnoactiveships"><![CDATA[Cannot warp. You do not have a flight-ready ship.]]></item>
  <item name="title_questwin"><![CDATA[Communication window - Mission Control]]></item>
  <item name="tab_questwin_quests"><![CDATA[Missions]]></item>
@@ -2219,13 +2179,11 @@ Complete this mission for particularly valuable rewards.]]></item>
  <item name="title_questwin_no_quests_available"><![CDATA[No available missions]]></item>
  <item name="desc_questwin_no_quests_available_NYX"><![CDATA[Well done, pilot. You have completed all the tasks available.
 Stop by tomorrow and take on some more.]]></item>
- <item name="desc_questwin_no_event_quests_available_NYX"><![CDATA[There are no missions currently available for you. Make sure you check in on a regular basis, so you don't miss any!]]></item>
- <item name="desc_questwin_no_weekly_event_quests_available_NYX"><![CDATA[TBD]]></item>
+ <item name="desc_questwin_no_event_quests_available_NYX"><![CDATA[There are no missions currently available to you. But make sure you check in on a regular basis so you don't miss any!]]></item>
  <item name="ttip_questwin_notacceptable_TOOMANY"><![CDATA[Mission unavailable. You may only have %AMOUNT% missions active at the same time.]]></item>
  <item name="ttip_questwin_notacceptable_TOOLOWLEVEL"><![CDATA[You have to reach level %AMOUNT% to be able to accept this mission.]]></item>
  <item name="ttip_questwin_notacceptable_DATE"><![CDATA[This mission will be available in %BEGIN% and lasts %TIME%.]]></item>
  <item name="ttip_questwin_notacceptable_PRE_QUEST"><![CDATA[%MIN% of %MAX% missions have been completed to unlock this mission.]]></item>
- <item name="ttip_questwin_notacceptable_EVENT"><![CDATA[This mission is only available during a special event.]]></item>
  <item name="ttip_questwin_link_eppp"><![CDATA[Show this player's pilot profile page]]></item>
  <item name="label_questslots_free_s"><![CDATA[%AMOUNT% mission slots remaining]]></item>
  <item name="label_questslots_free_p"><![CDATA[%AMOUNT% mission slots remaining]]></item>
@@ -2375,10 +2333,6 @@ The Battle Station's deflector is now being charged.]]></item>
  <item name="log_msg_gg_reward_kronos_part_s"><![CDATA[Part received for the Kronos Gate.]]></item>
  <item name="log_msg_gg_reward_kronos_part_p"><![CDATA[%COUNT% parts received for the Kronos Gate.]]></item>
  <item name="log_msg_gg_build_complete_kronos"><![CDATA[Kronos Gate erected.]]></item>
- <item name="log_msg_gg_completed_wildpet_easy"><![CDATA[Galaxy Gate P.E.T Attack (easy) completed.]]></item>
- <item name="log_msg_gg_completed_wildpet_hard"><![CDATA[Galaxy Gate P.E.T Attack (hard) completed.]]></item>
- <item name="log_msg_gg_completed_tunnel_of_terror"><![CDATA[Vortex of Terror Gate completed.]]></item>
- <item name="log_msg_gg_completed_permafrost_fissure"><![CDATA[Permafrost Fissure Gate completed.]]></item>
  <item name="msg_pending_mails_s"><![CDATA[You still have unread messages in your inbox.]]></item>
  <item name="msg_pending_mails_p"><![CDATA[You still have %COUNT% unread messages in your inbox.]]></item>
  <item name="ttip_fullscreen_btn_disabled"><![CDATA[Please update your FlashPlayer to use the fullscreen mode.]]></item>
@@ -2558,7 +2512,7 @@ The Battle Station's deflector is now being charged.]]></item>
  <item name="tdm_popup_no_match_for_faction_message"><![CDATA[There is no game available for this company.]]></item>
  <item name="tdm_result_msg"><![CDATA[Team Deathmatch:
  %WINNER% has defeated %LOSER% with a score of %POINTS_WINNER% to %POINTS_LOSER%.
- Match duration: %TIME%.]]></item>
+ The game has lasted %TIME%.]]></item>
  <item name="friendlyfire_disabled"><![CDATA[Friendly fire disabled]]></item>
  <item name="tdm_status_event_headline"><![CDATA[Team Deathmatch Status:]]></item>
  <item name="tdm_status_lives_remaining"><![CDATA[Lives:]]></item>
@@ -2607,8 +2561,6 @@ The Battle Station's deflector is now being charged.]]></item>
  <item name="gameentry_hintwindow_message_policychanges_eic"><![CDATA[Orders from on high! Due to a company policy change, you're being upgraded to Level 5 and being issued a Piranha class ship. And as a welcome basket to our newest Scorpion, you also get a few other small, practical things. This all is no excuse for laziness, though: get to Mission Control and look for your next task!]]></item>
  <item name="gameentry_hintwindow_message_policychanges_vru"><![CDATA[The memo I'm holding says that due to a change in company policy, your whole class of new Cobra members not only get promoted to Level 5, but also are being issued a goodie bag of practical items and a brand-new Piranha class starship! VRU takes care of its own! This is truth. Now - report to Mission Control!]]></item>
  <item name="gameentry_hintwindow_button_openshop"><![CDATA[Open Shop Now]]></item>
- <item name="gameentry_hintwindow_button_openequipment"><![CDATA[Open Equipment Now]]></item>
-
  <item name="gameentry_hintwindow_button_openskylab"><![CDATA[Open Skylab]]></item>
  <item name="gameentry_hintwindow_button_confirmation"><![CDATA[OK]]></item>
  <item name="gameentry_hintoverviewwindow_button_archive"><![CDATA[Archive]]></item>
@@ -2646,9 +2598,9 @@ The Battle Station's deflector is now being charged.]]></item>
  <item name="gameentry_hintwindow_message_quickbuybar_eic"><![CDATA[If gathering munitions is taking too long for you, you can also buy them by clicking on the green Quick Shop button. Try to maintain yourself equipped with the best of what you can afford: it's a smart investment.]]></item>
  <item name="gameentry_hintwindow_message_quickbuybar_vru"><![CDATA[If gathering munitions is taking too long for you, you can also buy them by clicking on the green Quick Shop button. And remember, you can tinker and improve and upgrade just about anything!]]></item>
  <item name="gameentry_hintwindow_title_preparebattle"><![CDATA[Quickslots]]></item>
- <item name="gameentry_hintwindow_message_preparebattle_mmo"><![CDATA[When you expand the quickslot bar, you can drag and drop munitions into the quickslots you want to use as well as open all the munition menus. Get comfortable with your controls, pilot; speed saves lives.]]></item>
- <item name="gameentry_hintwindow_message_preparebattle_eic"><![CDATA[When you expand the quickslot bar, you can drag and drop munitions into the quickslots you wish to use, as well as open the various munition menus. Familiarize yourself with your controls: Fast reaction times saves lives.]]></item>
- <item name="gameentry_hintwindow_message_preparebattle_vru"><![CDATA[When you expand the quickslot bar, you can drag and drop munitions into the quickslots you want to use, as well as open the various munition menus. Know your tools, and you'll know your constraints: get used to your controls and displays!]]></item>
+ <item name="gameentry_hintwindow_message_preparebattle_mmo"><![CDATA[When you expand the quickslot bar, you can drag and drop munitions into the quickslots you want to use as well as open all the munitions menus. Get comfortable with your controls, pilot; speed saves lives.]]></item>
+ <item name="gameentry_hintwindow_message_preparebattle_eic"><![CDATA[When you expand the quickslot bar, you can drag and drop munitions into the quickslots you wish to use, as well as open the various munitions menus. Familiarize yourself with your controls, always: fast reaction times save lives.]]></item>
+ <item name="gameentry_hintwindow_message_preparebattle_vru"><![CDATA[When you expand the quickslot bar, you can drag and drop munitions into the quickslots you want to use, as well as open the various munitions menus. Know your tools, and you'll know your constraints: get used to your controls and displays!]]></item>
  <item name="gameentry_hintwindow_title_howtojump"><![CDATA[Jump Gates]]></item>
  <item name="gameentry_hintwindow_message_howtojump_mmo"><![CDATA[If you're near a Gate, you can perform a jump by clicking on the Jump icon over the Gate, or by pressing the J key.]]></item>
  <item name="gameentry_hintwindow_message_howtojump_eic"><![CDATA[If you are near a Gate, you can perform a jump by pressing the J key, or by clicking on the Jump icon over the Gate.]]></item>
@@ -2661,17 +2613,6 @@ The Battle Station's deflector is now being charged.]]></item>
  <item name="gameentry_hintwindow_message_buyequipment_mmo"><![CDATA[You can always buy better equipment from the Shop. Click on OPEN SHOP NOW and browse the Ships, Lasers, Generators, and more on offer there. Ahem. .....This has been an MMO-approved message.]]></item>
  <item name="gameentry_hintwindow_message_buyequipment_eic"><![CDATA[EIC requires me to inform you that you can click on OPEN SHOP NOW and browse the Ships, Lasers, Generators, and more on offer there. Ahem. ..."Only the best for the pride of Earth's security forces."]]></item>
  <item name="gameentry_hintwindow_message_buyequipment_vru"><![CDATA[You can always buy better equipment from the Shop, all of it thoroughly tested by and approved for VRU use! Click on OPEN SHOP NOW to browse the Ships, Lasers, Generators, and more on offer there.]]></item>
- 
- <item name="gameentry_hintwindow_title_buyanduseequipment"><![CDATA[Shop and Hangar]]></item>
- <item name="gameentry_hintwindow_message_buyanduseequipment_mmo"><![CDATA[You're on your way to becoming a real asset to MMO - and the higher-ups agree. They've set you up with a sweet little ship - go to the Hangar to check it out! You probably already know that you can always buy better equipment in the Shop, too. Well done.]]></item>
- <item name="gameentry_hintwindow_message_buyanduseequipment_eic"><![CDATA[You are becoming a true asset to EIC, and I'm not the only one who thinks so. High Command has granted you a bonus: a rather nice little vessel. You can visit it in the Hangar. And should you want to purchase better equipment for it or another of your ships, you can do so in the Shop.]]></item>
- <item name="gameentry_hintwindow_message_buyanduseequipment_vru"><![CDATA[You're doing VRU proud. I'm not the only one to think so: the Security Circle has sent you a brand-new ship! Congratulations! Look for it in the Hangar - and if you want to buy it or another of your ships some better equipment, you can always find a good deal in the Shop.]]></item>
- <item name="gameentry_hintwindow_title_allocateship"><![CDATA[Allocate Ship]]></item>
- <item name="gameentry_hintwindow_message_allocateship"><![CDATA[Each Hangar hall has room for one spaceship. Place one in it with the "Allocate" button. Warning! If that Hangar already contains a ship, that ship will automatically be sold!]]></item>
- 
- <item name="gameentry_hintwindow_title_dragtoequip"><![CDATA[Equip Ship]]></item>
- <item name="gameentry_hintwindow_message_dragtoequip"><![CDATA[Equipping your ship is as easy as drag and drop! Open the Hangar while you're at your Headquarters, and drag the item in question into the appropriate slot on your ship. That's it!]]></item>
- 
  <item name="gameentry_hintwindow_title_shipwarp"><![CDATA[Changing Ships]]></item>
  <item name="gameentry_hintwindow_message_shipwarp_mmo"><![CDATA[You can change ships by clicking on the Ship Warp button. Make yourself comfortable later; we have things to do now.]]></item>
  <item name="gameentry_hintwindow_message_shipwarp_eic"><![CDATA[You can change ships by clicking on the Ship Warp button. Take my advice, though: wait until downtime to hang any artwork, and use something stronger than standard-issue Stikplast.]]></item>
@@ -2689,9 +2630,9 @@ The Battle Station's deflector is now being charged.]]></item>
  <item name="gameentry_hintwindow_message_galaxygates_eic"><![CDATA[%HERONAME%, it is my honor to welcome you to the Scorpions. You can now use your Energy Spins to build Galaxy Gates, which will take you to dangerous, far-flung, and potentially very profitable corners of the galaxy. Er, as EIC's mandatory recruitment speech puts it: "no longer must humanity cower in the dark orbits of our own solar system - you are now part of our greater destiny among the stars!"]]></item>
  <item name="gameentry_hintwindow_message_galaxygates_vru"><![CDATA[%HERONAME%, you are now officially a Cobra! Your Energy Spins can now build Galaxy Gates, which will take you to distant, xeno-filled, and potentially profitable sectors. As VRU's recruitment department has beautifully put it: "no longer must humanity cower in the dark orbits of our own solar system - you are now part of our greater destiny among the stars!"]]></item>
  <item name="gameentry_hintwindow_title_equip_plt2021"><![CDATA[Equip Your Rockets!]]></item>
- <item name="gameentry_hintwindow_message_equip_plt2021_mmo"><![CDATA[The right equipment can save your life, rookie. I'm not sure why you haven't equipped the more powerful PLT-2021 rockets yet, instead of the ordnance you're depending on now, but if I were you - I would!]]></item>
- <item name="gameentry_hintwindow_message_equip_plt2021_eic"><![CDATA[You need to be methodical and prepared in this line of work, and that means keeping an eye on the ordnance you're using and how it stacks up against your options. You should equip those PLT-2021 Rockets before you see action - they could save your life!]]></item>
- <item name="gameentry_hintwindow_message_equip_plt2021_vru"><![CDATA[Innovation, progress, upgrading - VRU values, all! You may want to keep them in mind more: you've got PLT-2021s in your hold, and they're a lot more powerful than what you have equipped. I'd strongly suggest switching them in before your next battle!]]></item>
+ <item name="gameentry_hintwindow_message_equip_plt2021_mmo"><![CDATA[The right equipment can save your life, rookie. I'm not sure why you haven't equipped the more powerful PTL-2021 rockets yet, instead of the ordnance you're depending on now, but if I were you - I would!]]></item>
+ <item name="gameentry_hintwindow_message_equip_plt2021_eic"><![CDATA[You need to be methodical and prepared in this line of work, and that means keeping an eye on the ordnance you're using and how it stacks up against your options. You should equip those PTL-2021 Rockets before you see action - they could save your life!]]></item>
+ <item name="gameentry_hintwindow_message_equip_plt2021_vru"><![CDATA[Innovation, progress, upgrading - VRU values, all! You may want to keep them in mind more: you've got PTL-2021s in your hold, and they're a lot more powerful than what you have equipped. I'd strongly suggest switching them in before your next battle!]]></item>
  <item name="gameentry_hintwindow_title_skylab"><![CDATA[The Skylab]]></item>
  <item name="gameentry_hintwindow_message_skylab_mmo"><![CDATA[I recommend you build yourself that miracle of Martian technology: the Skylab!  You'll be able to refine the raw materials you find for yourself, to upgrade your weapons - or look under Trade Raw Materials to sell them for Credits.]]></item>
  <item name="gameentry_hintwindow_message_skylab_eic"><![CDATA[I recommend you build yourself that miracle of Earthling technology: the Skylab! You'll be able to refine the raw materials you find for yourself, to upgrade your weapons - or look under Trade Raw Materials to sell them for Credits.]]></item>
@@ -2701,12 +2642,12 @@ The Battle Station's deflector is now being charged.]]></item>
  <item name="gameentry_hintwindow_message_jumpgatesdevice_eic"><![CDATA[Good work, there! You gave those spineless blobs what for. They've withdrawn, for now. Use your built-in Jump CPU 1 to jump directly back to our home map. You're needed here once more!]]></item>
  <item name="gameentry_hintwindow_message_jumpgatesdevice_vru"><![CDATA[Oh, wonderful job! Those Lordakia certainly weren't expecting that. Let's get you back here; there's always work to do! Use the Jump CPU 1 - it's built into your ship, and always allows you to jump straight back to your home map.]]></item>
  <item name="gameentry_hintwindow_title_unknown_dangers"><![CDATA[Unencountered Dangers]]></item>
- <item name="gameentry_hintwindow_message_unknown_dangers_mmo"><![CDATA[Good work, there! MMO is formally thanking you with Premium status, but don't let it go to your head: that last wave only consisted of Sibelon cannon-fodder. When an actual Sibelon shows up on your display, be prepared for a real fight! But don't let that stop you from exploring deep space. That's where the richest prizes are earned.]]></item>
- <item name="gameentry_hintwindow_message_unknown_dangers_eic"><![CDATA[First-class work! Don't let EIC's reward of Premium status go to your head. You've confronted the hapless cannon fodder that the Sibelon feed into their war machine, but you've not come across an actual Sibelon yet. The first time one comes up on your display, steel yourself for a deadly opponent! As you explore deeper into space, you'll have a chance to show your mettle.]]></item>
+ <item name="gameentry_hintwindow_message_unknown_dangers_mmo"><![CDATA[Good work, there! MMO is formally thanking you with Premium status, but don't let it go to your head: that last wave consisted of Sibelon cannon-fodder, no more. When an actual Sibelon shows up on your display, be prepared for a real fight! But don't let that stop you from exploring deep space. That's where the richest prizes are earned.]]></item>
+ <item name="gameentry_hintwindow_message_unknown_dangers_eic"><![CDATA[First-class work! Don't let EIC's reward of Premium status go to your head just yet. You've confronted the hapless cannon fodder that the Sibelon feed into their war machine, but you've not come across an actual Sibelon yet. The first time one comes up on your display, steel yourself for a deadly opponent! As you explore deeper into space, you'll have a chance to show your mettle.]]></item>
  <item name="gameentry_hintwindow_message_unknown_dangers_vru"><![CDATA[Congratulations! VRU has rewarded you for your efforts with Premium status - but don't let that make you cocky! You still haven't met humanity's greatest enemy: the Sibelon; you've just come across their cannon-fodder vassals. Hone your skills and ready yourself, and eventually you'll be able to face one in combat, in the deep, wonderful, mysterious reaches of space.]]></item>
  <item name="gameentry_hintwindow_title_attack"><![CDATA[Attack!]]></item>
  <item name="gameentry_hintwindow_message_attack_mmo"><![CDATA[All right, rookie, here's a quick rundown of your new ship's basic offensive commands. Click on an enemy to select it as your target. Press <font color="%marked_yellow%">1 on your keyboard</font> to <font color="%marked_yellow%">fire your lasers</font>. Pressing the 1 button again will stop them firing. To <font color="%marked_yellow%">launch a rocket</font> at your target, press <font color="%marked_yellow%">2 on your keyboard</font>. That's it!]]></item>
- <item name="gameentry_hintwindow_message_attack_eic"><![CDATA[Let's get used to your new ship's controls, in terms of offence. First, click on any enemy to select them as your target. Then, press <font color="%marked_yellow%">1 on your keyboard</font> to <font color="%marked_yellow%">fire your lasers</font>; pressing 1 again will stop them firing. Press <font color="%marked_yellow%">2 on your keyboard</font> to <font color="%marked_yellow%">launch a rocket</font>.]]></item>
+ <item name="gameentry_hintwindow_message_attack_eic"><![CDATA[Let's get your used to your new ship's controls, in terms of offence. First, click on any enemy to select them as your target. Then, press <font color="%marked_yellow%">1 on your keyboard</font> to <font color="%marked_yellow%">fire your lasers</font>; pressing 1 again will stop them firing. Press <font color="%marked_yellow%">2 on your keyboard</font> to <font color="%marked_yellow%">launch a rocket</font>.]]></item>
  <item name="gameentry_hintwindow_message_attack_vru"><![CDATA[I do so love new gadgets, don't you? Let's get you used to the controls on yours! It's simple: click on any enemy to select them as your target, then pressing <font color="%marked_yellow%">1 on your keyboard</font> will <font color="%marked_yellow%">fire your lasers</font>, and pressing 1 again will stop them firing. Or, you can press <font color="%marked_yellow%">2 on your keyboard</font> to <font color="%marked_yellow%">launch a rocket</font> at your target.]]></item>
  <item name="gameentry_hintwindow_title_fullcargobox"><![CDATA[Your cargo is full]]></item>
  <item name="gameentry_hintwindow_message_fullcargobox_mmo"><![CDATA[Your cargo is completely full. To make room you can sell resources at the refinery in your home base or by upgrading the ore yourself using the refining option from the menu on the bottom.]]></item>
@@ -2757,12 +2698,7 @@ The Battle Station's deflector is now being charged.]]></item>
  <item name="targeted_hintwindow_message_recallfriends"><![CDATA[Some of your friends haven't been around lately and you need their help to dominate the Galaxy? Recall them now!]]></item>
  <item name="targeted_hintwindow_button_recallfriends"><![CDATA[Recall friends]]></item>
  <item name="targeted_hintwindow_title_traininggrounds"><![CDATA[Ultimate Battle Arena]]></item>
- <item name="targeted_hintwindow_message_traininggrounds"><![CDATA[The Ultimate Battle Arena is a safe place to improve your PvP skills in rapid 1 vs. 1 duels. Win or lose, dare to try: you won't lose any resources or suffer damage to your drones. After the duel, you'll be returned to the map you were on before, with full HP and shields.]]></item>
- <item name="targeted_hintwindow_title_motivationalSurvey"><![CDATA[Take part in the player survey!]]></item>
- <item name="targeted_hintwindow_message_motivationalSurvey"><![CDATA[We are constantly working on making our game more interesting and appealing, and your opinion is very important to us. Please take part in our survey and help us shape the future of DarkOrbit!<br>The survey will open in a separate window and will take you no more than 15 minutes.<br>You will receive 250 Extra Energy as a small thank you gift!]]></item>
- <item name="targeted_hintwindow_message_motivationalSurvey_pay_feature_analysis"><![CDATA[Dear Space Pilot,<br><br>We are constantly trying to improve fairness and prices, and we request your assistance!<br><br>Please take this 10 minute survey and give us your feedback!]]></item>
- <item name="targeted_hintwindow_button_survey_open"><![CDATA[Take the survey]]></item>
- <item name="targeted_hintwindow_button_survey_cancel"><![CDATA[No thank you]]></item>
+ <item name="targeted_hintwindow_message_traininggrounds"><![CDATA[The Ultimate Battle Arena is a safe place to improve your PvP skills in rapid 1 vs. 1 duels. Win or lose, dare to try: you won't lose any resources or suffer damage to your drones. After the duel, you'll be returned to the map you were on before with full HP and shields.]]></item>
  <item name="categoryBar"><![CDATA[Categories]]></item>
  <item name="premiumSlotBar"><![CDATA[Premium Bar]]></item>
  <item name="standardSlotBar"><![CDATA[Standard Bar]]></item>
@@ -2834,7 +2770,6 @@ The Battle Station's deflector is now being charged.]]></item>
  <item name="label_traininggrounds_battles"><![CDATA[Duels fought: %AMOUNT%]]></item>
  <item name="label_traininggrounds_current_score"><![CDATA[Current score: %AMOUNT%]]></item>
  <item name="label_traininggrounds_general_desc"><![CDATA[Play a quick 1 vs. 1 duel against a random opponent.<br />Once the duel is complete, you will be returned to the map you were on, with your HP and shield refilled.<br />A tip: if you lose the duel, you will not lose any of your drones or resources.]]></item>
- <item name="label_traininggrounds_registration_unavailable_gear_score"><![CDATA[You’re too weak to fight in the Battle Arena. Toughen up, improve your equipment, and return to face the challenge!]]></item>
  <item name="btn_traininggrounds_join_queue"><![CDATA[Matchmaking]]></item>
  <item name="btn_traininggrounds_cancel"><![CDATA[Cancel]]></item>
  <item name="log_msg_traininggrounds_cannot_join"><![CDATA[You CANNOT enter into this duel until you have finished your current combat.]]></item>
@@ -2953,7 +2888,7 @@ The Battle Station's deflector is now being charged.]]></item>
  <item name="plague_condition_kill_healthy_players"><![CDATA[You must destroy a non-host!]]></item>
  <item name="plague_condition_kill_infected_players"><![CDATA[Destroy an infected person.]]></item>
  <item name="msg_easter_egg_found"><![CDATA[Surprise! Look what you found!]]></item>
- <item name="label_switch_2d3d_restart"><![CDATA[Switching between 2D and 3D requires a client restart. Do you want to reboot the game now?]]></item>
+ <item name="label_switch_2d3d_restart"><![CDATA[Switching from 2D to 3D requires a client restart. Do you want to reboot the game now?]]></item>
  <item name="ttip_inactive_mine_training_ground_map"><![CDATA[You can't lay these mines in the Ultimate Battle Arena!]]></item>
  <item name="ttip_inactive_laser_training_ground_map"><![CDATA[You can't use this ammunition in the Ultimate Battle Arena!]]></item>
  <item name="log_msg_traininggrounds_prohibit_ammo_pib100"><![CDATA[You may not use PIB-100 in the Ultimate Battle Arena. Auto-selected ammo: %AMMO%.]]></item>
@@ -2982,15 +2917,15 @@ The Battle Station's deflector is now being charged.]]></item>
  <item name="ttip_setting_quality_zones3D"><![CDATA[Determines the quality of the block zones displayed.]]></item>
  <item name="client_selection_3d"><![CDATA[3D]]></item>
  <item name="client_selection_2d"><![CDATA[No thanks - I'll stick with the 2D version for now.]]></item>
- <item name="client_selection_info"><![CDATA[Try DarkOrbit out in 3D! <font color="#fbcc00">The new 3D client has arrived.</font> Update your graphics card driver and your Flash player. You'll also need to enable Hardware Acceleration. (Right-click -> Settings)<br/><br/> Play in 3D and become a <font color="#fbcc00">"Multi-Dimensional Pilot"!</font>]]></item>
- <item name="client_selection_headline"><![CDATA[DarkOrbit is now in 3D!]]></item>
+ <item name="client_selection_info"><![CDATA[Try OneUltimate out in 3D! <font color="#fbcc00">The new 3D client has arrived.</font> Update your graphics card driver and your Flash player. You'll also need to enable Hardware Acceleration. (Right-click -> Settings)<br/><br/> Play in 3D and become a <font color="#fbcc00">"Multi-Dimensional Pilot"!</font>]]></item>
+ <item name="client_selection_headline"><![CDATA[OneUltimate is now in 3D!]]></item>
  <item name="ttip_3d_not_available"><![CDATA[The 3D experience is not available to you because either your Flash player is outdated, your graphics card doesn't support it, or hardware acceleration is deactivated.]]></item>
- 
+
  <item name="client_selection_faq"><![CDATA[Learn more about the 3D version and system requirements]]></item>
  <item name="client_selection_faq_link"><![CDATA[http://www.bigpoint.com/darkorbit/board/threads/3d-faq.102621/ ]]></item>
- <item name="client_selection_info_no_3d"><![CDATA[DarkOrbit has entered the next dimension - <font color="#fbcc00">The new client has arrived.</font> Unfortunately, we have detected that you can’t currently run the 3D version. Update your graphics card drivers, your Flash player, and enable Hardware Acceleration.<br/><br/> Once your PC is ready, play in 3D and become a <font color="#fbcc00">“Multi-Dimensional Pilot"!</font>]]></item>
+ <item name="client_selection_info_no_3d"><![CDATA[OneUltimate has entered the next dimension - <font color="#fbcc00">The new client has arrived.</font> Unfortunately, we have detected that you can’t currently run the 3D version. Update your graphics card drivers, your Flash player, and enable Hardware Acceleration.<br/><br/> Once your PC is ready, play in 3D and become a <font color="#fbcc00">“Multi-Dimensional Pilot"!</font>]]></item>
  <item name="client_selection_continue_2d"><![CDATA[Play in 2D]]></item>
- 
+
 <item name="msg_reward_trainingArenaSeason_package_received"><![CDATA[Ultimate Battle Arena Season %SEASON_NAME%: you have received the %RANKING_POSITION% reward pack.]]></item>
 <item name="label_traininggrounds_season"><![CDATA[%NAME% - Time left: %DATE%]]></item>
 <item name="button_tas_match"><![CDATA[Match]]></item>
@@ -3008,194 +2943,14 @@ The Battle Station's deflector is now being charged.]]></item>
 <item name="label_traininggrounds_no_season"><![CDATA[No Season currently running]]></item>
 <item name="label_TAS_no_season_ranking"><![CDATA[There is no Season running, and therefore no medals to win]]></item>
 <item name="log_msg_gather_jump-cpu_p"><![CDATA[You have received a Jump CPU 1]]></item>
+
 <item name="targeted_hintwindow_title_proActionBar"><![CDATA[Pro action bar]]></item>
 <item name="targeted_hintwindow_message_proActionBar"><![CDATA[The pro action bar gives you a quick access to those items that you don't use frequently enough to have them in the main action bar but to which you want to have a quick access to them in case of need. You can open and close it using SHIFT button, it also closes automatically once you have selected the item you needed. Of course you can set up it's look and position from the config mode in the game settings. While the pro bar is open the shortcuts keys you regularly use only affect this bar, so that by pressing SHIFT and then 1 you will trigger the item you had in that slot.]]></item>
-<item name="targeted_hintwindow_title_assembly"><![CDATA[Assembly]]></item>
-<item name="targeted_hintwindow_message_assembly"><![CDATA[Choose any item from the list and click the Assemble button once you have all the necessary components and collectibles!]]></item>
+
 <item name="setting_pro_action_bar_enabled"><![CDATA[Display pro action bar]]></item>
 <item name="pro_action_bar_keyboard_input_enabled"><![CDATA[Use key bindings for pro action bar]]></item>
 <item name="setting_auto_hide_pro_action_bar_enabled"><![CDATA[Auto hide pro action bar]]></item>
+
 <item name="keyboard_action_show_pro_action_bar"><![CDATA[Show/Hide Pro Action Bar]]></item>
-
-<item name="streuner_gate_narrative_map1"><![CDATA[Attention all Streuner in or near the Kuiper Belt! We are under attack! This is not a drill. Prepare defensive measures at once: Code 1701 Delta!]]></item>
-<item name="streuner_gate_narrative_map2"><![CDATA[Stranger, I don't know who you are - but let's talk civilly, human to human. ...What, has fear struck you dumb? Don't be too hard on yourself: my soldiers Shock and Awe often have that effect!]]></item>
-<item name="streuner_gate_narrative_map3"><![CDATA[What exactly are you trying to prove, here? Are you after fame? Credits? I warn you, if you keep coming - we Streuners stick together! And we'll unite against any invaders!]]></item>
-<item name="streuner_gate_narrative_map4"><![CDATA[See these turrets? You might recognize their design... Donations from our highly esteemed patrons! And after all, we Streuners can't look gift allies in the mouth.]]></item>
-<item name="streuner_gate_narrative_map5_1"><![CDATA[This is your last warning. Reverse course, or face the consequences. This is our home, and we'll defend it to the very last Streuner!]]></item>
-<item name="emperor_streuner_speech_streuner_gate"><![CDATA[Emperor Erreet Falard to unidentified ship: you are out of warnings. Streuners, to me! I'll take care of this corporate lapdog personally.]]></item>
-<item name="emperor_sibelon_speech_streuner_gate"><![CDATA[That idiot Erreet's fleet is coming apart. Streuners can be useful if they're properly armed, but I suppose breeding tells: sooner or later, human filth is still human filth. <br/>What? You dare attack me?! Then come and get it, vermin!]]></item>
-
-<item name="log_msg_gg_completed_streuner"><![CDATA[Kuiper Galaxy Gate successfully completed.]]></item>
-<item name="label_traininggrounds_general_description"><![CDATA[Play a quick 1 vs. 1 duel against a random opponent.<br />Once the duel is complete, you will be returned to the map you were on, with your HP and shield refilled.<br />A tip: if you lose the duel, you will not lose any of your drones or resources. Nanohull and Ore update won´t be available during UBA matches.]]></item>
-
-<item name="title_assembly"><![CDATA[Assembly]]></item>
-<item name="assembly_button_ready"><![CDATA[Assemble]]></item>
-<item name="assembly_button_collect"><![CDATA[Collect]]></item>
-<item name="assembly_build_not_possible_unique_max"><![CDATA[Assembly unavailable: you already own the maximum amount of the selected item(s).]]></item>
-<item name="assembly_item_tooltip_shop"><![CDATA[Get any missing parts now!]]></item>
-<item name="assembly_build_unavailable"><![CDATA[You have no items available to be assembled at the moment. The Assembly allows you to combine raw materials and collectibles to produce free ships, equipment, and items!]]></item>
-<item name="assembly_build_crafting_item"><![CDATA[Assembling %item%. Please stand by.]]></item>
-<item name="assembly_recipe_available_time"><![CDATA[Assembly complete in: %time%]]></item>
-<item name="log_message_assembly_new_items"><![CDATA[A new item is available at the Assembly: %item%]]></item>
-<item name="log_message_assembly_refund"><![CDATA[You already own the following: %item%. The following resources and collectibles have been refunded:]]></item>
-<item name="assembly_label_collect"><![CDATA[Assembled %item%]]></item>
-<item name="assembly_recipe_not_recurrent"><![CDATA[Single-use blueprint consumed.]]></item>
-<item name="assembly_no_items_for_filter"><![CDATA[No items found under the selected filter.]]></item>
-<item name="assembly_label_filter"><![CDATA[Filter]]></item>
-
-<item name="log_message_assembly_recipe_ready_to_collect"><![CDATA[Assembly of %recipename% is now complete.]]></item>
-<item name="log_message_assembly_item_collected"><![CDATA[%itemname% retrieved from the Assembly.]]></item>
-<item name="log_message_assembly_item_deduction"><![CDATA[The following items and/or collectibles were consumed to assemble %recipename%:]]></item>
-<item name="log_message_item_deducted"><![CDATA[%count% %lootId%(s) were consumed.]]></item>
-<item name="log_message_assembly_recipe_collected"><![CDATA[Collected the %recipename% and received the following item(s):]]></item>
-<item name="log_message_assembly_recipe_disabled"><![CDATA[%recipename% is no longer available to be assembled. Your resources and collectibles have been refunded.]]></item>
-
-
-<item name="assembly_no_item_for_filter"><![CDATA[No items found under the selected filter.]]></item>
-<item name="log_message_assembly_recipe_build_process_started"><![CDATA[%recipename% assembly is now under way.]]></item>
-<item name="assembly_build_not_possible_already_used"><![CDATA[This blueprint can only be used once.]]></item>
-<item name="log_message_motivational_survey_reward_booked"><![CDATA[Thank you for taking part in the survey. You've just received your gift of 250 Extra Energy.]]></item>
-
-<item name="settings_pixelationMode"><![CDATA[Turn Game into retro mode]]></item>
-<item name="assembly_item_timer_ttip"><![CDATA[Time left for this offer]]></item>
-<item name="desc_shipwarp_only_favourite_ships_info"><![CDATA[You can only Warp ships that are marked as your favorites!]]></item>
-
-<item name="log_message_assembly_pet_rename_compensation"><![CDATA[For renaming your P.E.T.:]]></item>
-
-<item name="ttip_blueprint_box_poison_pusat_design"><![CDATA[Poison Pusat design]]></item>
-<item name="ttip_blueprint_box_poison_spectrum_design"><![CDATA[Poison Spectrum design]]></item>
-<item name="ttip_blueprint_box_poison_pusat_drone_design"><![CDATA[Poison Pusat drone design]]></item>
-<item name="ttip_blueprint_box_poison_spectrum_drone_design"><![CDATA[Poison Spectrum drone design]]></item>
-
-<item name="ttip_blueprint_box_a_elite_poison"><![CDATA[Poison A-Elite design]]></item>
-<item name="ttip_blueprint_box_a_elite_poison_drone"><![CDATA[Poison A-Elite drone design]]></item>
-<item name="ttip_blueprint_box_a_elite_poison_pet"><![CDATA[Poison A-Elite P.E.T design]]></item>
-<item name="ttip_blueprint_box_a_elite_legend"><![CDATA[Legend A-Elite design]]></item>
-
-<item name="ttip_blueprint_box_legend_spectrum_design"><![CDATA[Legend Spectrum Blueprint]]></item>
-
-<item name="targeted_offer_description_opening_line"><![CDATA[Awesome gear on offer!]]></item>
-<item name="targeted_offer_description_closing_line"><![CDATA[Only available now!]]></item>
-
-
-<item name="targeted_offer_pvp_death_title"><![CDATA[Time to get revenge, pilot!]]></item>
-<item name="targeted_offer_pve_death_title"><![CDATA[Damn those alien hordes!]]></item>
-<item name="targeted_offer_pvp_kill_title"><![CDATA[Tactically astute enemy kill!]]></item>
-<item name="targeted_offer_galaxygate_completed_title"><![CDATA[Mankind loves a true hero.]]></item>
-
-<item name="rzone_registration"><![CDATA[Registration]]></item>
-<item name="rzone_leave"><![CDATA[EXIT]]></item>
-<item name="rzone_on_r_zone"><![CDATA[Leaving Refractions.]]></item>
-<item name="rzone_hint_bottom"><![CDATA[You cannot enter Refractions when in combat!]]></item>
-<item name="rzone_jump"><![CDATA[JUMP NOW!]]></item>
-<item name="rzone_on_r_zone_help"><![CDATA[It takes a short time for your nav-computer to plot your exit from Refractions.]]></item>
-<item name="rzone_confirmation"><![CDATA[Confirmation]]></item>
-<item name="title_rzone_ui"><![CDATA[Refractions]]></item>
-<item name="rzone_time_in_queue"><![CDATA[You've been waiting for:]]></item>
-<item name="rzone_register"><![CDATA[QUEUE NOW!]]></item>
-<item name="httip_rzone"><![CDATA[Refractions]]></item>
-<item name="rzone_cancel"><![CDATA[CANCEL]]></item>
-<item name="rzone_registration_unavailable"><![CDATA[REFRACTION TEMPORARILY CLOSED FOR CLEANING: our minesweeper trawlers are disposing of wreckage and debris. The Refraction will re-open for duels shortly!]]></item>
-<item name="rzone_queueing"><![CDATA[Enter Refractions]]></item>
-<item name="rzone_confirmation_help"><![CDATA[We've reserved your spot for the next jump to Refractions.]]></item>
-<item name="rzone_closing_help"><![CDATA[Refractions is unstable. Wait for it to stabilize or leave!]]></item>
-<item name="rzone_closing_time"><![CDATA[Refractions will close in:]]></item>
-<item name="rzone_registration_help"><![CDATA[Your nav-computer needs to connect to Refractions to plot your course there.]]></item>
-
-<item name="window_assembly_explanation_windowtitle"><![CDATA[Permafrost Fissure Assemblies]]></item>
-<item name="window_assembly_explanation_header"><![CDATA[This is how it works!]]></item>
-<item name="window_assembly_explanation_description"><![CDATA[Gather valuable Proxium from the Permafrost Fissure using the Subglacial CPU and create the other exotic elements to get hold of an Unstable LF-4. Burn a new hole in the galaxy!]]></item>
-<item name="window_assembly_explanation_iteminfo"><![CDATA[Damage from a minimum of 128 to a maximum of 220.]]></item>
-
-<item name="reward_booster_hours"><![CDATA[Your Proxium Doubler Booster expires in %HOURS% hours.]]></item>
-<item name="reward_booster_minutes"><![CDATA[Your Proxium Doubler Booster expires in %MINUTES% minutes.]]></item>
-<item name="dropchance_booster_hours"><![CDATA[Your Proxium Drop Booster expires in %HOURS% hours.]]></item>
-<item name="dropchance_booster_minutes"><![CDATA[Your Proxium Drop Booster expires in %MINUTES% minutes.]]></item>
-
-<item name="boosterName_30"><![CDATA[Equipment booster]]></item>
-<item name="tab_questwin_weekly_missions"><![CDATA[Weekly Missions]]></item>
-<item name="ttip_questwin_weekly_mission_exclude_explanation"><![CDATA[Accept Mission]]></item>
-<item name="ttip_questwin_icon_daily1"><![CDATA[Easy]]></item>
-<item name="ttip_questwin_icon_daily2"><![CDATA[Medium]]></item>
-<item name="ttip_questwin_icon_daily3"><![CDATA[Hard]]></item>
-<item name="desc_questwin_no_weekly_event_quests_available_NYX"><![CDATA[My systems identify that you cannot take a new weekly quest at the moment. Weekly quests become available on Monday, each week.]]></item>
-
-<item name="booster_filter_show_all"><![CDATA[Show All Boosters]]></item>
-<item name="window_event_progress_title"><![CDATA[Hatching Out!]]></item>
-<item name="window_event_progress_button_confirmation_collect_rewards"><![CDATA[Collect]]></item>
-<item name="window_event_progress_button_confirmation_collect_restart"><![CDATA[Restart]]></item>
-<item name="window_event_progress_label_event_ends"><![CDATA[Event Ends in:]]></item>
-<item name="window_event_progress_tabbar_eventprogress"><![CDATA[Progress]]></item>
-<item name="window_event_progress_tabbar_explanation"><![CDATA[Sources]]></item>
-<item name="window_event_progress_label_nextreward"><![CDATA[Next Reward:]]></item>
-<item name="window_event_progress_tooltip_package01_hatching_out"><![CDATA[15 Khyalon and 50 Bifenon]]></item>
-<item name="window_event_progress_tooltip_package02_hatching_out"><![CDATA[40 Khyalon and 60 Tetrathrin]]></item>
-<item name="window_event_progress_label_timeleft"><![CDATA[Time left:]]></item>
-<item name="window_event_progress_label_description"><![CDATA[Help remove the viral infection by collecting Viral Purge points. The more you collect, the better the rewards. With factions agreeing to award all who complete the process an LF-4. The more times you complete the process the more awards you will gain. So, its time to prepare for action.]]></item>
-<item name="window_event_progress_label_event_collection_points_hatchingout_event"><![CDATA[You can collect Viral Purge points from: Eggs, Gygerthralls, Killing the HITAC, Event Missions and Alpha, Beta and Gamma Gates.]]></item>
-<item name="ttip_event_progress"><![CDATA[Progress]]></item>
-
-<item name="targeted_offer_buy_button"><![CDATA[Get it Now!]]></item>
-<item name="targeted_offer_headline"><![CDATA[Exclusive Discount!]]></item>
-
-<item name="log_msg_gg_completed_quarantine_zone"><![CDATA[You've won, pilot! Quarantine Zone successfully completed.]]></item>
-<item name="msg_quarantine_zone_get_ready"><![CDATA[Quarantine Zone activated.]]></item>
-<item name="msg_quarantine_zone_no_pvp"><![CDATA[Sorry, it's not possible to attack other pilots when in the Quarantine Zone.]]></item>
-<item name="msg_quarantine_zone_not_in_group"><![CDATA[Access denied - your group needs at least %COUNT% members to enter the Quarantine Zone.]]></item>
-<item name="msg_quarantine_zone_wrong_gate_stage"><![CDATA[Access denied - you must be at the same stage as the group leader.]]></item>
-<item name="msg_quarantine_zone_max_players_reached"><![CDATA[Quarantine Zone server is at maximum capacity. Consider joining or creating a new group.]]></item>
-<item name="msg_quarantine_zone_activation_cancelled"><![CDATA[Activation canceled – all group members must remain in the activation zone to start the gate.]]></item>
-<item name="msg_quarantine_zone_already_completed"><![CDATA[Access denied - Your group already completed the Quarantine Zone.]]></item>
-
-<item name="title_plague_kill_progress_window"><![CDATA[Plague Alert!]]></item>
-<item name="kill_progress_window_headline"><![CDATA[Kill Progress]]></item>
-<item name="kill_progress_window_kills_left"><![CDATA[%AMOUNT% %KILL_NAME% kills until the next %SPAWN_NAME% spawn.]]></item>
-<item name="kill_progress_window_npc_count"><![CDATA[Current %NPC_NAME% on the map: %AMOUNT%]]></item>
-<item name="kill_progress_window_plague_alert"><![CDATA[Plague Alert!]]></item>
-<item name="kill_progress_window_npc_count_2"><![CDATA[There are currently %AMOUNT% %NPC_NAME% on the map!]]></item>
-
-<item name="ttip_apocalypse_box"><![CDATA[A fine selection of prizes can be found in the Apocalypse Box. Grab it now, pilot!]]></item>
-
-<item name="ttip_mayhem_box"><![CDATA[Grab a Mayhem box every time a goal is scored in the Space Ball Mayhem Mode.]]></item>
-
-
-<item name="ttip_red_bootybox"><![CDATA[The Red Booty Box is stocked full of treasures. Open it with a Red Booty Key!]]></item>
-<item name="ttip_blue_bootybox"><![CDATA[The Blue Booty Box is stocked full of treasures. Open it with a Blue Booty Key!]]></item>
-
-<item name="jumpgate_failed_no_key_activated"><![CDATA[You need an Immunizer CPU and a group to access the Quarantine Zone.]]></item>
-
-<item name="log_msg_no_warp_queue_rzone"><![CDATA[Your ship cannot go to warp while queuing for Refractions.]]></item>
-<item name="log_msg_no_warp_confirmation_rzone"><![CDATA[Your ship cannot go to warp during entry confirmation to Refractions.]]></item>
-
-<item name="title_event_rewards_window"><![CDATA[Pirate Hunt Rewards]]></item>
-<item name="event_rewards_window_headline"><![CDATA[CONGRATULATIONS!]]></item>
-<item name="event_rewards_window_message"><![CDATA[We are delighted to reward you for your actions protecting humanity.]]></item>
-<item name="event_rewards_window_message_clan"><![CDATA[We are delighted to reward your clan for your actions in protecting humanity.]]></item>
-<item name="event_rewards_window_confirmBtn"><![CDATA[ACCEPT]]></item>
-<item name="event_rewards_window_place"><![CDATA[You are No. #%POSITION%]]></item>
-
-<item name="alienhunt_tab_overview"><![CDATA[OVERVIEW]]></item>
-<item name="alienhunt_tab_points"><![CDATA[POINTS]]></item>
-<item name="alienhunt_tab_rewards"><![CDATA[REWARDS]]></item>
-<item name="alienhunt_tab_overview_timeleft"><![CDATA[Time Left:]]></item>
-<item name="alienhunt_tab_overview_playerpoints"><![CDATA[Player Points]]></item>
-<item name="alienhunt_tab_overview_clanpoints"><![CDATA[Clan Points]]></item>
-<item name="alienhunt_tab_overview_hint"><![CDATA[If you want to compare your position with others, check out the Hall of Fame.]]></item>
-<item name="alienhunt_tab_overview_button"><![CDATA[HALL OF FAME]]></item>
-<item name="alienhunt_tab_overview_button_ttip"><![CDATA[Opens a new browser tab]]></item>
-<item name="alienhunt_tab_points_headline_prey"><![CDATA[PREY]]></item>
-<item name="alienhunt_tab_points_headline_points"><![CDATA[POINTS]]></item>
-<item name="alienhunt_tab_rewards_headline_playerrewards"><![CDATA[PLAYER REWARDS]]></item>
-<item name="alienhunt_tab_rewards_headline_clanrewards"><![CDATA[CLAN REWARDS]]></item>
-<item name="alienhunt_tab_rewards_tooltip_playerrewards"><![CDATA[Rewards for %POSITION% position]]></item>
-<item name="alienhunt_tab_rewards_tooltip_clanrewards"><![CDATA[Clan rewards for %POSITION% position]]></item>
-
-<item name="title_command_center"><![CDATA[Command Center]]></item>
-<item name="ttip_commandCenterDeals"><![CDATA[A Special Deal is running. Time left: %TIME%]]></item>
-
-<item name="window_event_spacecup_title"><![CDATA[Space Cup!]]></item>
-<item name="window_event_spacecup_label_description"><![CDATA[Be a part of the action! Join the Space Cup and get a chance to win a selection of amazing rewards! Use your piloting skills to achieve the best score!]]></item>
-<item name="window_event_spacecup_source"><![CDATA[Get Points through Winning Matches and Missions!]]></item>
-
 
 </resource>

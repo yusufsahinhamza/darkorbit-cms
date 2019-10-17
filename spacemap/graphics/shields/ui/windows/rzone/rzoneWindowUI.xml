@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<root>
+    <!-- LIBS -->
+    <libraries>
+        <library id="assemblyWindow"/>
+        <library id="gameclientCommonUI"/>
+        <library id="rzone"/>
+    </libraries>
+
+    <!-- TEXT STYLES -->
+
+    <!--<skin name="rzone_divider" classname="BasicSkin" library="gameclientCommonUI">-->
+    <!--<layer classname="BitmapLayer" libraryID="horizontal_divider">normal</layer>-->
+    <!--</skin>-->
+    <skin name="commonui_info_icon" library="assemblyWindow" classname="BasicSkin">
+        <layer classname="BitmapLayer" libraryID="btn_info_normal">normal</layer>
+    </skin>
+
+    <skin name="rzone_cogs" library="rzone" classname="BasicSkin">
+        <layer classname="BitmapLayer" libraryID="cogs">normal</layer>
+    </skin>
+
+    <skin name="rzone_hourglas" library="rzone" classname="BasicSkin">
+        <layer classname="BitmapLayer" libraryID="hourglass">normal</layer>
+    </skin>
+
+    <textstyle name="rzone_textstyle_score"
+               background="false"
+               textColor="0xFFFFFF"
+               type="dynamic"
+               selectable="false"
+               fontName="EurostileFl"
+               wordWrap="true"
+               align="center"
+               embedFonts="true"
+               fontSize="16"/>
+    <textstyle
+            name="rzone_info_textstyle"
+            textColor="0x999898"
+            type="dynamic"
+            fontSize="10"
+            autoSize="center"
+            align="center"
+            wordWrap="true"
+            multiline="true"
+            embedFonts="false"
+            fontName="Verdana" />
+
+
+    <textstyle
+            name="rzone_unavailable_headline_textstyle"
+            textColor="0xBFBFBF"
+            type="dynamic"
+            fontSize="14"
+            embedFonts="false"
+            wordWrap="true"
+            multiline="true"
+            fontName="Verdana"
+            align="center"/>
+
+
+
+    <!-- TEMPLATES -->
+    <template name="Footer">
+        <container name="informationFooterContainer" marginLeft="2" marginTop="10"
+                   marginRight="2" height="60" autoSizeWidth="true">
+            <coreponent autoSizeWidth="true"
+                        height="2"
+                        registeredSkinName="commonui_horizontal_divider"
+                        marginRight="0"
+                        marginLeft="0"/>
+            <label text="localize:rzone_hint_bottom"
+                   marginTop="10"
+                   registeredSkinName="commonui_default_label" marginLeft="35" marginRight="10" autoSizeWidth="true"
+                   registeredTextStyleName="commonui_info_textstyle"/>
+            <coreponent alignX="left" alignY="top" marginLeft="0" marginTop="10" registeredSkinName="commonui_info_icon"/>
+        </container>
+    </template>
+
+    <template name="QUEUEING">
+        <container name="QUEUEING" width="300" autoSizeHeight="true"
+                   autoSizeMode="children" layout="vertical">
+            <label text="localize:rzone_queueing" registeredSkinName="commonui_default_label" width="300" height="30"
+                   alignX="center"
+                   registeredTextStyleName="commonui_default_headline_textstyle"/>
+            <coreponent registeredSkinName="rzone_hourglas" alignX="center"/>
+            <label text="localize:rzone_time_in_queue" registeredSkinName="commonui_default_label" width="300"
+                   height="20"
+                   alignX="center"
+                   registeredTextStyleName="commonui_default_headline_textstyle"/>
+            <label text="00:00:00" name="time" registeredSkinName="commonui_default_label" width="300" height="20"
+                   alignX="center"
+                   registeredTextStyleName="rzone_textstyle_score" decorate="default.lightBlueGlow"/>
+            <button name="cancel" text="localize:rzone_cancel" width="160" height="62" alignX="center" marginTop="20"
+                    registeredSkinName="commonui_confirmationbutton_blue"
+                    registeredTextStyleName="commonui_confirmationbutton_blue_normal"/>
+
+            <reference template="Footer"/>
+        </container>
+    </template>
+    <template name="ON_R_ZONE">
+        <container name="ON_R_ZONE" width="300" autoSizeHeight="true"
+                   autoSizeMode="children" layout="vertical">
+            <label text="localize:rzone_on_r_zone" registeredSkinName="commonui_default_label" width="300" height="30"
+                   alignX="center"
+                   registeredTextStyleName="commonui_default_headline_textstyle"/>
+            <label text="localize:rzone_on_r_zone_help"
+                   registeredSkinName="commonui_default_label" width="300" alignX="center" height="100"
+                   registeredTextStyleName="rzone_info_textstyle"/>
+            <button name="leave" text="localize:rzone_leave" width="160" height="62" alignX="center"
+                    registeredSkinName="commonui_confirmationbutton_blue"
+                    registeredTextStyleName="commonui_confirmationbutton_blue_normal"/>
+
+            <reference template="Footer"/>
+        </container>
+    </template>
+    <template name="REGISTRATION">
+        <container name="REGISTRATION" width="300" autoSizeHeight="true"
+                   autoSizeMode="children" layout="vertical">
+            <label text="localize:rzone_registration" registeredSkinName="commonui_default_label" width="300"
+                   height="30"
+                   alignX="center"
+                   registeredTextStyleName="commonui_default_headline_textstyle"/>
+            <label text="localize:rzone_registration_help"
+                   registeredSkinName="commonui_default_label" width="300" alignX="center"
+                   height="30" registeredTextStyleName="rzone_info_textstyle"/>
+            <button name="register" text="localize:rzone_register" width="240" height="62" alignX="center"
+                    marginTop="20"
+                    registeredSkinName="commonui_confirmationbutton_green"
+                    registeredTextStyleName="commonui_confirmationbutton_green_normal"/>
+
+            <reference template="Footer"/>
+        </container>
+    </template>
+    <template name="REGISTRATION_UNAVAILABLE">
+        <container name="REGISTRATION_UNAVAILABLE" width="300" autoSizeHeight="true"
+                   autoSizeMode="children" layout="vertical">
+            <label text="localize:rzone_registration_unavailable" registeredSkinName="commonui_default_label"
+                   width="300" height="120" alignX="center"
+                   registeredTextStyleName="rzone_unavailable_headline_textstyle"/>
+
+            <reference template="Footer"/>
+        </container>
+    </template>
+    <template name="CONFIRMATION">
+        <container name="CONFIRMATION" width="300" autoSizeHeight="true"
+                   autoSizeMode="children" layout="vertical">
+            <label text="localize:rzone_confirmation" registeredSkinName="commonui_default_label" width="300"
+                   height="30"
+                   alignX="center"
+                   registeredTextStyleName="commonui_default_headline_textstyle"/>
+            <coreponent alignX="center" mouseEnabled="false" mouseChildren="false" registeredSkinName="rzone_cogs"/>
+            <label text="00:00:00" name="time" registeredSkinName="commonui_default_label" width="300" height="20"
+                   alignX="center" registeredTextStyleName="rzone_textstyle_score" decorate="default.lightBlueGlow"/>
+            <label text="localize:rzone_confirmation_help"
+                   registeredSkinName="commonui_default_label" width="300" alignX="center"
+                   height="30" registeredTextStyleName="rzone_info_textstyle"/>
+            <container name="buttonContainer" width="300" height="82" alignX="center">
+                <button name="yes" text="localize:rzone_jump" width="150" height="62" alignX="left" marginTop="20"
+                        registeredSkinName="commonui_confirmationbutton_green"
+                        registeredTextStyleName="commonui_confirmationbutton_green_normal"/>
+                <button name="no" text="localize:rzone_cancel" width="150" height="62" alignX="right" marginTop="20"
+                        registeredSkinName="commonui_confirmationbutton_blue"
+                        registeredTextStyleName="commonui_confirmationbutton_blue_normal"/>
+            </container>
+
+            <reference template="Footer"/>
+        </container>
+    </template>
+    <template name="LEAVING">
+        <container name="LEAVING" width="300" autoSizeHeight="true"
+                   autoSizeMode="children" layout="vertical">
+            <label text="localize:rzone_on_r_zone" registeredSkinName="commonui_default_label" width="300" height="30"
+                   alignX="center"
+                   registeredTextStyleName="commonui_default_headline_textstyle"/>
+            <label text="localize:rzone_on_r_zone_help"
+                   registeredSkinName="commonui_default_label" width="300" alignX="center" height="100"
+                   registeredTextStyleName="rzone_info_textstyle"/>
+            <label text="00:00:00" name="time" registeredSkinName="commonui_default_label" width="300" height="20"
+                   alignX="center"
+                   registeredTextStyleName="rzone_textstyle_score" decorate="default.lightBlueGlow"/>
+            <reference template="Footer"/>
+        </container>
+    </template>
+
+    <template name="CLOSING">
+        <container name="CLOSING" width="300" autoSizeHeight="true"
+                   autoSizeMode="children" layout="vertical">
+            <label text="localize:rzone_on_r_zone_help"
+                   registeredSkinName="commonui_default_label" width="300" alignX="center"
+                   height="30" registeredTextStyleName="rzone_info_textstyle"/>
+            <label text="00:00:00" name="time" registeredSkinName="commonui_default_label" width="300" height="20"
+                   alignX="center"
+                   registeredTextStyleName="rzone_textstyle_score" decorate="default.lightBlueGlow"/>
+            <button name="leave" text="localize:rzone_leave" width="160" height="62" alignX="center"
+                    registeredSkinName="commonui_confirmationbutton_blue"
+                    registeredTextStyleName="commonui_confirmationbutton_blue_normal"/>
+            <reference template="Footer"/>
+        </container>
+    </template>
+    <!-- CONTENT -->
+    <container name="windowContentContainer"  width="300" autoSizeHeight="true" autoSizeMode="children">
+        <container name="stateContainer" width="300" alignX="center">
+            <reference template="QUEUEING"/>
+            <reference template="ON_R_ZONE"/>
+            <reference template="REGISTRATION"/>
+            <reference template="REGISTRATION_UNAVAILABLE"/>
+            <reference template="CONFIRMATION"/>
+            <reference template="LEAVING"/>
+            <reference template="CLOSING"/>
+        </container>
+    </container>
+</root>
