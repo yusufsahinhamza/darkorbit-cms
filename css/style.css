@@ -160,3 +160,8 @@ input[type=text]:not(.browser-default).invalid ~ .helper-text[data-error] {
     display: unset !important;
   }
 }
+
+.toast .toast-action {
+  margin-left: 15px;
+  margin-right: -15px;
+}

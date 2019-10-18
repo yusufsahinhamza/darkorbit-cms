@@ -50,6 +50,10 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
 		if (isset($_POST['version'])) {
 			echo Functions::ChangeVersion(Functions::s($_POST['version']));
 		}
+	} else if ($request === 'send_link_again') {
+		if (isset($_POST['username'])) {
+			echo Functions::SendLinkAgain(Functions::s($_POST['username']));
+		}
 	} else if ($request === 'buy') {
 		if (isset($_POST['itemId'])) {
 			echo Functions::Buy(Functions::s($_POST['itemId']));

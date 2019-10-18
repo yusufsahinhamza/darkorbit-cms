@@ -66,6 +66,27 @@
         if (json.status) {
           location.reload();
         } else if (json.message != '') {
+          var html = '<span>'+ json.message +'</span>';
+
+          if (json.toastAction != '') {
+            html += json.toastAction;
+          }
+
+          M.toast({html: html});
+        }
+      }
+    });
+  });
+
+  $('body').on('click', '#send-link-again', function() {
+    $.ajax({
+      type: 'POST',
+      url: '<?php echo DOMAIN; ?>api/',
+      data: { action: 'send_link_again', username: $('#l-username').val() },
+      success: function(response) {
+        var json = jQuery.parseJSON(response);
+
+        if (json.message != '') {
           M.toast({html: '<span>'+ json.message +'</span>'});
         }
       }

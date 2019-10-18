@@ -148,7 +148,8 @@ class Functions {
 
 		$json = [
 			'status' => false,
-			'message' => ''
+			'message' => '',
+      'toastAction' => ''
     ];
 
 		$statement = $mysqli->query('SELECT userId, password, verification FROM player_accounts WHERE username = "'.$username.'"');
@@ -178,6 +179,10 @@ class Functions {
 					$mysqli->close();
 
 				} else {
+          if(!isset($_COOKIE['send-link-again-button'])) {
+            $json['toastAction'] = '<button id="send-link-again" class="btn-flat waves-effect waves-light toast-action">Send link again</button>';
+          }
+
 					$json['message'] = 'This account is not verified, please verify it from your e-mail address.';
 				}
 			} else {
@@ -189,6 +194,34 @@ class Functions {
 
 		return json_encode($json);
 	}
+
+  public static function SendLinkAgain($username) {
+    $mysqli = Database::GetInstance();
+
+    $username = $mysqli->real_escape_string($username);
+
+    $json = [
+      'message' => ''
+    ];
+
+    if (!isset($_COOKIE['send-link-again-button'])) {
+      $statement = $mysqli->query('SELECT userId, email, verification FROM player_accounts WHERE username = "'.$username.'"');
+      $fetch = $statement->fetch_assoc();
+
+      if ($statement->num_rows >= 1) {
+        SMTP::SendMail($fetch['email'], $username, 'E-mail verification', '<p>Hi '.$username.', <br>Click this link to activate your account: <a href="'.DOMAIN.'api/verify/'.$fetch['userId'].'/'.json_decode($fetch['verification'])->hash.'">Activate</a></p><p style="font-size:small;color:#666">—<br>You are receiving this because you registered to the '.SERVER_NAME.'.<br>If that was not your request, then you can ignore this email.<br>This is an automated message, please do not reply directly to this email.</p>');
+
+        $json['message'] = 'Activation link sent again.';
+        setcookie('send-link-again-button', true, (time() + (120)), '/');
+      } else {
+        $json['message'] = 'Something went wrong!';
+      }
+    } else {
+      $json['message'] = 'You need to wait 2 minutes for send link again.';
+    }
+
+    return json_encode($json);
+  }
 
 	public static function CompanySelect($company) {
 		$mysqli = Database::GetInstance();
