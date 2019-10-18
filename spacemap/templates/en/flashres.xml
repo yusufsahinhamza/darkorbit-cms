@@ -338,7 +338,7 @@ Return to a safe zone before you're destroyed.]]></item>
  <item name="title_59"><![CDATA[Spring Fighter EIC 2]]></item>
  <item name="title_60"><![CDATA[Spring Fighter VRU 2]]></item>
  <item name="title_200"><![CDATA[Master of the Orbit]]></item>
- <item name="title_201"><![CDATA[King of OneUltimate]]></item>
+ <item name="title_201"><![CDATA[King of InfinityOrbit]]></item>
  <item name="title_202"><![CDATA[One-man Army]]></item>
  <item name="title_203"><![CDATA[Hordebreaker]]></item>
  <item name="title_204"><![CDATA[Humanity's Hero]]></item>
@@ -2917,13 +2917,13 @@ The Battle Station's deflector is now being charged.]]></item>
  <item name="ttip_setting_quality_zones3D"><![CDATA[Determines the quality of the block zones displayed.]]></item>
  <item name="client_selection_3d"><![CDATA[3D]]></item>
  <item name="client_selection_2d"><![CDATA[No thanks - I'll stick with the 2D version for now.]]></item>
- <item name="client_selection_info"><![CDATA[Try OneUltimate out in 3D! <font color="#fbcc00">The new 3D client has arrived.</font> Update your graphics card driver and your Flash player. You'll also need to enable Hardware Acceleration. (Right-click -> Settings)<br/><br/> Play in 3D and become a <font color="#fbcc00">"Multi-Dimensional Pilot"!</font>]]></item>
- <item name="client_selection_headline"><![CDATA[OneUltimate is now in 3D!]]></item>
+ <item name="client_selection_info"><![CDATA[Try InfinityOrbit out in 3D! <font color="#fbcc00">The new 3D client has arrived.</font> Update your graphics card driver and your Flash player. You'll also need to enable Hardware Acceleration. (Right-click -> Settings)<br/><br/> Play in 3D and become a <font color="#fbcc00">"Multi-Dimensional Pilot"!</font>]]></item>
+ <item name="client_selection_headline"><![CDATA[InfinityOrbit is now in 3D!]]></item>
  <item name="ttip_3d_not_available"><![CDATA[The 3D experience is not available to you because either your Flash player is outdated, your graphics card doesn't support it, or hardware acceleration is deactivated.]]></item>
 
  <item name="client_selection_faq"><![CDATA[Learn more about the 3D version and system requirements]]></item>
  <item name="client_selection_faq_link"><![CDATA[http://www.bigpoint.com/darkorbit/board/threads/3d-faq.102621/ ]]></item>
- <item name="client_selection_info_no_3d"><![CDATA[OneUltimate has entered the next dimension - <font color="#fbcc00">The new client has arrived.</font> Unfortunately, we have detected that you can’t currently run the 3D version. Update your graphics card drivers, your Flash player, and enable Hardware Acceleration.<br/><br/> Once your PC is ready, play in 3D and become a <font color="#fbcc00">“Multi-Dimensional Pilot"!</font>]]></item>
+ <item name="client_selection_info_no_3d"><![CDATA[InfinityOrbit has entered the next dimension - <font color="#fbcc00">The new client has arrived.</font> Unfortunately, we have detected that you can’t currently run the 3D version. Update your graphics card drivers, your Flash player, and enable Hardware Acceleration.<br/><br/> Once your PC is ready, play in 3D and become a <font color="#fbcc00">“Multi-Dimensional Pilot"!</font>]]></item>
  <item name="client_selection_continue_2d"><![CDATA[Play in 2D]]></item>
 
 <item name="msg_reward_trainingArenaSeason_package_received"><![CDATA[Ultimate Battle Arena Season %SEASON_NAME%: you have received the %RANKING_POSITION% reward pack.]]></item>

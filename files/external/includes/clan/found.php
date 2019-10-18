@@ -16,7 +16,7 @@
 
     <div class="col s5">
       <div class="row">
-        <form id="found_clan">
+        <form id="found_clan" method="post">
           <div class="input-field col s12">
             <input class="white-text validate" type="text" name="name" id="name" maxlength="50" required>
             <label for="name">Clan name</label>

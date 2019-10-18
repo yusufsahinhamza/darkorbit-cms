@@ -8,7 +8,7 @@
                 <h5>SETTINGS</h5>
                   <div class="row">
                     <div class="col s12 l6">
-                      <form id="change_pilot_name">
+                      <form id="change_pilot_name" method="post">
                         <div class="col s12">
                           <div class="row">
                             <div class="input-field col s9">

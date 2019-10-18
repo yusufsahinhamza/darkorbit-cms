@@ -345,7 +345,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && Functions::IsLoggedIn()) {
 
 					echo base64_encode('{"isError":0,"data":{"ret":1,"money":{"uridium":"0","credits":"0"}}}');
 					SetConfigs();
-					Socket::Send('ChangeShip', array('UserId' => $player['userId'], 'ShipId' => $ship['shipID']));
+
+					if (Socket::Get('IsOnline', array('UserId' => $player['userId'], 'Return' => false))) {
+						Socket::Send('ChangeShip', array('UserId' => $player['userId'], 'ShipId' => $ship['shipID']));
+					}
 				} else {
 					SendError($error[3]);
 				}
@@ -666,11 +669,10 @@ function CreateDrone($item_id, $fromId, $amount)
 
   $amount = count($drones) + $amount;
 	for($i = $fromId; $i < $amount; $i++) {
+		$drone = ["I" => $i, "L" => $item_id, "LV" => 5, "HP" => "0%",
+		"EF" => "10%/20%", "SP" => 15625, "DE" => "", "DL" => null, "SL" => null, "repair" => 500, "currency" => "uridium"];
 
-		$drone = array("I" => $i, "L" => $item_id, "LV" => 5, "HP" => "0%",
-		"EF" => "10%/20%", "SP" => 15625, "DE" => "", "DL" => null, "SL" => null, "repair" => 500, "currency" => "uridium");
 		array_push($drones, $drone);
-
 	}
 }
 
@@ -678,7 +680,7 @@ function GetDesignsLootIds()
 {
 	global $mysqli, $equipment, $currentShip;
 
-	$ships = [GetCurrentShipLootId()];
+	$ships = [$mysqli->query('SELECT lootID FROM server_ships WHERE shipID = '.$currentShip['baseShipId'].'')->fetch_assoc()['lootID']];
 
 	if ($currentShip['baseShipId'] == 8) {
 		$currentDesigns = [
@@ -701,8 +703,7 @@ function GetDesignsLootIds()
 		"ship_goliath_design_exalted",
 		"ship_goliath_design_crimson",
 		"ship_goliath_design_ignite",
-		"ship_goliath_design_centaur",
-		"ship_goliath_design_goliath-razer"];
+		"ship_goliath_design_centaur"];
 		$ships = array_merge($ships, $currentDesigns);
 	}
 
@@ -787,56 +788,47 @@ function GetShipInformation($itemId, $shipId) {
 	global $mysqli;
 
 	$informations = $mysqli->query('SELECT * FROM server_ships WHERE shipID = '.$shipId.'')->fetch_assoc();
-	return '{
-						  "L": '.$itemId.',
-						  "name": "'.$informations['name'].'",
-						  "T": 22,
-						  "C": "ship",
-						  "levels": [
-							{
-							  "slotsets": {
-								"lasers": {
-								  "T": [
-									0
-								  ],
-								  "Q": '.$informations['lasers'].'
-								},
-								"generators": {
-								  "T": [
-									3,
-									4
-								  ],
-								  "Q": '.$informations['generators'].'
-								},
-								"heavy_guns": {
-								  "T": [
-									1
-								  ],
-								  "Q": 0
-								},
-								"extras": {
-								  "T": [
-									11,
-									9,
-									7,
-									8,
-									10,
-									6
-								  ],
-								  "Q": 0
-								}
-							  },
-							  "selling": {
-								"credits": 0
-							  },
-							  "cdn": {
-								"63x63": "c6c8a09a4749af691b6a9947cf2c6900",
-								"100x100": "5fcdb83e69b401d92cc1ae6abb172300",
-								"top": "a604cd4669b80a0ddd89fa54fc946300"
-							  }
-							}
-						  ]
-						}';
+
+	return json_encode([
+		'L' => $itemId,
+		'name' => $informations['name'],
+		'T' => 22,
+		'C' => 'ship',
+		'levels' => [
+			[
+				'slotsets' => [
+					'lasers' => [
+						'T' => [0],
+						'Q' => $informations['lasers']
+					],
+					'generators' => [
+						'T' => [3, 4],
+						'Q' =>$informations['generators']
+					],
+					'heavy_guns' => [
+						'T' => [1],
+						'Q' => 0
+					],
+					'extras' => [
+						'T' => [6, 7, 8, 10, 11],
+						'Q' => 0
+					]
+				]
+			],
+			[
+				'selling' => [
+					'credits' => 0
+				]
+			],
+			[
+				'cdn' => [
+					'63x63' => 'c6c8a09a4749af691b6a9947cf2c6900',
+					'100x100' => '5fcdb83e69b401d92cc1ae6abb172300',
+					'top' => 'a604cd4669b80a0ddd89fa54fc946300'
+				]
+			]
+		]
+	]);
 }
 
 function SetConfigs()
@@ -911,6 +903,9 @@ function SetConfigs()
 
 	$array = array('Config1Hitpoints' => $config1_hp + 60000, 'Config1Damage' => $config1_damage, 'Config1Shield' => $config1_shield, 'Config1Speed' => ($config1_speed + $config1_speed * 0.2), 'Config2Hitpoints' => $config2_hp + 60000, 'Config2Damage' => $config2_damage, 'Config2Shield' => $config2_shield, 'Config2Speed' => ($config2_speed + $config2_speed * 0.2));
 	$mysqli->query("UPDATE player_equipment SET configs = '".json_encode($array, JSON_NUMERIC_CHECK)."' WHERE userId = ".$player['userId']."");
-	Socket::Send('UpdateStatus', array('UserId' => $player['userId'], 'Status' => $array));
+
+	if (Socket::Get('IsOnline', array('UserId' => $player['userId'], 'Return' => false))) {
+		Socket::Send('UpdateStatus', array('UserId' => $player['userId'], 'Status' => $array));
+	}
 }
 ?>

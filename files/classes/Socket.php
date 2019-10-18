@@ -6,8 +6,7 @@ class Socket {
         return @fsockopen("tcp://".$host."", $port, $errno, $errstr, 0);
     }
 
-    public static function Get($Action, $Parameters)
-    {
+    public static function Get($Action, $Parameters) {
       $socket = Socket::Connection();
 
       if ($socket) {
@@ -19,7 +18,7 @@ class Socket {
       } else return $Parameters['Return'];
     }
 
-    public static function Send($Action, $Parameters){
+    public static function Send($Action, $Parameters) {
       $socket = Socket::Connection();
 
       if ($socket) {

@@ -31,7 +31,7 @@ $pendingAlready = $mysqli->query('SELECT id FROM server_clan_applications WHERE 
     </div>
     <div class="col s6" style="margin-top: 25px;">
       <div class="row">
-        <form id="send_clan_application">
+        <form id="send_clan_application" method="post">
           <input type="hidden" name="clanId" value="<?php echo $clanId; ?>">
           <div class="input-field col s12">
             <textarea name="text" class="materialize-textarea white-text" placeholder="<?php echo ($pendingAlready ? 'Your application to this Clan is pending.' : ($clan['recruiting'] ? 'Enter your application text here.' : "This Clan is not recruiting, so you can't apply to join.")); ?>" <?php echo ($pendingAlready || !$clan['recruiting'] ? 'disabled' : ''); ?>></textarea>

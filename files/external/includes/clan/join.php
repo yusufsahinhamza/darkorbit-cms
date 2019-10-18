@@ -10,16 +10,14 @@ if ($page_n + 1 > $number_of_pages) {
 ?>
 
 <div class="card white-text grey darken-4 col s12 padding-15">
-  <form>
-    <div class="row">
-      <div class="input-field col s12">
-        <i class="material-icons prefix">search</i>
-        <input class="white-text" type="text" name="search_clan" id="search_clan">
-        <label for="search_clan">Search clan...</label>
-      </div>
+  <div class="row">
+    <div class="input-field col s12">
+      <i class="material-icons prefix">search</i>
+      <input class="white-text" type="text" name="search_clan" id="search_clan">
+      <label for="search_clan">Search clan...</label>
     </div>
-  </form>
-
+  </div>
+  
   <?php
   $array = $mysqli->query('SELECT clanId FROM server_clan_applications WHERE userId = '.$player['userId'].'')->fetch_all(MYSQLI_ASSOC);
 

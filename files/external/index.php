@@ -11,7 +11,7 @@
                   <li class="tab"><a href="#register">REGISTER</a></li>
                 </ul>
 
-                <form id="login">
+                <form id="login" method="post">
                   <div class="card-content">
                     <div class="row">
                       <div class="input-field col s12">
@@ -31,7 +31,7 @@
                   </div>
                 </form>
 
-                <form id="register">
+                <form id="register" method="post">
                   <div class="card-content">
                     <div class="row">
                       <div class="input-field col s12">

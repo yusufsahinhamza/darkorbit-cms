@@ -1,5 +1,11 @@
 <?php
 ob_end_flush();
+
+if (!Functions::IsLoggedIn()) {
+  header('Location: /');
+  die();
+}
+
 $gamePlayerSettings = json_decode($mysqli->query('SELECT * FROM player_settings WHERE userId = '.$player['userId'].'')->fetch_assoc()['gameplay']);
 ?>
 <!DOCTYPE html>
@@ -77,7 +83,7 @@ $gamePlayerSettings = json_decode($mysqli->query('SELECT * FROM player_settings 
             "userID": "<?php echo $player['userId']; ?>",
             "sessionID": "<?php echo $player['sessionId']; ?>",
             "basePath": "spacemap",
-            "pid": "0",
+            "pid": "563",
             "boardLink": "",
             "helpLink": "",
             "loadingClaim": "LOADING",

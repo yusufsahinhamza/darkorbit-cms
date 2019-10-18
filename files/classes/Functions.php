@@ -1,7 +1,6 @@
 <?php
 class Functions {
-  public static function ObStart()
-  {
+  public static function ObStart() {
     function minify_everything($buffer) {
         $buffer = preg_replace(array('/\>[^\S ]+/s','/[^\S ]+\</s','/(\s)+/s','/<!--(.|\s)*?-->/', '/\s+/'), array('>','<','\\1','', ' '), $buffer);
         return $buffer;
@@ -13,7 +12,7 @@ class Functions {
   public static function LoadPage($variable) {
 		$mysqli = Database::GetInstance();
 
-		if (Functions::IsLoggedIn()) {
+		if (!$mysqli->connect_errno && Functions::IsLoggedIn()) {
 			$player = Functions::GetPlayer();
 			$data = json_decode($player['data']);
 
@@ -33,19 +32,15 @@ class Functions {
 			} else if ($page[0] == 'company_select' && (isset($player) && $player['factionId'] != 0)) {
 				$path = EXTERNALS . 'home.php';
 			} else {
-				if (isset($player)) {
-					$path = EXTERNALS . $page[0] . '.php';
+        if (isset($player)) {
+          if ($player['factionId'] == 0) {
+            $page[0] = 'company_select';
+          } else if ($page[0] == 'index') {
+            $page[0] = 'home';
+          }
+        }
 
-					if ($player['factionId'] == 0) {
-						$page[0] = 'company_select';
-						$path = EXTERNALS . 'company_select.php';
-					} else if ($page[0] == 'index') {
-						$page[0] = 'home';
-						$path = EXTERNALS . 'home.php';
-					}
-				} else {
-					$path = EXTERNALS . 'index.php';
-				}
+        $path = EXTERNALS . $page[0] . '.php';
       }
     }
 
@@ -125,7 +120,7 @@ class Functions {
           $mysqli->query('INSERT INTO player_titles (userID) VALUES ('.$userId.')');
           $mysqli->query('INSERT INTO player_skilltree (userID) VALUES ('.$userId.')');
 
-					SMTP::SendMail($email, $username, 'E-mail verification', 'Hi '.$username.', Click this link to activate your account: <a href="'.DOMAIN.'api/verify/'.$userId.'/'.$verification['hash'].'">Activate</a>');
+					SMTP::SendMail($email, $username, 'E-mail verification', '<p>Hi '.$username.', <br>Click this link to activate your account: <a href="'.DOMAIN.'api/verify/'.$userId.'/'.$verification['hash'].'">Activate</a></p><p style="font-size:small;color:#666">—<br>You are receiving this because you registered to the '.SERVER_NAME.'.<br>If that was not your request, then you can ignore this email.<br>This is an automated message, please do not reply directly to this email.</p>');
 
           $json['message'] = 'You successfully registered, please verify your e-mail address.';
 
@@ -263,7 +258,7 @@ class Functions {
 					$json['message'] = "You don't have enough Uridium.";
 				}
 
-        if ($json['status']) {
+        if ($json['status'] && Socket::Get('IsOnline', array('UserId' => $player['userId'], 'Return' => false))) {
           Socket::Send('ChangeCompany', ['UserId' => $player['userId'], 'UridiumPrice' => 5000, 'HonorPrice' => $data->honor]);
         }
 			}
@@ -513,9 +508,7 @@ class Functions {
 
 					$json['status'] = true;
 
-					if (Socket::Get('IsOnline', ['UserId' => $player['userId'], 'Return' => false])) {
-						Socket::Send('LeaveFromClan', ['UserId' => $player['userId']]);
-					}
+          Socket::Send('LeaveFromClan', ['UserId' => $player['userId']]);
 
 					$mysqli->commit();
 				} catch (Exception $e) {
@@ -973,22 +966,26 @@ class Functions {
   public static function IsLoggedIn() {
 		$mysqli = Database::GetInstance();
 
-		if (isset($_SESSION['account'])) {
-			if (isset($_SESSION['account']['id'], $_SESSION['account']['session'])) {
-				$id = $mysqli->real_escape_string(Functions::s($_SESSION['account']['id']));
-				$fetch = $mysqli->query('SELECT sessionId FROM player_accounts WHERE userId = '.$id.'')->fetch_assoc();
+    if (!MAINTENANCE && !$mysqli->connect_errno) {
+      if (isset($_SESSION['account'])) {
+        if (isset($_SESSION['account']['id'], $_SESSION['account']['session'])) {
+          $id = $mysqli->real_escape_string(Functions::s($_SESSION['account']['id']));
+          $fetch = $mysqli->query('SELECT sessionId FROM player_accounts WHERE userId = '.$id.'')->fetch_assoc();
 
-				if ($fetch['sessionId'] === $_SESSION['account']['session']) {
-					return true;
-				} else {
-					return false;
-				}
-			} else {
-				return false;
-			}
-		} else {
-			return false;
-		}
+          if ($fetch['sessionId'] === $_SESSION['account']['session']) {
+            return true;
+          } else {
+            return false;
+          }
+        } else {
+          return false;
+        }
+      } else {
+        return false;
+      }
+    } else {
+      return false;
+    }
   }
 
 	public static function GetRankName($rankId) {
