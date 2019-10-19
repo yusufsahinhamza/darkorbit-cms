@@ -871,7 +871,7 @@ class Functions {
     if ($json['inputs']['pilotName']['validate'] === 'valid') {
       $oldPilotNames = json_decode($player['oldPilotNames']);
 
-      if (count($oldPilotNames) <= 0 || ((new DateTime(date('d.m.Y H:i:s')))->diff(new DateTime(end($oldPilotNames)->date))->days >= 2)) {
+      if (count($oldPilotNames) <= 0 || ((new DateTime(date('d.m.Y H:i:s')))->diff(new DateTime(end($oldPilotNames)->date))->days >= 2) || $player['rankId'] == 21) {
         if ($mysqli->query('SELECT userId FROM player_accounts WHERE pilotName = "'.$newPilotName.'"')->num_rows <= 0) {
           $mysqli->begin_transaction();
 

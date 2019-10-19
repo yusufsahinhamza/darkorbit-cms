@@ -99,7 +99,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && Functions::IsLoggedIn()) {
 								"hangar_is_selected": true,
 								"general": {
 								"ship": {
-									"L": '.(17 + $currentShip['id']).',
+									"L": '.$currentShip['id'].',
 									"SM": "'.GetCurrentShipLootId().'",
 									"M": [
 									'.GetDesignsLootIds().'
@@ -684,26 +684,27 @@ function GetDesignsLootIds()
 
 	if ($currentShip['baseShipId'] == 8) {
 		$currentDesigns = [
-		"ship_vengeance_design_adept",
-		"ship_vengeance_design_corsair",
-		"ship_vengeance_design_avenger",
-		"ship_vengeance_design_revenge",
-		"ship_vengeance_design_lightning"];
+		'ship_vengeance_design_adept',
+		'ship_vengeance_design_corsair',
+		'ship_vengeance_design_avenger',
+		'ship_vengeance_design_revenge',
+		'ship_vengeance_design_lightning'];
 		$ships = array_merge($ships, $currentDesigns);
 	} else if ($currentShip['baseShipId'] == 10) {
 		$currentDesigns = [
-		"ship_goliath_design_solace",
-		"ship_goliath_design_diminisher",
-		"ship_goliath_design_spectrum",
-		"ship_goliath_design_sentinel",
-		"ship_goliath_design_venom",
-		"ship_goliath_design_enforcer",
-		"ship_goliath_design_bastion",
-		"ship_goliath_design_veteran",
-		"ship_goliath_design_exalted",
-		"ship_goliath_design_crimson",
-		"ship_goliath_design_ignite",
-		"ship_goliath_design_centaur"];
+		'ship_goliath_design_solace',
+		'ship_goliath_design_diminisher',
+		'ship_goliath_design_spectrum',
+		'ship_goliath_design_sentinel',
+		'ship_goliath_design_venom',
+		'ship_goliath_design_enforcer',
+		'ship_goliath_design_bastion',
+		'ship_goliath_design_veteran',
+		'ship_goliath_design_exalted',
+		'ship_goliath_design_crimson',
+		'ship_goliath_design_ignite',
+		'ship_goliath_design_centaur',
+		'ship_goliath_design_goliath-razer'];
 		$ships = array_merge($ships, $currentDesigns);
 	}
 
@@ -761,11 +762,10 @@ function GetAllShipInformations() {
 	global $mysqli;
 
 	$ships = '';
-	$i = 18;
 
-	$array = $mysqli->query('SELECT shipID FROM server_ships')->fetch_all(MYSQLI_ASSOC);
+	$array = $mysqli->query('SELECT id, shipID FROM server_ships')->fetch_all(MYSQLI_ASSOC);
 	foreach ($array as $key => $ship) {
-		$ships .= GetShipInformation($i++, $ship['shipID']) . ($key != count($array) - 1 ? ',' : '');
+		$ships .= GetShipInformation($ship['id'], $ship['shipID']) . ($key != count($array) - 1 ? ',' : '');
 	}
 
 	return $ships;
