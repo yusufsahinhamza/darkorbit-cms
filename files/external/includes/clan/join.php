@@ -17,14 +17,14 @@ if ($page_n + 1 > $number_of_pages) {
       <label for="search_clan">Search clan...</label>
     </div>
   </div>
-  
+
   <?php
   $array = $mysqli->query('SELECT clanId FROM server_clan_applications WHERE userId = '.$player['userId'].'')->fetch_all(MYSQLI_ASSOC);
 
   if (count($array) >= 1) {
   ?>
 
-  <h5>OPEN CLAN APPLICATIONS</h5>
+  <h6>OPEN CLAN APPLICATIONS</h6>
   <table id="open-clan-applications" class="striped highlight">
     <thead>
       <tr>
@@ -53,7 +53,7 @@ if ($page_n + 1 > $number_of_pages) {
   <br>
   <?php } ?>
 
-  <h5>CLAN LIST</h5>
+  <h6>CLAN LIST</h6>
   <table id="clan-list" class="striped highlight">
     <thead>
       <tr>

@@ -29,7 +29,5 @@ require_once(CLASSES . 'Functions.php');
 require_once(CLASSES . 'Database.php');
 require_once(CLASSES . 'Socket.php');
 
-date_default_timezone_set('UTC');
-
 Functions::ObStart();
 ?>

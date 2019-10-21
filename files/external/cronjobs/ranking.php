@@ -4,7 +4,7 @@ $mysqli = Database::GetInstance();
 $mysqli->begin_transaction();
 
 try {
-  foreach ($mysqli->query('SELECT * FROM player_accounts') as $value) {
+  foreach ($mysqli->query('SELECT * FROM player_accounts WHERE rankId != 21') as $value) {
     $data = json_decode($value['data']);
     $destructions = json_decode($value['destructions']);
 
@@ -34,7 +34,7 @@ try {
     $mysqli->query('UPDATE player_accounts SET rankPoints = '.$rankPoints.' WHERE userId = '.$value['userId'].'');
   }
 
-  foreach ($mysqli->query('SELECT * FROM player_accounts ORDER BY rankPoints DESC') as $key => $value) {
+  foreach ($mysqli->query('SELECT * FROM player_accounts WHERE rankId != 21 ORDER BY rankPoints DESC') as $key => $value) {
     $mysqli->query('UPDATE player_accounts SET rank = '.($key + 1).' WHERE userId = '.$value['userId'].'');
   }
 

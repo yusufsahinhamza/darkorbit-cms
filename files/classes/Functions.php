@@ -330,6 +330,119 @@ class Functions {
 		return json_encode($clans);
 	}
 
+  public static function DiplomacySearchClan($keywords) {
+    $mysqli = Database::GetInstance();
+
+    $player = Functions::GetPlayer();
+		$keywords = $mysqli->real_escape_string($keywords);
+
+		$clans = [];
+
+		foreach ($mysqli->query('SELECT * FROM server_clans WHERE id != '.$player['clanId'].' AND (tag like "%'.$keywords.'%" OR name like "%'.$keywords.'%")')->fetch_all(MYSQLI_ASSOC) as $key => $value) {
+      $clans[$key]['id'] = $value['id'];
+      $clans[$key]['tag'] = $value['tag'];
+			$clans[$key]['name'] = $value['name'];
+		}
+
+		return json_encode($clans);
+	}
+
+  public static function RequestDiplomacy($clanId, $diplomacyType) {
+    $mysqli = Database::GetInstance();
+
+    $player = Functions::GetPlayer();
+		$clanId = $mysqli->real_escape_string($clanId);
+    $diplomacyType = $mysqli->real_escape_string($diplomacyType);
+		$clan = $mysqli->query('SELECT * FROM server_clans WHERE id = '.$player['clanId'].'')->fetch_assoc();
+
+		$json = [
+			'message' => ''
+		];
+
+    if ($clanId != 0) {
+      if ($clan != NULL) {
+        if ($clan['leaderId'] == $player['userId']) {
+          $toClan = $mysqli->query('SELECT * FROM server_clans WHERE id = "'.$clanId.'"')->fetch_assoc();
+
+          if ($toClan != NULL && $clan['id'] != $toClan['id'] && in_array($diplomacyType, [1, 2, 3, 4])) {
+            $mysqli->begin_transaction();
+
+            try {
+              $statement = $mysqli->query('SELECT id, diplomacyType FROM server_clan_diplomacy WHERE (senderClanId = '.$clan['id'].' AND toClanId = '.$toClan['id'].') OR (toClanId = '.$clan['id'].' AND senderClanId = '.$toClan['id'].')');
+              $fetch = $statement->fetch_assoc();
+
+              if ($statement->num_rows <= 0 || $diplomacyType == 4) {
+                if ($diplomacyType == 3) {
+                  $mysqli->query('INSERT INTO server_clan_diplomacy (senderClanId, toClanId, diplomacyType) VALUES ('.$clan['id'].', '.$toClan['id'].', '.$diplomacyType.')');
+
+                  $declaredId = $mysqli->insert_id;
+
+                  $mysqli->query('DELETE FROM server_clan_diplomacy_applications WHERE senderClanId = '.$clan['id'].' AND toClanId = '.$toClan['id'].'');
+
+                  $json['message'] = 'You declared war on the '.$toClan['name'].' clan.';
+
+                  $json['declared'] = [
+                    'id' => $declaredId,
+                    'date' => date('d.m.Y'),
+                    'form' => ($diplomacyType == 1 ? 'Alliance' : ($diplomacyType == 2 ? 'NAP' : 'War')),
+                    'clan' => [
+                      'id' => $toClan['id'],
+                      'name' => $toClan['name']
+                    ]
+                  ];
+
+                  Socket::Send('StartDiplomacy', ['SenderClanId' => $clan['id'], 'TargetClanId' => $toClan['id'], 'DiplomacyType' => $diplomacyType]);
+                } else {
+                  if ($mysqli->query('SELECT id FROM server_clan_diplomacy_applications WHERE senderClanId = '.$clan['id'].' AND toClanId = '.$toClan['id'].'')->num_rows <= 0) {
+                    $mysqli->query('INSERT INTO server_clan_diplomacy_applications (senderClanId, toClanId, diplomacyType) VALUES ('.$clan['id'].', '.$toClan['id'].', '.$diplomacyType.')');
+
+                    $requestId = $mysqli->insert_id;
+
+                    $json['message'] = 'Your diplomacy request was sent.';
+
+                    $json['request'] = [
+                      'id' => $requestId,
+                      'date' => date('d.m.Y'),
+                      'form' => ($diplomacyType == 1 ? 'Alliance' : ($diplomacyType == 2 ? 'NAP' : ($diplomacyType == 3 ? 'War' : 'End War'))),
+                      'clan' => [
+                        'name' => $toClan['name']
+                      ]
+                    ];
+
+                  } else {
+                    $json['message'] = 'You already submitted a diplomacy request to this clan.';
+                  }
+                }
+
+              } else {
+                $currentStatus = $fetch['diplomacyType'] == 1 ? 'Alliance' : ($fetch['diplomacyType'] == 2 ? 'NAP' : 'War');
+
+                $json['message'] = 'You already have a diplomatic status with this clan.<br>Current status: '.$currentStatus.'';
+              }
+
+              $mysqli->commit();
+            } catch (Exception $e) {
+              $json['message'] = 'An error occurred. Please try again later.';
+              $mysqli->rollback();
+            }
+
+            $mysqli->close();
+          } else {
+            $json['message'] = 'Something went wrong!';
+          }
+        } else {
+          $json['message'] = 'Only leaders are can sent a diplomacy request.';
+        }
+      } else {
+        $json['message'] = 'Something went wrong!';
+      }
+    } else {
+      $json['message'] = 'Please select a clan.';
+    }
+
+    return json_encode($json);
+  }
+
 	public static function SendClanApplication($clanId, $text) {
 		$mysqli = Database::GetInstance();
 
@@ -342,9 +455,9 @@ class Functions {
 			'message' => ''
 		];
 
-    $clan = $mysqli->query('SELECT * FROM server_clans WHERE id = '.$clanId.'')->fetch_assoc();
+    $clan = $mysqli->query('SELECT * FROM server_clans WHERE id = "'.$clanId.'"')->fetch_assoc();
 
-		if ($clan !== NULL & $clan['recruiting'] && $mysqli->query('SELECT id FROM server_clan_applications WHERE clanId = '.$clanId.' AND userId = '.$player['userId'].'')->num_rows <= 0 && $player['clanId'] == 0) {
+		if ($clan != NULL & $clan['recruiting'] && $mysqli->query('SELECT id FROM server_clan_applications WHERE clanId = '.$clanId.' AND userId = '.$player['userId'].'')->num_rows <= 0 && $player['clanId'] == 0) {
 			$mysqli->begin_transaction();
 
 			try {
@@ -410,6 +523,8 @@ class Functions {
 							$player['userId'] => date('Y-m-d H:i:s')
 						];
 
+            $mysqli->query('DELETE FROM server_clan_applications WHERE userId = '.$player['userId'].'');
+
 						$mysqli->query("INSERT INTO server_clans (name, tag, description, factionId, recruiting, leaderId, join_dates) VALUES ('".$name."', '".$tag."', '".$description."', ".$player['factionId'].", 1, ".$player['userId'].", '".json_encode($join_dates)."')");
 
 						$clanId = $mysqli->insert_id;
@@ -428,10 +543,10 @@ class Functions {
 
 					$mysqli->close();
 				} else {
-					$json['message'] = 'This clan tag is already taken.';
+					$json['message'] = 'Another clan is already using this tag. Please select another one for your clan.';
 				}
 			} else {
-				$json['message'] = 'This clan name is already taken.';
+				$json['message'] = 'Another clan is already using this name. Please select another one for your clan.';
 			}
 		}
 
@@ -449,7 +564,7 @@ class Functions {
 			'message' => ''
 		];
 
-		if ($mysqli->query('SELECT id FROM server_clan_applications WHERE clanId = '.$clanId.' AND userId = '.$player['userId'].'')->num_rows >= 1) {
+		if ($mysqli->query('SELECT id FROM server_clan_applications WHERE clanId = "'.$clanId.'" AND userId = '.$player['userId'].'')->num_rows >= 1) {
 			$mysqli->begin_transaction();
 
 			try {
@@ -483,7 +598,7 @@ class Functions {
 			'message' => ''
 		];
 
-		if ($clan !== NULL && $clan['leaderId'] == $player['userId']) {
+		if ($clan != NULL && $clan['leaderId'] == $player['userId']) {
 			$mysqli->begin_transaction();
 
 			try {
@@ -492,6 +607,10 @@ class Functions {
 				$mysqli->query('UPDATE player_accounts SET clanId = 0 WHERE clanId = '.$clan['id'].'');
 
 				$mysqli->query('DELETE FROM server_clan_applications WHERE clanId = '.$clan['id'].'');
+
+        $mysqli->query('DELETE FROM server_clan_diplomacy WHERE senderClanId = '.$clan['id'].' OR toClanId = '.$clan['id'].'');
+
+        $mysqli->query('DELETE FROM server_clan_diplomacy_applications WHERE senderClanId = '.$clan['id'].' OR toClanId = '.$clan['id'].'');
 
 				$json['status'] = true;
 
@@ -524,7 +643,7 @@ class Functions {
 
 		$NotOnlineOrOnlineAndInEquipZone = !Socket::Get('IsOnline', array('UserId' => $player['userId'], 'Return' => false)) || (Socket::Get('IsOnline', array('UserId' => $player['userId'], 'Return' => false)) && Socket::Get('IsInEquipZone', array('UserId' => $player['userId'], 'Return' => false)));
 
-		if ($clan !== NULL && $clan['leaderId'] != $player['userId']) {
+		if ($clan != NULL && $clan['leaderId'] != $player['userId']) {
 			if ($NotOnlineOrOnlineAndInEquipZone) {
 				$mysqli->begin_transaction();
 
@@ -566,14 +685,14 @@ class Functions {
 		$player = Functions::GetPlayer();
 		$userId = $mysqli->real_escape_string($userId);
     $clan = $mysqli->query('SELECT * FROM server_clans WHERE id = '.$player['clanId'].'')->fetch_assoc();
-		$user = $mysqli->query('SELECT * FROM player_accounts WHERE userId = '.$userId.' AND clanId = '.$clan['id'].'')->fetch_assoc();
+		$user = $mysqli->query('SELECT * FROM player_accounts WHERE userId = "'.$userId.'" AND clanId = "'.$clan['id'].'"')->fetch_assoc();
 
 		$json = [
 			'status' => false,
 			'message' => ''
 		];
 
-		if ($clan !== NULL && $user !== NULL && $clan['leaderId'] == $player['userId']) {
+		if ($clan != NULL && $user != NULL && $clan['leaderId'] == $player['userId']) {
 			$mysqli->begin_transaction();
 
 			try {
@@ -611,7 +730,7 @@ class Functions {
 
 		$player = Functions::GetPlayer();
 		$userId = $mysqli->real_escape_string($userId);
-		$user = $mysqli->query('SELECT * FROM player_accounts WHERE userId = '.$userId.'')->fetch_assoc();
+		$user = $mysqli->query('SELECT * FROM player_accounts WHERE userId = "'.$userId.'"')->fetch_assoc();
 		$clan = $mysqli->query('SELECT * FROM server_clans WHERE id = '.$player['clanId'].'')->fetch_assoc();
 
 		$json = [
@@ -619,7 +738,7 @@ class Functions {
 			'message' => ''
 		];
 
-		if ($clan !== NULL && $user !== NULL && $clan['leaderId'] == $player['userId'] && $user['clanId'] == 0) {
+		if ($clan != NULL && $user != NULL && $clan['leaderId'] == $player['userId'] && $user['clanId'] == 0) {
 			$mysqli->begin_transaction();
 
 			try {
@@ -671,7 +790,7 @@ class Functions {
 
 		$player = Functions::GetPlayer();
 		$userId = $mysqli->real_escape_string($userId);
-		$user = $mysqli->query('SELECT * FROM player_accounts WHERE userId = '.$userId.'')->fetch_assoc();
+		$user = $mysqli->query('SELECT * FROM player_accounts WHERE userId = "'.$userId.'"')->fetch_assoc();
 		$clan = $mysqli->query('SELECT * FROM server_clans WHERE id = '.$player['clanId'].'')->fetch_assoc();
 
 		$json = [
@@ -679,7 +798,7 @@ class Functions {
 			'message' => ''
 		];
 
-		if ($clan !== NULL && $user !== NULL && $clan['leaderId'] == $player['userId']) {
+		if ($clan != NULL && $user != NULL && $clan['leaderId'] == $player['userId']) {
 			$mysqli->begin_transaction();
 
 			try {
@@ -702,6 +821,228 @@ class Functions {
 		return json_encode($json);
 	}
 
+  public static function CancelDiplomacyRequest($requestId) {
+    $mysqli = Database::GetInstance();
+
+    $player = Functions::GetPlayer();
+    $clan = $mysqli->query('SELECT * FROM server_clans WHERE id = '.$player['clanId'].'')->fetch_assoc();
+    $requestId = $mysqli->real_escape_string($requestId);
+
+    $json = [
+      'status' => false,
+      'message' => ''
+    ];
+
+    if ($clan != NULL) {
+      if ($clan['leaderId'] == $player['userId']) {
+        $statement = $mysqli->query('SELECT id FROM server_clan_diplomacy_applications WHERE senderClanId = '.$player['clanId'].' AND id = "'.$requestId.'"');
+        $fetch = $statement->fetch_assoc();
+
+        if ($statement->num_rows >= 1) {
+          $mysqli->begin_transaction();
+
+          try {
+            $mysqli->query('DELETE FROM server_clan_diplomacy_applications WHERE id = '.$fetch['id'].'');
+
+            $json['status'] = true;
+            $json['message'] = 'Your diplomatic request was withdrawn.';
+
+            $mysqli->commit();
+          } catch (Exception $e) {
+            $json['message'] = 'An error occurred. Please try again later.';
+            $mysqli->rollback();
+          }
+
+          $mysqli->close();
+        } else {
+          $json['message'] = 'Something went wrong!';
+        }
+      } else {
+        $json['message'] = 'Only leaders are can cancel a diplomacy request.';
+      }
+    } else {
+      $json['message'] = 'Something went wrong!';
+    }
+
+    return json_encode($json);
+  }
+
+  public static function DeclineDiplomacyRequest($requestId) {
+    $mysqli = Database::GetInstance();
+
+    $player = Functions::GetPlayer();
+    $clan = $mysqli->query('SELECT * FROM server_clans WHERE id = '.$player['clanId'].'')->fetch_assoc();
+    $requestId = $mysqli->real_escape_string($requestId);
+
+    $json = [
+      'status' => false,
+      'message' => ''
+    ];
+
+
+    if ($clan != NULL) {
+      if ($clan['leaderId'] == $player['userId']) {
+        $statement = $mysqli->query('SELECT id, senderClanId FROM server_clan_diplomacy_applications WHERE toClanId = '.$player['clanId'].' AND id = "'.$requestId.'"');
+        $fetch = $statement->fetch_assoc();
+
+        if ($statement->num_rows >= 1) {
+          $mysqli->begin_transaction();
+
+          try {
+            $mysqli->query('DELETE FROM server_clan_diplomacy_applications WHERE id = '.$fetch['id'].'');
+
+            $senderClanName = $mysqli->query('SELECT name FROM server_clans WHERE id = '.$fetch['senderClanId'].'')->fetch_assoc()['name'];
+
+            $json['status'] = true;
+            $json['message'] = "You declined the ".$senderClanName." clan's diplomacy request.";
+
+            $mysqli->commit();
+          } catch (Exception $e) {
+            $json['message'] = 'An error occurred. Please try again later.';
+            $mysqli->rollback();
+          }
+
+          $mysqli->close();
+        } else {
+          $json['message'] = 'Something went wrong!';
+        }
+      } else {
+        $json['message'] = 'Only leaders are can cancel a diplomacy request.';
+      }
+    } else {
+      $json['message'] = 'Something went wrong!';
+    }
+
+    return json_encode($json);
+  }
+
+  public static function AcceptDiplomacyRequest($requestId) {
+    $mysqli = Database::GetInstance();
+
+    $player = Functions::GetPlayer();
+    $clan = $mysqli->query('SELECT * FROM server_clans WHERE id = '.$player['clanId'].'')->fetch_assoc();
+    $requestId = $mysqli->real_escape_string($requestId);
+
+    $json = [
+      'status' => false,
+      'message' => ''
+    ];
+
+    if ($clan != NULL) {
+      if ($clan['leaderId'] == $player['userId']) {
+        $statement = $mysqli->query('SELECT * FROM server_clan_diplomacy_applications WHERE toClanId = '.$player['clanId'].' AND id = "'.$requestId.'"');
+        $fetch = $statement->fetch_assoc();
+
+        if ($statement->num_rows >= 1) {
+          $mysqli->begin_transaction();
+
+          try {
+            $mysqli->query('DELETE FROM server_clan_diplomacy_applications WHERE id = '.$fetch['id'].'');
+
+            if ($fetch['diplomacyType'] == 4) {
+              $diplomacyId = $mysqli->query('SELECT id FROM server_clan_diplomacy WHERE (senderClanId = '.$fetch['senderClanId'].' AND toClanId = '.$fetch['toClanId'].') OR (toClanId = '.$fetch['senderClanId'].' AND senderClanId = '.$fetch['toClanId'].')')->fetch_assoc()['id'];
+
+              $mysqli->query('DELETE FROM server_clan_diplomacy WHERE id = '.$diplomacyId.'');
+
+              $json['warEnded'] = [
+                'id' => $diplomacyId
+              ];
+
+              $json['status'] = true;
+              $json['message'] = 'War ended';
+
+              Socket::Send('EndDiplomacy', ['SenderClanId' => $fetch['senderClanId'], 'TargetClanId' => $fetch['toClanId']]);
+            } else {
+              $mysqli->query('INSERT INTO server_clan_diplomacy (senderClanId, toClanId, diplomacyType) VALUES ('.$fetch['senderClanId'].', '.$fetch['toClanId'].', '.$fetch['diplomacyType'].')');
+
+              $diplomacyId = $mysqli->insert_id;
+
+              $senderClanName = $mysqli->query('SELECT name FROM server_clans WHERE id = '.$fetch['senderClanId'].'')->fetch_assoc()['name'];
+
+              $form = ($fetch['diplomacyType'] == 1 ? 'Alliance' : ($fetch['diplomacyType'] == 2 ? 'NAP' : 'War'));
+
+              $json['acceptedRequest'] = [
+                'id' => $diplomacyId,
+                'name' => $senderClanName,
+                'form' => $form,
+                'diplomacyType' => $fetch['diplomacyType'],
+                'date' => date('d.m.Y')
+              ];
+
+              $json['status'] = true;
+              $json['message'] = "You accepted the ".$senderClanName." clan's diplomacy request.<br>New status: ".$form."";
+
+              Socket::Send('StartDiplomacy', ['SenderClanId' => $fetch['senderClanId'], 'TargetClanId' => $fetch['toClanId'], 'DiplomacyType' => $fetch['diplomacyType']]);
+            }
+
+            $mysqli->commit();
+          } catch (Exception $e) {
+            $json['message'] = 'An error occurred. Please try again later.';
+            $mysqli->rollback();
+          }
+
+          $mysqli->close();
+        } else {
+          $json['message'] = 'Something went wrong!';
+        }
+      } else {
+        $json['message'] = 'Only leaders are can cancel a diplomacy request.';
+      }
+    } else {
+      $json['message'] = 'Something went wrong!';
+    }
+
+    return json_encode($json);
+  }
+
+  public static function EndDiplomacy($diplomacyId) {
+    $mysqli = Database::GetInstance();
+
+    $player = Functions::GetPlayer();
+    $clan = $mysqli->query('SELECT * FROM server_clans WHERE id = '.$player['clanId'].'')->fetch_assoc();
+    $diplomacyId = $mysqli->real_escape_string($diplomacyId);
+
+    $json = [
+      'status' => false,
+      'message' => ''
+    ];
+
+    if ($clan != NULL) {
+      if ($clan['leaderId'] == $player['userId']) {
+        $statement = $mysqli->query('SELECT * FROM server_clan_diplomacy WHERE id = "'.$diplomacyId.'"');
+        $fetch = $statement->fetch_assoc();
+
+        if ($statement->num_rows >= 1 && $fetch['diplomacyType'] != 3) {
+          $mysqli->begin_transaction();
+
+          try {
+            $mysqli->query('DELETE FROM server_clan_diplomacy WHERE id = '.$diplomacyId.'');
+
+            $json['status'] = true;
+            $json['message'] = 'Diplomacy was ended.';
+
+            Socket::Send('EndDiplomacy', ['SenderClanId' => $fetch['senderClanId'], 'TargetClanId' => $fetch['toClanId']]);
+
+            $mysqli->commit();
+          } catch (Exception $e) {
+            $json['message'] = 'An error occurred. Please try again later.';
+            $mysqli->rollback();
+          }
+
+          $mysqli->close();
+        } else {
+          $json['message'] = 'Something went wrong!';
+        }
+      } else {
+        $json['message'] = 'Only leaders are can end a diplomacy.';
+      }
+    } else {
+      $json['message'] = 'Something went wrong!';
+    }
+
+    return json_encode($json);
+  }
+
   public static function GetUniqueSessionId() {
     $mysqli = Database::GetInstance();
 
@@ -721,7 +1062,7 @@ class Functions {
 
 		$message = '';
 
-		if ($mysqli->query('SELECT userId FROM player_accounts WHERE userId = '.$userId.'')->num_rows >= 1) {
+		if ($mysqli->query('SELECT userId FROM player_accounts WHERE userId = "'.$userId.'"')->num_rows >= 1) {
 			$verification = json_decode($mysqli->query('SELECT verification FROM player_accounts WHERE userId = '.$userId.'')->fetch_assoc()['verification']);
 
 			if (!$verification->verified) {

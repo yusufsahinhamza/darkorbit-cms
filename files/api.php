@@ -54,6 +54,34 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
 		if (isset($_POST['username'])) {
 			echo Functions::SendLinkAgain(Functions::s($_POST['username']));
 		}
+	} else if ($request === 'diplomacy_search_clan') {
+		if (isset($_POST['keywords'])) {
+			echo Functions::DiplomacySearchClan(Functions::s($_POST['keywords']));
+		}
+	} else if ($request === 'request_diplomacy') {
+		if (isset($_POST['clanId'], $_POST['diplomacyType'])) {
+			echo Functions::RequestDiplomacy(Functions::s($_POST['clanId']), Functions::s($_POST['diplomacyType']));
+		}
+	} else if ($request === 'cancel_diplomacy_request') {
+		if (isset($_POST['requestId'])) {
+			echo Functions::CancelDiplomacyRequest(Functions::s($_POST['requestId']));
+		}
+	} else if ($request === 'decline_diplomacy_request') {
+		if (isset($_POST['requestId'])) {
+			echo Functions::DeclineDiplomacyRequest(Functions::s($_POST['requestId']));
+		}
+	} else if ($request === 'accept_diplomacy_request') {
+		if (isset($_POST['requestId'])) {
+			echo Functions::AcceptDiplomacyRequest(Functions::s($_POST['requestId']));
+		}
+	} else if ($request === 'end_diplomacy') {
+		if (isset($_POST['diplomacyId'])) {
+			echo Functions::EndDiplomacy(Functions::s($_POST['diplomacyId']));
+		}
+	} else if ($request === 'end_war_request') {
+		if (isset($_POST['clanId'])) {
+			echo Functions::RequestDiplomacy(Functions::s($_POST['clanId']), 4);
+		}
 	} else if ($request === 'buy') {
 		if (isset($_POST['itemId'])) {
 			echo Functions::Buy(Functions::s($_POST['itemId']));

@@ -165,3 +165,7 @@ input[type=text]:not(.browser-default).invalid ~ .helper-text[data-error] {
   margin-left: 15px;
   margin-right: -15px;
 }
+
+.select-wrapper input {
+  color: #fff;
+}

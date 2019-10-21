@@ -214,10 +214,12 @@
   <?php } ?>
 
   $('input[name=search_clan]').on('keyup keypress keydown click', function() {
-    if ($('input[name=search_clan]').val() != '') {
+    var value = $(this).val();
+
+    if (value != '') {
       $.ajax({
         url: '<?php echo DOMAIN; ?>api/',
-        data: { action: 'search_clan', keywords: $('input[name=search_clan]').val() },
+        data: { action: 'search_clan', keywords: value },
         type: 'POST',
         success:function(response) {
           $('#clan-list tbody').html('');
@@ -236,6 +238,274 @@
       });
     }
   });
+</script>
+<?php } ?>
+
+<?php if (Functions::IsLoggedIn() && isset($page[1], $clan) && $page[1] === 'diplomacy' && $clan !== NULL) { ?>
+<script type="text/javascript">
+$('input[name=keywords]').on('keyup keypress keydown click', function() {
+  var value = $(this).val();
+
+  if (value != '') {
+    $.ajax({
+      url: '<?php echo DOMAIN; ?>api/',
+      data: { action: 'diplomacy_search_clan', keywords: value },
+      type: 'POST',
+      success:function(response) {
+        $('#dropdown3').html('');
+        $('#dropdown3').css({display: 'block', opacity: 1});
+
+        var json = jQuery.parseJSON(response);
+        for (var index in json) {
+          $('#dropdown3').append('
+            <li>
+              <a href="javascript:void(0)" data-clan-id="'+ json[index].id +'">['+ json[index].tag +'] '+ json[index].name +'</a>
+            </li>');
+        }
+      }
+    });
+  } else {
+    $('#dropdown3').css({display: 'none', opacity: 0});
+    $('input[name=keywords]').val('');
+    $('input[name=clanId]').val(0);
+  }
+});
+
+$('#request_diplomacy').submit(function(e) {
+  e.preventDefault();
+
+  var form = $(this);
+
+  $.ajax({
+    url: '<?php echo DOMAIN; ?>api/',
+    data: form.serialize() + '&action=request_diplomacy',
+    type: 'POST',
+    success:function(response) {
+      var json = jQuery.parseJSON(response);
+
+      if (json.request) {
+        $('#open_applications_button').css({display: 'inline-block'});
+
+        $('#pending-requests tbody').append('
+          <tr id="pending-request-'+ json.request.id +'">
+            <td>'+ json.request.date +'</td>
+            <td>'+ json.request.clan.name +'</td>
+            <td>'+ json.request.form +'</td>
+            <td>Waiting...</td>
+            <td><button data-request-id="'+ json.request.id +'" class="cancel-request btn grey darken-1 waves-effect waves-light col s12">CANCEL</button></td>
+          </tr>');
+      }
+
+      if (json.declared) {
+        $('#clan-diplomacy tbody').append('
+          <tr id="diplomacy-'+ json.declared.id +'">
+            <td>'+ json.declared.clan.name +'</td>
+            <td>'+ json.declared.form +'</td>
+            <td>'+ json.declared.date +'</td>
+            <td><button data-clan-id="'+ json.declared.clan.id +'" data-diplomacy-clan-name="'+ json.declared.clan.name +'" data-diplomacy-form="End War" class="end-war btn grey darken-1 waves-effect waves-light col s12 modal-trigger" href="#modal2">CANCEL</button></td>
+          </tr>');
+      }
+
+      if (json.message != '') {
+        M.toast({html: '<span>'+ json.message +'</span>'});
+      }
+    }
+  });
+});
+
+$('body').on('click', '.cancel-request', function() {
+  var requestId = $(this).data('request-id');
+
+  $.ajax({
+    type: 'POST',
+    url: '<?php echo DOMAIN; ?>api/',
+    data: { action: 'cancel_diplomacy_request', requestId: requestId },
+    success: function(response) {
+      var json = jQuery.parseJSON(response);
+
+      if (json.status) {
+        $('#pending-requests').find('#pending-request-'+ requestId +'').remove();
+
+        if ($('#pending-requests').length <= 1) {
+          $('#modal').modal('close');
+          $('#open_applications_button').css({display: 'none'});
+        }
+      }
+
+      if (json.message != '') {
+        M.toast({html: '<span>'+ json.message +'</span>'});
+      }
+    }
+  });
+});
+
+$('body').on('click', '.end-diplomacy', function() {
+  var diplomacyId = $(this).data('diplomacy-id');
+
+  $.ajax({
+    type: 'POST',
+    url: '<?php echo DOMAIN; ?>api/',
+    data: { action: 'end_diplomacy', diplomacyId: diplomacyId },
+    success: function(response) {
+      var json = jQuery.parseJSON(response);
+
+      if (json.status) {
+        $('#diplomacy-'+ diplomacyId +'').remove();
+      }
+
+      if (json.message != '') {
+        M.toast({html: '<span>'+ json.message +'</span>'});
+      }
+    }
+  });
+});
+
+$('body').on('click', '#dropdown3 li a', function() {
+  $('#dropdown3').css({display: 'none', opacity: 0});
+  $('input[name=keywords]').val($(this).text());
+  $('input[name=clanId]').val($(this).data('clan-id'));
+});
+
+var currentDrClanName = '%clan_name%';
+var currentDrForm = '%form%';
+var currentDrId = 0;
+
+$('.view-request').click(function() {
+  var requestId = $(this).data('request-id');
+
+  if (currentDrId != requestId) {
+    var name = $(this).data('request-clan-name');
+    var form = $(this).data('request-form');
+
+    $('#modal1 h6').text($('#modal1 h6').text().replace(currentDrClanName, name));
+    $('#modal1 p').text($('#modal1 p').text().replace(currentDrForm, form));
+
+    currentDrId = requestId;
+    currentDrClanName = name;
+    currentDrForm = form;
+  }
+});
+
+$('#decline').click(function() {
+  if (currentDrId != 0) {
+    $.ajax({
+      type: 'POST',
+      url: '<?php echo DOMAIN; ?>api/',
+      data: { action: 'decline_diplomacy_request', requestId: currentDrId },
+      success: function(response) {
+        var json = jQuery.parseJSON(response);
+
+        if (json.status) {
+          $('#request-'+ currentDrId +'').remove();
+        }
+
+        if (json.message != '') {
+          M.toast({html: '<span>'+ json.message +'</span>'});
+        }
+      }
+    });
+  }
+});
+
+$('#accept').click(function() {
+  if (currentDrId != 0) {
+    $.ajax({
+      type: 'POST',
+      url: '<?php echo DOMAIN; ?>api/',
+      data: { action: 'accept_diplomacy_request', requestId: currentDrId },
+      success: function(response) {
+        var json = jQuery.parseJSON(response);
+
+        if (json.status) {
+          $('#request-'+ currentDrId +'').remove();
+        }
+
+        if (json.warEnded) {
+          $('#diplomacy-'+ json.warEnded.id +'').remove();
+        }
+
+        if (json.acceptedRequest) {
+          $('#clan-diplomacy tbody').append('
+            <tr id="diplomacy-'+ json.acceptedRequest.id +'">
+              <td>'+ json.acceptedRequest.name +'</td>
+              <td>'+ json.acceptedRequest.form +'</td>
+              <td>'+ json.acceptedRequest.date +'</td>
+              <td><button data-diplomacy-id="'+ json.acceptedRequest.id +'" class="end-diplomacy btn grey darken-1 waves-effect waves-light col s12">CANCEL</button></td>
+            </tr>');
+        }
+
+        if (json.message != '') {
+          M.toast({html: '<span>'+ json.message +'</span>'});
+        }
+      }
+    });
+  }
+});
+
+
+
+
+
+
+var currentEwdClanName = '%clan_name%';
+var currentEwdForm = '%form%';
+var currentEwdClanId = 0;
+
+$('body').on('click', '.end-war', function() {
+  var clanId = $(this).data('clan-id');
+
+  if (currentEwdClanId != clanId) {
+    var name = $(this).data('diplomacy-clan-name');
+    var form = $(this).data('diplomacy-form');
+
+    $('#modal2 h6').text($('#modal2 h6').text().replace(currentEwdClanName, name));
+    $('#modal2 p').text($('#modal2 p').text().replace(currentEwdForm, form));
+
+    currentEwdClanId = clanId;
+    currentEwdClanName = name;
+    currentEwdForm = form;
+  }
+});
+
+$('#end-war').click(function() {
+  if (currentEwdClanId != 0) {
+    $.ajax({
+      type: 'POST',
+      url: '<?php echo DOMAIN; ?>api/',
+      data: { action: 'end_war_request', clanId: currentEwdClanId },
+      success: function(response) {
+        var json = jQuery.parseJSON(response);
+
+        if (json.request) {
+          $('#open_applications_button').css({display: 'inline-block'});
+
+          $('#pending-requests tbody').append('
+            <tr id="pending-request-'+ json.request.id +'">
+              <td>'+ json.request.date +'</td>
+              <td>'+ json.request.clan.name +'</td>
+              <td>'+ json.request.form +'</td>
+              <td>Waiting...</td>
+              <td><button data-request-id="'+ json.request.id +'" class="cancel-request btn grey darken-1 waves-effect waves-light col s12">CANCEL</button></td>
+            </tr>');
+        }
+
+        if (json.message != '') {
+          M.toast({html: '<span>'+ json.message +'</span>'});
+        }
+      }
+    });
+  }
+});
+
+
+
+
+
+
+
+
+
+
 </script>
 <?php } ?>
 
