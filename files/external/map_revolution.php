@@ -6,7 +6,19 @@ if (!Functions::IsLoggedIn()) {
   die();
 }
 
-$gamePlayerSettings = json_decode($mysqli->query('SELECT * FROM player_settings WHERE userId = '.$player['userId'].'')->fetch_assoc()['gameplay']);
+$mysqli->begin_transaction();
+
+try {
+  foreach ($mysqli->query('SELECT * FROM server_bans WHERE userId = '.$player['userId'].'')->fetch_all(MYSQLI_ASSOC) as $value) {
+    if (new DateTime(date('d.m.Y H:i:s')) >= new DateTime($value['end_date'])) {
+      $mysqli->query('DELETE FROM server_bans WHERE id = '.$value['id'].'');
+    }
+  }
+
+  $mysqli->commit();
+} catch (Exception $e) {
+  $mysqli->rollback();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,6 +43,14 @@ $gamePlayerSettings = json_decode($mysqli->query('SELECT * FROM player_settings 
     <script type="text/javascript" src="<?php echo DOMAIN; ?>js/darkorbit/main.js"></script>
 </head>
 <body>
+
+<?php
+$statement = $mysqli->query('SELECT * FROM server_bans WHERE typeId = 1 AND userId = '.$player['userId'].'');
+$fetch = $statement->fetch_assoc();
+
+if ($statement->num_rows <= 0) {
+$gamePlayerSettings = json_decode($mysqli->query('SELECT * FROM player_settings WHERE userId = '.$player['userId'].'')->fetch_assoc()['gameplay']);
+?>
   <div id="container"></div>
 
   <script type="text/javascript">
@@ -108,9 +128,18 @@ $gamePlayerSettings = json_decode($mysqli->query('SELECT * FROM player_settings 
             "display2d": "<?php echo ($player['version'] ? '1' : '2'); ?>",
             "autoStartEnabled": "<?php echo (int)($gamePlayerSettings != null ? $gamePlayerSettings->autoStartEnabled : true); ?>",
             "mapID": "1",
-            "allowChat": "1"
+            "allowChat": "<?php echo (int)($mysqli->query('SELECT * FROM server_bans WHERE typeId = 0 AND userId = '.$player['userId'].'')->num_rows <= 0);?>"
           });
       });
   </script>
+<?php } else { ?>
+<div id="container">
+  <div id="banned">
+    <div>You are banned by administrator.</div>
+    <div>Reason: <?php echo $fetch['reason']; ?></div>
+    <div>End date: <?php echo date('d.m.Y H:i', strtotime($fetch['end_date'])); ?></div>
+  </div>
+</div>
+<?php } ?>
 </body>
 </html>

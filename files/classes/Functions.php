@@ -29,15 +29,17 @@ class Functions {
         $path = ROOT . 'api.php';
       } else if ($page[0] == 'cronjobs') {
 				$path = CRONJOBS . $page[1] . '.php';
-			} else if ($page[0] == 'company_select' && (isset($player) && $player['factionId'] != 0)) {
-				$path = EXTERNALS . 'home.php';
 			} else {
         if (isset($player)) {
-          if ($player['factionId'] == 0) {
+          if ($page[0] == 'company_select' && $player['factionId'] != 0) {
+            $page[0] = 'home';
+          } else if ($player['factionId'] == 0) {
             $page[0] = 'company_select';
           } else if ($page[0] == 'index') {
             $page[0] = 'home';
           }
+        } else {
+          $page[0] = 'index';
         }
 
         $path = EXTERNALS . $page[0] . '.php';

@@ -34,6 +34,10 @@ try {
     $mysqli->query('UPDATE player_accounts SET rankPoints = '.$rankPoints.' WHERE userId = '.$value['userId'].'');
   }
 
+  foreach ($mysqli->query('SELECT * FROM server_bans WHERE typeId = 1') as $value) {
+    $mysqli->query('UPDATE player_accounts SET rankPoints = 10 WHERE userId = '.$value['userId'].'');
+  }
+
   foreach ($mysqli->query('SELECT * FROM player_accounts WHERE rankId != 21 ORDER BY rankPoints DESC') as $key => $value) {
     $mysqli->query('UPDATE player_accounts SET rank = '.($key + 1).' WHERE userId = '.$value['userId'].'');
   }
@@ -78,9 +82,9 @@ try {
     			);
 
     $addition = 0;
-    $userscount = ($mysqli->query('SELECT userId FROM player_accounts WHERE rankPoints > 10 AND factionId = '.$i.' AND rankId != 21')->num_rows) - 1;
+    $userscount = ($mysqli->query('SELECT userId FROM player_accounts WHERE rankPoints >= 10 AND factionId = '.$i.' AND rankId != 21')->num_rows) - 1;
     $predictcount = 0;
-    $userslist = ($mysqli->query('SELECT userId FROM player_accounts WHERE rankPoints > 10 AND factionId = '.$i.' AND rankId != 21 ORDER BY rankPoints DESC')->fetch_all(MYSQLI_ASSOC));
+    $userslist = ($mysqli->query('SELECT userId FROM player_accounts WHERE rankPoints >= 10 AND factionId = '.$i.' AND rankId != 21 ORDER BY rankPoints DESC')->fetch_all(MYSQLI_ASSOC));
 
     $rank = array_reverse($rank, true);
 
