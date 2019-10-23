@@ -263,9 +263,9 @@ class Functions {
 				$data = json_decode($player['data']);
 
 				if ($data->uridium >= 5000) {
-					$NotOnlineOrOnlineAndInEquipZone = !Socket::Get('IsOnline', array('UserId' => $player['userId'], 'Return' => false)) || (Socket::Get('IsOnline', array('UserId' => $player['userId'], 'Return' => false)) && Socket::Get('IsInEquipZone', array('UserId' => $player['userId'], 'Return' => false)));
+					$notOnlineOrOnlineAndInEquipZone = !Socket::Get('IsOnline', array('UserId' => $player['userId'], 'Return' => false)) || (Socket::Get('IsOnline', array('UserId' => $player['userId'], 'Return' => false)) && Socket::Get('IsInEquipZone', array('UserId' => $player['userId'], 'Return' => false)));
 
-					if ($NotOnlineOrOnlineAndInEquipZone) {
+					if ($notOnlineOrOnlineAndInEquipZone) {
 						$data->uridium -= 5000;
 
 						if ($data->honor > 0) {
@@ -643,10 +643,10 @@ class Functions {
 			'message' => ''
 		];
 
-		$NotOnlineOrOnlineAndInEquipZone = !Socket::Get('IsOnline', array('UserId' => $player['userId'], 'Return' => false)) || (Socket::Get('IsOnline', array('UserId' => $player['userId'], 'Return' => false)) && Socket::Get('IsInEquipZone', array('UserId' => $player['userId'], 'Return' => false)));
+		$notOnlineOrOnlineAndInEquipZone = !Socket::Get('IsOnline', array('UserId' => $player['userId'], 'Return' => false)) || (Socket::Get('IsOnline', array('UserId' => $player['userId'], 'Return' => false)) && Socket::Get('IsInEquipZone', array('UserId' => $player['userId'], 'Return' => false)));
 
 		if ($clan != NULL && $clan['leaderId'] != $player['userId']) {
-			if ($NotOnlineOrOnlineAndInEquipZone) {
+			if ($notOnlineOrOnlineAndInEquipZone) {
 				$mysqli->begin_transaction();
 
 				try {
@@ -1395,8 +1395,13 @@ class Functions {
 
 	public static function GetPlayer() {
 		$mysqli = Database::GetInstance();
-		$id = $mysqli->real_escape_string(Functions::s($_SESSION['account']['id']));
-		return $mysqli->query('SELECT * FROM player_accounts WHERE userId = '.$id.'')->fetch_assoc();
+
+    if (isset($_SESSION['account']['id'])) {
+      $id = $mysqli->real_escape_string(Functions::s($_SESSION['account']['id']));
+      return $mysqli->query('SELECT * FROM player_accounts WHERE userId = '.$id.'')->fetch_assoc();
+    } else {
+      return null;
+    }
 	}
 }
 

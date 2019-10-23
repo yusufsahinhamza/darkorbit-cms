@@ -1,6 +1,6 @@
 <?php require_once(INCLUDES . 'header.php'); ?>
 
-      <div id="main">
+      <div id="main" class="index">
         <div class="container container-center">
           <div class="row form">
             <div class="col l6 s12 offset-l3">

@@ -66,8 +66,11 @@ a, a:active {
 }
 
 #main {
-  height: 100vh;
   min-height: 100vh;
+}
+
+.index {
+  height: 100vh;
 }
 
 #login, #register {

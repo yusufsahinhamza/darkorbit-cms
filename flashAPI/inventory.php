@@ -7,7 +7,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && Functions::IsLoggedIn()) {
 
 	$equipment = $mysqli->query("SELECT * FROM player_equipment WHERE userId = {$player['userId']}")->fetch_assoc();
 	$currentShip = $mysqli->query("SELECT * FROM server_ships WHERE shipID = {$player['shipId']}")->fetch_assoc();
-	$onlineOrOnlineAndInEquipZone = !Socket::Get('IsOnline', array('UserId' => $player['userId'], 'Return' => false)) || (Socket::Get('IsOnline', array('UserId' => $player['userId'], 'Return' => false)) && Socket::Get('IsInEquipZone', array('UserId' => $player['userId'], 'Return' => false)));
+	$notOnlineOrOnlineAndInEquipZone = !Socket::Get('IsOnline', array('UserId' => $player['userId'], 'Return' => false)) || (Socket::Get('IsOnline', array('UserId' => $player['userId'], 'Return' => false)) && Socket::Get('IsInEquipZone', array('UserId' => $player['userId'], 'Return' => false)));
 
 	$lf4Count = json_decode($equipment['items'])->lf4Count;
 	$havocCount = json_decode($equipment['items'])->havocCount;
@@ -52,7 +52,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && Functions::IsLoggedIn()) {
 		1 => "You can't sell your ship!",
 		2 => "You can't sell your drones!",
 		3 => "Equipping isn't possible. You must be at a location with a hangar facility!",
-		4 => "Something went wrong."
+		4 => 'Something went wrong.',
+		5 => 'You cannot change spaceships until the 5 second cool-down has been completed.'
 	];
 
 	if (!empty($_POST))
@@ -340,14 +341,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && Functions::IsLoggedIn()) {
 			$ship = $mysqli->query('SELECT * FROM server_ships WHERE lootID = "'.$json_array['lootId'].'"')->fetch_assoc();
 
 			if ($ship['baseShipId'] == $currentShip['baseShipId']) {
-				if ($onlineOrOnlineAndInEquipZone) {
-					$mysqli->query('UPDATE player_accounts SET shipId = '.$ship['shipID'].' WHERE userID = '.$player['userId'].'');
+				if ($notOnlineOrOnlineAndInEquipZone) {
+					if (!Socket::Get('IsOnline', array('UserId' => $player['userId'], 'Return' => false)) || (Socket::Get('IsOnline', array('UserId' => $player['userId'], 'Return' => false)) && Socket::Get('AvailableToChangeShip', array('UserId' => $player['userId'], 'Return' => false)))) {
+						$mysqli->query('UPDATE player_accounts SET shipId = '.$ship['shipID'].' WHERE userID = '.$player['userId'].'');
 
-					echo base64_encode('{"isError":0,"data":{"ret":1,"money":{"uridium":"0","credits":"0"}}}');
-					SetConfigs();
+						echo base64_encode('{"isError":0,"data":{"ret":1,"money":{"uridium":"0","credits":"0"}}}');
+						SetConfigs();
 
-					if (Socket::Get('IsOnline', array('UserId' => $player['userId'], 'Return' => false))) {
-						Socket::Send('ChangeShip', array('UserId' => $player['userId'], 'ShipId' => $ship['shipID']));
+						if (Socket::Get('IsOnline', array('UserId' => $player['userId'], 'Return' => false))) {
+							Socket::Send('ChangeShip', array('UserId' => $player['userId'], 'ShipId' => $ship['shipID']));
+						}
+					} else {
+						SendError($error[5]);
 					}
 				} else {
 					SendError($error[3]);
@@ -357,7 +362,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && Functions::IsLoggedIn()) {
 			}
 		}
 		else if($_POST['action'] == 'clearConfig') {
-			if ($onlineOrOnlineAndInEquipZone) {
+			if ($notOnlineOrOnlineAndInEquipZone) {
 				$decoded = base64_decode($_POST['params']);
 				$json_array = json_decode($decoded, true);
 
@@ -372,7 +377,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && Functions::IsLoggedIn()) {
 		}
 		else if ($_POST['action'] == "droneEquip")
 		{
-			if ($onlineOrOnlineAndInEquipZone) {
+			if ($notOnlineOrOnlineAndInEquipZone) {
 				$data = '{"isError":0,"data":{"ret":1,"money":{"uridium":"0","credits":"0"}}}';
 				$decoded = base64_decode($_POST['params']);
 				$json_array = json_decode($decoded, true);
@@ -427,7 +432,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && Functions::IsLoggedIn()) {
 			}
 		}
 		else if($_POST['action'] == 'move') {
-			if ($onlineOrOnlineAndInEquipZone) {
+			if ($notOnlineOrOnlineAndInEquipZone) {
 				$ret = '';
 				$data = '{"isError":0,"data":{"ret":1,"money":{"uridium":"0","credits":"0"}}}';
 				$decoded = base64_decode($_POST['params']);
