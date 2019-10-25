@@ -143,14 +143,10 @@ input[type=text]:not(.browser-default).invalid ~ .helper-text[data-error] {
   padding: 10px 25px;
 }
 
-#drones .card .card-image img {
+.card .card-image img {
+  padding-top: 15px;
   width: unset;
   display: unset;
-}
-
-#data label {
-  font-size: unset;
-  color: unset;
 }
 
 @media only screen and (max-width: 992px) {
@@ -171,4 +167,8 @@ input[type=text]:not(.browser-default).invalid ~ .helper-text[data-error] {
 
 .select-wrapper input {
   color: #fff;
+}
+
+.btn.disabled, .disabled.btn-large, .disabled.btn-small, .btn-floating.disabled, .btn-large.disabled, .btn-small.disabled, .btn-flat.disabled, .btn:disabled, .btn-large:disabled, .btn-small:disabled, .btn-floating:disabled, .btn-large:disabled, .btn-small:disabled, .btn-flat:disabled, .btn[disabled], .btn-large[disabled], .btn-small[disabled], .btn-floating[disabled], .btn-large[disabled], .btn-small[disabled], .btn-flat[disabled] {
+  background-color: #424242 !important;
 }

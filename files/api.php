@@ -83,9 +83,17 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
 			echo Functions::RequestDiplomacy(Functions::s($_POST['clanId']), 4);
 		}
 	} else if ($request === 'buy') {
-		if (isset($_POST['itemId'])) {
-			echo Functions::Buy(Functions::s($_POST['itemId']));
+		if (isset($_POST['itemId'], $_POST['amount'])) {
+			echo Functions::Buy(Functions::s($_POST['itemId']), Functions::s($_POST['amount']));
 		}
+	} else if ($request === 'use_researchPoints') {
+		if (isset($_POST['skill'])) {
+			echo Functions::UseResearchPoints(Functions::s($_POST['skill']));
+		}
+	} else if ($request === 'exchange_logdisks') {
+		echo Functions::ExchangeLogdisks();
+	} else if ($request === 'reset_skills') {
+		echo Functions::ResetSkills();
 	} else if ($request === 'delete_clan') {
 		echo Functions::DeleteClan();
 	} else if ($request === 'leave_clan') {

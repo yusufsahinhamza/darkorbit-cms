@@ -38,7 +38,7 @@ class Functions {
           } else if ($page[0] == 'index') {
             $page[0] = 'home';
           }
-        } else {
+        } else if ($page[0] != 'maintenance') {
           $page[0] = 'index';
         }
 
@@ -1099,42 +1099,74 @@ class Functions {
 		return $message;
 	}
 
-	public static function Buy($itemId) {
+	public static function Buy($itemId, $amount) {
 		$mysqli = Database::GetInstance();
 
 		$player = Functions::GetPlayer();
 		$itemId = $mysqli->real_escape_string($itemId);
+    $amount = $mysqli->real_escape_string($amount);
+    $shop = Functions::GetShop();
 
 		$json = [
 			'status' => false,
 			'message' => ''
 		];
 
-		if (in_array($itemId, [1, 2])) {
+		if (isset($shop['items'][$itemId]) && $shop['items'][$itemId]['active']) {
 			$items = json_decode($mysqli->query('SELECT items FROM player_equipment WHERE userId = '.$player['userId'].'')->fetch_assoc()['items']);
 			$data = json_decode($player['data']);
 
-			if ($itemId == 1) {
-				if (!$items->apis) {
-					if ($data->uridium >= 100000) {
-						$data->uridium -= 100000;
-						$items->apis = true;
+      $price = $shop['items'][$itemId]['price'];
 
-						$mysqli->begin_transaction();
+      if ($shop['items'][$itemId]['amount'] && $amount <= 0) {
+        $amount = 1;
+      }
+
+      if ($shop['items'][$itemId]['amount'] && $amount >= 1) {
+        $price *= $amount;
+      }
+
+      if (($shop['items'][$itemId]['priceType'] == 'uridium' ? $data->uridium : $data->credits) >= $price) {
+          $data->{($shop['items'][$itemId]['priceType'] == 'uridium' ? 'uridium' : 'credits')} -= $price;
+
+          $status = false;
+
+          if ($shop['items'][$itemId]['name'] == 'Apis') {
+            if (!$items->apis) {
+              $items->apis = true;
+              $status = true;
+            } else {
+              $json['message'] = 'You already have an '.$shop['items'][$itemId]['name'].' Drone.';
+            }
+          } else if ($shop['items'][$itemId]['name'] == 'Zeus') {
+            if (!$items->zeus) {
+              $items->zeus = true;
+              $status = true;
+            } else {
+              $json['message'] = 'You already have an '.$shop['items'][$itemId]['name'].' Drone.';
+            }
+          } else if ($shop['items'][$itemId]['name'] == 'Logdisk') {
+            $items->skillTree->logdisks += $amount;
+            $status = true;
+          }
+
+          if ($status) {
+            $mysqli->begin_transaction();
 
 						try {
 							$mysqli->query("UPDATE player_accounts SET data = '".json_encode($data)."' WHERE userId = ".$player['userId']."");
 							$mysqli->query("UPDATE player_equipment SET items = '".json_encode($items)."' WHERE userId = ".$player['userId']."");
 
-							$json['status'] = true;
-
-							$json['uridium'] = number_format($data->uridium);
-
-							$json['message'] = 'Drone Apis purchased';
+							$json['newStatus'] = [
+                'uridium' => number_format($data->uridium),
+                'credits' => number_format($data->credits)
+              ];
 
 							if (Socket::Get('IsOnline', ['UserId' => $player['userId'], 'Return' => false])) {
-								Socket::Send('BuyItem', ['UserId' => $player['userId'], 'ItemType' => 'drone', 'DataType' => 0, 'Amount' => 100000]);
+								Socket::Send('BuyItem', ['UserId' => $player['userId'], 'ItemType' => $shop['items'][$itemId]['category'], 'DataType' => ($shop['items'][$itemId]['priceType'] == 'uridium' ? 0 : 1), 'Amount' => $price]);
 							}
+
+              $json['message'] = ''.$shop['items'][$itemId]['name'].' '.($amount != 0 ? '('.number_format($amount).')' : '').' purchased';
 
 							$mysqli->commit();
 						} catch (Exception $e) {
@@ -1143,49 +1175,10 @@ class Functions {
 						}
 
 						$mysqli->close();
-					} else {
-						$json['message'] = "You don't have enough Uridium.";
-					}
-				} else {
-					$json['message'] = 'You already have an Apis Drone.';
-				}
-			} else if ($itemId == 2) {
-				if (!$items->zeus) {
-					if ($data->uridium >= 100000) {
-						$data->uridium -= 100000;
-						$items->zeus = true;
-
-						$mysqli->begin_transaction();
-
-						try {
-							$mysqli->query("UPDATE player_accounts SET data = '".json_encode($data)."' WHERE userId = ".$player['userId']."");
-							$mysqli->query("UPDATE player_equipment SET items = '".json_encode($items)."' WHERE userId = ".$player['userId']."");
-
-							$json['status'] = true;
-
-							$json['uridium'] = number_format($data->uridium);
-
-							$json['message'] = 'Drone Zeus purchased';
-
-							if (Socket::Get('IsOnline', ['UserId' => $player['userId'], 'Return' => false])) {
-								Socket::Send('BuyItem', ['UserId' => $player['userId'], 'ItemType' => 'drone', 'DataType' => 0, 'Amount' => 100000]);
-							}
-
-							$mysqli->commit();
-						} catch (Exception $e) {
-							$json['message'] = 'An error occurred. Please try again later.';
-							$mysqli->rollback();
-						}
-
-						$mysqli->close();
-					} else {
-						$json['message'] = "You don't have enough Uridium.";
-					}
-				} else {
-					$json['message'] = 'You already have an Zeus Drone.';
-				}
-			}
-
+          }
+      } else {
+        $json['message'] = "You don't have enough " . ($shop['items'][$itemId]['priceType'] == 'uridium' ? 'Uridium' : 'Credits');
+      }
 		} else {
 			$json['message'] = 'Something went wrong!';
 		}
@@ -1243,6 +1236,295 @@ class Functions {
     return json_encode($json);
   }
 
+  public static function ExchangeLogdisks() {
+    $mysqli = Database::GetInstance();
+
+    $player = Functions::GetPlayer();
+
+    $equipment = $mysqli->query('SELECT skill_points, items FROM player_equipment WHERE userId = '.$player['userId'].'')->fetch_assoc();
+    $skillPoints = json_decode($equipment['skill_points']);
+    $items = json_decode($equipment['items']);
+    $requiredLogdisks = Functions::GetRequiredLogdisks((array_sum((array)json_decode($equipment['skill_points'])) + $items->skillTree->researchPoints) + 1);
+
+    $json = [
+      'message' => ''
+    ];
+
+    if ($items->skillTree->logdisks >= $requiredLogdisks && ((array_sum((array)$skillPoints) + $items->skillTree->researchPoints) < array_sum(array_column(Functions::GetSkills($skillPoints), 'maxLevel')))) {
+      $items->skillTree->logdisks -= $requiredLogdisks;
+      $items->skillTree->researchPoints++;
+
+      $mysqli->begin_transaction();
+
+      try {
+        $mysqli->query("UPDATE player_equipment SET items = '".json_encode($items)."' WHERE userId = ".$player['userId']."");
+
+        $json['newStatus'] = [
+          'logdisks' => $items->skillTree->logdisks,
+          'researchPoints' => $items->skillTree->researchPoints,
+          'researchPointsMaxed' => ((array_sum((array)$skillPoints) + $items->skillTree->researchPoints) == array_sum(array_column(Functions::GetSkills($skillPoints), 'maxLevel'))),
+          'requiredLogdisks' => Functions::GetRequiredLogdisks((array_sum((array)json_decode($equipment['skill_points'])) + $items->skillTree->researchPoints) + 1)
+        ];
+
+        $json['message'] = 'Log disks exchanged.';
+
+        $mysqli->commit();
+      } catch (Exception $e) {
+        $json['message'] = 'An error occurred. Please try again later.';
+        $mysqli->rollback();
+      }
+
+      $mysqli->close();
+    } else {
+      $json['message'] = 'Something went wrong!';
+    }
+
+    return json_encode($json);
+  }
+
+  public static function ResetSkills() {
+    $mysqli = Database::GetInstance();
+
+    $player = Functions::GetPlayer();
+
+    $equipment = $mysqli->query('SELECT skill_points, items FROM player_equipment WHERE userId = '.$player['userId'].'')->fetch_assoc();
+    $skillPoints = json_decode($equipment['skill_points']);
+    $items = json_decode($equipment['items']);
+    $data = json_decode($player['data']);
+
+    $json = [
+      'status' => false,
+      'message' => ''
+    ];
+
+    $cost = Functions::GetResetSkillCost($items->skillTree->resetCount);
+    if ($data->uridium >= $cost) {
+      $data->uridium -= $cost;
+      $items->skillTree->resetCount++;
+
+      $items->skillTree->researchPoints += array_sum((array)$skillPoints);
+
+      foreach ($skillPoints as $key => $value) {
+        $skillPoints->$key = 0;
+      }
+
+      $mysqli->begin_transaction();
+
+      try {
+        $mysqli->query("UPDATE player_accounts SET data = '".json_encode($data)."' WHERE userId = ".$player['userId']."");
+
+        $mysqli->query("UPDATE player_equipment SET items = '".json_encode($items)."', skill_points = '".json_encode($skillPoints)."' WHERE userId = ".$player['userId']."");
+
+        $json['status'] = true;
+        $json['message'] = 'Research points resetted.';
+
+        if (Socket::Get('IsOnline', ['UserId' => $player['userId'], 'Return' => false])) {
+					Socket::Send('ResetSkillTree', ['UserId' => $player['userId']]);
+				}
+
+        $mysqli->commit();
+      } catch (Exception $e) {
+        $json['message'] = 'An error occurred. Please try again later.';
+        $mysqli->rollback();
+      }
+
+      $mysqli->close();
+    } else {
+      $json['message'] = "You don't have enough Uridium.";
+    }
+
+    return json_encode($json);
+  }
+
+  public static function UseResearchPoints($skill) {
+    $mysqli = Database::GetInstance();
+
+    $player = Functions::GetPlayer();
+    $skill = $mysqli->real_escape_string($skill);
+
+    $equipment = $mysqli->query('SELECT skill_points, items FROM player_equipment WHERE userId = '.$player['userId'].'')->fetch_assoc();
+    $skillPoints = json_decode($equipment['skill_points']);
+    $items = json_decode($equipment['items']);
+
+    $skills = Functions::GetSkills($skillPoints);
+
+    $json = [
+      'message' => ''
+    ];
+
+    if (array_key_exists($skill, $skills) && isset($skillPoints->{$skill}) && (!isset($skills[$skill]['baseSkill']) || (isset($skills[$skill]['baseSkill']) && $skills[$skills[$skill]['baseSkill']]['currentLevel'] == $skills[$skills[$skill]['baseSkill']]['maxLevel']))) {
+      if ($items->skillTree->researchPoints >= 1 && $skillPoints->{$skill} < $skills[$skill]['maxLevel']) {
+        $items->skillTree->researchPoints--;
+        $skillPoints->{$skill}++;
+
+        $mysqli->begin_transaction();
+
+        try {
+          $mysqli->query("UPDATE player_equipment SET items = '".json_encode($items)."', skill_points = '".json_encode($skillPoints)."' WHERE userId = ".$player['userId']."");
+
+          $json['newStatus'] = [
+            'researchPoints' => $items->skillTree->researchPoints,
+            'currentLevel' => $skillPoints->{$skill},
+            'usedResearchPoints' => array_sum((array)$skillPoints),
+            'isMaxed' => $skillPoints->{$skill} == $skills[$skill]['maxLevel'],
+            'tooltip' => Functions::GetSkillTooltip($skills[$skill]['name'], $skillPoints->{$skill}, $skills[$skill]['maxLevel'])
+          ];
+
+          if ($json['newStatus']['isMaxed'] && isset($skills[$skill]['nextSkill'])) {
+            $json['newStatus']['nextSkill'] = $skills[$skill]['nextSkill'];
+          }
+
+          if (Socket::Get('IsOnline', ['UserId' => $player['userId'], 'Return' => false])) {
+  					Socket::Send('UpgradeSkillTree', ['UserId' => $player['userId'], 'Skill' => $skill]);
+  				}
+
+          $mysqli->commit();
+        } catch (Exception $e) {
+          $json['message'] = 'An error occurred. Please try again later.';
+          $mysqli->rollback();
+        }
+
+        $mysqli->close();
+      } else {
+        $json['message'] = 'Something went wrong!';
+      }
+    } else {
+      $json['message'] = 'Something went wrong!';
+    }
+
+    return json_encode($json);
+  }
+
+  public static function GetShop() {
+    return [
+      'categories' => ['drones', 'extras'],
+      'items' => [
+        [
+          'id' => 0,
+          'category' => 'drones',
+          'name' => 'Apis',
+          'price' => 100000,
+          'priceType' => 'uridium',
+          'amount' => false,
+          'image' => 'do_img/global/items/drone/apis-5_top.png',
+          'active' => true
+        ],
+        [
+          'id' => 1,
+          'category' => 'drones',
+          'name' => 'Zeus',
+          'price' => 100000,
+          'priceType' => 'uridium',
+          'amount' => false,
+          'image' => 'do_img/global/items/drone/zeus-5_top.png',
+          'active' => true
+        ],
+        [
+          'id' => 2,
+          'category' => 'extras',
+          'name' => 'Logdisk',
+          'price' => 1000,
+          'priceType' => 'credits',
+          'amount' => true,
+          'image' => 'do_img/global/items/resource/logfile_100x100.png',
+          'active' => true
+        ]
+      ]
+    ];
+  }
+
+  public static function GetResetSkillCost($resetCount) {
+    $cost = 1000;
+
+    for ($i = 0; $i < $resetCount; $i++) {
+      $cost *= 2;
+    }
+
+    return $cost;
+  }
+
+  public static function GetSkillDescription($skill, $level) {
+    $array = [
+      'Engineering' => 'Lets your repair bots repair '.($level <= 1 ? '5' : ($level == 2 ? '10' : ($level == 3 ? '15' : ($level == 4 ? '20' : ($level == 5 ? '30' : '0'))))).'% more HP<br> per second',
+      'Detonation I' => 'Makes your mines cause '.($level <= 1 ? '7' : ($level == 2 ? '14' : 0)).'% more damage',
+      'Detonation II' => 'Makes your mines cause '.($level <= 1 ? '21' : ($level == 2 ? '28' : ($level == 3 ? '50' : 0))).'% more damage',
+      'Heat-seeking Missiles' => 'Increases hit probability of your rockets by '.($level <= 1 ? '1' : ($level == 2 ? '2' : ($level == 3 ? '4' : ($level == 4 ? '6' : ($level == 5 ? '10' : '0'))))).'%',
+      'Rocket Fusion' => 'Makes your rockets cause '.($level <= 1 ? '2' : ($level == 2 ? '2' : ($level == 3 ? '4' : ($level == 4 ? '6' : ($level == 5 ? '10' : '0'))))).'% more damage',
+      'Cruelty I' => 'Gives you '.($level <= 1 ? '4' : ($level == 2 ? '8' : 0)).'% more honor points',
+      'Cruelty II' => 'Gives you '.($level <= 1 ? '12' : ($level == 2 ? '18' : ($level == 3 ? '25' : 0))).'% more honor points',
+      'Explosives' => 'Increases the radius of mine explosions by '.($level <= 1 ? '4' : ($level == 2 ? '8' : ($level == 3 ? '12' : ($level == 4 ? '18' : ($level == 5 ? '25' : '0'))))).'%',
+      'Luck I' => 'Gives you '.($level <= 1 ? '2' : ($level == 2 ? '4' : 0)).'% more bonus-box Uridium',
+      'Luck II' => 'Gives you '.($level <= 1 ? '6' : ($level == 2 ? '8' : ($level == 3 ? '12' : 0))).'% more bonus-box Uridium'
+    ];
+
+    return $array[$skill];
+  }
+
+  public static function GetSkillTooltip($skillName, $currentLevel, $maxLevel) {
+    return 'Name: <span style=\'color: #a4d3ef;\'>'.$skillName.'</span><br>Level: <span style=\'color: #a4d3ef;\'>'.$currentLevel.'/'.$maxLevel.'</span>'.($currentLevel != 0 ? '<br>Current Level: <span style=\'color: #a4d3ef;\'>'.Functions::GetSkillDescription($skillName, $currentLevel).'</span>' : '').''.($currentLevel != $maxLevel ? '<br>Next Level: <span style=\'color: #a4d3ef;\'>'.Functions::GetSkillDescription($skillName, $currentLevel + 1).'</span>' : '').'';
+  }
+
+  public static function GetSkills($skillPoints) {
+    return [
+      'engineering' => [
+        'name' => 'Engineering',
+        'currentLevel' => $skillPoints->engineering,
+        'maxLevel' => 5
+      ],
+      'detonation1' => [
+        'name' => 'Detonation I',
+        'currentLevel' => $skillPoints->detonation1,
+        'maxLevel' => 2,
+        'nextSkill' => 'detonation2'
+      ],
+      'detonation2' => [
+        'name' => 'Detonation II',
+        'currentLevel' => $skillPoints->detonation2,
+        'maxLevel' => 3,
+        'baseSkill' => 'detonation1'
+      ],
+      'heatseekingMissiles' => [
+        'name' => 'Heat-seeking Missiles',
+        'currentLevel' => $skillPoints->heatseekingMissiles,
+        'maxLevel' => 5
+      ],
+      'rocketFusion' => [
+        'name' => 'Rocket Fusion',
+        'currentLevel' => $skillPoints->rocketFusion,
+        'maxLevel' => 5
+      ],
+      'cruelty1' => [
+        'name' => 'Cruelty I',
+        'currentLevel' => $skillPoints->cruelty1,
+        'maxLevel' => 2,
+        'nextSkill' => 'cruelty2'
+      ],
+      'cruelty2' => [
+        'name' => 'Cruelty II',
+        'currentLevel' => $skillPoints->cruelty2,
+        'maxLevel' => 3,
+        'baseSkill' => 'cruelty1'
+      ],
+      'explosives' => [
+        'name' => 'Explosives',
+        'currentLevel' => $skillPoints->explosives,
+        'maxLevel' => 5
+      ],
+      'luck1' => [
+        'name' => 'Luck I',
+        'currentLevel' => $skillPoints->luck1,
+        'maxLevel' => 2,
+        'nextSkill' => 'luck2'
+      ],
+      'luck2' => [
+        'name' => 'Luck II',
+        'currentLevel' => $skillPoints->luck2,
+        'maxLevel' => 3,
+        'baseSkill' => 'luck1'
+      ]
+    ];
+  }
+
   public static function ChangeVersion($version) {
     $mysqli = Database::GetInstance();
 
@@ -1272,7 +1554,7 @@ class Functions {
       $json['message'] = 'Something went wrong!';
     }
 
-    echo json_encode($json);
+    return json_encode($json);
   }
 
 	public static function GetLevel($exp) {
@@ -1392,6 +1674,63 @@ class Functions {
 
 		return $array[$rankId];
 	}
+
+  public static function GetRequiredLogdisks($sumPoints) {
+      $array = array(
+          '1' => '30',
+          '2' => '63',
+          '3' => '99',
+          '4' => '139',
+          '5' => '183',
+          '6' => '231',
+          '7' => '284',
+          '8' => '342',
+          '9' => '406',
+          '10' => '477',
+          '11' => '555',
+          '12' => '641',
+          '13' => '735',
+          '14' => '839',
+          '15' => '953',
+          '16' => '1078',
+          '17' => '1216',
+          '18' => '1368',
+          '19' => '1535',
+          '20' => '1718',
+          '21' => '1920',
+          '22' => '2142',
+          '23' => '2386',
+          '24' => '2655',
+          '25' => '2950',
+          '26' => '3275',
+          '27' => '3633',
+          '28' => '4026',
+          '29' => '4459',
+          '30' => '4935',
+          '31' => '5458',
+          '32' => '6034',
+          '33' => '6667',
+          '34' => '7364',
+          '35' => '8130',
+          '36' => '8973',
+          '37' => '9900',
+          '38' => '10920',
+          '39' => '12042',
+          '40' => '13276',
+          '41' => '14634',
+          '42' => '16128',
+          '43' => '17771',
+          '44' => '19578',
+          '45' => '21566',
+          '46' => '23753',
+          '47' => '26158',
+          '48' => '28804',
+          '49' => '31715',
+          '50' => '34917'
+      );
+
+      return isset($array[$sumPoints]) ? $array[$sumPoints] : '0';
+  }
 
 	public static function GetPlayer() {
 		$mysqli = Database::GetInstance();

@@ -118,9 +118,109 @@
 </script>
 <?php } ?>
 
+<?php if (Functions::IsLoggedIn() && isset($page[0]) && $page[0] === 'skill_tree') { ?>
+<script type="text/javascript">
+  $('#exchangeLogdisks').click(function() {
+    var button = $(this);
+
+    if (!button.is(':disabled')) {
+      $.ajax({
+        type: 'POST',
+        url: '<?php echo DOMAIN; ?>api/',
+        data: { action: 'exchange_logdisks' },
+        success: function(response) {
+          var json = jQuery.parseJSON(response);
+
+          if (json.newStatus) {
+            $('#logdisks').text(json.newStatus.logdisks);
+            $('#requiredLogdisks').text(json.newStatus.requiredLogdisks);
+            $('#researchPoints').text(json.newStatus.researchPoints);
+
+            if (json.newStatus.logdisks < json.newStatus.requiredLogdisks || json.newStatus.researchPointsMaxed) {
+              button.attr('disabled', true);
+            }
+
+            $('.skill').children().removeClass('noCursor');
+          }
+
+          if (json.message != '') {
+            M.toast({html: '<span>'+ json.message +'</span>'});
+          }
+        }
+      });
+    }
+  });
+
+  $('#resetSkills').click(function() {
+    var button = $(this);
+
+    if (button.is(':visible')) {
+      $.ajax({
+        type: 'POST',
+        url: '<?php echo DOMAIN; ?>api/',
+        data: { action: 'reset_skills' },
+        success: function(response) {
+          var json = jQuery.parseJSON(response);
+
+          if (json.status) {
+            location.reload();
+          } else if (json.message != '') {
+            M.toast({html: '<span>'+ json.message +'</span>'});
+          }
+        }
+      });
+    }
+  });
+
+  $('.skill').click(function() {
+    if (parseInt($('#researchPoints').text()) >= 1 && parseInt($(this).find('.currentLevel').text()) != parseInt($(this).find('.maxLevel').text()) && !$(this).children().hasClass('skill_effect_inactive')) {
+      var skill = $(this).attr('id');
+
+      $.ajax({
+        type: 'POST',
+        url: '<?php echo DOMAIN; ?>api/',
+        data: { action: 'use_researchPoints', skill: skill },
+        success: function(response) {
+          var json = jQuery.parseJSON(response);
+
+          if (json.newStatus) {
+            $('#'+ skill +'').find('.currentLevel').text(json.newStatus.currentLevel);
+            $('#'+ skill +'').attr('data-tooltip', json.newStatus.tooltip);
+            $('.tooltipped').tooltip({ html: true });
+
+            $('#researchPoints').text(json.newStatus.researchPoints);
+            $('#usedResearchPoints').text(json.newStatus.usedResearchPoints);
+
+            if (json.newStatus.isMaxed) {
+              $('#'+ skill +'').find('.skillPoints').removeClass('skilltree_font_fail_skillPoints').addClass('skilltree_font_ismax');
+
+              if (json.newStatus.nextSkill) {
+                $('#'+ json.newStatus.nextSkill +'').children().removeClass('skill_effect_inactive').addClass('skill_effect');
+              }
+            }
+
+            if (json.newStatus.researchPoints <= 0) {
+              $('.skill').children().addClass('noCursor');
+            }
+
+            if (!$('.modal-trigger').is(':visible')) {
+              $('.modal-trigger').css({display: 'inline-block'});
+            }
+          }
+
+          if (json.message != '') {
+            M.toast({html: '<span>'+ json.message +'</span>'});
+          }
+        }
+      });
+    }
+  });
+</script>
+<?php } ?>
+
 <?php if (Functions::IsLoggedIn() && isset($page[0]) && $page[0] === 'shop') { ?>
 <script type="text/javascript">
-  var currentItemId = 0;
+  var currentItemId = -1;
   var currentItemName = "%item_name%";
   var currentItemPrice = "%item_price%";
 
@@ -141,16 +241,21 @@
   });
 
   $('#confirm-buy').click(function() {
-    if (currentItemId != 0) {
+    if (currentItemId != -1) {
+
+      var amountInput = $('#item-'+ currentItemId +'').find('input[name=amount]').val();
+      var amount = amountInput ? amountInput: 0;
+
       $.ajax({
         url: '<?php echo DOMAIN; ?>api/',
-        data: { action: 'buy', itemId: currentItemId },
+        data: { action: 'buy', itemId: currentItemId, amount: amount },
         type: 'POST',
         success:function(response) {
           var json = jQuery.parseJSON(response);
 
-          if (json.status) {
-            $('#data #uridium').text(json.uridium);
+          if (json.newStatus) {
+            $('#data #uridium').text(json.newStatus.uridium);
+            $('#data #credits').text(json.newStatus.credits);
           }
 
           if (json.message != '') {
@@ -158,6 +263,19 @@
           }
         }
       });
+    }
+  });
+
+  $('input[name=amount]').on('keyup keypress keydown click', function() {
+    var price = $(this).prev().val();
+
+    if ($.isNumeric(price) && $.isNumeric($(this).val())) {
+      if (parseInt($(this).val()) <= 0) {
+        $(this).val('1');
+      }
+
+      var sum = (parseInt(price) * parseInt($(this).val())).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1.');
+      $(this).parent().prev().find('.price').text(sum);
     }
   });
 </script>

@@ -1,0 +1,3600 @@
+#pppAjaxLoaderMask {
+    display:none;
+}
+
+.pppAjaxLoaderMask {
+    position: absolute;
+    margin-left: 0px;
+    top: 0px;
+    width: 775px;
+    height: 406px;
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    z-index: 2;
+    background-color: #000;
+}
+
+#pppAjaxLoader {
+    display: none;
+}
+
+.pppAjaxLoader {
+    position: absolute;
+    margin-left: -60px;
+    top: 184px;
+    width: 35px;
+    height: 35px;
+    left: 465px;
+    background-image:  url(/do_img/global/pilotSheet/profilePage/loadingAnimation.gif?__cv=742c828b59f24a779f6fb79f0806fc00);
+    background-repeat: no-repeat;
+    z-index: 2;
+}
+
+.imgLoader {
+    position: absolute;
+    left: 107px;
+    top: -22px;
+    width: 224px;
+    height: 8px;
+    background-image:  url(/do_img/global/pilotSheet/edit_profile/rework/pic_loadingbar.gif?__cv=70b078566b662c5a2d902efa62de9f00);
+    background-repeat: no-repeat;
+    z-index: 2;
+}
+
+.tabButtonActive {
+    background-image:  url(/do_img/global/pilotSheet/profilePage/tab_active.jpg?__cv=af06774e97a98879d2b4cd781b350400);
+}
+
+.tabButtonInActive {
+    background-image:  url(/do_img/global/pilotSheet/profilePage/tab_inactive1.jpg?__cv=491773b46f05dd34c2ae423de5e95800);
+}
+
+.tabButtonRollOver {
+    background-image:  url(/do_img/global/pilotSheet/profilePage/tab_rollover.jpg?__cv=4e701de4cf154f4df18a7b68be13dd00);
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #000;
+    text-align: center;
+    cursor: pointer;
+}
+
+.ppHorizontalSeparator {
+    background-image:  url(/do_img/global/pilotSheet/profilePage/seperator_horizontal.jpg?__cv=9a0c2ce4b4755f0ae553348fa9108900);
+}
+
+.ppHorizontalSeparatorBig {
+    background-image:  url(/do_img/global/pilotSheet/profilePage/seperator_horizontal_big.jpg?__cv=8d76fcfc560a1ca82538d17c6a1d6a00);
+}
+
+.ppVerticalSeparator {
+    background-image:  url(/do_img/global/pilotSheet/profilePage/seperator_vertical.jpg?__cv=7871c60f04c0e6644e2446a2ca24dc00);
+}
+
+.pageFont {
+    font-family: Verdana, Arial, sans-serif;
+    color: #fff;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.profilePageFont {
+    font-family: Verdana, Arial, sans-serif;
+    color: #fff;
+    font-size: 11px;
+    font-weight: normal;
+    vertical-align: baseline;
+}
+
+.profilePageFontTitle {
+    color: #c0c0c0;
+}
+
+.profilePageRank {
+    font-family: Verdana, Arial, sans-serif;
+    color: #a0a0a0;
+    font-size: 11px;
+    padding-left: -3px;
+}
+
+.tendencyIconUp {
+    padding-left: 13px;
+    background-image:  url(/do_img/global/pilotSheet/profilePage/arrow_up.png?__cv=3e363c4d7abe8ebd5f81d3042e6f1800);
+    background-repeat: no-repeat;
+    background-position: 1px 0px;
+}
+
+.tendencyIconDown {
+    padding-left: 13px;
+    background-image:  url(/do_img/global/pilotSheet/profilePage/arrow_down.png?__cv=62f0a1605e9de1b29bd2b02aa830da00);
+    background-repeat: no-repeat;
+    background-position: 1px 0px;
+}
+
+.pilotCountryFlag {
+    position: relative;
+    top: 10px;
+}
+
+.profileTitleFont {
+    font-family: Verdana, Arial, sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    color: #fcce00;
+    margin-bottom: 3px;
+}
+
+#profilePageRank {
+    position: relative;
+}
+
+#profilePageRankUp {
+    position: relative;
+}
+
+#tendencyIconUp {
+    position: absolute;
+    left: 110px;
+    top: 72px;
+}
+
+#tendencyIconDown {
+    position: absolute;
+    left: 5px;
+    top: 1px;
+}
+
+#minusTendency {
+    position: absolute;
+    left: 20px;
+    top: 1px;
+}
+
+.profileLinks {
+    cursor: pointer;
+    text-decoration: underline;
+    position: relative;
+    font-family: Verdana, Arial, sans-serif;
+    font-style: normal;
+    font-size: 10px;
+    color: #fff;
+}
+
+.profileLinksLeft {
+    left: 80px;
+}
+
+.profileLinksMiddle {
+    position: relative;
+}
+
+.profileLinksHeight {
+    top: 13px;
+    left: -20px;
+    text-align: right;
+}
+
+.profileEditButton {
+    height:33px;
+    width:200px;
+    cursor:pointer;
+    color:#fff;
+    font-size:13px;
+    text-align:center;
+    font-family:Arial, sans-serif;
+}
+
+.profileEditButtonEffects {
+    background: 0 0  url(/do_img/global/pilotSheet/profilePage/rework/button_sprite_200x33px.png?__cv=1556d1727584ec3e5a2e50ad3320c200);
+}
+
+.profileEditButtonEffects:hover {
+    background-positon: 0 -33px;
+}
+
+.profileEditButtonEffects:active {
+    background-position: 0 -66px;
+}
+
+.profileEditButtonLabel {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    font-weight: bold;
+    width: 185px;
+    text-align: center;
+}
+
+.tabLabelActive {
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #000;
+    background-position: center 6px;
+    position: relative;
+    height: 20px;
+}
+
+.tabLabelInActive {
+    background-position: center 6px;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #fff;
+    position: relative;
+    height: 20px;
+}
+
+.defaultProfileImage {
+    background-image:  url(/do_img/global/pilotSheet/profilePage/avatar.jpg?__cv=1d5100608ac24af8cf262385faef9e00);
+    background-repeat: no-repeat;
+    width: 105px;
+    height: 115px;
+}
+
+.resizeProfileImage {
+    width: 105px;
+    height: 115px;
+}
+.verticalSpace1 {
+    height: 10px;
+}
+#navBarProfile {
+    position: absolute;
+    top: -28px;
+    left: -12px;
+}
+
+#pageContent {
+    margin-left:1px;
+}
+
+#navBarProfileTab {
+    width: 810px;
+    height: 5px;
+}
+
+.tabLabel {
+    width: 185px;
+    height: 20px;
+}
+
+#tabButton1 {
+    position: relative;
+    top: -1px;
+    margin-left: 17px;
+    width: 185px;
+    height: 20px;
+    background-repeat: no-repeat;
+    float: left;
+}
+
+#tabButton2 {
+    position: relative;
+    top: -1px;
+    margin-left: 6px;
+    width: 185px;
+    height: 20px;
+    background-repeat: no-repeat;
+    float: left;
+}
+#tabButton3 {
+    position: relative;
+    top: -1px;
+    margin-left: 6px;
+    width: 185px;
+    height: 20px;
+    background-repeat: no-repeat;
+    float: left;
+}
+
+#tabButton4 {
+    position: relative;
+    top: -1px;
+    margin-left: 6px;
+    width: 185px;
+    height: 20px;
+    background-repeat: no-repeat;
+    float: left;
+}
+
+#profilePage {
+    width: 772px;
+    min-height: 400px;
+    background-image:  url(/do_img/global/pilotSheet/profilePage/Pilotsheet_bg2.jpg?__cv=fe9bb42e7e623415660191c9b7ccc500);
+    background-repeat: no-repeat;
+    position:relative;
+}
+
+.pageContent {
+    position:absolute;
+    top: 21px;
+    width: 780px;
+    left: 12px;
+}
+
+#pageControl {
+    position:relative;
+    width: 781px;
+}
+
+.activateCursor {
+    cursor: pointer;
+}
+
+.deactivateCursor {
+    cursor: text;
+}
+
+.tendencyIconUP {
+    width: 10px;
+    height: 10px;
+    background-image:  url(/do_img/global/pilotSheet/profilePage/arrow_up.png?__cv=3e363c4d7abe8ebd5f81d3042e6f1800);
+    background-repeat: no-repeat;
+}
+
+#ppLeft {
+    position: absolute;
+    width: 210px;
+    height: 400px;
+    left: 16px;
+    /*margin-left: 32px;*/
+    top: 10px;
+}
+
+#ppLeftTop {
+    position: absolute;
+    width: 100px;
+    height: 120px;
+    top: 20px;
+}
+
+#ppLeftTopImage {
+    position: absolute;
+    width: 110px;
+    height: 120px;
+    top: -3px;
+    left: 35px;
+}
+
+
+.profilePic {
+    height: 120px;
+    width: 110px
+}
+
+.ppLeftTopName {
+    position: relative;
+    width: 190px;
+    height: 16px;
+    top: 120px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis;
+}
+
+#ppLeftMiddle {
+    position: absolute;
+    width: 200px;
+    height: 190px;
+    top: 200px;
+}
+
+#ppLeftBottom {
+    position: absolute;
+    width: 200px;
+    height: 70px;
+    top: 310px;
+}
+
+#ppHorSep1 {
+    position: absolute;
+    width: 180px;
+    height: 5px;
+    top: 189px;
+    left: 0px;
+    z-index: 2;
+}
+
+#ppHorSep2 {
+    position: absolute;
+    width: 180px;
+    height: 5px;
+    top: 299px;
+    left: 0px;
+    z-index: 2;
+}
+
+#ppVerSep1 {
+    position: absolute;
+    width: 5px;
+    height: 393px;
+    top: 10px;
+    z-index: 2;
+    left:211px
+}
+
+#ppVerSep2 {
+    position: absolute;
+    width: 5px;
+    height: 393px;
+    top: 10px;
+    z-index: 2;
+    left:527px
+}
+
+#ppMiddle {
+    position: relative;
+    width: 295px;
+    height: 400px;
+    left: 235px;
+    top: 10px;
+}
+
+#ppMiddleTitle {
+    width: 295px;
+}
+
+#ppMiddleTop {
+    position: relative;
+    width: 295px;
+    height: 385px;
+    margin-top: 3px;
+    /*top: 3px;*/
+}
+
+.ppMiddleInfo {
+    position: relative;
+    margin-top: -15px;
+    /*top: -15px;*/
+}
+
+#ppMiddleTopEdit {
+    padding-top: 10px;
+    position:relative;
+    /*top: 30px;*/
+}
+
+#ppMiddleStatus {
+    /*    position: relative;*/
+    width: 285px;
+    height: 80px;
+    top: 0px;
+    padding-top: 15px;
+}
+
+#ppMiddleStatusEdit {
+    position: relative;
+}
+
+#inviteButtonTest {
+    position:relative;
+    top: 310px;
+    height:33;
+    width:200px;
+    background: 0 0  url(/do_img/global/pilotSheet/profilePage/rework/button_sprite_200x33px.png?__cv=1556d1727584ec3e5a2e50ad3320c200);
+}
+
+#statusTextbox {
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 10px;
+    font-weight: normal;
+    position: relative;
+    width: 276px;
+    height: 55px;
+    z-index: 2;
+    border: 0px;
+    padding: 3px 1px 1px 3px;
+    color: #a0a0a0;
+    overflow: hidden;
+    background: none;
+}
+
+.statMessTextarea {
+     background-image:  url(/do_img/global/pilotSheet/profilePage/rework/text_box.png?__cv=ecab469633c1d03e666482fdc097e800);
+    background-repeat: no-repeat;
+    width: 283px;
+    height: 100px;
+}
+
+.editStats {
+    position: relative;
+    float: left;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    color: #999;
+    width: 187px;
+}
+
+#imgUploadStatus {
+    position: relative;
+    left: 12px;
+}
+
+.imgUploadStats {
+    position: absolute;
+    left: 110px;
+    top: -31px;
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    color: #75b6ff;
+    width: 312px;
+}
+
+.imgUploadStatsError {
+    color: #bb0707;
+}
+
+.editStatsMessFailed {
+    top: 30px;
+}
+
+.editStatsMessSuccess {
+    top: 53px;
+}
+
+.editStatsFailedProfile {
+    top: -2px;
+}
+
+.editStatsSuccessProfile {
+    top: 10px;
+}
+
+.showEditStatsSuccess {
+    display: block;
+}
+
+.hideEditStatsSuccess {
+    display: none;
+}
+
+.showEditStatsFailed {
+    display: block;
+}
+
+.hideEditStatsFailed {
+    display: none;
+}
+
+.hideStatus {
+    display: none;
+}
+
+.showStatus {
+    display: block;
+}
+
+#ppHorSepBig {
+    position: relative;
+    width: 275px;
+    height: 5px;
+    z-index: 2;
+    margin-top: 45px
+}
+
+#ppRight {
+    position: absolute;
+    width: 250px;
+    height: 420px;
+    left: 533px;
+    top: 8px;
+}
+
+.stationMars {
+    height: 420px;
+    background-image:  url(/do_img/global/pilotSheet/profilePage/station_mars.jpg?__cv=7523e9407bc64f4d27ad0f7561636000);
+    background-repeat: no-repeat;
+}
+
+.stationEarth {
+    height: 420px;
+    background-image:  url(/do_img/global/pilotSheet/profilePage/station_earth.jpg?__cv=67a0c3415db4377fe7f1cf052c33d700);
+    background-repeat: no-repeat;
+}
+
+.stationVenus {
+    height: 420px;
+    background-image:  url(/do_img/global/pilotSheet/profilePage/station_venus.jpg?__cv=10e048a3d89f9d587ff995436345bb00);
+    background-repeat: no-repeat;
+}
+
+#friendshipRequestList {
+    position:absolute;
+    left:537px;
+    top: 0px;
+    z-index:1;
+}
+
+.listHead {
+    position:relative;
+    width:244px;
+    height:32px;
+    background-image:  url(/do_img/global/pilotSheet/profilePage/rework/friend_request_top.png?__cv=62e7368b8dd07126fafa58d46f7e1200);
+    background-repeat:no-repeat;
+    text-align:center;
+    color: #fcce00;
+    font-size:10px;
+}
+
+.listHeadLabel {
+    position: relative;
+    top: 4px;
+}
+
+.friendRequestTable {
+    margin-left:5px;
+}
+
+.listBody {
+    position:relative;
+    background-image: url(/do_img/global/pilotSheet/profilePage/rework/friend_request_middle.png?__cv=b2ddd122f799d030bd9fe37b7412d200);
+    width:244px;
+}
+
+.requestIcon {
+    height:46px;
+    width: 48px;
+    background-image: url(/do_img/global/pilotSheet/incentives/userpic.jpg?__cv=18675924bdaf715df706be8d3f195100);
+    background-repeat:no-repeat;
+}
+
+.requestListHead {
+    width:22%;
+}
+
+.requestee {
+    width:70%;
+    color: #fff;
+    font-family:Verdana, Arial, sans-serif;
+    font-size:11px;
+    vertical-align:top;
+}
+
+.requesteeName {
+    margin-bottom: 5px;
+    margin-top:5px;
+    width: 160px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.requestButton {
+    width:77px;
+    height:21px;
+    text-align:center;
+    position:absolute;
+    cursor: pointer;
+}
+
+.doneFriendRequest {
+    text-align:left;
+    color: #fc0;
+    font-weight:bold;
+}
+
+.confirmButton {
+    color:#ccc;
+    background:0 0  url(/do_img/global/pilotSheet/profilePage/rework/button_tiny_sprite.png?__cv=5f1cae06d6ec31accf9beca96116c900)
+}
+
+.confirmButton:hover {
+    color:#fff;
+    background-position: 0 -21px;
+}
+
+.confirmButton:active {
+    color:#fff;
+    background-position: 0 -42px;
+}
+
+.denyButton {
+    left: 146px;
+    color: #999;
+    background-image:  url(/do_img/global/pilotSheet/profilePage/rework/button_tiny_sprite.png?__cv=5f1cae06d6ec31accf9beca96116c900);
+    background-position: 0 -63px;
+}
+
+.denyButton:hover {
+    color: #fff;
+    background-position: 0 -84px;
+}
+
+.denyButton:active {
+    color: #fff;
+    background-position: 0 -105px;
+}
+
+.listFooter {
+    width: 244px;
+    height: 35px;
+    position: relative;
+    background-image:  url(/do_img/global/pilotSheet/profilePage/rework/friend_request_down.png?__cv=897dbaf86ae7cd58988173aba3223400);
+    background-repeat: no-repeat;
+}
+
+#editForm {
+    left:-10px;
+    height: auto;
+}
+
+#dayLabel {
+    /*z-index: 900;*/
+    padding-left: 155px;
+    /*position: relative;*/
+    margin-top: 30px;
+}
+
+.editForm {
+    position: relative;
+    left: 10px;
+    z-index: 300;
+}
+
+#editFormProfileAll {
+    display: none;
+    position: absolute;
+    z-index: 1000;
+    width: 485px;
+    background-image:  url(/do_img/global/pilotSheet/edit_profile/rework/layer_middle_483x1.png?__cv=07cd83660a05558512d77d0b8abe5000);
+    left: 143px;
+    margin: 0 auto;
+    top: -640px;
+
+}
+
+.elevateForm {
+    z-index: 9100;
+}
+
+.removeForm {
+    z-index: 3;
+}
+
+.container_edit_form {
+    padding-left: 25px;
+    margin-bottom: 10px;
+}
+
+.inner_container_edit_form {
+    position: relative;
+    float: left;
+    width: 330px;
+    margin-bottom: 7px;
+}
+
+.inputEditForm {
+    float: left;
+    position: relative;
+    width: 125px;
+}
+
+#editFormProfile {
+    width: 485px;
+    text-align: left;
+    padding-top: 25px;
+    background-image:  url(/do_img/global/pilotSheet/edit_profile/rework/layer_header_483x269.png?__cv=fe6323fbd5351cf93af93aa57989cb00);
+    background-position: top center;
+    background-repeat: no-repeat;
+}
+
+#editFormProfileFooter {
+    width: 485px;
+    height:90px;
+    background-image:  url(/do_img/global/pilotSheet/edit_profile/rework/layer_footer_483x90.png?__cv=6a25e803c7716dec127ae587ba658e00);
+}
+
+.ageFormElements {
+    border: none;
+    background-color: #0a0c10;
+    color: #a0a0a0;
+    width: 50px;
+}
+
+.ageFormElements1 {
+    border: none;
+    background-color: #0a0c10;
+    color: #a0a0a0;
+    width: 75px;
+}
+
+.countryElements {
+    border: none;
+    background-color: #0a0c10;
+    color: #a0a0a0;
+    width: 300px;
+}
+
+#ageMonth {
+    position: relative;
+    left: 35px;
+}
+
+#ageYear {
+    position: relative;
+    left: 57px;
+}
+
+.shift {
+    left: 110px;
+    position: absolute;
+}
+
+#sexEditFormSelect {
+    height: 17px;
+    width: 317px;
+}
+
+.formTextBox1 {
+    background-image:  url(/do_img/global/pilotSheet/edit_profile/textfield_medium.png?__cv=381a3f37561aa065b1dbe4d548a9a000);
+    background-repeat: no-repeat;
+    border: none;
+    color: #a0a0a0;
+    height: 15px;
+    width: 302px;
+}
+
+.formTextBox2 {
+    background-image:  url(/do_img/global/pilotSheet/edit_profile/textfield_big.png?__cv=0af30e74bdd3d36295c7cc9cac76bf00);
+    background-repeat: no-repeat;
+    background-color: #000;
+    border: none;
+    height: 15px;
+    width: 311px;
+}
+
+.formTextBox3 {
+    background-image:  url(/do_img/global/pilotSheet/edit_profile/textfield_big1.png?__cv=0ee1d6604e9c84781b5ef28ee2bb2100);
+    background-repeat: no-repeat;
+    background-color: #000;
+    border: none;
+    height: 15px;
+    width: 219px;
+}
+
+#countryEditFormSelect {
+    height: 17px;
+    width: 317px;
+}
+
+.closeButtonEdit {
+    position: absolute;
+    width: 17px;
+    height: 18px;
+    left: 487px;
+    top: 0;
+    z-index: 50;
+}
+
+.closeButtonInvite {
+    position: absolute;
+    width: 17px;
+    height: 18px;
+    left: 414px;
+    top: 12px;
+}
+
+.closeButtonInActive {
+    background-image:  url(/do_img/global/pilotSheet/edit_profile/close_button.png?__cv=09eb7b238c3c31c405fb3481cd016200);
+    background-repeat: no-repeat;
+}
+
+.closeButtonRollOver {
+    background-image:  url(/do_img/global/pilotSheet/edit_profile/close_button_rollover.png?__cv=9624c319461de01c5abc084084482000);
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.editFormLabel {
+     font-family: Verdana, Arial, sans-serif;
+     font-size: 11px;
+     color: #a0a0a0;
+ }
+
+.editFormLabelFont {
+     font-family: Verdana, Arial, sans-serif;
+     font-size: 11px;
+     font-weight: bold;
+     color: #a0a0a0;
+ }
+
+#pppAvatar {
+    margin-bottom: 10px;
+    margin-top: 15px;
+    padding-left: 25px;
+}
+
+#pppAvatarHint {
+    position: relative;
+    left: 110px;
+    width: 224px;
+}
+
+#uploadRow {
+    position: relative;
+    top: 8px;
+    width:300px;
+}
+
+.pppAvatarHint, .pppMessageSystemHint {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    color: #a0a0a0;
+}
+
+.pppAvatarDescrLink {
+    background-image:  url(/do_img/global/pilotSheet/edit_profile/info_field.png?__cv=60311ae2df4ddaac1a89f1a8e54dbe00);
+    background-repeat: no-repeat;
+    position: relative;
+    top: -28px;
+    width: 22px;
+    height: 22px;
+    float: left;
+}
+
+.moreInfo {
+    position: absolute;
+    left: 25px;
+    top: -4px;
+}
+
+#imgUploadHint {
+    position: relative;
+    left: 125px;
+}
+
+.sizeHint {
+    position: relative;
+    float: left;
+    top: -24px;
+}
+
+.pixelHint {
+    position: relative;
+    float: left;
+    color: #fcce00;
+    left: -126px;
+}
+
+.pppAvatarInput {
+    height:22px;
+    width:90px;
+    margin:0px;
+    position: relative;
+    left: 226px;
+    z-index: 200;
+    text-align: center;
+}
+
+.pppAvatarInputInActive {
+    background:  url(/do_img/global/pilotSheet/edit_profile/browse_button.png?__cv=77bcf4d683a7ba36a1efa0f059f41b00) no-repeat 100% 1px;
+    cursor:pointer;
+}
+
+.pppAvatarInputRollOver {
+    background:  url(/do_img/global/pilotSheet/edit_profile/browse_button_rollover.png?__cv=39d4ad62f2a157c80ac73e16b1c94100) no-repeat 100% 1px;
+    cursor: pointer;
+}
+
+.imgUpload {
+    opacity: 0.0;
+    -moz-opacity: 0.0;
+    filter: alpha(opacity=00);
+    font-size:18px;
+    z-index:200;
+    position:relative;
+    top: -18px;
+    width: 95px;
+    height:22px;
+}
+
+.fakeinputfile {
+    position: relative;
+    top: -22px;
+    width: 230px;
+}
+
+.fakefilepc {
+    background-color: #000;
+    background-image:  url(/do_img/global/pilotSheet/edit_profile/textfield_big1.png?__cv=0ee1d6604e9c84781b5ef28ee2bb2100);
+    background-repeat: no-repeat;
+    width:224px;
+    height:15px;
+    font-size:11px;
+    font-family:Arial;
+    color: #a0a0a0;
+    border: medium none;
+}
+
+.fakefileSpan {
+    color: #fff;
+    font-size: 11px;
+    font-weight: bold;
+    position:relative;
+    left: 18px;
+    border:1px solid green;
+}
+
+.fakefileSpanInActive {
+    color: #fff;
+    font-size:11px;
+    font-weight:bold;
+    padding-top:2px;
+}
+
+.fakefileSpanRollOver {
+    color: #000;
+    font-size:11px;
+    font-weight:bold;
+    padding-top:2px;
+}
+
+.fakefileSpanActive {
+    color: #000;
+    cursor: pointer;
+}
+
+
+#privacySettings {
+    position: relative;
+    margin-left: 25px;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    color: #a0a0a0;
+    width: 445px;
+}
+
+.psFont {
+    font-size: 12px;
+}
+
+.privacySettingsHint {
+    position: relative;
+}
+
+#privacySettingsHead {
+    position: relative;
+    top: 57px;
+    left: 42px;
+}
+
+.radioClassActive {
+    background-image:  url(/do_img/global/pilotSheet/edit_profile/radio_button_active.png?__cv=0f7c58fc4562ceda58febfeec618d300);
+    background-repeat: no-repeat;
+    height: 15px;
+    width: 15px;
+}
+
+.radioClassInActive {
+    background-image:  url(/do_img/global/pilotSheet/edit_profile/radio_button_inactive.png?__cv=638e244987bc04b6f8ae0ba66ac69e00);
+    background-repeat: no-repeat;
+    height: 15px;
+    width: 15px;
+}
+
+.separatorLine {
+    background-image:  url(/do_img/global/pilotSheet/edit_profile/divider1.png?__cv=3368183a069c26276167124f2ddf3600);
+    background-repeat: no-repeat;
+    width: 435px;
+    height: 5px;
+    left: 40px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.separatorLine1 {
+    position: relative;
+    top: 90px;
+}
+
+.separatorLine2 {
+    position: relative;
+    margin-bottom: 10px;
+    left: 30px;
+}
+
+.separatorLine3 {
+    position: absolute;
+    top: 440px;
+    left: 42px;
+}
+
+#saveButton {
+    position: relative;
+    left: 150px;
+    top: 25px;
+}
+
+.saveButtonInActive {
+    background-image:  url(/do_img/global/pilotSheet/edit_profile/button_standard.png?__cv=521fce076e717775a44d68ff149f7000);
+    background-repeat: no-repeat;
+    width: 177px;
+    height: 35px;
+}
+
+.saveButtonRollOver {
+    background-image:  url(/do_img/global/pilotSheet/edit_profile/button_rollover.png?__cv=1233485c1f95c874e661c1e0a3c09800);
+    background-repeat: no-repeat;
+    width: 177px;
+    height: 35px;
+    cursor: pointer;
+}
+
+.saveButtonLabelActive {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    color: #000;
+    top: 7px;
+    position: relative;
+    text-align: center;
+}
+
+.saveButtonLabelInActive {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    top: 7px;
+}
+
+.dropDownButton {
+    position: relative;
+    width: 22px;
+    height: 22px;
+    left: 500px;
+    background-image:  url(/do_img/global/pilotSheet/edit_profile/dropdown.png?__cv=a826fb536064c23d86257a218c9e0200);
+    background-repeat: no-repeat;
+}
+
+
+/*  SKILL TREE */
+
+.pilotSheet {
+    position: relative;
+    top: 56px;
+    width: 770px;
+    height: 350px;
+    background-image:  url(/do_img/global/pilotSheet/skilltree/background_image.jpg?__cv=d7695e947f9539d5113a3b3693aefd00);
+    background-repeat: no-repeat;
+}
+
+.cursPointer {
+    cursor: pointer;
+}
+
+.skilltree_font {
+    font-size: 11px;
+    color: #fff;
+}
+.skilltree_font a {
+    font-size: 11px;
+    color: #fff;
+    text-decoration: none;
+}
+.skilltree_font_info {
+    color: #a4d3ff;
+}
+.skilltree_font_fail {
+    color: #bb0707;
+}
+.skilltree_font_ismax {
+    color: #2e8ad1;
+}
+.skilltree_font_fail_skillPoints {
+    color: #666;
+}
+
+#infobar {
+    position: absolute;
+    top: -46px;
+    right: 21px;
+    width: 773px;
+    height: 51px;
+    background-image:  url(/do_img/global/pilotSheet/skill/logfile_view_bg.jpg?__cv=f3e7f3320dc52e387f69d05e53160800);
+    color: #fff;
+    font-size: 10px;
+    left: 0px;
+}
+
+#logfiles {
+    position: absolute;
+    top:18px;
+    right:465px;
+    line-height: 25px;
+}
+#arrow_logfile_0, #arrow_logfile_1 {
+    position: absolute;
+    top: 18px;
+    left: 310px;
+    width: 40px;
+    height: 25px;
+    line-height: 25px;
+}
+#arrow_logfile_0 {
+    background-image:  url(/do_img/global/pilotSheet/skill/arrow_logfiles_0.png?__cv=36d146d4c4e15795d8e2beb5cffdcb00);
+}
+#arrow_logfile_1 {
+    background-image:  url(/do_img/global/pilotSheet/skill/arrow_logfiles_1.png?__cv=36346ff9665d6a537fa7f53854313f00);
+}
+
+#researchpoints_container {
+    position: absolute;
+    top: 18px;
+    left: 360px;
+}
+#researchPoints_button_0, #researchPoints_button_1 {
+    width: 143px;
+    height: 25px;
+    text-align: center;
+    line-height: 25px;
+    float: left;
+}
+#researchPoints_button_0 a, #researchPoints_button_1 a {
+    display: block;
+}
+#researchPoints_button_0 {
+    background-image:  url(/do_img/global/pilotSheet/skill/but_convert_0.png?__cv=1999216b1c086b4445e65ba2301ea400);
+}
+
+#researchPoints_button_1 {
+    background-image:  url(/do_img/global/pilotSheet/skill/but_convert_1.png?__cv=4df9071b70d08aac0ee1f5417f5e8300);
+}
+#researchPoints_arrow_0, #researchPoints_arrow_1 {
+    width: 45px;
+    height: 25px;
+    float: left;
+}
+#researchPoints_arrow_0 {
+    background-image:  url(/do_img/global/pilotSheet/skill/arrow_researchpoints_0.png?__cv=44d7526b93decbc12c2c659ef468c900);
+}
+#researchPoints_arrow_1 {
+    background-image:  url(/do_img/global/pilotSheet/skill/arrow_researchpoints_1.png?__cv=853fc88c19fb060169b7a60d9cef9e00);
+}
+#researchPoints_view {
+    line-height: 25px;
+    float: left;
+}
+
+#infobar_helplink {
+    position: absolute;
+    top: -43px;
+    right: 0px;
+    width:58px;
+    height:17px;
+    left: 710px;
+    background-image:  url(/do_img/global/pilotSheet/skill/help_normal.jpg?__cv=75ae409c51103583828bfd56a6777c00);
+    cursor: pointer;
+    padding-top:25px;
+    text-align:center;
+}
+#infobar_helplink:hover {
+    background-image:  url(/do_img/global/pilotSheet/skill/help_hover.jpg?__cv=88adb150e1b7a63d3044278c58579700);
+}
+#infobar_helplink:active {
+    background-image:  url(/do_img/global/pilotSheet/skill/help_active.jpg?__cv=4ee7c2e3797da98775cb5a43325d7e00);
+}
+
+/* Infobar */
+
+
+/* Teaser*/
+#researchPoints_teaser_text  {
+    color:#ffca00;
+    font-weight:bold;
+    left:18px;
+    position:absolute;
+    text-align:center;
+    top:52px;
+    width:175px;
+}
+
+#researchPoints_teaser_image, #researchPoints_teaser_image_static  {
+    position:absolute;
+    left:21px;
+    top:98px;
+}
+
+#directlink_logfiles {
+    position: absolute;
+    top: 250px;
+    left: 1px;
+    width:204px;
+    height:54px;
+    cursor: pointer;
+    background-image:  url(/do_img/global/pilotSheet/skill/b_buy_normal.png?__cv=16282376d8b5266865237d76787ff300);
+}
+#directlink_logfiles:hover {
+    background-image:  url(/do_img/global/pilotSheet/skill/b_buy_hover.png?__cv=0d64834e6b5a60d738673da4bac16100);
+}
+#directlink_logfiles div {
+    width: 115px;
+    margin: 12px 0px 0px 43px;
+    font-weight: bold;
+    text-align: center;
+}
+/* Teaser*/
+
+
+.skillContainerAll {
+    /*    position: absolute;
+        left: 224px;
+        top: 20px;
+        width: 546px;
+        height: 288px;
+        overflow: hidden;*/
+}
+.scrollBackground {
+    position: relative;
+    left: 0px;
+    top: 0px;
+    background-image:  url(/do_img/global/pilotSheet/pilotSheet/scrollBackground.jpg?__cv=fe4c2876b3af189aad0463a79c92f500);
+}
+#skillResetButtonContainer {
+    position: absolute;
+    left: 637px;
+    top: 382px;
+}
+.skillResetButton {
+    position: absolute;
+    left: -18px;
+    top: -71px;
+    width: 146px;
+    height: 37px;
+    background-image:  url(/do_img/global/pilotSheet/skill/b_reset_normal.png?__cv=52ff68bd1caccd4d9ada91cc5d1adf00);
+    cursor: pointer;
+    font-size: 10px;
+}
+.skillResetButton:hover {
+    background-image:  url(/do_img/global/pilotSheet/skill/b_reset_hover.png?__cv=370a082325510fe01ce125e6dc037e00);
+}
+.skillResetButton:active {
+    background-image:  url(/do_img/global/pilotSheet/skill/b_reset_active.png?__cv=e49aa34829f4b9acbdae59fca9e8b600);
+}
+.skillResetButton .label {
+    position: absolute;
+    left: 0px;
+    top: 6px;
+    width: 146px;
+    text-align: center;
+}
+#researchPointUsage {
+    position:absolute;
+    right:185px;
+    top:331px;
+}
+
+.skillContainer {
+    position: relative;
+    margin-right: 10px;
+    display: inline-block;
+}
+.skill {
+    width: 74px;
+    height: 85px;
+    /*position: absolute;*/
+    background-image:  url(/do_img/global/pilotSheet/skill/skilltree_textur.png?__cv=9af642510fbf36d5086f19cd02493f00);
+    cursor: pointer;
+}
+.skill_effect, .skill_effect_inactive, .skill_effect_max {
+    width: 74px;
+    height: 85px;
+}
+.skill .skill_effect:hover {
+    background-image:  url(/do_img/global/pilotSheet/skill/skilltree_textur.png?__cv=9af642510fbf36d5086f19cd02493f00);
+    background-position: -74px 0;
+}
+.skill .skill_effect:active {
+    background-image:  url(/do_img/global/pilotSheet/skill/skilltree_textur.png?__cv=9af642510fbf36d5086f19cd02493f00);
+    background-position: -148px 0;
+}
+.skill .skill_effect_inactive {
+    background-image:  url(/do_img/global/pilotSheet/skill/skilltree_textur.png?__cv=9af642510fbf36d5086f19cd02493f00);
+    background-position: -222px 0;
+    cursor: default;
+}
+
+.skill .skill_effect_inactive:hover {
+    background-image:  url(/do_img/global/pilotSheet/skill/skilltree_textur.png?__cv=9af642510fbf36d5086f19cd02493f00);
+    background-position: 0 0;
+}
+
+.skill .skill_effect_max {
+    cursor: default;
+}
+
+.skill .skill_effect_max:hover {
+    background-image:  url(/do_img/global/pilotSheet/skill/skilltree_textur.png?__cv=9af642510fbf36d5086f19cd02493f00);
+    background-position: -74px 0;
+}
+.noCursor {
+    cursor: default;
+}
+
+.skill_small {
+    width: 22px;
+    height:25px;
+    background-image:  url(/do_img/global/pilotSheet/skill/skilltree_textur_small.png?__cv=d7f30c6b9e78526f5e13b1910198d900);
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    float: left;
+}
+.skill_small_name {
+    margin-left: 5px;
+    width: 195px;
+    line-height: 25px;
+    float: left;
+}
+#explosives {
+    top: 175px;
+    left: 100px;
+    background-position: -296px 0;
+}
+#skill_small_1 {
+    background-position: 0 0;
+}
+#skill_2 {
+    top: 95px;
+    left: 20px;
+    background-position: -370px 0;
+}
+#skill_small_2 {
+    background-position: -22px 0;
+}
+#skill_4 {
+    top: 95px;
+    left: 100px;
+    background-position: -444px 0;
+}
+#skill_small_4 {
+    background-position: -44px 0;
+}
+#detonation1 {
+    top: 175px;
+    left: 20px;
+    background-position: -518px 0;
+}
+#skill_small_5a {
+    background-position: -66px 0;
+}
+#detonation2 {
+    top: 175px;
+    left: 570px;
+    background-position: -592px 0;
+}
+#skill_small_5b {
+    background-position: -88px 0;
+}
+#rocketFusion {
+    top: 175px;
+    left: 375px;
+    background-position: -666px 0;
+}
+#skill_small_6 {
+    background-position: -110px 0;
+}
+#skill_8 {
+    top: 15px;
+    left: 570px;
+    background-position: -740px 0;
+}
+#skill_small_8 {
+    background-position: -132px 0;
+}
+#skill_9 {
+    top: 95px;
+    left: 570px;
+    background-position: -814px 0;
+}
+#skill_small_9 {
+    background-position: -154px 0;
+}
+#skill_11 {
+    top: 175px;
+    left: 455px;
+    background-position: -888px 0;
+}
+#skill_small_11 {
+    background-position: -176px 0;
+}
+#engineering {
+    top: 15px;
+    left: 100px;
+    background-position: -962px 0;
+}
+#skill_small_13 {
+    background-position: -198px 0;
+}
+#skill_14 {
+    top: 95px;
+    left: 455px;
+    background-position: -1036px 0;
+}
+#skill_small_14 {
+    background-position: -220px 0;
+}
+#skill_15 {
+    top: 95px;
+    left: 650px;
+    background-position: -1110px 0;
+}
+#skill_small_15 {
+    background-position: -242px 0;
+}
+#skill_16a {
+    top: 15px;
+    left: 295px;
+    background-position: -1184px 0;
+}
+#skill_small_16a {
+    background-position: -264px 0;
+}
+#skill_16b {
+    top: 15px;
+    left: 730px;
+    background-position: -1258px 0;
+}
+#skill_small_16b {
+    background-position: -286px 0;
+}
+#skill_17 {
+    top: 15px;
+    left: 180px;
+    background-position: -1332px 0;
+}
+#skill_small_17 {
+    background-position: -305px 0;
+}
+#skill_18a {
+    top: 15px;
+    left: 20px;
+    background-position: -1406px 0;
+}
+#skill_small_18a {
+    background-position: -330px 0;
+}
+#skill_18b {
+    top: 15px;
+    left: 375px;
+    background-position: -1480px 0;
+}
+#skill_small_18b {
+    background-position: -352px 0;
+}
+#skill_19 {
+    top: 175px;
+    left: 650px;
+    background-position: -1554px 0;
+}
+#skill_small_19 {
+    background-position: -374px 0;
+}
+#heatseekingMissiles {
+    top: 175px;
+    left: 180px;
+    background-position: -1628px 0;
+}
+#skill_small_20 {
+    background-position: -396px 0;
+}
+#cruelty1 {
+    top: 95px;
+    left: 375px;
+    background-position: -1702px 0;
+}
+#skill_small_21a {
+    background-position: -418px 0;
+}
+#cruelty2 {
+    top: 95px;
+    left: 730px;
+    background-position: -1776px 0;
+}
+#skill_small_21b {
+    background-position: -440px 0;
+}
+#skill_22a {
+    top: 175px;
+    left: 295px;
+    background-position: -1850px 0;
+}
+#skill_small_22a {
+    background-position: -462px 0;
+}
+#skill_22b {
+    top: 175px;
+    left: 730px;
+    background-position: -1924px 0;
+}
+#skill_small_22b {
+    background-position: -484px 0;
+}
+#luck1 {
+    top: 95px;
+    left: 295px;
+    background-position: -1998px 0;
+}
+#skill_small_23a {
+    background-position: -506px 0;
+}
+#luck2 {
+    top: 95px;
+    left: 810px;
+    background-position: -2072px 0;
+}
+#skill_small_23b {
+    background-position: -528px 0;
+}
+
+.skillPoints {
+    position: absolute;
+    text-align: center;
+    top: 66px;
+    width: 74px;
+    font-size: 11px;
+}
+
+
+/* Tooltip */
+#skill_tooltip_container {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+}
+.skill_tooltip {
+    position:absolute;
+    top: 0px;
+    left: 0px;
+    width: 256px;
+    z-index: 10;
+}
+.tooltip_header {
+    width: 256px;
+    height: 16px;
+    background-image:  url(/do_img/global/pilotSheet/skill/bg_tooltip_header.png?__cv=c3bb07ae9e7813b4c25bc94c8e514300)
+}
+.tooltip_content {
+    width:228px;
+    border-left:1px solid #7ca7ca;
+    border-right:1px solid #7ca7ca;
+    margin-left:3px;
+    padding: 2px 10px;
+    background-image:  url(/do_img/global/pilotSheet/skill/bg_tooltip.png?__cv=e164a75ec34f11a3f070db3399669700);
+}
+.tooltip_footer {
+    width: 256px;
+    height: 25px;
+    background-image:  url(/do_img/global/pilotSheet/skill/bg_tooltip_footer.png?__cv=5f46714ba8284521014d195f026c0500);
+    text-align:center;
+    line-height: 25px;
+}
+.tooltip_seperator {
+    height: 1px;
+    margin: 5px 0;
+    background-image:  url(/do_img/global/pilotSheet/skill/bg_tooltip_seperator.png?__cv=d15a2935b564375597e392382b8a7e00);
+}
+#resources td {
+    vertical-align:top;
+}
+#resources .firstRow {
+    padding-top:7px;
+}
+
+/* Tooltip */
+
+.font_inactive {
+    color: #515151;
+}
+
+/* internalInviteIncentives.tpl */
+
+#pilotInvite {
+    position: relative;
+    width: 770px;
+    height: 390px;
+    top: 10px;
+}
+
+.inviteTabRollOver {
+    background-image:  url(/do_img/global/pilotSheet/incentives/subtab_active.png?__cv=33d1b5d28635dff3403b147360bc3f00);
+    background-repeat: no-repeat;
+    cursor: pointer;
+    z-index: 2
+}
+
+.inviteTabActive {
+    background-image:  url(/do_img/global/pilotSheet/incentives/subtab_active.png?__cv=33d1b5d28635dff3403b147360bc3f00);
+    background-repeat: no-repeat;
+    z-index: 1
+}
+
+.inviteTabInActive {
+    background-image:  url(/do_img/global/pilotSheet/incentives/subtab_inactive.png?__cv=08e4c5dd0050ce322c9f1f7a4a7bbc00);
+    background-repeat: no-repeat;
+}
+
+.subTabLabelActive {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+    color: #fcce00;
+    text-align: center;
+    position: relative;
+    top: 2px;
+}
+
+.subTabLabelInActive {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #a0a0a0;
+    text-align: center;
+    position: relative;
+    top: 2px;
+}
+
+.subTabLabelRollover {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: #a0a0a0;
+    text-align: center;
+    position: relative;
+    top: 2px;
+}
+
+.headInviteTabLine {
+    position: relative;
+    height: 5px;
+    width: 773px;
+    top: -22px;
+    left: 0px;
+    background-image:  url(/do_img/global/pilotSheet/invitePage/subtabs_line.jpg?__cv=ac2a05c4984c590a0e221deea7c01100);
+    background-repeat: no-repeat;
+}
+
+#headInviteTabs {
+    position: relative;
+    height: 35px;
+    width: 773px;
+    top: -6px;
+    left: -1px;
+    background-image:  url(/do_img/global/pilotSheet/incentives/subtab_bg.jpg?__cv=4e847bbd086a5354fe17697781e3c300);
+    background-repeat: no-repeat;
+}
+
+#inviteTab {
+    position: relative;
+    height: 26px;
+    width: 180px;
+    top: 9px;
+    left: 8px;
+}
+
+#loginBonusTab {
+    position: relative;
+    height: 26px;
+    width: 180px;
+    top: -17px;
+    left: 191px;
+}
+
+#incentiveContent {
+    position: relative;
+    height: 365px;
+    width: 773px;
+    top: -10px;
+    left: 0px;
+}
+
+#incentiveContentHead {
+    position: relative;
+    height: 60px;
+    width: 740px;
+    top: 10px;
+    left: 15px;
+}
+
+#incentive1 {
+    position: absolute;
+    height: 50px;
+    width: 55px;
+    top: 6px;
+    left: 10px;
+    background-image:  url(/do_img/global/pilotSheet/incentives/button_1.png?__cv=19ce1a8cca74d6530f20672af2d06000);
+    background-repeat: no-repeat;
+}
+
+.friendInviteButton {
+    color: #fff;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.friendInviteButtonText {
+    margin-top: 5px;
+}
+
+#friendInviteButton {
+    position: absolute;
+    width: 179px;
+    height: 32px;
+    background-image:  url(/do_img/global/pilotSheet/incentives/button_standard.png?__cv=521fce076e717775a44d68ff149f7000);
+    background-repeat: no-repeat;
+    top: 15px;
+    left: 68px;
+    cursor: pointer;
+    padding-top: 7px;
+}
+
+#friendInviteButton:hover {
+    background-image:  url(/do_img/global/pilotSheet/incentives/button_rollover.png?__cv=1233485c1f95c874e661c1e0a3c09800);
+    background-repeat: no-repeat;
+}
+
+#friendInviteButton:active {
+     background-image:  url(/do_img/global/pilotSheet/incentives/button_click.png?__cv=b667584376a163487881d5d401218b00);
+    background-repeat: no-repeat;
+}
+
+#incentive1Hint {
+    position: absolute;
+    height: 30px;
+    width: 150px;
+    top: -42px;
+    left: 75px;
+}
+#incentive2 {
+    position: absolute;
+    height: 50px;
+    width: 55px;
+    top: 6px;
+    left: 275px;
+    background-image:  url(/do_img/global/pilotSheet/incentives/button_2.png?__cv=6c6630a08b75eafe093103076b2cef00);
+    background-repeat: no-repeat;
+}
+#incentive2Hint {
+    position: absolute;
+    height: 30px;
+    width: 187px;
+    top: 14px;
+    left: 335px;
+}
+#incentive3 {
+    position: absolute;
+    height: 50px;
+    width: 55px;
+    top: 5px;
+    left: 533px;
+    background-image:  url(/do_img/global/pilotSheet/incentives/button_3.png?__cv=1692bd9125ff6686cb51596b21f68b00);
+    background-repeat: no-repeat;
+}
+#incentive3Hint {
+    position: absolute;
+    height: 30px;
+    width: 130px;
+    top: 14px;
+    left: 600px;
+}
+
+.hintFont {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    color: #fcce00;
+    position: relative;
+}
+
+#incentiveContentBody {
+    position: relative;
+    height: 280px;
+    width: 773px;
+    top: 15px;
+}
+
+.invited_bg {
+    position: relative;
+    height: 280px;
+    width: 230px;
+    top: 50px;
+}
+
+.invitedRight {
+    position: relative;
+    height: 45px;
+    width: 80px;
+}
+
+.invitedLeft {
+    position: relative;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    color: #fff;
+    position: relative;
+    top: -5px;
+}
+
+.invitedLeftTop {
+    top: -18px;
+}
+
+.inviteInfo {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    color: #a0a0a0;
+    width: 75%;
+    padding: 10px 0 0 0px;
+}
+
+.inviteInfoHeader {
+    color: #fff;
+}
+
+.inviteInfoSpan {
+    color: #fcce00;
+    font-size: 12px;
+    width: 25%;
+    text-align: right;
+    vertical-align: bottom;
+}
+.inviteInfoSpan1 {
+    position: relative;
+    left: 85px;
+    top: 0px;
+}
+.inviteInfoSpan2 {
+    position: relative;
+    left: 105px;
+    top: 0px;
+}
+.inviteInfoSpan3 {
+    position: relative;
+    left: 100px;
+    top: 0px;
+}
+.inviteInfoSpan4 {
+    position: relative;
+    left: 155px;
+    top: -15px;
+}
+
+.inviteInfoSpan5 {
+    position: relative;
+    left: 0px;
+    top: 0px;
+}
+
+#invitedLeft {
+    top: 9px;
+    left: 0px;
+    width: 250px;
+}
+
+#invitedTopLeft {
+    top: 20px;
+    left: 20px;
+    width: 100px;
+}
+
+#invitedTopRight {
+    top: -19px;
+    left: 181px;
+    background-image:  url(/do_img/global/pilotSheet/incentives/user_icon.png?__cv=be59bcb98b0b2b07d49f95562e6f7a00);
+    background-repeat: no-repeat;
+}
+
+#invitedRest {
+    position: relative;
+    height: 215px;
+    width: 220px;
+    top: -18px;
+    left: 20px;
+}
+
+#invitedFriends {
+    position: absolute;
+    height: 210px;
+    width: 160px;
+    top: 3px;
+    left: 15px;
+}
+
+.invitedArrowUpActive {
+    background-image:  url(/do_img/global/pilotSheet/incentives/arrow_up_active.png?__cv=9a04672771c07de8ec0d098120139d00);
+    background-repeat: no-repeat;
+}
+
+.invitedArrowUpInActive {
+    background-image:  url(/do_img/global/pilotSheet/incentives/arrow_up_inactive.png?__cv=b2758e8e6950c64ea50ee4d4ad82b100);
+    background-repeat: no-repeat;
+}
+
+.invitedArrowDownActive {
+    background-image:  url(/do_img/global/pilotSheet/incentives/arrow_down_active.png?__cv=958f85a7522186370f1a5cbdbc33d600);
+    background-repeat: no-repeat;
+}
+
+.invitedArrowDownInActive {
+    background-image:  url(/do_img/global/pilotSheet/incentives/arrow_down_inactive.png?__cv=e9e6e8fd7e9e55530a756de15ec81300);
+    background-repeat: no-repeat;
+}
+
+.invitedArrowUp {
+    position: absolute;
+    height: 20px;
+    width: 30px;
+    top: 6px;
+    left:185px;
+}
+
+.invitedArrowDown {
+    position: absolute;
+    height: 20px;
+    width: 30px;
+    top: 199px;
+    left: 185px;
+}
+
+.middleArrow {
+    position: relative;
+    height: 60px;
+    width: 57px;
+    background-image:  url(/do_img/global/pilotSheet/incentives/arrows.png?__cv=db01a673c8e99d5a2f9392bbd57a6b00);
+    background-repeat: no-repeat;
+}
+
+.separatorUp {
+    position: relative;
+    height: 120px;
+    width: 5px;
+    background-image:  url(/do_img/global/pilotSheet/incentives/separator_up.png?__cv=8ff6e7cfbe37b07274e49cab15ecb500);
+    background-repeat: no-repeat;
+}
+
+.separatorDown {
+    position: relative;
+    height: 120px;
+    width: 5px;
+    background-image:  url(/do_img/global/pilotSheet/incentives/separator_down.png?__cv=898d8cd5b47f6ef3d679089c74a82400);
+    background-repeat: no-repeat;
+}
+#middleArrow1 {
+    top: -271px;
+    left: 236px;
+}
+#middleArrow2 {
+    top: -860px;
+    left: 512px;
+}
+#separatorUp1 {
+    top: -271px;
+    left: 260px;
+}
+#separatorUp2 {
+    top: -856px;
+    left: 536px;
+}
+#separatorDown1 {
+    top: -295px;
+    left: 260px;
+}
+
+#separatorDown2 {
+    top: -873px;
+    left: 536px;
+}
+
+#acceptedMiddle {
+    top: -570px;
+    left: 292px;
+}
+
+#middleTopLeft {
+    top: 29px;
+    left: 0px;
+}
+
+#middleTopRight {
+    top: -19px;
+    left: 140px;
+    background-image:  url(/do_img/global/pilotSheet/incentives/user_icons.png?__cv=47edd37fd719e552d5d7732857c6ac00);
+    background-repeat: no-repeat;
+}
+
+#middleRest {
+    position: relative;
+    height: 222px;
+    width: 220px;
+    top: -13px;
+    left: 0px;
+    background-image:  url(/do_img/global/pilotSheet/incentives/list_bg.png?__cv=3e0874b2242973d8d76a227452b30800);
+    background-repeat: no-repeat;
+}
+
+#middleFriends {
+    position: absolute;
+    height: 210px;
+    width: 185px;
+    top: 3px;
+    left: 0px;
+}
+
+.middleRest {
+}
+
+.middleLeft {
+    float: left;
+    background-image:  url(/do_img/global/pilotSheet/incentives/userpic.jpg?__cv=18675924bdaf715df706be8d3f195100);
+    background-repeat: no-repeat;
+    width: 48px;
+    height: 50px;
+}
+
+.middleRight {
+    float: right;
+    width: 125px;
+    text-align: left;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    color: #a0a0a0;
+}
+
+.middleRight1 {
+
+}
+
+.middleRight2 {
+    color: #fcce00;
+}
+
+.hideListElement {
+    display: none;
+}
+
+#bonusInfoDiv {
+    position: relative;
+    top: -15px;
+    left: -8px;
+    height: 110px
+}
+
+.bonusInfoDiv {
+    background-image:  url(/do_img/global/pilotSheet/incentives/incentive_overlay_big.png?__cv=b68f9d08a4a89bcaca06bb1b94424b00);
+    background-repeat: no-repeat;
+}
+
+.bonusInfoDivText {
+    color: #a0a0a0;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+.bonusInfoDivHead {
+    position: relative;
+    top: 24px;
+    left: 25px;
+    width: 175px;
+}
+
+.bonusInfoDivList {
+    list-style-type: circle;
+    list-style-position: outside;
+    position: relative;
+    top: 30px;
+    left: 50px;
+}
+
+.bonusInfoDivListCol {
+    color: #fcce00;
+}
+
+.bonusLogBookLink {
+    position: relative;
+    left: 0px;
+    top: -5px;
+    text-decoration: underline;
+}
+
+.bonusLogBookLinkActive {
+    cursor: pointer;
+    color: #a0a0a0;
+}
+
+.bonusLogBookLinkInActive {
+    color: #fff;
+}
+
+#bonuslogBookStatus {
+    position: absolute;
+    top: 250px;
+    left: 145px;
+    width: 100px;
+}
+
+#bonusLogBook {
+    position: absolute;
+    left: 135px;
+    top: -400px;
+    background-image:  url(/do_img/global/pilotSheet/incentives/bonuslog_bg.png?__cv=dbb3396d2b89110b81b3bf2612f5a000);
+    background-repeat: no-repeat;
+    height: 375px;
+    width: 590px;
+    z-index: 1000;
+}
+
+.bonusLogBookHead {
+    font-size: 12px;
+    color: #fcce00;
+    position: relative;
+    top: 10px;
+    left: 17px;
+    width: 100px;
+}
+
+.bonusLogBookBody {
+    font-size: 10px;
+    color: #a0a0a0;
+}
+
+.logBookTableHead {
+    position: absolute;
+    top: 42px;
+    left: 23px;
+    width: 550px
+}
+
+.logBookTableBody {
+    position: absolute;
+    top: 66px;
+    left: 23px;
+    width: 527px;
+    height: 290px;
+}
+
+.closeButtonBonusLog {
+    position: absolute;
+    width: 17px;
+    height: 18px;
+    left: 722px;
+    top: -390px;
+}
+
+.bonuslogBookStatus {
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 10px;
+    font-weight: bold;
+    color: #75b6ff;
+}
+
+.logBookHeadIncentives {
+    font-family: Verdana, Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    color: #A4d3FF;
+}
+
+.showBonusLogBook {
+    display: block;
+}
+
+.hideBonusLogBook {
+    display: none;
+}
+
+.noBonus {
+    background-image:  url(/do_img/global/pilotSheet/incentives/incentive_overlay.png?__cv=27687b6e1cc02b7cb4ab68ef4544e200);
+    background-repeat: no-repeat;
+    height: 90px;
+    width: 190px;
+    position: relative;
+    top: -99px;
+}
+
+.showBonus {
+    background-image:  url(/do_img/global/pilotSheet/incentives/incentivereached_overlay.png?__cv=6905e3e617f3dd7373c18667258e4d00);
+    background-repeat: no-repeat;
+}
+
+.showBonus {
+    background-image:  url(/do_img/global/pilotSheet/incentives/incentivereached_overlay.png?__cv=6905e3e617f3dd7373c18667258e4d00);
+    background-repeat: no-repeat;
+    height: 90px;
+    width: 190px;
+    position: relative;
+    top: -99px;
+}
+
+.incentiveFriends {
+    position: relative;
+    top: -2px;
+    left: 6px;
+    z-index: 1;
+}
+
+.incentive5Friends {
+    position: relative;
+    top: -2px;
+    left: -10px;
+    z-index: 1;
+}
+
+.incentive10Friends {
+    position: relative;
+    top: -3px;
+    left: 2px;
+    z-index: 1;
+}
+
+.incentive25Friends {
+    position: relative;
+    top: -2px;
+    left: 5px;
+    z-index: 1;
+}
+
+
+.acceptedHeadText {
+    position: relative;
+    top: 0px;
+    left: 6px;
+}
+
+#completedRight {
+    height: 290px;
+    width: 195px;
+    position: relative;
+    top: -1151px;
+    left: 565px;
+}
+
+#completedHead {
+    height: 15px;
+    padding-left: 6px;
+}
+
+.completedHeadText {
+    position: relative;
+    top: 0px;
+    left: 6px;
+}
+
+
+#completedTop {
+    height: 90px;
+    width: 190px;
+}
+
+#completedMiddle {
+    height: 90px;
+    width: 200px;
+}
+
+#completedBottom {
+    height: 90px;
+    width: 190px;
+}
+.completedInner {
+    position: relative;
+    left: 13px;
+    top: -10px;
+    height: 60px;
+    width: 160px;
+}
+#completedTopInner {
+    background-image:  url(/do_img/global/pilotSheet/incentives/incentives1.png?__cv=7cbc8ab97030d6d880fe4f3a98960b00);
+    background-repeat: no-repeat;
+}
+
+#completedMiddleInner {
+    background-image:  url(/do_img/global/pilotSheet/incentives/incentives2.png?__cv=9b899d672418acda495e4d15f3174e00);;
+    background-repeat: no-repeat;
+}
+
+#completedBottomInner {
+    background-image:  url(/do_img/global/pilotSheet/incentives/incentives3.png?__cv=0bbc27869b370c4559ca5d15fce29e00);
+    background-repeat: no-repeat;
+}
+
+#completedTopInnerEvent {
+    background-image:  url(/do_img/global/pilotSheet/incentives/incentives_push1_2.png?__cv=5ab004ed46efbc97350ea0a2cbd61400);
+    background-repeat: no-repeat;
+}
+
+#completedMiddleInnerEvent {
+    background-image:  url(/do_img/global/pilotSheet/incentives/incentives_push1_2.png?__cv=5ab004ed46efbc97350ea0a2cbd61400);;
+    background-repeat: no-repeat;
+}
+
+#completedBottomInnerEvent {
+    background-image:  url(/do_img/global/pilotSheet/incentives/incentives_push3.png?__cv=fafaddc1de5fac97a6c5d6f3c7a57200);
+    background-repeat: no-repeat;
+}
+
+.completedBottomInner {
+    top: -17px;
+}
+
+.bonusText {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    width: 150px;
+    height: 10px;
+    padding-left: 15px;
+    position: relative;
+    top: 10px;
+}
+
+.bonusTextActive {
+    color: #a0a0a0;
+}
+
+.bonusTextInactive {
+    color: #fff;
+}
+
+.rewardList {
+    list-style-type: circle;
+    list-style-position: outside;
+}
+
+.inviteInfoList {
+    padding-left: 50px;
+    padding-right: 20px;
+}
+
+.userProfileInfoLayer {
+    padding-left: 25px;
+    width: 500px;
+}
+
+.userProfileInfoLayerText1 {
+     height: 65px;
+}
+
+.userProfileInfoLayerText2 {
+     height: 30px;
+}
+
+.userProfileViewPossibilityList {
+    list-style-type: decimal;
+    list-style-position: outside;
+}
+
+.userProfileInfoLayerList {
+   padding-left:25px;
+   width: 500px;
+   height:90px;
+}
+
+.userProfileLink {
+    color: #fcce00;
+    text-decoration:underline;
+}
+
+.infoLayerLinkToProfile {
+    padding-left:25px;
+    width: 510px;
+    height:50px;
+}
+
+.searchProfile {
+    padding-left:25px;
+    width:500px;
+    height:40px;
+}
+
+.searchProfileField {
+    background-color: #000;
+    background-image:  url(/do_img/global/pilotSheet/search/textfield_username.png?__cv=d45e66174810e674cf59a123c565a700);
+    background-repeat: no-repeat;
+    border: medium none;
+    height: 15px;
+    width: 143px;
+    color: #a0a0a0;
+    font-size:11px;
+}
+
+.searchProfileSubmit {
+    background: 0 0  url(/do_img/global/pilotSheet/search/search_button_sprite.png?__cv=d4ec53720dd285b7bd594940505c2600);
+    background-repeat: no-repeat;
+    height: 21px;
+    width: 20px;
+    border: medium none;
+    cursor:pointer;
+}
+
+.searchProfileSubmit:hover {
+    background-position:-20px 0;
+}
+
+.searchProfileSubmit:active {
+    background-position:-40px 0;
+}
+
+.searchProfileFieldStatus {
+    height: 16px;
+    width: 16px;
+    border: medium none;
+}
+
+.searchProfileAjaxLoader {
+    background: 0 0  url(/do_img/global/pilotSheet/search/loader.gif?__cv=e00a2cd3d4aa5a5c0a469952b1b68700);
+    background-repeat: no-repeat;
+}
+
+.searchProfileSuccess {
+    background: 0 0  url(/do_img/global/pilotSheet/search/check_positiv.png?__cv=44f902a63a0dc22a97ae775a92530c00);
+    background-repeat: no-repeat;
+}
+
+.searchProfileFailure {
+    background: 0 0  url(/do_img/global/pilotSheet/search/check_negative.png?__cv=825be78a2fe3e730a3ffb83a081c7700);
+    background-repeat: no-repeat;
+}
+
+.crtlColor {
+    color:#a4d3ff;
+}
+
+.rewardList1 {
+    padding-left: 20px;
+}
+
+.obstrusive {
+    z-index: 25;
+}
+
+.verticalSeparator {
+    height: 10px;
+}
+
+.inviteInfoPopup {
+    color: #fff;
+    font-family: arial,sans-serif;
+    font-size: 12px;
+    z-index: 10;
+    position: absolute;
+    top: -500px;
+    left: 135px;
+    width: 590px;
+}
+
+.infoLayerContainer {
+    position: relative;
+    z-index: 1000;
+}
+
+.hideinviteInfoPopup {
+    display: none;
+}
+
+.showinviteInfoPopup {
+    display: block;
+}
+
+.hidePopUpMask {
+    display: none;
+}
+
+.showPopUpMask {
+    display: block;
+}
+
+.bgMask {
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    width: 1889px;
+    height: 1814px;
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    z-index: 9000;
+    background-color: rgb(51, 51, 51);
+}
+
+.inviteInfoPopupHeader {
+    background-image:   url(/do_img/global/pilotSheet/invitePage/inviteDialog/header.png?__cv=57b8ccbb24e2865598f867c9a5e4dc00);
+    background-repeat: no-repeat;
+    background-color: transparent;
+    border-bottom: medium none;
+    padding: 0px;
+    height: 80px;
+}
+
+.infoLayerHeaderIcon {
+    background:   url(/do_img/global/pilotSheet/invitePage/inviteDialog/userpic.png?__cv=587d57c96fdc71beba0955f4bf248700) no-repeat scroll left center transparent;
+    min-height: 54px;
+    padding-left: 80px;
+    position: relative;
+    left: 8px;
+    top: 11px;
+}
+
+.infoLayerHeaderText {
+    font-weight: bold;
+    font-size: 16px;
+    padding-left: 81px;
+    position: relative;
+    width: 357px;
+}
+
+.inviteInfoLayerHeaderText {
+    top: -40px;
+}
+
+.userProfileInfoLayerHeaderText {
+    top: -27px;
+}
+
+.infoLayerBodyHeader {
+    font-size: 12px;
+    font-weight: bold;
+    color: #a4d3ff;
+    padding: 10px 0px 25px 25px;
+}
+.inviteInfoPopupBodyHeader {
+    padding: 10px 0 25px 25px;
+}
+
+.userProfileInfoLayerBodyHeader {
+    padding: 0 0 0 25px;
+}
+
+.closeInfoLayer {
+    width: 18px;
+    height: 17px;
+    position: relative;
+    left: 555px;
+    cursor: pointer;
+}
+.closeInviteInfoLayer {
+    top: -85px;
+}
+
+.closeUserProfileInfoPopup {
+    top: -65px;
+}
+
+.infoLayerBodyWhole {
+    background:   url(/do_img/global/pilotSheet/invitePage/inviteDialog/body.png?__cv=019b85e1130a9d773d007506386a7900);
+    background-repeat: no-repeat;
+    height: 435px;
+    width: 585px;
+    text-align: left;
+}
+
+.closePopup {
+    background: none repeat scroll 0 0 transparent;
+    color: #a0a0a0;
+    font-family: arial,sans-serif;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: center;
+    position: absolute;
+    left: 485px;
+    top: 36px;
+    width: 100px;
+    cursor: pointer;
+}
+
+.inviteInfoPopupBodyText {
+    width: 470px;
+    padding-left: 25px;
+    padding-bottom: 15px;
+}
+
+.goliathDesign {
+    position: absolute;
+    top: 230px;
+    left: 350px;
+    height: 150px;
+    width: 200px;
+    background-image:  url(/do_img/global/pilotSheet/invitePage/incentive_goliath.png?__cv=0bcc72e91551650bb6622b1715b21600);
+    background-repeat: no-repeat;
+}
+
+.droneDesign {
+    position: absolute;
+    top: 230px;
+    left: 350px;
+    height: 158px;
+    width: 200px;
+    background-image:  url(/do_img/global/pilotSheet/invitePage/drone_formation_lance.png?__cv=76675a0c961721ee2adbc7118699e800);
+    background-repeat: no-repeat;
+}
+
+.infoLayerHead {
+    padding: 15px 0px 15px 25px;
+}
+
+.infoLayerBody {
+    padding: 5px 0px 10px 25px;
+}
+
+.infoLayerBodyList {
+    padding-bottom: 15px;
+}
+
+.infoLayerFooter {
+    position: absolute;
+    width: 580px;
+    height: 57px;
+    top: 416px;
+    background-image:  url(/do_img/global/pilotSheet/invitePage/inviteDialog/footer.png?__cv=dea773104b03e47dc8b306e311009400);
+    background-repeat: no-repeat;
+}
+#inviteInfoCheckBoxContainer {
+    position: absolute;
+    left: 200px;
+    margin-top: 7px;
+}
+
+.inviteInfoCheckBox {
+    position: relative;
+    top: 8px;
+    float: left;
+}
+
+#inviteInfoCheckbox {
+   position: relative;
+}
+
+.inviteInfoCheckbox {
+    position: relative;
+    top: 12px;
+}
+
+.inviteInfoCheckLabel {
+    position: relative;
+    float: left;
+    top: 10px;
+}
+
+.removeInvitee {
+    position: relative;
+    height: 17px;
+    width: 18px;
+    left: 39px;
+    top: 10px;
+    z-index: 2;
+}
+
+.removeInviteeActive {
+    background-image:   url(/do_img/global/pilotSheet/edit_profile/close_button_rollover.png?__cv=9624c319461de01c5abc084084482000);
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+
+.removeInviteeInActive {
+    background-image:   url(/do_img/global/pilotSheet/edit_profile/close_button.png?__cv=09eb7b238c3c31c405fb3481cd016200);
+    background-repeat: no-repeat;
+}
+
+.hideRemoveInvitee {
+    visibility: hidden;
+}
+
+.showRemoveInvitee {
+    visibility: visible;
+}
+
+.pilotInvitePage {
+    position: absolute;
+    width: 770px;
+    height: 364px;
+    top: 26px;
+    left: 0px;
+}
+
+.pilotInvitePageShow {
+    display: block;
+    background-image:  url(/do_img/global/pilotSheet/invitePage/background_black_overlay.png?__cv=82e1e897dfe4f18c96a17a04315f6300);
+    background-repeat: no-repeat;
+}
+
+.pilotInvitePageHide {
+    display: none;
+}
+
+.loginBonus {
+    display: none;
+}
+
+#introLeft {
+    height: 100px;
+    width: 300px
+}
+
+#introRight {
+    height: 115px;
+    width: 300px;
+    position: relative;
+    top: -92px;
+    left: 458px;
+}
+
+#middleSecHead {
+    height: 20px;
+    width: 770px;
+    position: relative;
+    top: -35px;
+}
+
+#middleSec {
+    height: 160px;
+    width: 770px;
+    position: relative;
+    top: -35px;
+}
+
+
+#middleSecTop {
+    height: 100px;
+    width: 300px
+}
+
+#customTooltip {
+    text-align: left;
+}
+
+.inviteBody {
+    position: relative;
+    height: 230px;
+    width: 413px;
+    top: 65px;
+    left: 185px;
+}
+
+.inviteBodyShow {
+    display: block;
+    background-image:  url(/do_img/global/pilotSheet/invitePage/choose_platform_frame.png?__cv=a4ff8d6df500668be66c9ba04535e500);
+    background-repeat: no-repeat;
+}
+.inviteBodyHide {
+    display: none;
+}
+
+.inviteBodyEmail {
+    position: relative;
+    height: 230px;
+    width: 413px;
+    top: 65px;
+    left: 185px;
+}
+.inviteBodyEmailHide {
+    display: none;
+}
+.inviteBodyEmailShow {
+    display: block;
+    background-image:  url(/do_img/global/pilotSheet/invitePage/choose_platform_frame.png?__cv=a4ff8d6df500668be66c9ba04535e500);
+    background-repeat: no-repeat;
+}
+
+#bodyHeaderText {
+    position: relative;
+    height: 20px;
+    width: 130px;
+    top: 10px;
+    left: 140px;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    color: #fcce00;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+#bodyHeaderTextEmail {
+    position: relative;
+    height: 15px;
+    width: 150px;
+    top: 90px;
+    left: 30px;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    font-size: 11px;
+}
+
+#bodyHeaderTextFb {
+    position: relative;
+    height: 15px;
+    width: 130px;
+    top: 75px;
+    left: 238px;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    font-size: 11px;
+}
+
+#tabEmail {
+    position: relative;
+    height: 20px;
+    width: 145px;
+    top: 115px;
+    left: 30px;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    color: #fff;
+    text-align: center;
+}
+
+#tabFb {
+    position: relative;
+    height: 20px;
+    width: 145px;
+    top: 95px;
+    left: 238px;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    color: #fff;
+    text-align: center;
+}
+
+.inviteEmailTabRollOver {
+    background-image:  url(/do_img/global/pilotSheet/invitePage/email_invite_button_hover.png?__cv=480e299e13df98661ada310a46e6aa00);
+    z-index: 2;
+}
+.inviteEmailTabInActive {
+    background-image:  url(/do_img/global/pilotSheet/invitePage/email_invite_button_normal.png?__cv=a881dbbdf471cfd58a7db68513bc2a00);
+}
+
+.inviteFbTabRollOver {
+    background-image:  url(/do_img/global/pilotSheet/invitePage/friend_invite_button_hover.png?__cv=bfa84174a66e88a187690b6f5959ef00);
+}
+
+.inviteFbTabInActive {
+    background-image:  url(/do_img/global/pilotSheet/invitePage/friend_invite_button_normal.png?__cv=7acfe94dc7356aa3f885980bc40f9900);
+}
+
+.inviteTabLabelActive {
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    color: #fcce00;
+    text-align: center;
+    position: relative;
+}
+
+.inviteTabLabelInActive {
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    color: #fff;
+    text-align: center;
+    position: relative;
+}
+
+#inviteButt {
+    display: none;
+}
+
+/* customized scrollbar*/
+
+#scrollbar_container {
+    width:220px;
+    height: 210px;
+}
+
+#scrollbar_track {
+    position:absolute;
+    top:-2px;
+    right:0;
+    height:100%;
+    width:16px;
+    background-image:  url(/do_img/global/pilotSheet/incentives/scrollbar/vertical/bg.png?__cv=000cfa7c72a8a047af40093042ef6600);
+    cursor:move;
+    left: 203px;
+}
+
+#scrollbar_handle {
+    width:16px;
+    background-image:  url(/do_img/global/pilotSheet/incentives/scrollbar/vertical/bar.png?__cv=6bc46b5f6b3b91f3f76cb00831cecc00);
+    cursor:move;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    opacity:0.9;
+    -moz-opacity:0.9;
+}
+
+#scrollbar_content {
+    overflow:hidden;
+    height: 210px;
+    width: 185px;
+    position: relative;
+}
+
+#scrollbar_container_country {
+    position:relative;
+    width:220px;
+}
+
+#scrollbar_track_country {
+    position:absolute;
+    top:0;
+    right:0;
+    height:100%;
+    width:16px;
+    background-image:  url(/do_img/global/pilotSheet/incentives/scrollbar/vertical/bg.png?__cv=000cfa7c72a8a047af40093042ef6600);
+    cursor:move;
+    left: 203px;
+    display: block;
+}
+
+#scrollbar_handle_country {
+    width:16px;
+    background-image:  url(/do_img/global/pilotSheet/incentives/scrollbar/vertical/bar.png?__cv=6bc46b5f6b3b91f3f76cb00831cecc00);
+    cursor:move;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    opacity:0.9;
+    -moz-opacity:0.9;
+    position: absolute;
+    left: 0px
+}
+
+#scrollbar_content_country {
+    overflow:hidden;
+    height: 198px;
+    width: 185px;
+    position: relative;
+}
+
+#scrollbar_handle_year {
+    width:16px;
+    background-image:  url(/do_img/global/pilotSheet/incentives/scrollbar/vertical/bar.png?__cv=6bc46b5f6b3b91f3f76cb00831cecc00);
+    cursor:move;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    opacity:0.9;
+    -moz-opacity:0.9;
+    position: absolute;
+    left: 0px;
+}
+#scrollbar_track_year {
+    position:absolute;
+    top:0;
+    right:0;
+    height:100%;
+    width:16px;
+    background-image:  url(/do_img/global/pilotSheet/incentives/scrollbar/vertical/bg.png?__cv=000cfa7c72a8a047af40093042ef6600);
+    cursor:move;
+    left: 49px;
+}
+
+#scrollbar_content_year {
+    overflow:hidden;
+    height: 167px;
+    width: 40px;
+}
+
+#scrollbar_container_year {
+    position:relative;
+    width:65px;
+    height: 163px;
+}
+
+#scrollbar_container_month {
+    position:relative;
+    width:65px;
+    height: 165px;
+}
+
+#scrollbar_track_month {
+    position:absolute;
+    top:0;
+    right:0;
+    height:100%;
+    width:16px;
+    background-image:  url(/do_img/global/pilotSheet/incentives/scrollbar/vertical/bg.png?__cv=000cfa7c72a8a047af40093042ef6600);
+    cursor:move;
+    left: 49px;
+}
+
+#scrollbar_handle_month {
+    width:16px;
+    background-image:  url(/do_img/global/pilotSheet/incentives/scrollbar/vertical/bar.png?__cv=6bc46b5f6b3b91f3f76cb00831cecc00);
+    background-color:#5c92e7;
+    cursor:move;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    opacity:0.9;
+    -moz-opacity:0.9;
+    left: 0px;
+}
+
+#scrollbar_content_month {
+    overflow:hidden;
+    height: 167px;
+    width: 50px;
+}
+
+#scrollbar_container_day {
+    position:absolute;
+    width:51px;
+    height: 163px;
+    z-index: 1500;
+}
+
+#scrollbar_track_day {
+    position:absolute;
+    top:0;
+    right:0;
+    height:100%;
+    width:16px;
+    background-image:  url(/do_img/global/pilotSheet/incentives/scrollbar/vertical/bg.png?__cv=000cfa7c72a8a047af40093042ef6600);
+    cursor:move;
+    left: 36px;
+}
+
+#scrollbar_handle_day {
+    width:16px;
+    background-image:  url(/do_img/global/pilotSheet/incentives/scrollbar/vertical/bar.png?__cv=6bc46b5f6b3b91f3f76cb00831cecc00);
+    background-color:#5c92e7;
+    cursor:move;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    opacity:0.9;
+    -moz-opacity:0.9;
+    left: 0px;
+}
+
+#scrollbar_content_day {
+    overflow:hidden;
+    height: 167px;
+    width: 30px;
+    position: relative;
+    z-index: 2000;
+}
+
+#scrollbar_container_logBook {
+    position:absolute;
+    width:527px;
+    height: 290px;
+    z-index: 1500;
+}
+
+#scrollbar_track_logBook {
+    position:absolute;
+    top:0px;
+    right:0;
+    height:100%;
+    width:16px;
+    background-image:  url(/do_img/global/pilotSheet/incentives/scrollbar/vertical/bg.png?__cv=000cfa7c72a8a047af40093042ef6600);
+    cursor:move;
+    left: 512px;
+    z-index: 1000;
+}
+
+#scrollbar_handle_logBook {
+    width:16px;
+    background-image:  url(/do_img/global/pilotSheet/incentives/scrollbar/vertical/bar.png?__cv=6bc46b5f6b3b91f3f76cb00831cecc00);
+    background-color:#5c92e7;
+    cursor:move;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    opacity:0.9;
+    -moz-opacity:0.9;
+    left: 0px;
+}
+
+#scrollbar_content_logBook {
+    overflow:hidden;
+    height: 285px;
+    width: 527px;
+    position: relative;
+}
+
+.customSelect {
+    font-size: 11px;
+    width: 100px;
+}
+
+.itemSelected {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    color: #a0a0a0;
+    padding-left: 5px;
+    cursor: default;
+}
+
+.itemSelected1 {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    color: #a0a0a0;
+    padding-left: 5px;
+}
+
+#selectday {
+    width: 30px; /* With the padding included, the width is 190 pixels: the actual width of the image. */
+    background:  url(/do_img/global/pilotSheet/edit_profile/rework/dropdown_60x17.png?__cv=69bbf900358afb37cea86261bde5b000) no-repeat;
+    color:#a0a0a0;
+    height:18px;
+}
+
+
+#selectmonth {
+    width: 30px; /* With the padding included, the width is 190 pixels: the actual width of the image. */
+    background:  url(/do_img/global/pilotSheet/edit_profile/rework/dropdown_60x17.png?__cv=69bbf900358afb37cea86261bde5b000) no-repeat;
+    color:#a0a0a0;
+    height:18px;
+}
+
+#selectyear {
+    width: 60px; /* With the padding included, the width is 190 pixels: the actual width of the image. */
+    background:  url(/do_img/global/pilotSheet/edit_profile/rework/dropdown_92x17.png?__cv=827092ba3170a01af19d060e9e570100) no-repeat;
+    color:#a0a0a0;
+    height:18px;
+}
+
+#selectsex {
+    width: 228px; /* With the padding included, the width is 190 pixels: the actual width of the image. */
+    background:  url(/do_img/global/pilotSheet/edit_profile/dropdown_227x17psd.png?__cv=700c19e6c45bf27ea9d28713da112600) no-repeat;
+    color:#a0a0a0;
+    height:18px;
+}
+
+#selectcountry {
+    width: 228px; /* With the padding included, the width is 190 pixels: the actual width of the image. */
+    background:  url(/do_img/global/pilotSheet/edit_profile/dropdown_227x17psd.png?__cv=700c19e6c45bf27ea9d28713da112600) no-repeat;
+    color:#a0a0a0;
+    height:18px;
+}
+
+.listBox {
+    width: 50px;
+    height: 215px;
+    background-color: #000;
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    color: #a0a0a0;
+    padding-left: 5px;
+    z-index: 2;
+}
+
+.listBoxDay {
+    width: 51px;
+    height: 165px;
+    position: relative;
+    left: 110px;
+    top: -11px;
+    z-index: 1000;
+}
+
+.listBoxMonth {
+    width: 50px;
+    height: 165px;
+    position: absolute;
+    left: 189px;
+    top: 20px;
+    z-index: 1000;
+}
+
+.listBoxYear {
+    width: 64px;
+    height: 165px;
+    position: absolute;
+    left: 266px;
+    top: 20px;
+    z-index: 1000;
+}
+
+.listBoxSex {
+    width: 219px;
+    height: 30px;
+    position: absolute;
+    left: 110px;
+    top: 17px;
+}
+
+.listBoxCountry {
+    width: 219px;
+    height: 265px;
+    position: absolute;
+    left: 110px;
+    top: 17px;
+    z-index: 700;
+}
+
+.arrowSelectActive {
+    background-image:  url(/do_img/global/pilotSheet/edit_profile/dropdown_active.png?__cv=07b0f57edf514cefdf5f016833da2100);
+    background-repeat: no-repeat;
+}
+
+.arrowSelectInactive {
+    background-image:  url(/do_img/global/pilotSheet/edit_profile/dropdown.png?__cv=a826fb536064c23d86257a218c9e0200);
+    background-repeat: no-repeat;
+}
+
+.arrowSelectDay {
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    left: 150px;
+    top: 3px;
+}
+
+.arrowSelectMonth {
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    left: 228px;
+    top: 3px;
+}
+
+.arrowSelectYear {
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    left: 319px;
+    top: 3px;
+}
+
+.arrowSelectSex {
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    left: 319px;
+    top: 0px;
+}
+
+.arrowSelectCountry {
+    width: 22px;
+    height: 22px;
+    position: absolute;
+    left: 319px;
+    top: 0px;
+}
+
+.arrowDown {
+    display: block;
+}
+
+.arrowUp {
+    display: none;
+}
+
+.customSelect.arrowUp ul.options {
+    display: none;
+}
+
+.customSelect ul.options li.customSelectOver {
+    color: #000;
+    background-color: #fcce00;
+    cursor: default;
+}
+
+.customSelect ul.options li.selectedItem {
+    background-color: #5a6266 !important;
+    color: #000;
+    cursor: default;
+}
+
+.ulOptions {
+    position: relative;
+}
+
+#skillTreeHorwrap {
+    position: absolute;
+    left: 224px;
+    top: 297px;
+    width: 545px;
+    height: 15px;
+}
+
+/* left image of track */
+#skillTreeHorHandle-left {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: transparent  url(/do_img/global/pilotSheet/incentives/scrollbar/horizontal/bar_left.png?__cv=31fe9cd43dfdb251e0c709ddc5b78500);
+    background-repeat: no-repeat;
+}
+
+#skillTreeHorHandle-right {
+    position: absolute;
+    left: 37px;
+    top: 0px;
+    width: 15px;
+    height: 15px;
+    background: transparent  url(/do_img/global/pilotSheet/incentives/scrollbar/horizontal/bar_right.png?__cv=07169ed8867758ba9b03b11c30639c00);
+    background-repeat: no-repeat;
+}
+
+#skillTreeHorTrack-left {
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: transparent  url(/do_img/global/pilotSheet/incentives/scrollbar/horizontal/arrow_left.png?__cv=cce179282cc9592685ff011e952b1300);
+    background-repeat: no-repeat;
+}
+
+#skillTreeHorTrack-right {
+    position: absolute;
+    left: 540px;
+    top: 0px;
+    width: 15px;
+    height: 15px;
+    background: transparent  url(/do_img/global/pilotSheet/incentives/scrollbar/horizontal/arrow_right.png?__cv=c43194a9a25d239ac3f643f991e7d400);
+    background-repeat: no-repeat;
+}
+
+
+/* horizontal track */
+#skillTreeHorTrack {
+    position: absolute;
+    width: 535px;
+    height: 16px;
+    left: 5px;
+    background: transparent  url(/do_img/global/pilotSheet/incentives/scrollbar/horizontal/bg.png?__cv=6a54b28e9ff9fbb794710a767c86b600);
+}
+
+#skillTreeHorHandleCover {
+    width: 37px;
+    height: 15px;
+}
+
+/* horizontal track handle */
+#skillTreeHorHandle {
+    width: 37px;
+    height: 15px;
+    background: transparent  url(/do_img/global/pilotSheet/incentives/scrollbar/horizontal/bar.png?__cv=502d2b3280891d54db214c8bbe7fd700);
+}
+
+#skillTreeHorScrollable {
+    position: relative;
+    top: 5px;
+    left: 224px;
+    width: 546px;
+    height: 289px;
+    overflow: auto;
+}
+
+.minDistance {
+    vertical-align: top;
+    width: 20%
+}
+
+.maxDistance {
+    width: 80%;
+}
+
+.moveRight {
+    float: right;
+}
+
+.scroll-track {
+    height:10px;
+    width:16px;
+    background-image:  url(/do_img/global/pilotSheet/incentives/scrollbar/vertical/bg.png?__cv=000cfa7c72a8a047af40093042ef6600);
+}
+
+.scroll-handle {
+    border: 1px solid black;
+    height:10px;
+    width:15px;
+    left: -1px;
+    background-image:  url(/do_img/global/pilotSheet/incentives/scrollbar/vertical/bar.png?__cv=6bc46b5f6b3b91f3f76cb00831cecc00);
+    cursor:pointer;
+}
+
+.scroll-track-top {
+    background-image:  url(/do_img/global/pilotSheet/incentives/scrollbar/vertical/arrow_up.png?__cv=abcf286c198aff708ba0e922d8854100);
+    background-repeat: no-repeat;
+    height:16px;
+    width:16px;
+}
+
+.scroll-track-bot {
+    background-image:  url(/do_img/global/pilotSheet/incentives/scrollbar/vertical/arrow_down.png?__cv=04d0ed94ef193c5199b4c83e2ec38300);
+    background-repeat: no-repeat;
+    height:16px;
+    width:16px;
+}
+
+.scroll-track-top-active {
+    background-image:  url(/do_img/global/pilotSheet/incentives/scrollbar/vertical/arrow_up_active.png?__cv=486293d4de491f5ce795552b0911e100);
+    background-repeat: no-repeat;
+    height:16px;
+    width:16px;
+}
+
+.scroll-track-bot-active {
+    background-image:  url(/do_img/global/pilotSheet/incentives/scrollbar/vertical/arrow_down_active.png?__cv=ca13238fd3d58410c4735c8c8256c700);
+    background-repeat: no-repeat;
+    height:16px;
+    width:16px;
+}
+
+.checkbox, .radio {
+	width: 19px;
+	height: 20px;
+	padding: 0 5px 0 0;
+	background:  url(/do_img/global/pilotSheet/edit_profile/checkbox.gif?__cv=640e32a9784fbb7f9e974fc41bb0a700) no-repeat;
+	display: block;
+	clear: left;
+	float: left;
+}
+
+.radio {
+	background:  url(/do_img/global/pilotSheet/edit_profile/radio_sprite.png?__cv=a8d4a76cd97031a564834c6ee210ce00) no-repeat;
+}
+
+.checkbox {
+	background:  url(/do_img/global/pilotSheet/edit_profile/radio_sprite.png?__cv=a8d4a76cd97031a564834c6ee210ce00) no-repeat;
+}
+
+
+.select {
+	position: absolute;
+	width: 158px; /* With the padding included, the width is 190 pixels: the actual width of the image. */
+	height: 21px;
+	padding: 0 24px 0 8px;
+	color: #fff;
+	font: 12px/21px arial,sans-serif;
+	background:  url(/do_img/global/pilotSheet/edit_profile/radio_button_active.png?__cv=0f7c58fc4562ceda58febfeec618d300) no-repeat;
+	overflow: hidden;
+}
+
+.horizontal-only {
+    height: auto;
+    max-height: 323px;
+}
+
+#logBookBox {
+    overflow: auto;
+    position: relative;
+    top: 5px;
+}
+
+.externalPPPLinkDialog {
+    position:relative;
+    color:#a0a0a0;
+    text-align:left;
+    font-size: 11px;
+    font-weight: bold;
+    color:#fcce00;
+}
+
+.epppLinkLabel {
+    position: absolute;
+    top: 10px;
+    text-decoration:underline;
+}
+
+.externalPPPLinkDialog:hover {
+    color: #a4d3ff;
+    background-position: -24px 0;
+}
+
+.externalPPPLinkDialog:active {
+    color:#a0a0a0;
+    background-position: -48px 0;
+}
+
+#busyLayerPilotSheet {
+    display: none;
+    position: absolute;
+    left: 0px; top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: black; opacity: 0.7; filter: alpha(opacity=70);
+    z-index:2;
+}
+
+#changeUsername {
+    background-image:  url(/do_img/global/pilotSheet/edit_profile/browse_button.png?__cv=77bcf4d683a7ba36a1efa0f059f41b00);
+    color: #fff;
+    float: right;
+    font-weight: bold;
+    height: 20px;
+    margin-right: 13px;
+    text-align: center;
+    width: 89px;
+    line-height: 19px;
+    cursor: pointer;
+    margin-top: -1px;
+}
