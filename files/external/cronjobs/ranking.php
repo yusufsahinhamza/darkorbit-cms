@@ -88,8 +88,10 @@ try {
 
     $rank = array_reverse($rank, true);
 
-    $mysqli->query('UPDATE player_accounts SET rankId = 20 WHERE userId = '.$userslist[0]['userId'].'');
-    unset($userslist[0]);
+    if (isset($userslist[0])) {
+      $mysqli->query('UPDATE player_accounts SET rankId = 20 WHERE userId = '.$userslist[0]['userId'].'');
+      unset($userslist[0]);
+    }
 
     foreach ($rank as $key => $value) {
     	$predict = $userscount / 100 * $value;

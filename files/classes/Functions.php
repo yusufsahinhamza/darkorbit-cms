@@ -1207,7 +1207,7 @@ class Functions {
     if ($json['inputs']['pilotName']['validate'] === 'valid') {
       $oldPilotNames = json_decode($player['oldPilotNames']);
 
-      if (count($oldPilotNames) <= 0 || ((new DateTime(date('d.m.Y H:i:s')))->diff(new DateTime(end($oldPilotNames)->date))->days >= 2) || $player['rankId'] == 21) {
+      if (count($oldPilotNames) <= 0 || ((new DateTime(date('d.m.Y H:i:s')))->diff(new DateTime(end($oldPilotNames)->date))->days >= 1) || $player['rankId'] == 21) {
         if ($mysqli->query('SELECT userId FROM player_accounts WHERE pilotName = "'.$newPilotName.'"')->num_rows <= 0) {
           $mysqli->begin_transaction();
 
@@ -1229,7 +1229,7 @@ class Functions {
           $json['message'] = 'This Pilot name is already in use.';
         }
       } else {
-        $json['message'] = 'You can only rename your Pilot once every 48 hours. <br> (Your last name change: '.date('d.m.Y H:i', strtotime(end($oldPilotNames)->date)).')';
+        $json['message'] = 'You can only rename your Pilot once every 24 hours. <br> (Your last name change: '.date('d.m.Y H:i', strtotime(end($oldPilotNames)->date)).')';
       }
     }
 

@@ -350,9 +350,9 @@ try {
 							$mysqli->query('UPDATE player_accounts SET shipId = '.$ship['shipID'].' WHERE userID = '.$player['userId'].'');
 
 							echo base64_encode('{"isError":0,"data":{"ret":1,"money":{"uridium":"0","credits":"0"}}}');
-							SetConfigs();
 
 							if (Socket::Get('IsOnline', array('UserId' => $player['userId'], 'Return' => false))) {
+								Socket::Send('UpdateStatus', array('UserId' => $player['userId']));
 								Socket::Send('ChangeShip', array('UserId' => $player['userId'], 'ShipId' => $ship['shipID']));
 							}
 						} else {
@@ -372,7 +372,10 @@ try {
 
 					$drones = '[{"items":[],"designs":[]},{"items":[],"designs":[]},{"items":[],"designs":[]},{"items":[],"designs":[]},{"items":[],"designs":[]},{"items":[],"designs":[]},{"items":[],"designs":[]},{"items":[],"designs":[]},{"items":[],"designs":[]},{"items":[],"designs":[]}]';
 					$mysqli->query("UPDATE player_equipment SET config".$json_array['configID']."_lasers = '[]', config".$json_array['configID']."_generators = '[]', config".$json_array['configID']."_drones = '".$drones."' WHERE userId = ".$player['userId']."");
-					SetConfigs();
+
+					if (Socket::Get('IsOnline', array('UserId' => $player['userId'], 'Return' => false))) {
+						Socket::Send('UpdateStatus', array('UserId' => $player['userId']));
+					}
 
 					echo base64_encode('{"isError":0,"data":{"ret":1,"money":{"uridium":"0","credits":"0"}}}');
 				} else {
@@ -430,7 +433,10 @@ try {
 					$mysqli->query("UPDATE player_equipment SET ".$toType." = '".$json."' WHERE userId = ".$player['userId']."");
 
 					echo base64_encode($data);
-					SetConfigs();
+
+					if (Socket::Get('IsOnline', array('UserId' => $player['userId'], 'Return' => false))) {
+						Socket::Send('UpdateStatus', array('UserId' => $player['userId']));
+					}
 				} else {
 					SendError($error[3]);
 				}
@@ -562,7 +568,10 @@ try {
 					}
 
 					echo base64_encode($data);
-					SetConfigs();
+
+					if (Socket::Get('IsOnline', array('UserId' => $player['userId'], 'Return' => false))) {
+						Socket::Send('UpdateStatus', array('UserId' => $player['userId']));
+					}
 				} else {
 					SendError($error[3]);
 				}
@@ -846,92 +855,5 @@ function GetShipInformation($itemId, $shipId) {
 			]
 		]
 	]);
-}
-
-function SetConfigs()
-{
-	global $mysqli, $player, $lf3s, $lf4s, $bo2s, $g3ns, $havocs, $herculess, $drones;
-
-	$config1_hp = $mysqli->query('SELECT health FROM server_ships WHERE shipID = '.$player['shipId'].'')->fetch_assoc()['health'];
-	$config1_damage = 0;
-	$config1_shield = 0;
-	$config1_speed = $mysqli->query('SELECT speed FROM server_ships WHERE shipID = '.$player['shipId'].'')->fetch_assoc()['speed'];
-
-	$config2_hp = $mysqli->query('SELECT health FROM server_ships WHERE shipID = '.$player['shipId'].'')->fetch_assoc()['health'];
-	$config2_damage = 0;
-	$config2_shield = 0;
-	$config2_speed = $mysqli->query('SELECT speed FROM server_ships WHERE shipID = '.$player['shipId'].'')->fetch_assoc()['speed'];
-
-	for ($i = 1; $i <= 2; $i++) {
-		//CONFIG 1 / 2 DAMAGE
-		$lasers = json_decode($mysqli->query('SELECT config'.$i.'_lasers FROM player_equipment WHERE userId = '.$player['userId'].'')->fetch_assoc()['config'.$i.'_lasers']);
-		foreach ($lasers as $item) {
-			if (in_array($item, $lf3s)) {
-				${'config' . $i . '_damage'} += 150;
-			} else if (in_array($item, $lf4s)) {
-				${'config' . $i . '_damage'} += 200;
-			}
-		}
-		//CONFIG 1 / 2 DAMAGE
-
-		//CONFIG 1 / 2 GENERATORS
-		$generators = json_decode($mysqli->query('SELECT config'.$i.'_generators FROM player_equipment WHERE userId = '.$player['userId'].'')->fetch_assoc()['config'.$i.'_generators']);
-		foreach ($generators as $item) {
-			if (in_array($item, $bo2s)) {
-				${'config' . $i . '_shield'} += 10000;
-			} else if (in_array($item, $g3ns)) {
-				${'config' . $i . '_speed'} += 10;
-			}
-		}
-		//CONFIG 1 / 2GENERATORS
-
-		//CONFIG 1 / 2DRONES
-		$drones = json_decode($mysqli->query('SELECT config'.$i.'_drones FROM player_equipment WHERE userId = '.$player['userId'].'')->fetch_assoc()['config'.$i.'_drones']);
-		$havocCount = 0;
-		$herculesCount = 0;
-		foreach ($drones as $drone) {
-			$herculesEquipped = false;
-			foreach ($drone->designs as $design) {
-				if (in_array($design, $havocs)) {
-					$havocCount++;
-				} elseif (in_array($design, $herculess)) {
-					$herculesEquipped = true;
-					$herculesCount++;
-				}
-			}
-			foreach ($drone->items as $item) {
-				if (in_array($item, $lf3s)) {
-					${'config' . $i . '_damage'} += 165;
-				} else if (in_array($item, $lf4s)) {
-					${'config' . $i . '_damage'} += 220;
-				} else if (in_array($item, $bo2s)) {
-					${'config' . $i . '_shield'} += 12000 + ($herculesEquipped ? + (12000 * 0.15) : 0);
-				}
-			}
-		}
-
-		if ($havocCount == count($drones)) {
-			${'config' . $i . '_damage'} += ${'config' . $i . '_damage'} * 0.1;
-		} elseif ($herculesCount == 10) {
-			${'config' . $i . '_hp'} += ${'config' . $i . '_hp'} * 0.2;
-		}
-		//CONFIG 1 / 2 DRONES
-	}
-
-	$config1_hp = round($config1_hp);
-	$config1_damage = round($config1_damage);
-	$config1_shield = round($config1_shield);
-	$config1_speed = round($config1_speed);
-	$config2_hp = round($config2_hp);
-	$config2_damage = round($config2_damage);
-	$config2_shield = round($config2_shield);
-	$config2_speed = round($config2_speed);
-
-	$array = array('Config1Hitpoints' => $config1_hp + 60000, 'Config1Damage' => $config1_damage, 'Config1Shield' => $config1_shield, 'Config1Speed' => ($config1_speed + $config1_speed * 0.2), 'Config2Hitpoints' => $config2_hp + 60000, 'Config2Damage' => $config2_damage, 'Config2Shield' => $config2_shield, 'Config2Speed' => ($config2_speed + $config2_speed * 0.2));
-	$mysqli->query("UPDATE player_equipment SET configs = '".json_encode($array, JSON_NUMERIC_CHECK)."' WHERE userId = ".$player['userId']."");
-
-	if (Socket::Get('IsOnline', array('UserId' => $player['userId'], 'Return' => false))) {
-		Socket::Send('UpdateStatus', array('UserId' => $player['userId'], 'Status' => $array));
-	}
 }
 ?>

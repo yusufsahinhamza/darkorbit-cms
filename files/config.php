@@ -3,9 +3,15 @@ define('ROOT', realpath(dirname(__FILE__)) . DIRECTORY_SEPARATOR);
 
 ini_set('log_errors', 1);
 ini_set('error_log', ROOT . 'error_logs' . DIRECTORY_SEPARATOR . 'php_error.log');
-ini_set('display_errors', 0);
+ini_set('display_errors', 1);
 ini_set('error_reporting', E_ALL);
-ini_set('session.save_path', ROOT . 'sessions');
+
+$sessions_path = ROOT . 'sessions';
+ini_set('session.save_path', $sessions_path);
+
+if (!file_exists($sessions_path)) {
+  mkdir($sessions_path);
+}
 
 session_start();
 
@@ -13,7 +19,7 @@ define('MAINTENANCE', FALSE);
 
 define('MYSQL_HOST', 'localhost');
 define('MYSQL_USER', 'root');
-define('MYSQL_PASSWORD', 'ZUf65YiqmW5ksL235qMN');
+define('MYSQL_PASSWORD', '');
 define('MYSQL_DATABASE', 'server');
 define('MYSQL_PORT', '3306');
 
