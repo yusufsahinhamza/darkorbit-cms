@@ -1423,8 +1423,8 @@ class Functions {
           'id' => 2,
           'category' => 'extras',
           'name' => 'Logdisk',
-          'price' => 1000,
-          'priceType' => 'credits',
+          'price' => 50,
+          'priceType' => 'uridium',
           'amount' => true,
           'image' => 'do_img/global/items/resource/logfile_100x100.png',
           'active' => true
@@ -1446,6 +1446,7 @@ class Functions {
   public static function GetSkillDescription($skill, $level) {
     $array = [
       'Engineering' => 'Lets your repair bots repair '.($level <= 1 ? '5' : ($level == 2 ? '10' : ($level == 3 ? '15' : ($level == 4 ? '20' : ($level == 5 ? '30' : '0'))))).'% more HP<br> per second',
+      'Shield Engineering' => 'Increases your shield strength by '.($level <= 1 ? '4' : ($level == 2 ? '8' : ($level == 3 ? '12' : ($level == 4 ? '18' : ($level == 5 ? '25' : '0'))))).'%',
       'Detonation I' => 'Makes your mines cause '.($level <= 1 ? '7' : ($level == 2 ? '14' : 0)).'% more damage',
       'Detonation II' => 'Makes your mines cause '.($level <= 1 ? '21' : ($level == 2 ? '28' : ($level == 3 ? '50' : 0))).'% more damage',
       'Heat-seeking Missiles' => 'Increases hit probability of your rockets by '.($level <= 1 ? '1' : ($level == 2 ? '2' : ($level == 3 ? '4' : ($level == 4 ? '6' : ($level == 5 ? '10' : '0'))))).'%',
@@ -1469,6 +1470,11 @@ class Functions {
       'engineering' => [
         'name' => 'Engineering',
         'currentLevel' => $skillPoints->engineering,
+        'maxLevel' => 5
+      ],
+      'shieldEngineering' => [
+        'name' => 'Shield Engineering',
+        'currentLevel' => $skillPoints->shieldEngineering,
         'maxLevel' => 5
       ],
       'detonation1' => [
