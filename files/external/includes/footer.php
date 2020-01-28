@@ -1,7 +1,7 @@
 <footer class="page-footer grey darken-4">
   <div class="footer-copyright">
     <div class="container">
-    © <?php echo date('Y'); ?> <?php echo SERVER_NAME; ?>
+    © <?php echo date('Y'); ?> <?php echo SERVER_NAME; ?> | Online: <?php echo Socket::Get('OnlineCount', array('Return' => 0)); ?>
     <div class="right">
       <a class="grey-text text-lighten-4" href="https://darkorbit.com/" target="_blank">DarkOrbit</a>
       |

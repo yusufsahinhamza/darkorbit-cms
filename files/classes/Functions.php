@@ -53,17 +53,19 @@ class Functions {
     require_once($path);
   }
 
-  public static function Register($username, $password, $email) {
+  public static function Register($username, $password, $password_confirm, $email) {
     $mysqli = Database::GetInstance();
 
 		$username = $mysqli->real_escape_string($username);
 		$password = $mysqli->real_escape_string($password);
+    $password_confirm = $mysqli->real_escape_string($password_confirm);
 		$email = $mysqli->real_escape_string($email);
 
     $json = [
       'inputs' => [
         'username' => ['validate' => 'valid', 'error' => 'Enter a valid username!'],
         'password' => ['validate' => 'valid', 'error' => 'Enter a valid password!'],
+        'password_confirm' => ['validate' => 'valid', 'error' => 'Enter a valid password!'],
         'email' => ['validate' => 'valid', 'error' => 'Enter a valid e-mail address!'],
       ],
       'message' => ''
@@ -89,7 +91,12 @@ class Functions {
       $json['inputs']['password']['error'] = 'Your password should be between 8 and 45 characters.';
     }
 
-    if ($json['inputs']['username']['validate'] === 'valid' && $json['inputs']['password']['validate'] === 'valid' && $json['inputs']['email']['validate'] === 'valid') {
+    if ($password != $password_confirm) {
+      $json['inputs']['password_confirm']['validate'] = 'invalid';
+      $json['inputs']['password_confirm']['error'] = "Those passwords didn't match. Try again.";
+    }
+
+    if ($json['inputs']['username']['validate'] === 'valid' && $json['inputs']['password']['validate'] === 'valid' && $json['inputs']['password_confirm']['validate'] === 'valid' && $json['inputs']['email']['validate'] === 'valid') {
       if ($mysqli->query('SELECT userId FROM player_accounts WHERE username = "'.$username.'"')->num_rows <= 0) {
         $ip = Functions::GetIP();
         $sessionId = Functions::GetUniqueSessionId();

@@ -3,8 +3,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
 	$request = $_POST['action'];
 
   if ($request === 'register') {
-    if (isset($_POST['username'], $_POST['password'], $_POST['email'])) {
-    	echo Functions::Register(Functions::s($_POST['username']), Functions::s($_POST['password']), Functions::s($_POST['email']));
+    if (isset($_POST['username'], $_POST['password'], $_POST['password_confirm'], $_POST['email'])) {
+    	echo Functions::Register(Functions::s($_POST['username']), Functions::s($_POST['password']), Functions::s($_POST['password_confirm']), Functions::s($_POST['email']));
     }
   }	else if ($request === 'login') {
 		if (isset($_POST['username'], $_POST['password'])) {

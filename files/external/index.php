@@ -53,6 +53,12 @@
                         <span class="helper-text" data-error="Enter a valid password!">Enter your password.</span>
                       </div>
                       <div class="input-field col s12">
+                        <i class="material-icons prefix">lock</i>
+                        <input type="password" name="password_confirm" id="r-password-confirm" class="validate" maxlength="45" required>
+                        <label for="r-password-confirm">Password Confirm</label>
+                        <span class="helper-text" data-error="Enter a valid password!">Confirm your password.</span>
+                      </div>
+                      <div class="input-field col s12">
                         <p>
                           <label>
                             <input type="checkbox" name="agreement" required>
