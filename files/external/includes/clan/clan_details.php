@@ -29,6 +29,7 @@ $pendingAlready = $mysqli->query('SELECT id FROM server_clan_applications WHERE 
     <div class="col s6" style="margin-top: 25px;">
       <p><?php echo $clan['description']; ?></p>
     </div>
+    <?php if ($player['clanId'] == 0) { ?>
     <div class="col s6" style="margin-top: 25px;">
       <div class="row">
         <form id="send_clan_application" method="post">
@@ -42,6 +43,7 @@ $pendingAlready = $mysqli->query('SELECT id FROM server_clan_applications WHERE 
         </form>
       </div>
     </div>
+    <?php } ?>
   </div>
   <?php } ?>
 </div>

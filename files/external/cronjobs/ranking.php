@@ -4,6 +4,32 @@ $mysqli = Database::GetInstance();
 $mysqli->begin_transaction();
 
 try {
+  foreach ($mysqli->query('SELECT * FROM player_accounts WHERE rankId != 21') as $player) {
+    $warPoints = 0;
+
+    foreach ($mysqli->query('SELECT * FROM log_player_kills WHERE killer_id = '.$player['userId'].'') as $value) {
+      $days = (new DateTime(date('d.m.Y H:i:s')))->diff(new DateTime($value['date_added']))->days;
+
+      if ($days <= 7) {
+        $warPoints += 75;
+      } elseif ($days >= 7) {
+        $warPoints += 50;
+      } elseif ($days >= 30) {
+        $warPoints += 25;
+      } elseif ($days >= 60) {
+        $warPoints += 12;
+      }
+    }
+
+    $warPoints = round($warPoints);
+
+    $mysqli->query('UPDATE player_accounts SET warPoints = '.$warPoints.' WHERE userId = '.$player['userId'].'');
+  }
+
+  foreach ($mysqli->query('SELECT * FROM player_accounts WHERE rankId != 21 AND warPoints > 0 ORDER BY warPoints DESC') as $key => $value) {
+    $mysqli->query('UPDATE player_accounts SET warRank = '.($key + 1).' WHERE userId = '.$value['userId'].'');
+  }
+
   foreach ($mysqli->query('SELECT * FROM player_accounts WHERE rankId != 21') as $value) {
     $data = json_decode($value['data']);
     $destructions = json_decode($value['destructions']);

@@ -5,6 +5,8 @@
     <div class="right">
       <a class="grey-text text-lighten-4" href="https://darkorbit.com/" target="_blank">DarkOrbit</a>
       |
+      <a class="grey-text text-lighten-4" href="https://discord.gg/RwytCms" target="_blank">Discord</a>
+      |
       <a class="grey-text text-lighten-4" href="https://elitepvpers.com/" target="_blank">Elitepvpers</a>
     </div>
     </div>

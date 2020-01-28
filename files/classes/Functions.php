@@ -37,6 +37,9 @@ class Functions {
             $page[0] = 'company_select';
           } else if ($page[0] == 'index') {
             $page[0] = 'home';
+          } else if ($page[0] == 'clan' && isset($page[2]) && $page[2] == $player['clanId']) {
+            $page[0] = 'clan';
+            $page[1] = 'informations';
           }
         } else if ($page[0] != 'maintenance') {
           $page[0] = 'index';
