@@ -9,9 +9,9 @@ if (!Functions::IsLoggedIn()) {
 $mysqli->begin_transaction();
 
 try {
-  foreach ($mysqli->query('SELECT * FROM server_bans WHERE userId = '.$player['userId'].'')->fetch_all(MYSQLI_ASSOC) as $value) {
+  foreach ($mysqli->query('SELECT * FROM server_bans WHERE userId = '.$player['userId'].' AND ended = 0')->fetch_all(MYSQLI_ASSOC) as $value) {
     if (new DateTime(date('d.m.Y H:i:s')) >= new DateTime($value['end_date'])) {
-      $mysqli->query('DELETE FROM server_bans WHERE id = '.$value['id'].'');
+      $mysqli->query('UPDATE server_bans SET ended = 1 WHERE id = '.$value['id'].'');
     }
   }
 
@@ -45,7 +45,7 @@ try {
 <body>
 
 <?php
-$statement = $mysqli->query('SELECT * FROM server_bans WHERE typeId = 1 AND userId = '.$player['userId'].'');
+$statement = $mysqli->query('SELECT * FROM server_bans WHERE typeId = 1 AND ended = 0 AND userId = '.$player['userId'].'');
 $fetch = $statement->fetch_assoc();
 
 if ($statement->num_rows <= 0) {
@@ -137,7 +137,7 @@ $gamePlayerSettings = json_decode($mysqli->query('SELECT * FROM player_settings 
   <div id="banned">
     <div>You are banned by administrator.</div>
     <div>Reason: <?php echo $fetch['reason']; ?></div>
-    <div>End date: <?php echo date('d.m.Y H:i', strtotime($fetch['end_date'])); ?></div>
+    <div>End date: <?php echo (new DateTime(date('d.m.Y H:i:s')))->diff(new DateTime($fetch['end_date']))->days >= 9998 ? 'Permanent' : date('d.m.Y H:i', strtotime($fetch['end_date'])); ?></div>
   </div>
 </div>
 <?php } ?>

@@ -5,67 +5,75 @@ $mysqli->begin_transaction();
 
 try {
   foreach ($mysqli->query('SELECT * FROM player_accounts WHERE rankId != 21') as $player) {
-    $warPoints = 0;
+    if ($mysqli->query('SELECT id FROM server_bans WHERE userId = '.$player['userId'].' AND typeId = 1 AND ended = 0')->num_rows <= 0) {
+      $warPoints = 0;
 
-    foreach ($mysqli->query('SELECT * FROM log_player_kills WHERE killer_id = '.$player['userId'].'') as $value) {
-      $days = (new DateTime(date('d.m.Y H:i:s')))->diff(new DateTime($value['date_added']))->days;
+      foreach ($mysqli->query('SELECT * FROM log_player_kills WHERE killer_id = '.$player['userId'].' AND pushing = 0') as $value) {
+        $days = (new DateTime(date('d.m.Y H:i:s')))->diff(new DateTime($value['date_added']))->days;
 
-      if ($days <= 7) {
-        $warPoints += 75;
-      } elseif ($days >= 7) {
-        $warPoints += 50;
-      } elseif ($days >= 30) {
-        $warPoints += 25;
-      } elseif ($days >= 60) {
-        $warPoints += 12;
+        if ($days <= 7) {
+          $warPoints += 75;
+        } elseif ($days >= 7) {
+          $warPoints += 50;
+        } elseif ($days >= 30) {
+          $warPoints += 25;
+        } elseif ($days >= 60) {
+          $warPoints += 12;
+        }
       }
+
+      $warPoints = round($warPoints);
+
+      $mysqli->query('UPDATE player_accounts SET warPoints = '.$warPoints.' WHERE userId = '.$player['userId'].'');
     }
-
-    $warPoints = round($warPoints);
-
-    $mysqli->query('UPDATE player_accounts SET warPoints = '.$warPoints.' WHERE userId = '.$player['userId'].'');
   }
 
   foreach ($mysqli->query('SELECT * FROM player_accounts WHERE rankId != 21 AND warPoints > 0 ORDER BY warPoints DESC') as $key => $value) {
-    $mysqli->query('UPDATE player_accounts SET warRank = '.($key + 1).' WHERE userId = '.$value['userId'].'');
+    if ($mysqli->query('SELECT id FROM server_bans WHERE userId = '.$value['userId'].' AND typeId = 1 AND ended = 0')->num_rows <= 0) {
+      $mysqli->query('UPDATE player_accounts SET warRank = '.($key + 1).' WHERE userId = '.$value['userId'].'');
+    }
   }
 
   foreach ($mysqli->query('SELECT * FROM player_accounts WHERE rankId != 21') as $value) {
-    $data = json_decode($value['data']);
-    $destructions = json_decode($value['destructions']);
+    if ($mysqli->query('SELECT id FROM server_bans WHERE userId = '.$value['userId'].' AND typeId = 1 AND ended = 0')->num_rows <= 0) {
+      $data = json_decode($value['data']);
+      $destructions = json_decode($value['destructions']);
 
-    $rankPoints = 0;
-
-    $rankPoints += ($data->experience / 100000);
-    $rankPoints += ($data->honor / 100);
-    $rankPoints += (Functions::GetLevel($data->experience) * 100);
-
-    $registerDate = new DateTime(json_decode($value['info'])->registerDate);
-    $daysSinceRegistration = (new DateTime(date('d.m.Y H:i:s')))->diff($registerDate)->days;
-
-    $rankPoints += ($daysSinceRegistration * 6);
-    $rankPoints += ($mysqli->query('SELECT baseShipId FROM server_ships WHERE shipID = '.$value['shipId'].'')->fetch_assoc()['baseShipId'] * 100);
-
-    $rankPoints -= ($destructions->fpd * 100);
-    $rankPoints -= ($destructions->dbe * 4);
-    $rankPoints += ($destructions->de * 4);
-    $rankPoints -= ($destructions->dbrz * 8);
-
-    if ($rankPoints < 0) {
       $rankPoints = 0;
+
+      $rankPoints += ($data->experience / 100000);
+      $rankPoints += ($data->honor / 100);
+      $rankPoints += (Functions::GetLevel($data->experience) * 100);
+
+      $registerDate = new DateTime(json_decode($value['info'])->registerDate);
+      $daysSinceRegistration = (new DateTime(date('d.m.Y H:i:s')))->diff($registerDate)->days;
+
+      $rankPoints += ($daysSinceRegistration * 6);
+      $rankPoints += ($mysqli->query('SELECT baseShipId FROM server_ships WHERE shipID = '.$value['shipId'].'')->fetch_assoc()['baseShipId'] * 100);
+
+      $rankPoints += ($mysqli->query('SELECT id FROM log_player_kills WHERE killer_id = '.$value['userId'].' AND pushing = 0')->num_rows * 4);
+      $rankPoints -= ($destructions->fpd * 100);
+      $rankPoints -= ($mysqli->query('SELECT id FROM log_player_kills WHERE target_id = '.$value['userId'].' AND pushing = 0')->num_rows * 4);
+      $rankPoints -= ($destructions->dbrz * 8);
+
+      if ($rankPoints < 0) {
+        $rankPoints = 0;
+      }
+
+      $rankPoints = round($rankPoints);
+
+      $mysqli->query('UPDATE player_accounts SET rankPoints = '.$rankPoints.' WHERE userId = '.$value['userId'].'');
     }
-
-    $rankPoints = round($rankPoints);
-
-    $mysqli->query('UPDATE player_accounts SET rankPoints = '.$rankPoints.' WHERE userId = '.$value['userId'].'');
   }
 
-  foreach ($mysqli->query('SELECT * FROM server_bans WHERE typeId = 1') as $value) {
-    $mysqli->query('UPDATE player_accounts SET rankPoints = 10 WHERE userId = '.$value['userId'].'');
+  foreach ($mysqli->query('SELECT * FROM server_bans WHERE typeId = 1 AND ended = 0') as $value) {
+    $mysqli->query('UPDATE player_accounts SET rankId = 1, rank = 0, rankPoints = 0, warRank = 0, warPoints = 0 WHERE userId = '.$value['userId'].'');
   }
 
   foreach ($mysqli->query('SELECT * FROM player_accounts WHERE rankId != 21 ORDER BY rankPoints DESC') as $key => $value) {
-    $mysqli->query('UPDATE player_accounts SET rank = '.($key + 1).' WHERE userId = '.$value['userId'].'');
+    if ($mysqli->query('SELECT id FROM server_bans WHERE userId = '.$value['userId'].' AND typeId = 1 AND ended = 0')->num_rows <= 0) {
+      $mysqli->query('UPDATE player_accounts SET rank = '.($key + 1).' WHERE userId = '.$value['userId'].'');
+    }
   }
 
   foreach ($mysqli->query('SELECT id FROM server_clans') as $value) {
@@ -73,10 +81,7 @@ try {
 
     $sumRankpoints = $mysqli->query('SELECT SUM(rankPoints) as rankPoints, COUNT(userId) as userCount FROM player_accounts WHERE clanId = '.$value['id'].'')->fetch_assoc();
 
-    $rankPoints = $sumRankpoints['rankPoints'];
-    $rankPoints /= $sumRankpoints['userCount'];
-
-    $rankPoints = round($rankPoints);
+    $rankPoints = round($sumRankpoints['rankPoints']);
 
     $mysqli->query('UPDATE server_clans SET rankPoints = '.$rankPoints.' WHERE id = '.$value['id'].'');
   }
