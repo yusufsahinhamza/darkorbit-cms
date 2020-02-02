@@ -13,7 +13,9 @@ if (!file_exists($sessions_path)) {
   mkdir($sessions_path);
 }
 
-session_start();
+if (session_start()) {
+    setcookie(session_name(), session_id(), null, '/', null, null, true);
+}
 
 define('MAINTENANCE', FALSE);
 
