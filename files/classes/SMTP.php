@@ -8,7 +8,7 @@ if (defined('ROOT')) {
 	require ROOT . 'packages/PHPMailer/src/SMTP.php';
 }
 
-define('SERVER_NAME', 'InfinityOrbit');
+define('SERVER_NAME', 'DarkOrbit');
 define('SMTP_HOST', 'smtp.yandex.com.tr');
 define('SMTP_USERNAME', 'verification@infinityorbit.com');
 define('SMTP_PASSWORD', 'FDKofks0942k!da');
