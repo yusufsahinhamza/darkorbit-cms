@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.2
+-- version 5.0.1
 -- https://www.phpmyadmin.net/
 --
 -- Anamakine: 127.0.0.1
--- Üretim Zamanı: 28 Oca 2020, 13:53:16
--- Sunucu sürümü: 10.4.10-MariaDB
--- PHP Sürümü: 7.3.12
+-- Üretim Zamanı: 15 Şub 2020, 16:28:41
+-- Sunucu sürümü: 10.4.11-MariaDB
+-- PHP Sürümü: 7.4.1
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -66,6 +66,7 @@ CREATE TABLE `log_player_kills` (
   `id` int(11) NOT NULL,
   `killer_id` int(11) NOT NULL,
   `target_id` int(11) NOT NULL,
+  `pushing` tinyint(1) NOT NULL,
   `date_added` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
@@ -81,7 +82,7 @@ CREATE TABLE `player_accounts` (
   `data` text COLLATE utf8_bin NOT NULL DEFAULT '{"uridium":0,"credits":0,"honor":0,"experience":0,"jackpot":0}',
   `bootyKeys` text COLLATE utf8_bin NOT NULL DEFAULT '{"greenKeys": 0, "redKeys": 0, "blueKeys": 0}',
   `info` text COLLATE utf8_bin NOT NULL,
-  `destructions` text COLLATE utf8_bin NOT NULL DEFAULT '{"fpd":0,"dbe":0,"dbrz":0,"de":0}',
+  `destructions` text COLLATE utf8_bin NOT NULL DEFAULT '{"fpd":0,"dbrz":0}',
   `username` varchar(20) COLLATE utf8_bin NOT NULL,
   `pilotName` varchar(20) COLLATE utf8_bin NOT NULL,
   `petName` varchar(20) COLLATE utf8_bin NOT NULL DEFAULT 'P.E.T 15',
@@ -95,6 +96,8 @@ CREATE TABLE `player_accounts` (
   `rankId` int(2) NOT NULL DEFAULT 1,
   `rankPoints` bigint(20) NOT NULL DEFAULT 0,
   `rank` int(11) NOT NULL DEFAULT 0,
+  `warPoints` bigint(20) NOT NULL,
+  `warRank` int(11) NOT NULL,
   `extraEnergy` int(11) NOT NULL,
   `nanohull` int(11) NOT NULL,
   `verification` text COLLATE utf8_bin NOT NULL,
@@ -183,6 +186,7 @@ CREATE TABLE `server_bans` (
   `modId` int(11) NOT NULL,
   `reason` text COLLATE utf8_bin NOT NULL,
   `typeId` tinyint(4) NOT NULL,
+  `ended` tinyint(1) NOT NULL,
   `end_date` datetime NOT NULL,
   `date_added` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
@@ -606,7 +610,7 @@ ALTER TABLE `server_battlestations`
 -- Tablo için AUTO_INCREMENT değeri `server_clans`
 --
 ALTER TABLE `server_clans`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- Tablo için AUTO_INCREMENT değeri `server_clan_applications`
