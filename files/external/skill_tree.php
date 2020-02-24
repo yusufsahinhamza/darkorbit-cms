@@ -1,6 +1,4 @@
 <?php
-require_once(INCLUDES . 'header.php');
-
 $equipment = $mysqli->query('SELECT skill_points, items FROM player_equipment WHERE userId = '.$player['userId'].'')->fetch_assoc();
 $skillPoints = json_decode($equipment['skill_points']);
 $skillTree = json_decode($equipment['items'])->skillTree;
@@ -49,4 +47,3 @@ $skills = Functions::GetSkills($skillPoints);
           <a id="resetSkills" class="modal-close waves-effect waves-light btn grey darken-3">OK</a>
         </div>
       </div>
-<?php require_once(INCLUDES . 'footer.php'); ?>

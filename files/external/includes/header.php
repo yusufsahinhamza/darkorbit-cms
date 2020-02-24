@@ -45,7 +45,7 @@
             <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Hangar<i class="material-icons right">arrow_drop_down</i></a></li>
             <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">Clan<i class="material-icons right">arrow_drop_down</i></a></li>
             <li><a href="<?php echo DOMAIN; ?>shop">Shop</a></li>
-            <li><a href="<?php echo DOMAIN; ?>donate">Donate</a></li>
+            <!--<li><a href="<?php echo DOMAIN; ?>donate">Donate</a></li>-->
             <li><a href="<?php echo DOMAIN; ?>settings">Settings</a></li>
             <li><a href="/api/logout">Logout</a></li>
           </ul>

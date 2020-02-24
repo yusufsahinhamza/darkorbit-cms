@@ -3,24 +3,24 @@ RewriteEngine On
 
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ files/redirect.php?action=$1
+RewriteRule ^(.*)$ files/redirect.php?p=$1
 
-RewriteRule ^files/config.php files/redirect.php?action=error
-RewriteRule ^files/external/ files/redirect.php?action=error
-RewriteRule ^files/classes/ files/redirect.php?action=error
+RewriteRule ^files/config.php files/redirect.php?p=error
+RewriteRule ^files/external/ files/redirect.php?p=error
+RewriteRule ^files/classes/ files/redirect.php?p=error
 
-RewriteRule ^.git/ files/redirect.php?action=error
-RewriteRule ^.gitignore files/redirect.php?action=error
-RewriteRule ^README.md files/redirect.php?action=error
-RewriteRule ^server.sql files/redirect.php?action=error
+RewriteRule ^.git/ files/redirect.php?p=error
+RewriteRule ^.gitignore files/redirect.php?p=error
+RewriteRule ^README.md files/redirect.php?p=error
+RewriteRule ^server.sql files/redirect.php?p=error
 
-ErrorDocument 400 /files/redirect.php?action=error
-ErrorDocument 401 /files/redirect.php?action=error
-ErrorDocument 403 /files/redirect.php?action=error
-ErrorDocument 404 /files/redirect.php?action=error
-ErrorDocument 500 /files/redirect.php?action=error
-ErrorDocument 502 /files/redirect.php?action=error
-ErrorDocument 504 /files/redirect.php?action=error
+ErrorDocument 400 /files/redirect.php?p=error
+ErrorDocument 401 /files/redirect.php?p=error
+ErrorDocument 403 /files/redirect.php?p=error
+ErrorDocument 404 /files/redirect.php?p=error
+ErrorDocument 500 /files/redirect.php?p=error
+ErrorDocument 502 /files/redirect.php?p=error
+ErrorDocument 504 /files/redirect.php?p=error
 
 <IfModule mod_headers.c>
   Header always set X-XSS-Protection "1; mode=block"

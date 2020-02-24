@@ -36,6 +36,4 @@ require_once(CLASSES . 'SMTP.php');
 require_once(CLASSES . 'Functions.php');
 require_once(CLASSES . 'Database.php');
 require_once(CLASSES . 'Socket.php');
-
-Functions::ObStart();
 ?>

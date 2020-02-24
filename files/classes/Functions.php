@@ -10,6 +10,8 @@ class Functions {
   }
 
   public static function LoadPage($variable) {
+    Functions::ObStart();
+
 		$mysqli = Database::GetInstance();
 
 		if (!$mysqli->connect_errno && Functions::IsLoggedIn()) {
@@ -21,7 +23,10 @@ class Functions {
 			}
 		}
 
-    $page = explode('/', str_replace('-', '_', Functions::s($variable)));
+    $page = array_filter(explode('/', str_replace('-', '_', Functions::s($variable))), function($a) {
+      return trim($a) !== '';
+    });
+
     $path = '';
 
     if (isset($page[0])) {
@@ -47,13 +52,27 @@ class Functions {
 
         $path = EXTERNALS . $page[0] . '.php';
       }
+    } else {
+      $page[0] = 'index';
     }
 
     if (!file_exists($path)) {
       $path = EXTERNALS . 'error.php';
     }
 
+    $require = $page[0] !== 'map_revolution' && $page[0] !== 'api' && $page[0] !== 'cronjobs' ? true : false;
+
+    if ($require) {
+      require_once(INCLUDES . 'header.php');
+    }
+
     require_once($path);
+
+    if ($require) {
+      require_once(INCLUDES . 'footer.php');
+    }
+
+    ob_end_flush();
   }
 
   public static function Register($username, $password, $password_confirm, $email) {

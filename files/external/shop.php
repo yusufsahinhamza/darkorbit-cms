@@ -1,4 +1,4 @@
-<?php require_once(INCLUDES . 'header.php'); $shop = Functions::GetShop(); ?>
+<?php $shop = Functions::GetShop(); ?>
 
       <div id="main">
         <div class="container">
@@ -64,5 +64,3 @@
           </div>
         </div>
       </div>
-
-<?php require_once(INCLUDES . 'footer.php'); ?>

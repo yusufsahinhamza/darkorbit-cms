@@ -1,5 +1,3 @@
-<?php require_once(INCLUDES . 'header.php'); ?>
-
       <div id="main" class="index">
         <div class="container container-center">
           <div class="row form">
@@ -158,5 +156,3 @@
           </div>
         </div>
       </div>
-
-<?php require_once(INCLUDES . 'footer.php'); ?>
