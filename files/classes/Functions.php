@@ -226,6 +226,60 @@ class Functions {
 		return json_encode($json);
 	}
 
+  public static function ChangeShip($shipLootId) {
+    $mysqli = Database::GetInstance();
+
+    $shipLootId = $mysqli->real_escape_string($shipLootId);
+
+    $json = [
+      'message' => ''
+    ];
+
+    $player = Functions::GetPlayer();
+
+    $ship = $mysqli->query('SELECT * FROM server_ships WHERE lootID = "'.$shipLootId.'"')->fetch_assoc();
+    $currentShip = $mysqli->query("SELECT * FROM server_ships WHERE shipID = {$player['shipId']}")->fetch_assoc();
+    $equipment = $mysqli->query('SELECT * FROM player_equipment WHERE userId = '.$player['userId'].'')->fetch_assoc();
+
+    $ships = json_decode($equipment['items'])->ships;
+    array_push($ships, 8);
+    array_push($ships, 10);
+
+    if ($ship != NULL && in_array($ship['shipID'], $ships)) {
+      if ($currentShip['baseShipId'] != $ship['shipID']) {
+        if (!Socket::Get('IsOnline', array('UserId' => $player['userId'], 'Return' => false)) || (Socket::Get('IsOnline', array('UserId' => $player['userId'], 'Return' => false)) && Socket::Get('AvailableToChangeShip', array('UserId' => $player['userId'], 'Return' => false)))) {
+          $mysqli->begin_transaction();
+
+          try {
+            $mysqli->query('UPDATE player_accounts SET shipID = '.$ship['shipID'].' WHERE userId = '.$player['userId'].'');
+
+            $json['status'] = true;
+
+            $drones = '[{"items":[],"designs":[]},{"items":[],"designs":[]},{"items":[],"designs":[]},{"items":[],"designs":[]},{"items":[],"designs":[]},{"items":[],"designs":[]},{"items":[],"designs":[]},{"items":[],"designs":[]},{"items":[],"designs":[]},{"items":[],"designs":[]}]';
+            $mysqli->query("UPDATE player_equipment SET config1_lasers = '[]', config2_lasers = '[]', config1_generators = '[]', config2_generators = '[]', config1_drones = '".$drones."', config2_drones = '".$drones."' WHERE userId = ".$player['userId']."");
+
+            if (Socket::Get('IsOnline', array('UserId' => $player['userId'], 'Return' => false))) {
+              Socket::Send('ChangeShip', array('UserId' => $player['userId'], 'ShipId' => $ship['shipID']));
+            }
+
+            $mysqli->commit();
+          } catch (Exception $e) {
+            $json['message'] = 'An error occurred. Please try again later.';
+            $mysqli->rollback();
+          }
+
+          $mysqli->close();
+        } else {
+          $json['message'] = 'You cannot change spaceships until the 5 second cool-down has been completed.';
+        }
+      }
+    } else {
+      $json['message'] = 'Something went wrong!';
+    }
+
+    return json_encode($json);
+  }
+
   public static function SendLinkAgain($username) {
     $mysqli = Database::GetInstance();
 

@@ -352,7 +352,6 @@ try {
 							echo base64_encode('{"isError":0,"data":{"ret":1,"money":{"uridium":"0","credits":"0"}}}');
 
 							if (Socket::Get('IsOnline', array('UserId' => $player['userId'], 'Return' => false))) {
-								Socket::Send('UpdateStatus', array('UserId' => $player['userId']));
 								Socket::Send('ChangeShip', array('UserId' => $player['userId'], 'ShipId' => $ship['shipID']));
 							}
 						} else {

@@ -17,6 +17,7 @@ if (session_start()) {
     setcookie(session_name(), session_id(), null, '/', null, null, true);
 }
 
+define('SERVER_NAME', 'DarkOrbit');
 define('MAINTENANCE', FALSE);
 
 define('MYSQL_HOST', 'localhost');

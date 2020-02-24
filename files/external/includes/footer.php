@@ -18,7 +18,7 @@
 <script type="text/javascript" src="<?php echo DOMAIN; ?>js/materialize.min.js"></script>
 <script type="text/javascript" src="<?php echo DOMAIN; ?>js/main.js"></script>
 
-<?php if (!Functions::IsLoggedIn() && isset($page[0]) && $page[0] === 'index') { ?>
+<?php if (!Functions::IsLoggedIn() && $page[0] === 'index') { ?>
 <script type="text/javascript">
   $('#modal #agree').click(function() {
     $('#register input[name=agreement]').prop('checked', true);
@@ -97,7 +97,7 @@
 </script>
 <?php } ?>
 
-<?php if (Functions::IsLoggedIn() && isset($page[0]) && $page[0] === 'company_select' && (isset($player) && $player['factionId'] == 0)) { ?>
+<?php if (Functions::IsLoggedIn() && $page[0] === 'company_select' && (isset($player) && $player['factionId'] == 0)) { ?>
 <script type="text/javascript">
   $('.company').click(function() {
     var company = $(this).attr('class').split(' ')[1];
@@ -120,7 +120,30 @@
 </script>
 <?php } ?>
 
-<?php if (Functions::IsLoggedIn() && isset($page[0]) && $page[0] === 'skill_tree') { ?>
+<?php if (Functions::IsLoggedIn() && $page[0] === 'ships') { ?>
+<script type="text/javascript">
+  $('.ship').click(function() {
+    var ship = $(this).attr('id');
+
+    $.ajax({
+      type: 'POST',
+      url: '<?php echo DOMAIN; ?>api/',
+      data: { action: 'change_ship', ship: ship },
+      success: function(response) {
+        var json = jQuery.parseJSON(response);
+
+        if (json.status) {
+          $(location).attr('href', "<?php echo DOMAIN;?>equipment");
+        } else if (json.message != '') {
+          M.toast({html: '<span>'+ json.message +'</span>'});
+        }
+      }
+    });
+  });
+</script>
+<?php } ?>
+
+<?php if (Functions::IsLoggedIn() && $page[0] === 'skill_tree') { ?>
 <script type="text/javascript">
   $('#exchangeLogdisks').click(function() {
     var button = $(this);
@@ -220,7 +243,7 @@
 </script>
 <?php } ?>
 
-<?php if (Functions::IsLoggedIn() && isset($page[0]) && $page[0] === 'shop') { ?>
+<?php if (Functions::IsLoggedIn() && $page[0] === 'shop') { ?>
 <script type="text/javascript">
   var currentItemId = -1;
   var currentItemName = "%item_name%";
@@ -657,7 +680,7 @@ $('#end-war').click(function() {
 </script>
 <?php } ?>
 
-<?php if (Functions::IsLoggedIn() && isset($page[0]) && $page[0] === 'settings') { ?>
+<?php if (Functions::IsLoggedIn() && $page[0] === 'settings') { ?>
 <script type="text/javascript">
   $('#change_pilot_name').submit(function(e) {
     e.preventDefault();
@@ -941,7 +964,7 @@ $('#end-war').click(function() {
 </script>
 <?php } ?>
 
-<?php if (Functions::IsLoggedIn() && isset($page[0]) && $page[0] === 'equipment') { ?>
+<?php if (Functions::IsLoggedIn() && $page[0] === 'equipment') { ?>
   <script type="text/javascript" src="<?php echo DOMAIN; ?>js/darkorbit/jquery.flashembed.js"></script>
   <script type='text/javascript'>
       function onFailFlashembed() {

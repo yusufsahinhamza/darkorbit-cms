@@ -8,11 +8,10 @@ if (defined('ROOT')) {
 	require ROOT . 'packages/PHPMailer/src/SMTP.php';
 }
 
-define('SERVER_NAME', 'DarkOrbit');
-define('SMTP_HOST', 'smtp.yandex.com.tr');
-define('SMTP_USERNAME', 'verification@infinityorbit.com');
-define('SMTP_PASSWORD', 'FDKofks0942k!da');
-define('SMTP_PORT', '465');
+define('SMTP_HOST', '');
+define('SMTP_USERNAME', '');
+define('SMTP_PASSWORD', '');
+define('SMTP_PORT', '');
 
 class SMTP {
 	public static function SendMail($email, $head, $subject, $message) {
