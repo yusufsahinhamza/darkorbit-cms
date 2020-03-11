@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.1
+-- version 4.9.4deb1
 -- https://www.phpmyadmin.net/
 --
--- Anamakine: 127.0.0.1
--- Üretim Zamanı: 15 Şub 2020, 16:28:41
--- Sunucu sürümü: 10.4.11-MariaDB
--- PHP Sürümü: 7.4.1
+-- Host: localhost
+-- Generation Time: Mar 11, 2020 at 01:58 PM
+-- Server version: 10.3.22-MariaDB-0ubuntu0.19.10.1
+-- PHP Version: 7.3.11-0ubuntu0.19.10.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Veritabanı: `server`
+-- Database: `server`
 --
 
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `chat_permissions`
+-- Table structure for table `chat_permissions`
 --
 
 CREATE TABLE `chat_permissions` (
@@ -35,7 +35,7 @@ CREATE TABLE `chat_permissions` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Tablo döküm verisi `chat_permissions`
+-- Dumping data for table `chat_permissions`
 --
 
 INSERT INTO `chat_permissions` (`id`, `userId`, `type`) VALUES
@@ -44,7 +44,7 @@ INSERT INTO `chat_permissions` (`id`, `userId`, `type`) VALUES
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `log_event_jpb`
+-- Table structure for table `log_event_jpb`
 --
 
 CREATE TABLE `log_event_jpb` (
@@ -59,7 +59,7 @@ CREATE TABLE `log_event_jpb` (
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `log_player_kills`
+-- Table structure for table `log_player_kills`
 --
 
 CREATE TABLE `log_player_kills` (
@@ -73,7 +73,7 @@ CREATE TABLE `log_player_kills` (
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `player_accounts`
+-- Table structure for table `player_accounts`
 --
 
 CREATE TABLE `player_accounts` (
@@ -90,16 +90,16 @@ CREATE TABLE `player_accounts` (
   `email` varchar(260) COLLATE utf8_bin NOT NULL,
   `shipId` int(11) NOT NULL DEFAULT 10,
   `premium` tinyint(1) NOT NULL DEFAULT 0,
-  `title` varchar(128) COLLATE utf8_bin NOT NULL,
+  `title` varchar(128) COLLATE utf8_bin NOT NULL DEFAULT '',
   `factionId` int(1) NOT NULL DEFAULT 0,
   `clanId` int(11) NOT NULL DEFAULT 0,
   `rankId` int(2) NOT NULL DEFAULT 1,
   `rankPoints` bigint(20) NOT NULL DEFAULT 0,
   `rank` int(11) NOT NULL DEFAULT 0,
-  `warPoints` bigint(20) NOT NULL,
-  `warRank` int(11) NOT NULL,
-  `extraEnergy` int(11) NOT NULL,
-  `nanohull` int(11) NOT NULL,
+  `warPoints` bigint(20) NOT NULL DEFAULT 0,
+  `warRank` int(11) DEFAULT 0,
+  `extraEnergy` int(11) NOT NULL DEFAULT 0,
+  `nanohull` int(11) NOT NULL DEFAULT 0,
   `verification` text COLLATE utf8_bin NOT NULL,
   `oldPilotNames` text COLLATE utf8_bin NOT NULL DEFAULT '[]',
   `version` tinyint(4) NOT NULL DEFAULT 1
@@ -108,7 +108,7 @@ CREATE TABLE `player_accounts` (
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `player_equipment`
+-- Table structure for table `player_equipment`
 --
 
 CREATE TABLE `player_equipment` (
@@ -128,7 +128,7 @@ CREATE TABLE `player_equipment` (
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `player_galaxygates`
+-- Table structure for table `player_galaxygates`
 --
 
 CREATE TABLE `player_galaxygates` (
@@ -144,29 +144,29 @@ CREATE TABLE `player_galaxygates` (
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `player_settings`
+-- Table structure for table `player_settings`
 --
 
 CREATE TABLE `player_settings` (
   `userId` int(11) NOT NULL,
-  `audio` text COLLATE utf8_bin NOT NULL,
-  `quality` text COLLATE utf8_bin NOT NULL,
-  `classY2T` text COLLATE utf8_bin NOT NULL,
-  `display` text COLLATE utf8_bin NOT NULL,
-  `gameplay` text COLLATE utf8_bin NOT NULL,
-  `window` text COLLATE utf8_bin NOT NULL,
-  `boundKeys` text COLLATE utf8_bin NOT NULL,
-  `inGameSettings` text COLLATE utf8_bin NOT NULL,
-  `cooldowns` text COLLATE utf8_bin NOT NULL,
-  `slotbarItems` text COLLATE utf8_bin NOT NULL,
-  `premiumSlotbarItems` text COLLATE utf8_bin NOT NULL,
-  `proActionBarItems` text COLLATE utf8_bin NOT NULL
+  `audio` text COLLATE utf8_bin NOT NULL DEFAULT '',
+  `quality` text COLLATE utf8_bin NOT NULL DEFAULT '',
+  `classY2T` text COLLATE utf8_bin NOT NULL DEFAULT '',
+  `display` text COLLATE utf8_bin NOT NULL DEFAULT '',
+  `gameplay` text COLLATE utf8_bin NOT NULL DEFAULT '',
+  `window` text COLLATE utf8_bin NOT NULL DEFAULT '',
+  `boundKeys` text COLLATE utf8_bin NOT NULL DEFAULT '',
+  `inGameSettings` text COLLATE utf8_bin NOT NULL DEFAULT '',
+  `cooldowns` text COLLATE utf8_bin NOT NULL DEFAULT '',
+  `slotbarItems` text COLLATE utf8_bin NOT NULL DEFAULT '',
+  `premiumSlotbarItems` text COLLATE utf8_bin NOT NULL DEFAULT '',
+  `proActionBarItems` text COLLATE utf8_bin NOT NULL DEFAULT ''
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `player_titles`
+-- Table structure for table `player_titles`
 --
 
 CREATE TABLE `player_titles` (
@@ -177,7 +177,7 @@ CREATE TABLE `player_titles` (
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `server_bans`
+-- Table structure for table `server_bans`
 --
 
 CREATE TABLE `server_bans` (
@@ -194,7 +194,7 @@ CREATE TABLE `server_bans` (
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `server_battlestations`
+-- Table structure for table `server_battlestations`
 --
 
 CREATE TABLE `server_battlestations` (
@@ -216,7 +216,7 @@ CREATE TABLE `server_battlestations` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Tablo döküm verisi `server_battlestations`
+-- Dumping data for table `server_battlestations`
 --
 
 INSERT INTO `server_battlestations` (`id`, `name`, `mapId`, `clanId`, `positionX`, `positionY`, `inBuildingState`, `buildTimeInMinutes`, `buildTime`, `deflectorActive`, `deflectorSecondsLeft`, `deflectorTime`, `visualModifiers`, `modules`, `active`) VALUES
@@ -225,7 +225,7 @@ INSERT INTO `server_battlestations` (`id`, `name`, `mapId`, `clanId`, `positionX
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `server_clans`
+-- Table structure for table `server_clans`
 --
 
 CREATE TABLE `server_clans` (
@@ -238,8 +238,8 @@ CREATE TABLE `server_clans` (
   `leaderId` int(11) NOT NULL DEFAULT 0,
   `news` text COLLATE utf8_bin NOT NULL DEFAULT '[]',
   `join_dates` text COLLATE utf8_bin NOT NULL DEFAULT '{}',
-  `rankPoints` bigint(20) NOT NULL,
-  `rank` int(11) NOT NULL,
+  `rankPoints` bigint(20) DEFAULT 0,
+  `rank` int(11) NOT NULL DEFAULT 0,
   `date` datetime NOT NULL DEFAULT current_timestamp(),
   `profile` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT 'default.jpg'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
@@ -247,7 +247,7 @@ CREATE TABLE `server_clans` (
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `server_clan_applications`
+-- Table structure for table `server_clan_applications`
 --
 
 CREATE TABLE `server_clan_applications` (
@@ -261,7 +261,7 @@ CREATE TABLE `server_clan_applications` (
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `server_clan_diplomacy`
+-- Table structure for table `server_clan_diplomacy`
 --
 
 CREATE TABLE `server_clan_diplomacy` (
@@ -275,7 +275,7 @@ CREATE TABLE `server_clan_diplomacy` (
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `server_clan_diplomacy_applications`
+-- Table structure for table `server_clan_diplomacy_applications`
 --
 
 CREATE TABLE `server_clan_diplomacy_applications` (
@@ -289,7 +289,7 @@ CREATE TABLE `server_clan_diplomacy_applications` (
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `server_maps`
+-- Table structure for table `server_maps`
 --
 
 CREATE TABLE `server_maps` (
@@ -304,7 +304,7 @@ CREATE TABLE `server_maps` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Tablo döküm verisi `server_maps`
+-- Dumping data for table `server_maps`
 --
 
 INSERT INTO `server_maps` (`mapID`, `name`, `npcs`, `stations`, `portals`, `collectables`, `options`, `factionID`) VALUES
@@ -357,7 +357,7 @@ INSERT INTO `server_maps` (`mapID`, `name`, `npcs`, `stations`, `portals`, `coll
 -- --------------------------------------------------------
 
 --
--- Tablo için tablo yapısı `server_ships`
+-- Table structure for table `server_ships`
 --
 
 CREATE TABLE `server_ships` (
@@ -379,7 +379,7 @@ CREATE TABLE `server_ships` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
--- Tablo döküm verisi `server_ships`
+-- Dumping data for table `server_ships`
 --
 
 INSERT INTO `server_ships` (`id`, `shipID`, `baseShipId`, `lootID`, `name`, `health`, `shield`, `speed`, `lasers`, `generators`, `cargo`, `aggressive`, `damage`, `respawnable`, `reward`) VALUES
@@ -454,190 +454,202 @@ INSERT INTO `server_ships` (`id`, `shipID`, `baseShipId`, `lootID`, `name`, `hea
 (86, 29, 0, 'ship29', '..::{ Boss Kristallin }::..', 200000, 160000, 320, 1, 1, 100, 1, 4000, 1, '{\"Experience\":25600,\"Honor\":128,\"Credits\":51200,\"Uridium\":64}');
 
 --
--- Dökümü yapılmış tablolar için indeksler
+-- Indexes for dumped tables
 --
 
 --
--- Tablo için indeksler `chat_permissions`
+-- Indexes for table `chat_permissions`
 --
 ALTER TABLE `chat_permissions`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `log_event_jpb`
+-- Indexes for table `log_event_jpb`
 --
 ALTER TABLE `log_event_jpb`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `log_player_kills`
+-- Indexes for table `log_player_kills`
 --
 ALTER TABLE `log_player_kills`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `player_accounts`
+-- Indexes for table `player_accounts`
 --
 ALTER TABLE `player_accounts`
   ADD PRIMARY KEY (`userId`);
 
 --
--- Tablo için indeksler `player_equipment`
+-- Indexes for table `player_equipment`
 --
 ALTER TABLE `player_equipment`
   ADD PRIMARY KEY (`userId`);
 
 --
--- Tablo için indeksler `player_galaxygates`
+-- Indexes for table `player_galaxygates`
 --
 ALTER TABLE `player_galaxygates`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `player_settings`
+-- Indexes for table `player_settings`
 --
 ALTER TABLE `player_settings`
   ADD PRIMARY KEY (`userId`);
 
 --
--- Tablo için indeksler `player_titles`
+-- Indexes for table `player_titles`
 --
 ALTER TABLE `player_titles`
   ADD PRIMARY KEY (`userID`);
 
 --
--- Tablo için indeksler `server_bans`
+-- Indexes for table `server_bans`
 --
 ALTER TABLE `server_bans`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `server_battlestations`
+-- Indexes for table `server_battlestations`
 --
 ALTER TABLE `server_battlestations`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `server_clans`
+-- Indexes for table `server_clans`
 --
 ALTER TABLE `server_clans`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `server_clan_applications`
+-- Indexes for table `server_clan_applications`
 --
 ALTER TABLE `server_clan_applications`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `server_clan_diplomacy`
+-- Indexes for table `server_clan_diplomacy`
 --
 ALTER TABLE `server_clan_diplomacy`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `server_clan_diplomacy_applications`
+-- Indexes for table `server_clan_diplomacy_applications`
 --
 ALTER TABLE `server_clan_diplomacy_applications`
   ADD PRIMARY KEY (`id`);
 
 --
--- Tablo için indeksler `server_maps`
+-- Indexes for table `server_maps`
 --
 ALTER TABLE `server_maps`
   ADD PRIMARY KEY (`mapID`);
 
 --
--- Tablo için indeksler `server_ships`
+-- Indexes for table `server_ships`
 --
 ALTER TABLE `server_ships`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `shipID` (`shipID`);
 
 --
--- Dökümü yapılmış tablolar için AUTO_INCREMENT değeri
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- Tablo için AUTO_INCREMENT değeri `chat_permissions`
+-- AUTO_INCREMENT for table `chat_permissions`
 --
 ALTER TABLE `chat_permissions`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- Tablo için AUTO_INCREMENT değeri `log_event_jpb`
+-- AUTO_INCREMENT for table `log_event_jpb`
 --
 ALTER TABLE `log_event_jpb`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Tablo için AUTO_INCREMENT değeri `log_player_kills`
+-- AUTO_INCREMENT for table `log_player_kills`
 --
 ALTER TABLE `log_player_kills`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Tablo için AUTO_INCREMENT değeri `player_accounts`
+-- AUTO_INCREMENT for table `player_accounts`
 --
 ALTER TABLE `player_accounts`
   MODIFY `userId` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
--- Tablo için AUTO_INCREMENT değeri `player_equipment`
+-- AUTO_INCREMENT for table `player_equipment`
 --
 ALTER TABLE `player_equipment`
   MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Tablo için AUTO_INCREMENT değeri `player_galaxygates`
+-- AUTO_INCREMENT for table `player_galaxygates`
 --
 ALTER TABLE `player_galaxygates`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Tablo için AUTO_INCREMENT değeri `server_bans`
+-- AUTO_INCREMENT for table `player_settings`
+--
+ALTER TABLE `player_settings`
+  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `player_titles`
+--
+ALTER TABLE `player_titles`
+  MODIFY `userID` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `server_bans`
 --
 ALTER TABLE `server_bans`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
--- Tablo için AUTO_INCREMENT değeri `server_battlestations`
+-- AUTO_INCREMENT for table `server_battlestations`
 --
 ALTER TABLE `server_battlestations`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- Tablo için AUTO_INCREMENT değeri `server_clans`
+-- AUTO_INCREMENT for table `server_clans`
 --
 ALTER TABLE `server_clans`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Tablo için AUTO_INCREMENT değeri `server_clan_applications`
+-- AUTO_INCREMENT for table `server_clan_applications`
 --
 ALTER TABLE `server_clan_applications`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Tablo için AUTO_INCREMENT değeri `server_clan_diplomacy`
+-- AUTO_INCREMENT for table `server_clan_diplomacy`
 --
 ALTER TABLE `server_clan_diplomacy`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
--- Tablo için AUTO_INCREMENT değeri `server_clan_diplomacy_applications`
+-- AUTO_INCREMENT for table `server_clan_diplomacy_applications`
 --
 ALTER TABLE `server_clan_diplomacy_applications`
   MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT;
 
 --
--- Tablo için AUTO_INCREMENT değeri `server_maps`
+-- AUTO_INCREMENT for table `server_maps`
 --
 ALTER TABLE `server_maps`
   MODIFY `mapID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=225;
 
 --
--- Tablo için AUTO_INCREMENT değeri `server_ships`
+-- AUTO_INCREMENT for table `server_ships`
 --
 ALTER TABLE `server_ships`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=118;
